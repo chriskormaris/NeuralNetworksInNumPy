@@ -2,6 +2,6 @@
 
 Made by Chris Kormaris
 
-Programming Languange: Python
+Programming Language: Python
 
 A neural network that trains on a MNIST dataset to classify test images as one-digit numbers.
