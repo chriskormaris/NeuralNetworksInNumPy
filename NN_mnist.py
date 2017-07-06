@@ -1,4 +1,4 @@
-# 1st Activation Function: sigmoid
+# 1st Activation Function: tanh
 # 2nd Activation Function: softmax
 # Maximum Likelihood Estimate Function: Cross Entropy Function
 # train algorithm: gradient ascent
@@ -66,6 +66,10 @@ def read_labels(path, testOrTrainFile):
     y = np.array(y).astype(np.int)  # convert classification parameter to the appropriate data type
     return y
 
+	
+def tanh_output_to_derivative(output):
+    return 1 - np.square(output)
+
 
 def softmax(x):
     return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
@@ -129,7 +133,7 @@ def train(X, y, iterations=20000, print_estimate=False):
         # Forward propagation
         s1 = X.dot(W1.T)  # s1: NxM
         o1 = np.tanh(s1)  # o1: NxM
-        grad = 1 - np.square(o1)  # the gradient of tanh function, grad: NxM
+        grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
         o1 = concat_ones_vector(o1)  # o1: NxM+1
         s2 = o1.dot(W2.T)  # s2: NxK
         o2 = softmax(s2)  # o2: NxK
