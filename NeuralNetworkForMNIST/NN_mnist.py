@@ -66,7 +66,7 @@ def read_labels(path, testOrTrainFile):
     y = np.array(y).astype(np.int)  # convert classification parameter to the appropriate data type
     return y
 
-	
+
 def tanh_output_to_derivative(output):
     return 1 - np.square(output)
 
@@ -75,21 +75,29 @@ def softmax(x):
     return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
 
 
-# concat ones column vector as the first column of the matrix
+# concat ones column vector as the first column of the matrix (adds bias term)
 def concat_ones_vector(x):
     ones_vector = np.ones((x.shape[0], 1))
     return np.concatenate((ones_vector, x), axis=1)
 
 
+# Forward propagation
+def forward(X, W1, W2):
+    s1 = X.dot(W1.T)  # s1: NxM
+    o1 = np.tanh(s1)  # o1: NxM
+    grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
+    o1 = concat_ones_vector(o1)  # o1: NxM+1
+    s2 = o1.dot(W2.T)  # s2: NxK
+    o2 = softmax(s2)  # o2: NxK
+    return s1, o1, grad, s2, o2
+
+	
 # Helper function to evaluate the likelihood on the train dataset.
 def likelihood(W1, W2, X, t):
     num_examples = len(X)  # N: training set size
 
     # Forward propagation to calculate our predictions
-    s1 = X.dot(W1.T)
-    o1 = np.tanh(s1)
-    o1 = concat_ones_vector(o1)
-    s2 = o1.dot(W2.T)
+    _, _, _, s2, _ = forward(X, W1, W2)
 
     # Calculating the mle
     mle = sum(sum(np.multiply(t, s2)))  # NxK .* NxK
@@ -101,11 +109,7 @@ def likelihood(W1, W2, X, t):
 
 def test(W1, W2, X):
     # Forward propagation
-    s1 = X.dot(W1.T)
-    o1 = np.tanh(s1)
-    o1 = concat_ones_vector(o1)
-    s2 = o1.dot(W2.T)
-    o2 = softmax(s2)
+    _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
 
 
@@ -131,12 +135,7 @@ def train(X, y, iterations=20000, print_estimate=False):
         # W2: KxM+1 = num_of_categories x num_hidden_layers
 
         # Forward propagation
-        s1 = X.dot(W1.T)  # s1: NxM
-        o1 = np.tanh(s1)  # o1: NxM
-        grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
-        o1 = concat_ones_vector(o1)  # o1: NxM+1
-        s2 = o1.dot(W2.T)  # s2: NxK
-        o2 = softmax(s2)  # o2: NxK
+        _, o1, grad, s2, o2 = forward(X, W1, W2)
 
         # Backpropagation
         delta1 = t - o2  # delta1: NxK

@@ -111,16 +111,23 @@ def concat_ones_vector(x):
     return np.concatenate((ones_vector, x), axis=1)
 
 
+# Forward propagation
+def forward(X, W1, W2):
+    s1 = X.dot(W1.T)  # s1: NxM
+    o1 = np.tanh(s1)  # o1: NxM
+    grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
+    o1 = concat_ones_vector(o1)  # o1: NxM+1
+    s2 = o1.dot(W2.T)  # s2: NxK
+    o2 = sigmoid(s2)  # o2: NxK
+    return s1, o1, grad, s2, o2
+
+
 # Helper function to evaluate the total loss of the dataset
 def loss_function(W1, W2, X, t):
     num_examples = len(X)  # N: training set size
 
     # Forward propagation to calculate our predictions
-    s1 = X.dot(W1.T)
-    o1 = np.tanh(s1)
-    o1 = concat_ones_vector(o1)
-    s2 = o1.dot(W2.T)
-    o2 = sigmoid(s2)
+    _, _, _, _, o2 = forward(X, W1, W2)
 
     # Calculating the mean square error loss
     squared_error = np.square(o2 - t)
@@ -133,11 +140,7 @@ def loss_function(W1, W2, X, t):
 
 def test(W1, W2, X):
     # Forward propagation
-    s1 = X.dot(W1.T)
-    o1 = np.tanh(s1)
-    o1 = concat_ones_vector(o1)
-    s2 = o1.dot(W2.T)
-    o2 = sigmoid(s2)
+    _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
 
 
@@ -152,7 +155,7 @@ def train(X, y, iterations=20000, print_loss=False):
     W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(NNParams.num_input_layers)  # W1: MxD
     W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(NNParams.num_hidden_layers)  # W2: KxM
 
-    # concat ones matrix
+    # concat ones vector
     W1 = concat_ones_vector(W1)  # W1: MxD+1
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
@@ -161,14 +164,9 @@ def train(X, y, iterations=20000, print_loss=False):
 
         # W1: MxD+1 = num_hidden_layers x num_of_features
         # W2: KxM+1 = num_of_categories x num_hidden_layers
-		
+
         # Forward propagation
-        s1 = X.dot(W1.T)  # s1: NxM
-        o1 = np.tanh(s1)  # o1: NxM
-        grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
-        o1 = concat_ones_vector(o1)  # o1: NxM+1
-        s2 = o1.dot(W2.T)  # s2: NxK
-        o2 = sigmoid(s2)  # o2: NxK
+        _, o1, grad, _, o2 = forward(X, W1, W2)
 
         # Backpropagation
         delta1 = o2 - t  # delta1: NxK
