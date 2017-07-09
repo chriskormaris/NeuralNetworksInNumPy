@@ -20,7 +20,7 @@ Bias terms are used.
 ########################################
 
 
-# NeuralNetworksSpamHamClassifiers
+# NeuralNetworksSpamHamClassification
 
 Made by Chris Kormaris
 
