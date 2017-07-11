@@ -136,11 +136,11 @@ def loss_function(W1, W2, X, t):
 
     # Calculating the loss
     logprobs = -np.multiply(t, np.log(o2))
-    loss = np.sum(logprobs)  # cross entropy loss
+    data_loss = np.sum(logprobs)  # cross entropy loss
 
     # Add regularization term to loss (optional)
-    loss += NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
-    return loss
+    data_loss += NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
+    return data_loss
 
 
 def test(W1, W2, X):
