@@ -178,12 +178,12 @@ def train(X, y, iterations=20000, print_loss=False):
         dW2 = np.dot(delta1.T, o1)  # KxM+1
 
         # Add regularization terms
-        dW1 += NNParams.reg_lambda * W1
-        dW2 += NNParams.reg_lambda * W2
+        dW1 = dW1 + NNParams.reg_lambda * W1
+        dW2 = dW2 + NNParams.reg_lambda * W2
 
         # Update gradient descent parameters
-        W1 += -NNParams.eta * dW1
-        W2 += -NNParams.eta * dW2
+        W1 = W1 - NNParams.eta * dW1
+        W2 = W2 - NNParams.eta * dW2
 
         # Optionally print the loss.
         # This is expensive because it uses the whole dataset, so we don't want to do it too often.
