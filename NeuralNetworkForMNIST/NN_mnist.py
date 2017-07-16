@@ -164,6 +164,7 @@ def train(X, y, iterations=20000, print_estimate=False):
     return W1, W2
 
 
+# Train using Stochastic Gradient Ascent
 def train_stochastic(X, y, epochs=50, tol=1e-6, print_estimate=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
