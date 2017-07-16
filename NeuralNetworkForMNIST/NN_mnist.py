@@ -72,7 +72,8 @@ def tanh_output_to_derivative(output):
 
 
 def softmax(x):
-    return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
+    #return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
+    return np.divide(np.exp(x), np.sum(np.exp(x), axis=1))
 
 
 # concat ones column vector as the first column of the matrix (adds bias term)
@@ -91,7 +92,7 @@ def forward(X, W1, W2):
     o2 = softmax(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
-	
+
 # Helper function to evaluate the likelihood on the train dataset.
 def likelihood(W1, W2, X, t):
     num_examples = len(X)  # N: training set size
@@ -100,7 +101,7 @@ def likelihood(W1, W2, X, t):
     _, _, _, s2, _ = forward(X, W1, W2)
 
     # Calculating the mle
-    mle = sum(sum(np.multiply(t, s2)))  # NxK .* NxK
+    mle = np.sum(np.sum(np.multiply(t, s2)))  # NxK .* NxK
 
     # Add regularization term to likelihood (optional)
     mle -= NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
@@ -147,18 +148,81 @@ def train(X, y, iterations=20000, print_estimate=False):
         dW2 = np.dot(delta1.T, o1)  # KxM+1
 
         # Add regularization terms
-        dW1 += -NNParams.reg_lambda * W1
-        dW2 += -NNParams.reg_lambda * W2
+        dW1 = dW1 - NNParams.reg_lambda * W1
+        dW2 = dW2 - NNParams.reg_lambda * W2
 
         # Update gradient ascent parameters
-        W1 += NNParams.eta * dW1
-        W2 += NNParams.eta * dW2
+        W1 = W1 + NNParams.eta * dW1
+        W2 = W2 + NNParams.eta * dW2
 
         # Optionally print the estimate.
         # This is expensive because it uses the whole dataset, so we don't want to do it too often.
         #if print_estimate and i % 1000 == 0:
         if print_estimate:
             print("Likelihood estimate after iteration %i: %f" % (i, likelihood(W1, W2, X, t)))
+
+    return W1, W2
+
+
+def train_stochastic(X, y, epochs=50, tol=1e-6, print_estimate=False):
+    t = np.zeros((y.shape[0], NNParams.num_output_layers))
+    t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
+    # Initialize the parameters to random values. We need to learn these.
+    np.random.seed(0)
+    W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
+        NNParams.num_input_layers)  # W1: MxD
+    W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
+        NNParams.num_hidden_layers)  # W2: KxM
+
+    # concat ones vector
+    W1 = concat_ones_vector(W1)  # W1: MxD+1
+    W2 = concat_ones_vector(W2)  # W2: KxM+1
+
+    # Run Stochastic gradient ascent
+    num_examples = X.shape[0]
+    s_old = -np.inf
+    for e in range(epochs):
+
+        s = 0
+        for i in range(num_examples):
+
+            xi = np.matrix(X[i, :])
+            ti = np.matrix(t[i, :])
+
+            # W1: MxD+1 = num_hidden_layers x num_of_features
+            # W2: KxM+1 = num_of_categories x num_hidden_layers
+
+            # Forward propagation
+            _, o1, grad, s2, o2 = forward(xi, W1, W2)
+
+            # Backpropagation
+            delta1 = ti - o2  # delta1: 1xK
+            W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
+            delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
+            delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: 1xM
+
+            dW1 = np.dot(delta3.T, xi)  # MxD+1
+            dW2 = np.dot(delta1.T, o1)  # KxM+1
+
+            # Add regularization terms
+            dW1 = dW1 - NNParams.reg_lambda * W1
+            dW2 = dW2 - NNParams.reg_lambda * W2
+
+            # Update gradient ascent parameters
+            W1 = W1 + NNParams.eta * dW1
+            W2 = W2 + NNParams.eta * dW2
+
+            s = s + likelihood(W1, W2, xi, ti)
+
+        # Optionally print the estimate.
+        if print_estimate:
+            print("Likelihood estimate after epoch %i: %f" % (e, s))
+
+        if np.abs(s - s_old) <= tol:
+            break
+
+        s_old = s
+
 
     return W1, W2
 
@@ -229,7 +293,8 @@ X_test = X_test / 255
 NNParams.eta = 0.5 / len(X_train)
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, iterations=500, print_estimate=True)
+#W1, W2 = train(X_train, y_train, iterations=500, print_estimate=True)
+W1, W2 = train_stochastic(X_train, y_train, epochs=50, tol=1e-6, print_estimate=True)
 
 # test the Neural Network Model
 predicted = test(W1, W2, X_test)
