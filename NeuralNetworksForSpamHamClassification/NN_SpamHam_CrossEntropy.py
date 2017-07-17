@@ -128,10 +128,10 @@ def forward(X, W1, W2):
 
 
 # Helper function to evaluate the total loss of the dataset
-def loss_function(W1, W2, X, t):
+def loss_function(X, t, W1, W2):
     num_examples = len(X)  # N: training set size
 
-    # Forward propagation to calculate our predictions
+    # Forward propagate to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
 
     # Calculating the loss
@@ -164,36 +164,43 @@ def train(X, y, iterations=20000, print_loss=False):
     W1 = concat_ones_vector(W1)  # W1: MxD+1
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
-    # Run Batch gradient descent
+    # Run Batch Gradient Descent
     for i in range(iterations):
 
-        # W1: MxD+1 = num_hidden_layers x num_of_features
-        # W2: KxM+1 = num_of_categories x num_hidden_layers
-
-        # Forward propagation
-        _, o1, grad, _, o2 = forward(X, W1, W2)
-
-        # Backpropagation
-        delta1 = o2 - t  # delta1: NxK
-        W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
-        delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
-        delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
-
-        dW1 = np.dot(delta3.T, X)  # MxD+1
-        dW2 = np.dot(delta1.T, o1)  # KxM+1
-
-        # Add regularization terms
-        dW1 = dW1 + NNParams.reg_lambda * W1
-        dW2 = dW2 + NNParams.reg_lambda * W2
-
-        # Update gradient descent parameters
-        W1 = W1 - NNParams.eta * dW1
-        W2 = W2 - NNParams.eta * dW2
+        W1, W2 = grad_descent(X, t, W1, W2)
 
         # Optionally print the loss.
         # This is expensive because it uses the whole dataset, so we don't want to do it too often.
         if print_loss and i % 1000 == 0:
-            print("Cross entropy loss after iteration %i: %f" % (i, loss_function(W1, W2, X, t)))
+            print("Cross entropy loss after iteration %i: %f" % (i, loss_function(X, t, W1, W2)))
+
+    return W1, W2
+
+
+# Update the Weight matrices using Gradient Descent
+def grad_descent(X, t, W1, W2):
+    # W1: MxD+1 = num_hidden_layers x num_of_features
+    # W2: KxM+1 = num_of_categories x num_hidden_layers
+
+    # Forward propagation
+    _, o1, grad, _, o2 = forward(X, W1, W2)
+
+    # Backpropagation
+    delta1 = o2 - t  # delta1: NxK
+    W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
+    delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
+    delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
+
+    dW1 = np.dot(delta3.T, X)  # MxD+1
+    dW2 = np.dot(delta1.T, o1)  # KxM+1
+
+    # Add regularization terms
+    dW1 = dW1 + NNParams.reg_lambda * W1
+    dW2 = dW2 + NNParams.reg_lambda * W2
+
+    # Update gradient descent parameters
+    W1 = W1 - NNParams.eta * dW1
+    W2 = W2 - NNParams.eta * dW2
 
     return W1, W2
 
