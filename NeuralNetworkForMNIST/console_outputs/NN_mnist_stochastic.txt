@@ -1,0 +1,30 @@
+Reading TRAIN files...
+Reading 'train0.txt'
+Reading 'train1.txt'
+Reading 'train2.txt'
+Reading 'train3.txt'
+Reading 'train4.txt'
+Reading 'train5.txt'
+Reading 'train6.txt'
+Reading 'train7.txt'
+Reading 'train8.txt'
+Reading 'train9.txt'
+
+
+Reading TEST files...
+Reading 'test0.txt'
+Reading 'test1.txt'
+Reading 'test2.txt'
+Reading 'test3.txt'
+Reading 'test4.txt'
+Reading 'test5.txt'
+Reading 'test6.txt'
+Reading 'test7.txt'
+Reading 'test8.txt'
+Reading 'test9.txt'
+
+
+Traceback (most recent call last):
+  File "/home/chris/Workspace/PycharmProjects/MachineLearning/NN_mnist/NN_mnist_stochastic.py", line 253, in <module>
+    W1, W2 = train(X_train, y_train, iterations=500, print_estimate=True)
+TypeError: train() got an unexpected keyword argument 'iterations'

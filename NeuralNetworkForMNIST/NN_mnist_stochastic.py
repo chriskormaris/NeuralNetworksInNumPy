@@ -72,7 +72,8 @@ def tanh_output_to_derivative(output):
 
 
 def softmax(x):
-    return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
+    #return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
+    return np.divide(np.exp(x), np.sum(np.exp(x), axis=1))
 
 
 # concat ones column vector as the first column of the matrix (adds bias term)
@@ -113,31 +114,45 @@ def test(X, W1, W2):
     return np.argmax(o2, axis=1)
 
 
-# Train using Batch Gradient Ascent
-# This function learns the parameter weights W1, W2 for the neural network and returns them.
-# - iterations: Number of iterations through the training data for gradient ascent
-# - print_estimate: If True, print the estimate every 1000 iterations
-def train(X, y, iterations=500, print_estimate=False):
+# Train using Stochastic Gradient Ascent
+def train(X, y, epochs=50, tol=1e-6, print_estimate=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
     # Initialize the parameters to random values. We need to learn these.
     np.random.seed(0)
-    W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(NNParams.num_input_layers)  # W1: MxD
-    W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(NNParams.num_hidden_layers)  # W2: KxM
+    W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
+        NNParams.num_input_layers)  # W1: MxD
+    W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
+        NNParams.num_hidden_layers)  # W2: KxM
 
     # concat ones vector
     W1 = concat_ones_vector(W1)  # W1: MxD+1
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
-    # Run Batch Gradient Ascent
-    for i in range(iterations):
+    # Run Stochastic gradient ascent
+    num_examples = X.shape[0]
+    s_old = -np.inf
+    for e in range(epochs):
 
-        W1, W2 = grad_ascent(X, t, W1, W2)
+        s = 0
+        for i in range(num_examples):
+
+            xi = np.matrix(X[i, :])
+            ti = np.matrix(t[i, :])
+
+            W1, W2 = grad_ascent(xi, ti, W1, W2)
+
+            s = s + likelihood(xi, ti, W1, W2)
 
         # Optionally print the estimate.
-        # This is expensive because it uses the whole dataset.
         if print_estimate:
-            print("Likelihood estimate after iteration %i: %f" % (i, likelihood(X, t, W1, W2)))
+            print("Likelihood estimate after epoch %i: %f" % (e, s))
+
+        if np.abs(s - s_old) <= tol:
+            break
+
+        s_old = s
+
 
     return W1, W2
 
@@ -236,10 +251,10 @@ X_test = X_test / 255
 NNParams.eta = 0.5 / len(X_train)
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, iterations=500, print_estimate=True)
+W1, W2 = train(X_train, y_train, epochs=50, tol=1e-6, print_estimate=True)
 
 # test the Neural Network Model
-predicted = test(X_test, W1, W2)
+predicted = test(X_test, W1, W2,)
 
 # check predictions
 wrong_counter = 0  # the number of wrong classifications made by the Neural Network
