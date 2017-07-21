@@ -1,8 +1,11 @@
-# NeuralNetworkForMNIST
+# NeuralNetworksInPython
 
 Made by Chris Kormaris
 
 Programming Language: Python
+
+
+## NeuralNetworkForMNIST
 
 Unzip the MNIST data from the file "mnisttxt.zip", in the same directory where the Python files are.
 Then, run the Neural Network python code from the file "NN_mnist.py".
@@ -19,11 +22,7 @@ Bias terms are used.
 The precision that is achieved is: 94.7 %
 
 
-# NeuralNetworksSpamHamClassification
-
-Made by Chris Kormaris
-
-Programming Language: Python
+## NeuralNetworksSpamHamClassification
 
 Unzip the files "TRAIN.zip" and "TEST.zip", in the same directory where the Python files are.
 First, run the python file "FeatureSelectionUsingIG.py" to generate the output file
