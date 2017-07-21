@@ -16,6 +16,7 @@ Maximum Likelihood Estimate Function: Cross Entropy Function
 train algorithm: gradient ascent
 Bias terms are used.
 
+The precision that is achieved is: 94.7 %
 
 ########################################
 
