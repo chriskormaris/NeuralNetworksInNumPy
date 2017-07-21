@@ -55,4 +55,4 @@ The second neural network that has been implemented uses
 the sigmoid activation function in the first input layer
 and softmax sigmoid activation function in the last output layer.
 In the last node of the network the Cross Entropy Loss formula is used.
-The precision that is achieved is: 94.57%.
+The precision that has been achieved is: 94.57%.
