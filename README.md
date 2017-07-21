@@ -18,8 +18,6 @@ Bias terms are used.
 
 The precision that is achieved is: 94.7 %
 
-########################################
-
 
 # NeuralNetworksSpamHamClassification
 
@@ -34,9 +32,7 @@ Then run the Neural Network of your choice between "SpamHamNeuralNetworkSqErr.py
 
 Note: You can use your own Train and Test text files if you want, as long as they contain "spam" or "ham" in their names, accordingly to their category. The existence of the substrings "spam" or "ham" in a text file define in which category of the two the text file belongs to.
 
-##########
-
-Neural Network #1
+### Neural Network #1
 File:
 "SpamHamNeuralNetworkSqErr.py"
 1st Activation Function: tanh
@@ -49,9 +45,7 @@ and the sigmoid activation function in the last output layer.
 In the last node of the network the Squared Error Loss formula (SqErr loss function) is used.
 The precision that is achieved is: 94.33%.
 
-##########
-
-Neural Network #2
+### Neural Network #2
 File:
 "SpamHamNeuralNetworkCrossEntropy.py"
 1st Activation Function: sigmoid
