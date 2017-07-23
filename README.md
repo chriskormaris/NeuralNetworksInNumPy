@@ -29,7 +29,7 @@ First, run the python file "FeatureSelectionUsingIG.py" to generate the output f
 "feature_dictionary.txt", containing the features tokens that we'll use.
 Then run the Neural Network of your choice between "SpamHamNeuralNetworkSqErr.py" and "SpamHamNeuralNetworkCrossEntropy.py".
 
-Note: You can use your own Train and Test text files if you want, as long as they contain "spam" or "ham" in their names, according to their category. The existence of the substrings "spam" or "ham" in a text file defines in which category of the two the text file belongs to.
+**Note:** You can use your own Train and Test text files if you want, as long as they contain "spam" or "ham" in their names, according to their category. The existence of the substring "spam" or "ham" in a text file defines in which category of the two the text file belongs to.
 
 ### Neural Network #1
 File:
