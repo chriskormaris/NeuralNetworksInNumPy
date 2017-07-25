@@ -26,7 +26,7 @@ train algorithm: gradient ascent
 
 Bias terms are used.
 
-The precision that has been achieved is: 94.7 %
+The precision that was achieved: 94.7 %
 
 
 ## NeuralNetworksSpamHamClassification
@@ -59,7 +59,7 @@ The first neural network that has been implemented uses
 the tanh activation function in the first input layer
 and the sigmoid activation function in the last output layer.
 In the last node of the network the Squared Error Loss formula (SqErr loss function) is used.
-The precision that has been achieved is: 94.33%.
+The precision that was achieved: 94.33%.
 
 ### Neural Network #2
 Run:
@@ -79,4 +79,4 @@ The second neural network that has been implemented uses
 the sigmoid activation function in the first input layer
 and softmax sigmoid activation function in the last output layer.
 In the last node of the network the Cross Entropy Loss formula is used.
-The precision that has been achieved is: 94.57%.
+The precision that was achieved: 94.57%.
