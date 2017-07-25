@@ -14,12 +14,16 @@ python NN_mnist.py
 ```
 
 Neural Network details
-File:
-"NN_mnist.py"
+File: "NN_mnist.py"
+
 1st Activation Function: sigmoid
+
 2nd Activation Function: softmax
+
 Maximum Likelihood Estimate Function: Cross Entropy Function
+
 train algorithm: gradient ascent
+
 Bias terms are used.
 
 The precision that has been achieved is: 94.7 %
@@ -42,11 +46,14 @@ Run:
 ```python
 python SpamHamNeuralNetworkSqErr.py
 ```
-File:
-"SpamHamNeuralNetworkSqErr.py"
+File: "SpamHamNeuralNetworkSqErr.py"
+
 1st Activation Function: tanh
+
 2nd Activation Function: sigmoid
+
 Loss Function: Mean Squared Error Loss
+
 
 The first neural network that has been implemented uses
 the tanh activation function in the first input layer
@@ -59,11 +66,14 @@ Run:
 ```python
 python SpamHamNeuralNetworkCrossEntropy.py
 ```
-File:
-"SpamHamNeuralNetworkCrossEntropy.py"
+File: "SpamHamNeuralNetworkCrossEntropy.py"
+
 1st Activation Function: sigmoid
+
 2nd Activation Function: softmax
+
 Loss Function: Cross Entropy Loss
+
 
 The second neural network that has been implemented uses
 the sigmoid activation function in the first input layer
