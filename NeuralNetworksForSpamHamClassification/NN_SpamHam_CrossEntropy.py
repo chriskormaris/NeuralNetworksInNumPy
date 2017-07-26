@@ -150,9 +150,9 @@ def test(W1, W2, X):
 
 
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
-# - iterations: Number of iterations through the training data for gradient descent
-# - print_loss: If True, print the loss every 1000 iterations
-def train(X, y, iterations=20000, print_loss=False):
+# - iterations: Number of iterations through the training data for gradient descent.
+# - print_loss: If True, print the loss every 1000 iterations.
+def train(X, y, iterations=20000, tol=1e-6, print_loss=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
     # Initialize the parameters to random values. We need to learn these.
@@ -165,6 +165,7 @@ def train(X, y, iterations=20000, print_loss=False):
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
     # Run Batch Gradient Descent
+    old_loss = -np.inf
     for i in range(iterations):
 
         W1, W2 = grad_descent(X, t, W1, W2)
@@ -172,7 +173,10 @@ def train(X, y, iterations=20000, print_loss=False):
         # Optionally print the loss.
         # This is expensive because it uses the whole dataset, so we don't want to do it too often.
         if print_loss and i % 1000 == 0:
-            print("Cross entropy loss after iteration %i: %f" % (i, loss_function(X, t, W1, W2)))
+            loss = loss_function(X, t, W1, W2)
+            print("Cross entropy loss after iteration %i: %f" % (i, loss))
+            if np.abs(loss - old_loss) <= tol:
+                break
 
     return W1, W2
 
@@ -245,7 +249,7 @@ X_train = X_train - np.mean(np.mean(X_train))
 X_test = X_test - np.mean(np.mean(X_test))
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, iterations=20000, print_loss=True)
+W1, W2 = train(X_train, y_train, iterations=20000, tol=1e-6, print_loss=True)
 
 # test the Neural Network Model
 predicted = test(W1, W2, X_test)

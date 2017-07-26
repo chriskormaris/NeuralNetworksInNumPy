@@ -146,8 +146,8 @@ def test(X, W1, W2):
 
 
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
-# - iterations: Number of iterations through the training data for gradient descent
-# - print_loss: If True, print the loss every 1000 iterations
+# - iterations: Number of iterations through the training data for gradient descent.
+# - print_loss: If True, print the loss.
 def train(X, y, epochs=50, tol = 1e-6, print_loss=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
