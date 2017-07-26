@@ -11520,56 +11520,56 @@ Reading test file 3843.2005-04-05.BG.spam.txt...
 
 
 
-Mean squared error loss after epoch 0: 672.407035
-Mean squared error loss after epoch 1: 548.821745
-Mean squared error loss after epoch 2: 328.128131
-Mean squared error loss after epoch 3: 207.953147
-Mean squared error loss after epoch 4: 221.165960
-Mean squared error loss after epoch 5: 610.805009
-Mean squared error loss after epoch 6: 132.081523
-Mean squared error loss after epoch 7: 155.905222
-Mean squared error loss after epoch 8: 103.928844
-Mean squared error loss after epoch 9: 58.760495
-Mean squared error loss after epoch 10: 266.349655
-Mean squared error loss after epoch 11: 431.440046
-Mean squared error loss after epoch 12: 198.975500
-Mean squared error loss after epoch 13: 292.028221
-Mean squared error loss after epoch 14: 348.465448
-Mean squared error loss after epoch 15: 271.981123
-Mean squared error loss after epoch 16: 1006.493169
-Mean squared error loss after epoch 17: 133.174224
-Mean squared error loss after epoch 18: 311.864049
-Mean squared error loss after epoch 19: 97.789835
-Mean squared error loss after epoch 20: 795.420192
-Mean squared error loss after epoch 21: 151.496955
-Mean squared error loss after epoch 22: 79.421857
-Mean squared error loss after epoch 23: 132.574946
-Mean squared error loss after epoch 24: 56.843680
-Mean squared error loss after epoch 25: 35.594003
-Mean squared error loss after epoch 26: 34.601454
-Mean squared error loss after epoch 27: 34.250368
-Mean squared error loss after epoch 28: 231.839601
-Mean squared error loss after epoch 29: 581.053091
-Mean squared error loss after epoch 30: 119.836644
-Mean squared error loss after epoch 31: 366.812176
-Mean squared error loss after epoch 32: 375.278601
-Mean squared error loss after epoch 33: 266.559012
-Mean squared error loss after epoch 34: 202.506958
-Mean squared error loss after epoch 35: 620.091388
-Mean squared error loss after epoch 36: 543.273811
-Mean squared error loss after epoch 37: 99.983841
-Mean squared error loss after epoch 38: 369.159381
-Mean squared error loss after epoch 39: 312.418874
-Mean squared error loss after epoch 40: 53.236473
-Mean squared error loss after epoch 41: 28.906279
-Mean squared error loss after epoch 42: 26.845098
-Mean squared error loss after epoch 43: 26.349803
-Mean squared error loss after epoch 44: 26.255429
-Mean squared error loss after epoch 45: 26.261968
-Mean squared error loss after epoch 46: 26.261362
-Mean squared error loss after epoch 47: 26.280046
-Mean squared error loss after epoch 48: 26.156564
-Mean squared error loss after epoch 49: 25.544902
+Cross entropy loss after epoch 0: 672.407035
+Cross entropy loss after epoch 1: 548.821745
+Cross entropy loss after epoch 2: 328.128131
+Cross entropy loss after epoch 3: 207.953147
+Cross entropy loss after epoch 4: 221.165960
+Cross entropy loss after epoch 5: 610.805009
+Cross entropy loss after epoch 6: 132.081523
+Cross entropy loss after epoch 7: 155.905222
+Cross entropy loss after epoch 8: 103.928844
+Cross entropy loss after epoch 9: 58.760495
+Cross entropy loss after epoch 10: 266.349655
+Cross entropy loss after epoch 11: 431.440046
+Cross entropy loss after epoch 12: 198.975500
+Cross entropy loss after epoch 13: 292.028221
+Cross entropy loss after epoch 14: 348.465448
+Cross entropy loss after epoch 15: 271.981123
+Cross entropy loss after epoch 16: 1006.493169
+Cross entropy loss after epoch 17: 133.174224
+Cross entropy loss after epoch 18: 311.864049
+Cross entropy loss after epoch 19: 97.789835
+Cross entropy loss after epoch 20: 795.420192
+Cross entropy loss after epoch 21: 151.496955
+Cross entropy loss after epoch 22: 79.421857
+Cross entropy loss after epoch 23: 132.574946
+Cross entropy loss after epoch 24: 56.843680
+Cross entropy loss after epoch 25: 35.594003
+Cross entropy loss after epoch 26: 34.601454
+Cross entropy loss after epoch 27: 34.250368
+Cross entropy loss after epoch 28: 231.839601
+Cross entropy loss after epoch 29: 581.053091
+Cross entropy loss after epoch 30: 119.836644
+Cross entropy loss after epoch 31: 366.812176
+Cross entropy loss after epoch 32: 375.278601
+Cross entropy loss after epoch 33: 266.559012
+Cross entropy loss after epoch 34: 202.506958
+Cross entropy loss after epoch 35: 620.091388
+Cross entropy loss after epoch 36: 543.273811
+Cross entropy loss after epoch 37: 99.983841
+Cross entropy loss after epoch 38: 369.159381
+Cross entropy loss after epoch 39: 312.418874
+Cross entropy loss after epoch 40: 53.236473
+Cross entropy loss after epoch 41: 28.906279
+Cross entropy loss after epoch 42: 26.845098
+Cross entropy loss after epoch 43: 26.349803
+Cross entropy loss after epoch 44: 26.255429
+Cross entropy loss after epoch 45: 26.261968
+Cross entropy loss after epoch 46: 26.261362
+Cross entropy loss after epoch 47: 26.280046
+Cross entropy loss after epoch 48: 26.156564
+Cross entropy loss after epoch 49: 25.544902
 
 
 checking predictions...
