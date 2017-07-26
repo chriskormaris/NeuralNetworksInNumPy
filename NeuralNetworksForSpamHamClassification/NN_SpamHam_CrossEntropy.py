@@ -186,7 +186,12 @@ def grad_descent(X, t, W1, W2):
     _, o1, grad, _, o2 = forward(X, W1, W2)
 
     # Backpropagation
-    delta1 = o2 - t  # delta1: NxK
+
+    #sum1 = np.matrix(np.sum(t, axis=1)).T  # sum1: Nx1
+    #T = np.matlib.repmat(sum1, 1, K)  # T: NxK, each row contains the same sum values in each column
+    #delta1 = np.multiply(o2, T) - t  # delta1: NxK
+    delta1 = o2 - t  # delta1: NxK, since t is one-hot matrix, then T=1, so we can omit it
+
     W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
