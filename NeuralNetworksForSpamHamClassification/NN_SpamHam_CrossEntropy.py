@@ -245,7 +245,7 @@ X_train = X_train - np.mean(np.mean(X_train))
 X_test = X_test - np.mean(np.mean(X_test))
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, print_loss=True)
+W1, W2 = train(X_train, y_train, iterations=20000, print_loss=True)
 
 # test the Neural Network Model
 predicted = test(W1, W2, X_test)
