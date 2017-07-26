@@ -33,6 +33,7 @@ class NNParams:
 
 # FUNCTIONS #
 
+
 def read_dictionary_file(filename):
     text_file = open(filename, "r")
     lines = text_file.readlines()
@@ -47,9 +48,10 @@ def read_file(filename):
     return text
 
 
-def read_labels(path):
+# defines the label of the files based on their names
+def read_labels(files):
     labels = []
-    for file in listdir(path):
+    for file in files:
         if "spam" in str(file):
             labels.append(1)
         elif "ham" in str(file):
@@ -217,15 +219,15 @@ feature_tokens = read_dictionary_file(feature_dictionary_dir)
 NNParams.num_input_layers = len(feature_tokens)
 
 print("Reading TRAIN files...")
-train_files = [f for f in listdir(train_dir) if isfile(join(train_dir, f))]
-train_labels = read_labels(train_dir)
+train_files = sorted([f for f in listdir(train_dir) if isfile(join(train_dir, f))])
+train_labels = read_labels(train_files)
 X_train, y_train = get_classification_data(train_dir, train_files, train_labels, feature_tokens, 'train')
 
 print("\n")
 
 print("Reading TEST files...")
-test_files = [f for f in listdir(test_dir) if isfile(join(test_dir, f))]
-test_labels = read_labels(test_dir)
+test_files = sorted([f for f in listdir(test_dir) if isfile(join(test_dir, f))])
+test_labels = read_labels(test_files)
 X_test, y_test_true = get_classification_data(test_dir, test_files, test_labels, feature_tokens, 'test')
 
 print("\n")
