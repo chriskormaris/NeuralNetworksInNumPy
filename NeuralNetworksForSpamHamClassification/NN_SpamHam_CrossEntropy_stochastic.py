@@ -155,7 +155,7 @@ def test(X, W1, W2):
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_loss: If True, print the loss.
-def train(X, y, epochs=100, tol=1e-7, print_loss=False):
+def train(X, y, epochs=50, tol=1e-7, print_loss=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
     # Initialize the parameters to random values. We need to learn these.
@@ -260,7 +260,7 @@ X_train = X_train - np.mean(np.mean(X_train))
 X_test = X_test - np.mean(np.mean(X_test))
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, epochs=100, tol=1e-7, print_loss=True)
+W1, W2 = train(X_train, y_train, epochs=50, tol=1e-7, print_loss=True)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)
