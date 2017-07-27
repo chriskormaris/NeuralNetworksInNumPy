@@ -74,6 +74,56 @@ Likelihood estimate after epoch 46: 370167.520385
 Likelihood estimate after epoch 47: 372073.592166
 Likelihood estimate after epoch 48: 373934.899705
 Likelihood estimate after epoch 49: 375753.262757
+Likelihood estimate after epoch 50: 377530.394542
+Likelihood estimate after epoch 51: 379267.909844
+Likelihood estimate after epoch 52: 380967.332351
+Likelihood estimate after epoch 53: 382630.101329
+Likelihood estimate after epoch 54: 384257.577689
+Likelihood estimate after epoch 55: 385851.049523
+Likelihood estimate after epoch 56: 387411.737161
+Likelihood estimate after epoch 57: 388940.797794
+Likelihood estimate after epoch 58: 390439.329712
+Likelihood estimate after epoch 59: 391908.376189
+Likelihood estimate after epoch 60: 393348.929060
+Likelihood estimate after epoch 61: 394761.932008
+Likelihood estimate after epoch 62: 396148.283594
+Likelihood estimate after epoch 63: 397508.840055
+Likelihood estimate after epoch 64: 398844.417888
+Likelihood estimate after epoch 65: 400155.796241
+Likelihood estimate after epoch 66: 401443.719128
+Likelihood estimate after epoch 67: 402708.897486
+Likelihood estimate after epoch 68: 403952.011080
+Likelihood estimate after epoch 69: 405173.710277
+Likelihood estimate after epoch 70: 406374.617698
+Likelihood estimate after epoch 71: 407555.329753
+Likelihood estimate after epoch 72: 408716.418075
+Likelihood estimate after epoch 73: 409858.430861
+Likelihood estimate after epoch 74: 410981.894118
+Likelihood estimate after epoch 75: 412087.312837
+Likelihood estimate after epoch 76: 413175.172082
+Likelihood estimate after epoch 77: 414245.938020
+Likelihood estimate after epoch 78: 415300.058880
+Likelihood estimate after epoch 79: 416337.965854
+Likelihood estimate after epoch 80: 417360.073950
+Likelihood estimate after epoch 81: 418366.782779
+Likelihood estimate after epoch 82: 419358.477313
+Likelihood estimate after epoch 83: 420335.528583
+Likelihood estimate after epoch 84: 421298.294348
+Likelihood estimate after epoch 85: 422247.119716
+Likelihood estimate after epoch 86: 423182.337740
+Likelihood estimate after epoch 87: 424104.269967
+Likelihood estimate after epoch 88: 425013.226972
+Likelihood estimate after epoch 89: 425909.508850
+Likelihood estimate after epoch 90: 426793.405686
+Likelihood estimate after epoch 91: 427665.197999
+Likelihood estimate after epoch 92: 428525.157167
+Likelihood estimate after epoch 93: 429373.545819
+Likelihood estimate after epoch 94: 430210.618215
+Likelihood estimate after epoch 95: 431036.620602
+Likelihood estimate after epoch 96: 431851.791557
+Likelihood estimate after epoch 97: 432656.362303
+Likelihood estimate after epoch 98: 433450.557017
+Likelihood estimate after epoch 99: 434234.593122
 
 
 checking predictions...
@@ -114,7 +164,7 @@ data 33 classified as: [[0]] -> correct
 data 34 classified as: [[0]] -> correct
 data 35 classified as: [[0]] -> correct
 data 36 classified as: [[0]] -> correct
-data 37 classified as: [[8]] -> WRONG!
+data 37 classified as: [[0]] -> correct
 data 38 classified as: [[0]] -> correct
 data 39 classified as: [[0]] -> correct
 data 40 classified as: [[0]] -> correct
@@ -290,7 +340,7 @@ data 209 classified as: [[0]] -> correct
 data 210 classified as: [[0]] -> correct
 data 211 classified as: [[0]] -> correct
 data 212 classified as: [[0]] -> correct
-data 213 classified as: [[8]] -> WRONG!
+data 213 classified as: [[0]] -> correct
 data 214 classified as: [[0]] -> correct
 data 215 classified as: [[0]] -> correct
 data 216 classified as: [[0]] -> correct
@@ -485,7 +535,7 @@ data 404 classified as: [[0]] -> correct
 data 405 classified as: [[0]] -> correct
 data 406 classified as: [[0]] -> correct
 data 407 classified as: [[0]] -> correct
-data 408 classified as: [[2]] -> WRONG!
+data 408 classified as: [[0]] -> correct
 data 409 classified as: [[0]] -> correct
 data 410 classified as: [[0]] -> correct
 data 411 classified as: [[0]] -> correct
@@ -494,7 +544,7 @@ data 413 classified as: [[0]] -> correct
 data 414 classified as: [[0]] -> correct
 data 415 classified as: [[0]] -> correct
 data 416 classified as: [[0]] -> correct
-data 417 classified as: [[8]] -> WRONG!
+data 417 classified as: [[3]] -> WRONG!
 data 418 classified as: [[0]] -> correct
 data 419 classified as: [[0]] -> correct
 data 420 classified as: [[0]] -> correct
@@ -710,7 +760,7 @@ data 629 classified as: [[7]] -> WRONG!
 data 630 classified as: [[0]] -> correct
 data 631 classified as: [[0]] -> correct
 data 632 classified as: [[0]] -> correct
-data 633 classified as: [[5]] -> WRONG!
+data 633 classified as: [[0]] -> correct
 data 634 classified as: [[8]] -> WRONG!
 data 635 classified as: [[0]] -> correct
 data 636 classified as: [[0]] -> correct
@@ -1065,7 +1115,7 @@ data 984 classified as: [[1]] -> correct
 data 985 classified as: [[1]] -> correct
 data 986 classified as: [[1]] -> correct
 data 987 classified as: [[1]] -> correct
-data 988 classified as: [[3]] -> WRONG!
+data 988 classified as: [[1]] -> correct
 data 989 classified as: [[1]] -> correct
 data 990 classified as: [[1]] -> correct
 data 991 classified as: [[1]] -> correct
@@ -1126,7 +1176,7 @@ data 1045 classified as: [[1]] -> correct
 data 1046 classified as: [[1]] -> correct
 data 1047 classified as: [[1]] -> correct
 data 1048 classified as: [[1]] -> correct
-data 1049 classified as: [[8]] -> WRONG!
+data 1049 classified as: [[1]] -> correct
 data 1050 classified as: [[1]] -> correct
 data 1051 classified as: [[1]] -> correct
 data 1052 classified as: [[1]] -> correct
@@ -1289,7 +1339,7 @@ data 1208 classified as: [[1]] -> correct
 data 1209 classified as: [[1]] -> correct
 data 1210 classified as: [[1]] -> correct
 data 1211 classified as: [[1]] -> correct
-data 1212 classified as: [[8]] -> WRONG!
+data 1212 classified as: [[1]] -> correct
 data 1213 classified as: [[1]] -> correct
 data 1214 classified as: [[1]] -> correct
 data 1215 classified as: [[1]] -> correct
@@ -1542,7 +1592,7 @@ data 1461 classified as: [[1]] -> correct
 data 1462 classified as: [[1]] -> correct
 data 1463 classified as: [[1]] -> correct
 data 1464 classified as: [[1]] -> correct
-data 1465 classified as: [[5]] -> WRONG!
+data 1465 classified as: [[7]] -> WRONG!
 data 1466 classified as: [[3]] -> WRONG!
 data 1467 classified as: [[1]] -> correct
 data 1468 classified as: [[1]] -> correct
@@ -1812,7 +1862,7 @@ data 1731 classified as: [[1]] -> correct
 data 1732 classified as: [[1]] -> correct
 data 1733 classified as: [[1]] -> correct
 data 1734 classified as: [[1]] -> correct
-data 1735 classified as: [[8]] -> WRONG!
+data 1735 classified as: [[1]] -> correct
 data 1736 classified as: [[1]] -> correct
 data 1737 classified as: [[1]] -> correct
 data 1738 classified as: [[1]] -> correct
@@ -1901,7 +1951,7 @@ data 1820 classified as: [[1]] -> correct
 data 1821 classified as: [[1]] -> correct
 data 1822 classified as: [[1]] -> correct
 data 1823 classified as: [[1]] -> correct
-data 1824 classified as: [[8]] -> WRONG!
+data 1824 classified as: [[1]] -> correct
 data 1825 classified as: [[1]] -> correct
 data 1826 classified as: [[1]] -> correct
 data 1827 classified as: [[1]] -> correct
@@ -1939,7 +1989,7 @@ data 1858 classified as: [[1]] -> correct
 data 1859 classified as: [[1]] -> correct
 data 1860 classified as: [[1]] -> correct
 data 1861 classified as: [[1]] -> correct
-data 1862 classified as: [[1]] -> correct
+data 1862 classified as: [[8]] -> WRONG!
 data 1863 classified as: [[1]] -> correct
 data 1864 classified as: [[1]] -> correct
 data 1865 classified as: [[8]] -> WRONG!
@@ -2075,7 +2125,7 @@ data 1994 classified as: [[1]] -> correct
 data 1995 classified as: [[1]] -> correct
 data 1996 classified as: [[1]] -> correct
 data 1997 classified as: [[1]] -> correct
-data 1998 classified as: [[8]] -> WRONG!
+data 1998 classified as: [[1]] -> correct
 data 1999 classified as: [[8]] -> WRONG!
 data 2000 classified as: [[1]] -> correct
 data 2001 classified as: [[1]] -> correct
@@ -2204,7 +2254,7 @@ data 2123 classified as: [[2]] -> correct
 data 2124 classified as: [[2]] -> correct
 data 2125 classified as: [[2]] -> correct
 data 2126 classified as: [[9]] -> WRONG!
-data 2127 classified as: [[3]] -> WRONG!
+data 2127 classified as: [[2]] -> correct
 data 2128 classified as: [[2]] -> correct
 data 2129 classified as: [[2]] -> correct
 data 2130 classified as: [[2]] -> correct
@@ -2243,15 +2293,15 @@ data 2162 classified as: [[2]] -> correct
 data 2163 classified as: [[2]] -> correct
 data 2164 classified as: [[8]] -> WRONG!
 data 2165 classified as: [[2]] -> correct
-data 2166 classified as: [[8]] -> WRONG!
+data 2166 classified as: [[2]] -> correct
 data 2167 classified as: [[2]] -> correct
 data 2168 classified as: [[2]] -> correct
 data 2169 classified as: [[2]] -> correct
 data 2170 classified as: [[2]] -> correct
 data 2171 classified as: [[2]] -> correct
 data 2172 classified as: [[2]] -> correct
-data 2173 classified as: [[6]] -> WRONG!
-data 2174 classified as: [[1]] -> WRONG!
+data 2173 classified as: [[2]] -> correct
+data 2174 classified as: [[2]] -> correct
 data 2175 classified as: [[2]] -> correct
 data 2176 classified as: [[8]] -> WRONG!
 data 2177 classified as: [[2]] -> correct
@@ -2304,8 +2354,8 @@ data 2223 classified as: [[2]] -> correct
 data 2224 classified as: [[2]] -> correct
 data 2225 classified as: [[3]] -> WRONG!
 data 2226 classified as: [[2]] -> correct
-data 2227 classified as: [[8]] -> WRONG!
-data 2228 classified as: [[3]] -> WRONG!
+data 2227 classified as: [[2]] -> correct
+data 2228 classified as: [[2]] -> correct
 data 2229 classified as: [[2]] -> correct
 data 2230 classified as: [[2]] -> correct
 data 2231 classified as: [[2]] -> correct
@@ -2335,7 +2385,7 @@ data 2254 classified as: [[2]] -> correct
 data 2255 classified as: [[6]] -> WRONG!
 data 2256 classified as: [[3]] -> WRONG!
 data 2257 classified as: [[2]] -> correct
-data 2258 classified as: [[6]] -> WRONG!
+data 2258 classified as: [[2]] -> correct
 data 2259 classified as: [[2]] -> correct
 data 2260 classified as: [[2]] -> correct
 data 2261 classified as: [[2]] -> correct
@@ -2354,7 +2404,7 @@ data 2273 classified as: [[2]] -> correct
 data 2274 classified as: [[2]] -> correct
 data 2275 classified as: [[7]] -> WRONG!
 data 2276 classified as: [[2]] -> correct
-data 2277 classified as: [[1]] -> WRONG!
+data 2277 classified as: [[2]] -> correct
 data 2278 classified as: [[6]] -> WRONG!
 data 2279 classified as: [[2]] -> correct
 data 2280 classified as: [[2]] -> correct
@@ -2376,14 +2426,14 @@ data 2295 classified as: [[2]] -> correct
 data 2296 classified as: [[6]] -> WRONG!
 data 2297 classified as: [[2]] -> correct
 data 2298 classified as: [[2]] -> correct
-data 2299 classified as: [[8]] -> WRONG!
+data 2299 classified as: [[2]] -> correct
 data 2300 classified as: [[2]] -> correct
 data 2301 classified as: [[2]] -> correct
 data 2302 classified as: [[2]] -> correct
 data 2303 classified as: [[7]] -> WRONG!
 data 2304 classified as: [[2]] -> correct
 data 2305 classified as: [[2]] -> correct
-data 2306 classified as: [[9]] -> WRONG!
+data 2306 classified as: [[1]] -> WRONG!
 data 2307 classified as: [[2]] -> correct
 data 2308 classified as: [[6]] -> WRONG!
 data 2309 classified as: [[2]] -> correct
@@ -2447,7 +2497,7 @@ data 2366 classified as: [[2]] -> correct
 data 2367 classified as: [[2]] -> correct
 data 2368 classified as: [[2]] -> correct
 data 2369 classified as: [[2]] -> correct
-data 2370 classified as: [[8]] -> WRONG!
+data 2370 classified as: [[2]] -> correct
 data 2371 classified as: [[2]] -> correct
 data 2372 classified as: [[2]] -> correct
 data 2373 classified as: [[2]] -> correct
@@ -2462,7 +2512,7 @@ data 2381 classified as: [[2]] -> correct
 data 2382 classified as: [[2]] -> correct
 data 2383 classified as: [[2]] -> correct
 data 2384 classified as: [[2]] -> correct
-data 2385 classified as: [[8]] -> WRONG!
+data 2385 classified as: [[2]] -> correct
 data 2386 classified as: [[2]] -> correct
 data 2387 classified as: [[6]] -> WRONG!
 data 2388 classified as: [[2]] -> correct
@@ -2477,7 +2527,7 @@ data 2396 classified as: [[2]] -> correct
 data 2397 classified as: [[8]] -> WRONG!
 data 2398 classified as: [[2]] -> correct
 data 2399 classified as: [[2]] -> correct
-data 2400 classified as: [[9]] -> WRONG!
+data 2400 classified as: [[8]] -> WRONG!
 data 2401 classified as: [[2]] -> correct
 data 2402 classified as: [[2]] -> correct
 data 2403 classified as: [[2]] -> correct
@@ -2549,7 +2599,7 @@ data 2468 classified as: [[2]] -> correct
 data 2469 classified as: [[2]] -> correct
 data 2470 classified as: [[2]] -> correct
 data 2471 classified as: [[2]] -> correct
-data 2472 classified as: [[6]] -> WRONG!
+data 2472 classified as: [[2]] -> correct
 data 2473 classified as: [[2]] -> correct
 data 2474 classified as: [[2]] -> correct
 data 2475 classified as: [[2]] -> correct
@@ -2559,13 +2609,13 @@ data 2478 classified as: [[2]] -> correct
 data 2479 classified as: [[2]] -> correct
 data 2480 classified as: [[2]] -> correct
 data 2481 classified as: [[2]] -> correct
-data 2482 classified as: [[7]] -> WRONG!
+data 2482 classified as: [[2]] -> correct
 data 2483 classified as: [[2]] -> correct
 data 2484 classified as: [[2]] -> correct
 data 2485 classified as: [[2]] -> correct
 data 2486 classified as: [[2]] -> correct
 data 2487 classified as: [[2]] -> correct
-data 2488 classified as: [[8]] -> WRONG!
+data 2488 classified as: [[2]] -> correct
 data 2489 classified as: [[7]] -> WRONG!
 data 2490 classified as: [[3]] -> WRONG!
 data 2491 classified as: [[2]] -> correct
@@ -2586,7 +2636,7 @@ data 2505 classified as: [[2]] -> correct
 data 2506 classified as: [[2]] -> correct
 data 2507 classified as: [[2]] -> correct
 data 2508 classified as: [[2]] -> correct
-data 2509 classified as: [[8]] -> WRONG!
+data 2509 classified as: [[2]] -> correct
 data 2510 classified as: [[8]] -> WRONG!
 data 2511 classified as: [[2]] -> correct
 data 2512 classified as: [[3]] -> WRONG!
@@ -2629,7 +2679,7 @@ data 2548 classified as: [[2]] -> correct
 data 2549 classified as: [[4]] -> WRONG!
 data 2550 classified as: [[6]] -> WRONG!
 data 2551 classified as: [[2]] -> correct
-data 2552 classified as: [[6]] -> WRONG!
+data 2552 classified as: [[2]] -> correct
 data 2553 classified as: [[2]] -> correct
 data 2554 classified as: [[2]] -> correct
 data 2555 classified as: [[3]] -> WRONG!
@@ -2637,7 +2687,7 @@ data 2556 classified as: [[2]] -> correct
 data 2557 classified as: [[2]] -> correct
 data 2558 classified as: [[1]] -> WRONG!
 data 2559 classified as: [[2]] -> correct
-data 2560 classified as: [[3]] -> WRONG!
+data 2560 classified as: [[2]] -> correct
 data 2561 classified as: [[2]] -> correct
 data 2562 classified as: [[2]] -> correct
 data 2563 classified as: [[2]] -> correct
@@ -2682,7 +2732,7 @@ data 2601 classified as: [[4]] -> WRONG!
 data 2602 classified as: [[2]] -> correct
 data 2603 classified as: [[2]] -> correct
 data 2604 classified as: [[2]] -> correct
-data 2605 classified as: [[4]] -> WRONG!
+data 2605 classified as: [[2]] -> correct
 data 2606 classified as: [[2]] -> correct
 data 2607 classified as: [[2]] -> correct
 data 2608 classified as: [[2]] -> correct
@@ -2697,21 +2747,21 @@ data 2616 classified as: [[2]] -> correct
 data 2617 classified as: [[2]] -> correct
 data 2618 classified as: [[2]] -> correct
 data 2619 classified as: [[2]] -> correct
-data 2620 classified as: [[1]] -> WRONG!
+data 2620 classified as: [[2]] -> correct
 data 2621 classified as: [[2]] -> correct
 data 2622 classified as: [[2]] -> correct
 data 2623 classified as: [[2]] -> correct
-data 2624 classified as: [[6]] -> WRONG!
+data 2624 classified as: [[4]] -> WRONG!
 data 2625 classified as: [[2]] -> correct
 data 2626 classified as: [[2]] -> correct
 data 2627 classified as: [[2]] -> correct
 data 2628 classified as: [[2]] -> correct
 data 2629 classified as: [[2]] -> correct
 data 2630 classified as: [[3]] -> WRONG!
-data 2631 classified as: [[6]] -> WRONG!
+data 2631 classified as: [[2]] -> correct
 data 2632 classified as: [[8]] -> WRONG!
 data 2633 classified as: [[2]] -> correct
-data 2634 classified as: [[5]] -> WRONG!
+data 2634 classified as: [[3]] -> WRONG!
 data 2635 classified as: [[8]] -> WRONG!
 data 2636 classified as: [[2]] -> correct
 data 2637 classified as: [[2]] -> correct
@@ -2720,14 +2770,14 @@ data 2639 classified as: [[2]] -> correct
 data 2640 classified as: [[2]] -> correct
 data 2641 classified as: [[2]] -> correct
 data 2642 classified as: [[2]] -> correct
-data 2643 classified as: [[3]] -> WRONG!
+data 2643 classified as: [[2]] -> correct
 data 2644 classified as: [[2]] -> correct
 data 2645 classified as: [[2]] -> correct
 data 2646 classified as: [[2]] -> correct
 data 2647 classified as: [[2]] -> correct
 data 2648 classified as: [[2]] -> correct
 data 2649 classified as: [[2]] -> correct
-data 2650 classified as: [[9]] -> WRONG!
+data 2650 classified as: [[2]] -> correct
 data 2651 classified as: [[2]] -> correct
 data 2652 classified as: [[2]] -> correct
 data 2653 classified as: [[2]] -> correct
@@ -2750,7 +2800,7 @@ data 2669 classified as: [[2]] -> correct
 data 2670 classified as: [[2]] -> correct
 data 2671 classified as: [[2]] -> correct
 data 2672 classified as: [[2]] -> correct
-data 2673 classified as: [[6]] -> WRONG!
+data 2673 classified as: [[2]] -> correct
 data 2674 classified as: [[2]] -> correct
 data 2675 classified as: [[2]] -> correct
 data 2676 classified as: [[2]] -> correct
@@ -2772,7 +2822,7 @@ data 2691 classified as: [[2]] -> correct
 data 2692 classified as: [[2]] -> correct
 data 2693 classified as: [[2]] -> correct
 data 2694 classified as: [[2]] -> correct
-data 2695 classified as: [[8]] -> WRONG!
+data 2695 classified as: [[2]] -> correct
 data 2696 classified as: [[2]] -> correct
 data 2697 classified as: [[2]] -> correct
 data 2698 classified as: [[2]] -> correct
@@ -2832,7 +2882,7 @@ data 2751 classified as: [[2]] -> correct
 data 2752 classified as: [[8]] -> WRONG!
 data 2753 classified as: [[2]] -> correct
 data 2754 classified as: [[7]] -> WRONG!
-data 2755 classified as: [[8]] -> WRONG!
+data 2755 classified as: [[2]] -> correct
 data 2756 classified as: [[2]] -> correct
 data 2757 classified as: [[2]] -> correct
 data 2758 classified as: [[2]] -> correct
@@ -2890,7 +2940,7 @@ data 2809 classified as: [[2]] -> correct
 data 2810 classified as: [[2]] -> correct
 data 2811 classified as: [[2]] -> correct
 data 2812 classified as: [[2]] -> correct
-data 2813 classified as: [[2]] -> correct
+data 2813 classified as: [[8]] -> WRONG!
 data 2814 classified as: [[2]] -> correct
 data 2815 classified as: [[2]] -> correct
 data 2816 classified as: [[2]] -> correct
@@ -2911,10 +2961,10 @@ data 2830 classified as: [[2]] -> correct
 data 2831 classified as: [[6]] -> WRONG!
 data 2832 classified as: [[2]] -> correct
 data 2833 classified as: [[2]] -> correct
-data 2834 classified as: [[6]] -> WRONG!
-data 2835 classified as: [[6]] -> WRONG!
+data 2834 classified as: [[2]] -> correct
+data 2835 classified as: [[2]] -> correct
 data 2836 classified as: [[6]] -> WRONG!
-data 2837 classified as: [[6]] -> WRONG!
+data 2837 classified as: [[2]] -> correct
 data 2838 classified as: [[2]] -> correct
 data 2839 classified as: [[2]] -> correct
 data 2840 classified as: [[2]] -> correct
@@ -2946,7 +2996,7 @@ data 2865 classified as: [[2]] -> correct
 data 2866 classified as: [[2]] -> correct
 data 2867 classified as: [[4]] -> WRONG!
 data 2868 classified as: [[2]] -> correct
-data 2869 classified as: [[9]] -> WRONG!
+data 2869 classified as: [[2]] -> correct
 data 2870 classified as: [[2]] -> correct
 data 2871 classified as: [[2]] -> correct
 data 2872 classified as: [[2]] -> correct
@@ -2970,7 +3020,7 @@ data 2889 classified as: [[2]] -> correct
 data 2890 classified as: [[2]] -> correct
 data 2891 classified as: [[2]] -> correct
 data 2892 classified as: [[2]] -> correct
-data 2893 classified as: [[2]] -> correct
+data 2893 classified as: [[9]] -> WRONG!
 data 2894 classified as: [[2]] -> correct
 data 2895 classified as: [[2]] -> correct
 data 2896 classified as: [[2]] -> correct
@@ -3011,7 +3061,7 @@ data 2930 classified as: [[2]] -> correct
 data 2931 classified as: [[2]] -> correct
 data 2932 classified as: [[2]] -> correct
 data 2933 classified as: [[2]] -> correct
-data 2934 classified as: [[4]] -> WRONG!
+data 2934 classified as: [[9]] -> WRONG!
 data 2935 classified as: [[9]] -> WRONG!
 data 2936 classified as: [[4]] -> WRONG!
 data 2937 classified as: [[2]] -> correct
@@ -3027,9 +3077,9 @@ data 2946 classified as: [[2]] -> correct
 data 2947 classified as: [[2]] -> correct
 data 2948 classified as: [[2]] -> correct
 data 2949 classified as: [[2]] -> correct
-data 2950 classified as: [[6]] -> WRONG!
+data 2950 classified as: [[2]] -> correct
 data 2951 classified as: [[2]] -> correct
-data 2952 classified as: [[6]] -> WRONG!
+data 2952 classified as: [[2]] -> correct
 data 2953 classified as: [[4]] -> WRONG!
 data 2954 classified as: [[2]] -> correct
 data 2955 classified as: [[2]] -> correct
@@ -3052,7 +3102,7 @@ data 2971 classified as: [[2]] -> correct
 data 2972 classified as: [[2]] -> correct
 data 2973 classified as: [[2]] -> correct
 data 2974 classified as: [[2]] -> correct
-data 2975 classified as: [[9]] -> WRONG!
+data 2975 classified as: [[2]] -> correct
 data 2976 classified as: [[2]] -> correct
 data 2977 classified as: [[2]] -> correct
 data 2978 classified as: [[2]] -> correct
@@ -3129,7 +3179,7 @@ data 3048 classified as: [[8]] -> WRONG!
 data 3049 classified as: [[8]] -> WRONG!
 data 3050 classified as: [[2]] -> correct
 data 3051 classified as: [[2]] -> correct
-data 3052 classified as: [[3]] -> WRONG!
+data 3052 classified as: [[2]] -> correct
 data 3053 classified as: [[8]] -> WRONG!
 data 3054 classified as: [[2]] -> correct
 data 3055 classified as: [[2]] -> correct
@@ -3190,7 +3240,7 @@ data 3109 classified as: [[2]] -> correct
 data 3110 classified as: [[2]] -> correct
 data 3111 classified as: [[2]] -> correct
 data 3112 classified as: [[2]] -> correct
-data 3113 classified as: [[9]] -> WRONG!
+data 3113 classified as: [[2]] -> correct
 data 3114 classified as: [[2]] -> correct
 data 3115 classified as: [[2]] -> correct
 data 3116 classified as: [[8]] -> WRONG!
@@ -3203,9 +3253,9 @@ data 3122 classified as: [[0]] -> WRONG!
 data 3123 classified as: [[0]] -> WRONG!
 data 3124 classified as: [[0]] -> WRONG!
 data 3125 classified as: [[2]] -> correct
-data 3126 classified as: [[8]] -> WRONG!
+data 3126 classified as: [[2]] -> correct
 data 3127 classified as: [[8]] -> WRONG!
-data 3128 classified as: [[8]] -> WRONG!
+data 3128 classified as: [[2]] -> correct
 data 3129 classified as: [[8]] -> WRONG!
 data 3130 classified as: [[9]] -> WRONG!
 data 3131 classified as: [[8]] -> WRONG!
@@ -3213,9 +3263,9 @@ data 3132 classified as: [[2]] -> correct
 data 3133 classified as: [[8]] -> WRONG!
 data 3134 classified as: [[8]] -> WRONG!
 data 3135 classified as: [[8]] -> WRONG!
-data 3136 classified as: [[8]] -> WRONG!
+data 3136 classified as: [[2]] -> correct
 data 3137 classified as: [[8]] -> WRONG!
-data 3138 classified as: [[5]] -> WRONG!
+data 3138 classified as: [[2]] -> correct
 data 3139 classified as: [[2]] -> correct
 data 3140 classified as: [[2]] -> correct
 data 3141 classified as: [[2]] -> correct
@@ -3246,7 +3296,7 @@ data 3165 classified as: [[3]] -> correct
 data 3166 classified as: [[3]] -> correct
 data 3167 classified as: [[3]] -> correct
 data 3168 classified as: [[3]] -> correct
-data 3169 classified as: [[6]] -> WRONG!
+data 3169 classified as: [[5]] -> WRONG!
 data 3170 classified as: [[3]] -> correct
 data 3171 classified as: [[3]] -> correct
 data 3172 classified as: [[3]] -> correct
@@ -3255,7 +3305,7 @@ data 3174 classified as: [[3]] -> correct
 data 3175 classified as: [[3]] -> correct
 data 3176 classified as: [[3]] -> correct
 data 3177 classified as: [[3]] -> correct
-data 3178 classified as: [[9]] -> WRONG!
+data 3178 classified as: [[3]] -> correct
 data 3179 classified as: [[3]] -> correct
 data 3180 classified as: [[7]] -> WRONG!
 data 3181 classified as: [[3]] -> correct
@@ -3267,7 +3317,7 @@ data 3186 classified as: [[5]] -> WRONG!
 data 3187 classified as: [[3]] -> correct
 data 3188 classified as: [[3]] -> correct
 data 3189 classified as: [[3]] -> correct
-data 3190 classified as: [[7]] -> WRONG!
+data 3190 classified as: [[9]] -> WRONG!
 data 3191 classified as: [[3]] -> correct
 data 3192 classified as: [[3]] -> correct
 data 3193 classified as: [[3]] -> correct
@@ -3305,7 +3355,7 @@ data 3224 classified as: [[3]] -> correct
 data 3225 classified as: [[3]] -> correct
 data 3226 classified as: [[3]] -> correct
 data 3227 classified as: [[3]] -> correct
-data 3228 classified as: [[5]] -> WRONG!
+data 3228 classified as: [[3]] -> correct
 data 3229 classified as: [[3]] -> correct
 data 3230 classified as: [[3]] -> correct
 data 3231 classified as: [[3]] -> correct
@@ -3345,7 +3395,7 @@ data 3264 classified as: [[3]] -> correct
 data 3265 classified as: [[3]] -> correct
 data 3266 classified as: [[8]] -> WRONG!
 data 3267 classified as: [[3]] -> correct
-data 3268 classified as: [[7]] -> WRONG!
+data 3268 classified as: [[3]] -> correct
 data 3269 classified as: [[3]] -> correct
 data 3270 classified as: [[3]] -> correct
 data 3271 classified as: [[3]] -> correct
@@ -3371,7 +3421,7 @@ data 3290 classified as: [[3]] -> correct
 data 3291 classified as: [[3]] -> correct
 data 3292 classified as: [[3]] -> correct
 data 3293 classified as: [[3]] -> correct
-data 3294 classified as: [[6]] -> WRONG!
+data 3294 classified as: [[3]] -> correct
 data 3295 classified as: [[3]] -> correct
 data 3296 classified as: [[3]] -> correct
 data 3297 classified as: [[3]] -> correct
@@ -3431,7 +3481,7 @@ data 3350 classified as: [[3]] -> correct
 data 3351 classified as: [[3]] -> correct
 data 3352 classified as: [[3]] -> correct
 data 3353 classified as: [[3]] -> correct
-data 3354 classified as: [[5]] -> WRONG!
+data 3354 classified as: [[3]] -> correct
 data 3355 classified as: [[3]] -> correct
 data 3356 classified as: [[3]] -> correct
 data 3357 classified as: [[3]] -> correct
@@ -3467,7 +3517,7 @@ data 3386 classified as: [[3]] -> correct
 data 3387 classified as: [[5]] -> WRONG!
 data 3388 classified as: [[3]] -> correct
 data 3389 classified as: [[3]] -> correct
-data 3390 classified as: [[0]] -> WRONG!
+data 3390 classified as: [[3]] -> correct
 data 3391 classified as: [[3]] -> correct
 data 3392 classified as: [[3]] -> correct
 data 3393 classified as: [[3]] -> correct
@@ -3499,7 +3549,7 @@ data 3418 classified as: [[3]] -> correct
 data 3419 classified as: [[3]] -> correct
 data 3420 classified as: [[3]] -> correct
 data 3421 classified as: [[3]] -> correct
-data 3422 classified as: [[5]] -> WRONG!
+data 3422 classified as: [[3]] -> correct
 data 3423 classified as: [[3]] -> correct
 data 3424 classified as: [[3]] -> correct
 data 3425 classified as: [[3]] -> correct
@@ -3545,14 +3595,14 @@ data 3464 classified as: [[3]] -> correct
 data 3465 classified as: [[3]] -> correct
 data 3466 classified as: [[3]] -> correct
 data 3467 classified as: [[3]] -> correct
-data 3468 classified as: [[8]] -> WRONG!
+data 3468 classified as: [[3]] -> correct
 data 3469 classified as: [[3]] -> correct
 data 3470 classified as: [[3]] -> correct
 data 3471 classified as: [[3]] -> correct
 data 3472 classified as: [[3]] -> correct
 data 3473 classified as: [[3]] -> correct
 data 3474 classified as: [[3]] -> correct
-data 3475 classified as: [[8]] -> WRONG!
+data 3475 classified as: [[5]] -> WRONG!
 data 3476 classified as: [[5]] -> WRONG!
 data 3477 classified as: [[3]] -> correct
 data 3478 classified as: [[3]] -> correct
@@ -3562,7 +3612,7 @@ data 3481 classified as: [[3]] -> correct
 data 3482 classified as: [[3]] -> correct
 data 3483 classified as: [[3]] -> correct
 data 3484 classified as: [[3]] -> correct
-data 3485 classified as: [[8]] -> WRONG!
+data 3485 classified as: [[2]] -> WRONG!
 data 3486 classified as: [[3]] -> correct
 data 3487 classified as: [[3]] -> correct
 data 3488 classified as: [[3]] -> correct
@@ -3611,7 +3661,7 @@ data 3530 classified as: [[3]] -> correct
 data 3531 classified as: [[3]] -> correct
 data 3532 classified as: [[3]] -> correct
 data 3533 classified as: [[3]] -> correct
-data 3534 classified as: [[5]] -> WRONG!
+data 3534 classified as: [[3]] -> correct
 data 3535 classified as: [[9]] -> WRONG!
 data 3536 classified as: [[3]] -> correct
 data 3537 classified as: [[3]] -> correct
@@ -3627,7 +3677,7 @@ data 3546 classified as: [[5]] -> WRONG!
 data 3547 classified as: [[3]] -> correct
 data 3548 classified as: [[3]] -> correct
 data 3549 classified as: [[3]] -> correct
-data 3550 classified as: [[5]] -> WRONG!
+data 3550 classified as: [[2]] -> WRONG!
 data 3551 classified as: [[5]] -> WRONG!
 data 3552 classified as: [[3]] -> correct
 data 3553 classified as: [[3]] -> correct
@@ -3659,7 +3709,7 @@ data 3578 classified as: [[3]] -> correct
 data 3579 classified as: [[7]] -> WRONG!
 data 3580 classified as: [[3]] -> correct
 data 3581 classified as: [[7]] -> WRONG!
-data 3582 classified as: [[5]] -> WRONG!
+data 3582 classified as: [[3]] -> correct
 data 3583 classified as: [[3]] -> correct
 data 3584 classified as: [[3]] -> correct
 data 3585 classified as: [[3]] -> correct
@@ -3681,7 +3731,7 @@ data 3600 classified as: [[3]] -> correct
 data 3601 classified as: [[3]] -> correct
 data 3602 classified as: [[3]] -> correct
 data 3603 classified as: [[3]] -> correct
-data 3604 classified as: [[5]] -> WRONG!
+data 3604 classified as: [[3]] -> correct
 data 3605 classified as: [[3]] -> correct
 data 3606 classified as: [[3]] -> correct
 data 3607 classified as: [[3]] -> correct
@@ -3692,10 +3742,10 @@ data 3611 classified as: [[3]] -> correct
 data 3612 classified as: [[3]] -> correct
 data 3613 classified as: [[3]] -> correct
 data 3614 classified as: [[3]] -> correct
-data 3615 classified as: [[8]] -> WRONG!
+data 3615 classified as: [[3]] -> correct
 data 3616 classified as: [[3]] -> correct
 data 3617 classified as: [[3]] -> correct
-data 3618 classified as: [[5]] -> WRONG!
+data 3618 classified as: [[3]] -> correct
 data 3619 classified as: [[3]] -> correct
 data 3620 classified as: [[3]] -> correct
 data 3621 classified as: [[5]] -> WRONG!
@@ -3703,7 +3753,7 @@ data 3622 classified as: [[3]] -> correct
 data 3623 classified as: [[3]] -> correct
 data 3624 classified as: [[3]] -> correct
 data 3625 classified as: [[3]] -> correct
-data 3626 classified as: [[9]] -> WRONG!
+data 3626 classified as: [[8]] -> WRONG!
 data 3627 classified as: [[3]] -> correct
 data 3628 classified as: [[3]] -> correct
 data 3629 classified as: [[5]] -> WRONG!
@@ -3717,7 +3767,7 @@ data 3636 classified as: [[3]] -> correct
 data 3637 classified as: [[3]] -> correct
 data 3638 classified as: [[3]] -> correct
 data 3639 classified as: [[3]] -> correct
-data 3640 classified as: [[5]] -> WRONG!
+data 3640 classified as: [[3]] -> correct
 data 3641 classified as: [[3]] -> correct
 data 3642 classified as: [[3]] -> correct
 data 3643 classified as: [[3]] -> correct
@@ -3733,16 +3783,16 @@ data 3652 classified as: [[5]] -> WRONG!
 data 3653 classified as: [[3]] -> correct
 data 3654 classified as: [[2]] -> WRONG!
 data 3655 classified as: [[5]] -> WRONG!
-data 3656 classified as: [[2]] -> WRONG!
+data 3656 classified as: [[8]] -> WRONG!
 data 3657 classified as: [[2]] -> WRONG!
-data 3658 classified as: [[6]] -> WRONG!
+data 3658 classified as: [[5]] -> WRONG!
 data 3659 classified as: [[3]] -> correct
 data 3660 classified as: [[3]] -> correct
 data 3661 classified as: [[3]] -> correct
 data 3662 classified as: [[3]] -> correct
 data 3663 classified as: [[3]] -> correct
 data 3664 classified as: [[5]] -> WRONG!
-data 3665 classified as: [[8]] -> WRONG!
+data 3665 classified as: [[3]] -> correct
 data 3666 classified as: [[3]] -> correct
 data 3667 classified as: [[3]] -> correct
 data 3668 classified as: [[3]] -> correct
@@ -3805,7 +3855,7 @@ data 3724 classified as: [[3]] -> correct
 data 3725 classified as: [[3]] -> correct
 data 3726 classified as: [[3]] -> correct
 data 3727 classified as: [[3]] -> correct
-data 3728 classified as: [[9]] -> WRONG!
+data 3728 classified as: [[3]] -> correct
 data 3729 classified as: [[3]] -> correct
 data 3730 classified as: [[3]] -> correct
 data 3731 classified as: [[3]] -> correct
@@ -3817,7 +3867,7 @@ data 3736 classified as: [[0]] -> WRONG!
 data 3737 classified as: [[3]] -> correct
 data 3738 classified as: [[3]] -> correct
 data 3739 classified as: [[3]] -> correct
-data 3740 classified as: [[9]] -> WRONG!
+data 3740 classified as: [[8]] -> WRONG!
 data 3741 classified as: [[8]] -> WRONG!
 data 3742 classified as: [[3]] -> correct
 data 3743 classified as: [[3]] -> correct
@@ -3864,7 +3914,7 @@ data 3783 classified as: [[3]] -> correct
 data 3784 classified as: [[3]] -> correct
 data 3785 classified as: [[3]] -> correct
 data 3786 classified as: [[3]] -> correct
-data 3787 classified as: [[2]] -> WRONG!
+data 3787 classified as: [[3]] -> correct
 data 3788 classified as: [[8]] -> WRONG!
 data 3789 classified as: [[3]] -> correct
 data 3790 classified as: [[3]] -> correct
@@ -3952,7 +4002,7 @@ data 3871 classified as: [[3]] -> correct
 data 3872 classified as: [[3]] -> correct
 data 3873 classified as: [[3]] -> correct
 data 3874 classified as: [[7]] -> WRONG!
-data 3875 classified as: [[7]] -> WRONG!
+data 3875 classified as: [[3]] -> correct
 data 3876 classified as: [[3]] -> correct
 data 3877 classified as: [[3]] -> correct
 data 3878 classified as: [[3]] -> correct
@@ -3965,7 +4015,7 @@ data 3884 classified as: [[3]] -> correct
 data 3885 classified as: [[3]] -> correct
 data 3886 classified as: [[3]] -> correct
 data 3887 classified as: [[3]] -> correct
-data 3888 classified as: [[8]] -> WRONG!
+data 3888 classified as: [[3]] -> correct
 data 3889 classified as: [[3]] -> correct
 data 3890 classified as: [[3]] -> correct
 data 3891 classified as: [[3]] -> correct
@@ -3994,7 +4044,7 @@ data 3913 classified as: [[5]] -> WRONG!
 data 3914 classified as: [[3]] -> correct
 data 3915 classified as: [[3]] -> correct
 data 3916 classified as: [[3]] -> correct
-data 3917 classified as: [[5]] -> WRONG!
+data 3917 classified as: [[3]] -> correct
 data 3918 classified as: [[3]] -> correct
 data 3919 classified as: [[3]] -> correct
 data 3920 classified as: [[3]] -> correct
@@ -4017,7 +4067,7 @@ data 3936 classified as: [[9]] -> WRONG!
 data 3937 classified as: [[2]] -> WRONG!
 data 3938 classified as: [[3]] -> correct
 data 3939 classified as: [[3]] -> correct
-data 3940 classified as: [[2]] -> WRONG!
+data 3940 classified as: [[3]] -> correct
 data 3941 classified as: [[3]] -> correct
 data 3942 classified as: [[3]] -> correct
 data 3943 classified as: [[3]] -> correct
@@ -4036,7 +4086,7 @@ data 3955 classified as: [[3]] -> correct
 data 3956 classified as: [[3]] -> correct
 data 3957 classified as: [[3]] -> correct
 data 3958 classified as: [[3]] -> correct
-data 3959 classified as: [[5]] -> WRONG!
+data 3959 classified as: [[3]] -> correct
 data 3960 classified as: [[3]] -> correct
 data 3961 classified as: [[3]] -> correct
 data 3962 classified as: [[3]] -> correct
@@ -4054,7 +4104,7 @@ data 3973 classified as: [[8]] -> WRONG!
 data 3974 classified as: [[3]] -> correct
 data 3975 classified as: [[3]] -> correct
 data 3976 classified as: [[3]] -> correct
-data 3977 classified as: [[5]] -> WRONG!
+data 3977 classified as: [[8]] -> WRONG!
 data 3978 classified as: [[5]] -> WRONG!
 data 3979 classified as: [[3]] -> correct
 data 3980 classified as: [[3]] -> correct
@@ -4198,10 +4248,10 @@ data 4117 classified as: [[5]] -> WRONG!
 data 4118 classified as: [[8]] -> WRONG!
 data 4119 classified as: [[3]] -> correct
 data 4120 classified as: [[3]] -> correct
-data 4121 classified as: [[2]] -> WRONG!
+data 4121 classified as: [[3]] -> correct
 data 4122 classified as: [[3]] -> correct
-data 4123 classified as: [[8]] -> WRONG!
-data 4124 classified as: [[8]] -> WRONG!
+data 4123 classified as: [[3]] -> correct
+data 4124 classified as: [[3]] -> correct
 data 4125 classified as: [[8]] -> WRONG!
 data 4126 classified as: [[3]] -> correct
 data 4127 classified as: [[3]] -> correct
@@ -4218,7 +4268,7 @@ data 4137 classified as: [[3]] -> correct
 data 4138 classified as: [[3]] -> correct
 data 4139 classified as: [[3]] -> correct
 data 4140 classified as: [[3]] -> correct
-data 4141 classified as: [[3]] -> correct
+data 4141 classified as: [[0]] -> WRONG!
 data 4142 classified as: [[3]] -> correct
 data 4143 classified as: [[3]] -> correct
 data 4144 classified as: [[3]] -> correct
@@ -4244,7 +4294,7 @@ data 4163 classified as: [[4]] -> correct
 data 4164 classified as: [[4]] -> correct
 data 4165 classified as: [[4]] -> correct
 data 4166 classified as: [[4]] -> correct
-data 4167 classified as: [[9]] -> WRONG!
+data 4167 classified as: [[4]] -> correct
 data 4168 classified as: [[4]] -> correct
 data 4169 classified as: [[4]] -> correct
 data 4170 classified as: [[4]] -> correct
@@ -4267,7 +4317,7 @@ data 4186 classified as: [[4]] -> correct
 data 4187 classified as: [[4]] -> correct
 data 4188 classified as: [[6]] -> WRONG!
 data 4189 classified as: [[4]] -> correct
-data 4190 classified as: [[9]] -> WRONG!
+data 4190 classified as: [[4]] -> correct
 data 4191 classified as: [[4]] -> correct
 data 4192 classified as: [[4]] -> correct
 data 4193 classified as: [[4]] -> correct
@@ -4301,7 +4351,7 @@ data 4220 classified as: [[4]] -> correct
 data 4221 classified as: [[9]] -> WRONG!
 data 4222 classified as: [[9]] -> WRONG!
 data 4223 classified as: [[4]] -> correct
-data 4224 classified as: [[6]] -> WRONG!
+data 4224 classified as: [[4]] -> correct
 data 4225 classified as: [[4]] -> correct
 data 4226 classified as: [[4]] -> correct
 data 4227 classified as: [[4]] -> correct
@@ -4315,14 +4365,14 @@ data 4234 classified as: [[4]] -> correct
 data 4235 classified as: [[4]] -> correct
 data 4236 classified as: [[4]] -> correct
 data 4237 classified as: [[9]] -> WRONG!
-data 4238 classified as: [[9]] -> WRONG!
+data 4238 classified as: [[4]] -> correct
 data 4239 classified as: [[4]] -> correct
 data 4240 classified as: [[4]] -> correct
 data 4241 classified as: [[9]] -> WRONG!
 data 4242 classified as: [[4]] -> correct
 data 4243 classified as: [[4]] -> correct
 data 4244 classified as: [[4]] -> correct
-data 4245 classified as: [[9]] -> WRONG!
+data 4245 classified as: [[4]] -> correct
 data 4246 classified as: [[4]] -> correct
 data 4247 classified as: [[4]] -> correct
 data 4248 classified as: [[4]] -> correct
@@ -4345,7 +4395,7 @@ data 4264 classified as: [[4]] -> correct
 data 4265 classified as: [[4]] -> correct
 data 4266 classified as: [[4]] -> correct
 data 4267 classified as: [[4]] -> correct
-data 4268 classified as: [[9]] -> WRONG!
+data 4268 classified as: [[4]] -> correct
 data 4269 classified as: [[4]] -> correct
 data 4270 classified as: [[8]] -> WRONG!
 data 4271 classified as: [[4]] -> correct
@@ -4379,7 +4429,7 @@ data 4298 classified as: [[4]] -> correct
 data 4299 classified as: [[9]] -> WRONG!
 data 4300 classified as: [[4]] -> correct
 data 4301 classified as: [[4]] -> correct
-data 4302 classified as: [[9]] -> WRONG!
+data 4302 classified as: [[4]] -> correct
 data 4303 classified as: [[4]] -> correct
 data 4304 classified as: [[4]] -> correct
 data 4305 classified as: [[4]] -> correct
@@ -4472,12 +4522,12 @@ data 4391 classified as: [[4]] -> correct
 data 4392 classified as: [[4]] -> correct
 data 4393 classified as: [[4]] -> correct
 data 4394 classified as: [[4]] -> correct
-data 4395 classified as: [[8]] -> WRONG!
+data 4395 classified as: [[4]] -> correct
 data 4396 classified as: [[4]] -> correct
 data 4397 classified as: [[4]] -> correct
 data 4398 classified as: [[4]] -> correct
 data 4399 classified as: [[4]] -> correct
-data 4400 classified as: [[9]] -> WRONG!
+data 4400 classified as: [[4]] -> correct
 data 4401 classified as: [[4]] -> correct
 data 4402 classified as: [[4]] -> correct
 data 4403 classified as: [[4]] -> correct
@@ -4496,11 +4546,11 @@ data 4415 classified as: [[4]] -> correct
 data 4416 classified as: [[9]] -> WRONG!
 data 4417 classified as: [[4]] -> correct
 data 4418 classified as: [[4]] -> correct
-data 4419 classified as: [[7]] -> WRONG!
+data 4419 classified as: [[4]] -> correct
 data 4420 classified as: [[9]] -> WRONG!
 data 4421 classified as: [[4]] -> correct
 data 4422 classified as: [[4]] -> correct
-data 4423 classified as: [[9]] -> WRONG!
+data 4423 classified as: [[4]] -> correct
 data 4424 classified as: [[4]] -> correct
 data 4425 classified as: [[4]] -> correct
 data 4426 classified as: [[9]] -> WRONG!
@@ -4517,7 +4567,7 @@ data 4436 classified as: [[4]] -> correct
 data 4437 classified as: [[4]] -> correct
 data 4438 classified as: [[4]] -> correct
 data 4439 classified as: [[4]] -> correct
-data 4440 classified as: [[8]] -> WRONG!
+data 4440 classified as: [[4]] -> correct
 data 4441 classified as: [[4]] -> correct
 data 4442 classified as: [[4]] -> correct
 data 4443 classified as: [[4]] -> correct
@@ -4526,12 +4576,12 @@ data 4445 classified as: [[4]] -> correct
 data 4446 classified as: [[4]] -> correct
 data 4447 classified as: [[4]] -> correct
 data 4448 classified as: [[4]] -> correct
-data 4449 classified as: [[9]] -> WRONG!
+data 4449 classified as: [[4]] -> correct
 data 4450 classified as: [[9]] -> WRONG!
 data 4451 classified as: [[4]] -> correct
 data 4452 classified as: [[4]] -> correct
 data 4453 classified as: [[4]] -> correct
-data 4454 classified as: [[9]] -> WRONG!
+data 4454 classified as: [[4]] -> correct
 data 4455 classified as: [[4]] -> correct
 data 4456 classified as: [[4]] -> correct
 data 4457 classified as: [[4]] -> correct
@@ -4539,25 +4589,25 @@ data 4458 classified as: [[9]] -> WRONG!
 data 4459 classified as: [[4]] -> correct
 data 4460 classified as: [[4]] -> correct
 data 4461 classified as: [[4]] -> correct
-data 4462 classified as: [[9]] -> WRONG!
+data 4462 classified as: [[4]] -> correct
 data 4463 classified as: [[4]] -> correct
 data 4464 classified as: [[4]] -> correct
 data 4465 classified as: [[4]] -> correct
 data 4466 classified as: [[4]] -> correct
 data 4467 classified as: [[4]] -> correct
-data 4468 classified as: [[9]] -> WRONG!
+data 4468 classified as: [[4]] -> correct
 data 4469 classified as: [[9]] -> WRONG!
 data 4470 classified as: [[4]] -> correct
 data 4471 classified as: [[4]] -> correct
 data 4472 classified as: [[4]] -> correct
 data 4473 classified as: [[4]] -> correct
-data 4474 classified as: [[9]] -> WRONG!
+data 4474 classified as: [[4]] -> correct
 data 4475 classified as: [[4]] -> correct
 data 4476 classified as: [[4]] -> correct
 data 4477 classified as: [[4]] -> correct
 data 4478 classified as: [[4]] -> correct
 data 4479 classified as: [[4]] -> correct
-data 4480 classified as: [[9]] -> WRONG!
+data 4480 classified as: [[4]] -> correct
 data 4481 classified as: [[4]] -> correct
 data 4482 classified as: [[4]] -> correct
 data 4483 classified as: [[4]] -> correct
@@ -4581,7 +4631,7 @@ data 4500 classified as: [[4]] -> correct
 data 4501 classified as: [[4]] -> correct
 data 4502 classified as: [[4]] -> correct
 data 4503 classified as: [[4]] -> correct
-data 4504 classified as: [[9]] -> WRONG!
+data 4504 classified as: [[4]] -> correct
 data 4505 classified as: [[9]] -> WRONG!
 data 4506 classified as: [[4]] -> correct
 data 4507 classified as: [[4]] -> correct
@@ -4590,18 +4640,18 @@ data 4509 classified as: [[4]] -> correct
 data 4510 classified as: [[4]] -> correct
 data 4511 classified as: [[4]] -> correct
 data 4512 classified as: [[4]] -> correct
-data 4513 classified as: [[6]] -> WRONG!
+data 4513 classified as: [[4]] -> correct
 data 4514 classified as: [[9]] -> WRONG!
 data 4515 classified as: [[4]] -> correct
 data 4516 classified as: [[9]] -> WRONG!
 data 4517 classified as: [[9]] -> WRONG!
-data 4518 classified as: [[9]] -> WRONG!
+data 4518 classified as: [[4]] -> correct
 data 4519 classified as: [[4]] -> correct
 data 4520 classified as: [[9]] -> WRONG!
 data 4521 classified as: [[4]] -> correct
 data 4522 classified as: [[4]] -> correct
 data 4523 classified as: [[4]] -> correct
-data 4524 classified as: [[9]] -> WRONG!
+data 4524 classified as: [[3]] -> WRONG!
 data 4525 classified as: [[4]] -> correct
 data 4526 classified as: [[4]] -> correct
 data 4527 classified as: [[4]] -> correct
@@ -4634,7 +4684,7 @@ data 4553 classified as: [[9]] -> WRONG!
 data 4554 classified as: [[4]] -> correct
 data 4555 classified as: [[9]] -> WRONG!
 data 4556 classified as: [[4]] -> correct
-data 4557 classified as: [[2]] -> WRONG!
+data 4557 classified as: [[4]] -> correct
 data 4558 classified as: [[9]] -> WRONG!
 data 4559 classified as: [[4]] -> correct
 data 4560 classified as: [[6]] -> WRONG!
@@ -4651,7 +4701,7 @@ data 4570 classified as: [[6]] -> WRONG!
 data 4571 classified as: [[4]] -> correct
 data 4572 classified as: [[4]] -> correct
 data 4573 classified as: [[4]] -> correct
-data 4574 classified as: [[6]] -> WRONG!
+data 4574 classified as: [[4]] -> correct
 data 4575 classified as: [[4]] -> correct
 data 4576 classified as: [[4]] -> correct
 data 4577 classified as: [[9]] -> WRONG!
@@ -4660,10 +4710,10 @@ data 4579 classified as: [[4]] -> correct
 data 4580 classified as: [[4]] -> correct
 data 4581 classified as: [[4]] -> correct
 data 4582 classified as: [[4]] -> correct
-data 4583 classified as: [[9]] -> WRONG!
+data 4583 classified as: [[4]] -> correct
 data 4584 classified as: [[4]] -> correct
 data 4585 classified as: [[4]] -> correct
-data 4586 classified as: [[9]] -> WRONG!
+data 4586 classified as: [[4]] -> correct
 data 4587 classified as: [[4]] -> correct
 data 4588 classified as: [[4]] -> correct
 data 4589 classified as: [[4]] -> correct
@@ -4681,7 +4731,7 @@ data 4600 classified as: [[4]] -> correct
 data 4601 classified as: [[4]] -> correct
 data 4602 classified as: [[4]] -> correct
 data 4603 classified as: [[4]] -> correct
-data 4604 classified as: [[9]] -> WRONG!
+data 4604 classified as: [[4]] -> correct
 data 4605 classified as: [[4]] -> correct
 data 4606 classified as: [[4]] -> correct
 data 4607 classified as: [[4]] -> correct
@@ -4713,13 +4763,13 @@ data 4632 classified as: [[4]] -> correct
 data 4633 classified as: [[6]] -> WRONG!
 data 4634 classified as: [[4]] -> correct
 data 4635 classified as: [[4]] -> correct
-data 4636 classified as: [[9]] -> WRONG!
+data 4636 classified as: [[4]] -> correct
 data 4637 classified as: [[4]] -> correct
 data 4638 classified as: [[4]] -> correct
 data 4639 classified as: [[4]] -> correct
 data 4640 classified as: [[4]] -> correct
 data 4641 classified as: [[9]] -> WRONG!
-data 4642 classified as: [[9]] -> WRONG!
+data 4642 classified as: [[4]] -> correct
 data 4643 classified as: [[9]] -> WRONG!
 data 4644 classified as: [[4]] -> correct
 data 4645 classified as: [[4]] -> correct
@@ -4730,9 +4780,9 @@ data 4649 classified as: [[4]] -> correct
 data 4650 classified as: [[4]] -> correct
 data 4651 classified as: [[4]] -> correct
 data 4652 classified as: [[4]] -> correct
-data 4653 classified as: [[9]] -> WRONG!
-data 4654 classified as: [[9]] -> WRONG!
-data 4655 classified as: [[6]] -> WRONG!
+data 4653 classified as: [[4]] -> correct
+data 4654 classified as: [[4]] -> correct
+data 4655 classified as: [[4]] -> correct
 data 4656 classified as: [[4]] -> correct
 data 4657 classified as: [[4]] -> correct
 data 4658 classified as: [[4]] -> correct
@@ -4791,7 +4841,7 @@ data 4710 classified as: [[4]] -> correct
 data 4711 classified as: [[4]] -> correct
 data 4712 classified as: [[4]] -> correct
 data 4713 classified as: [[9]] -> WRONG!
-data 4714 classified as: [[9]] -> WRONG!
+data 4714 classified as: [[4]] -> correct
 data 4715 classified as: [[9]] -> WRONG!
 data 4716 classified as: [[9]] -> WRONG!
 data 4717 classified as: [[4]] -> correct
@@ -4823,18 +4873,18 @@ data 4742 classified as: [[7]] -> WRONG!
 data 4743 classified as: [[9]] -> WRONG!
 data 4744 classified as: [[0]] -> WRONG!
 data 4745 classified as: [[4]] -> correct
-data 4746 classified as: [[9]] -> WRONG!
+data 4746 classified as: [[4]] -> correct
 data 4747 classified as: [[9]] -> WRONG!
 data 4748 classified as: [[4]] -> correct
 data 4749 classified as: [[9]] -> WRONG!
-data 4750 classified as: [[9]] -> WRONG!
+data 4750 classified as: [[4]] -> correct
 data 4751 classified as: [[4]] -> correct
 data 4752 classified as: [[4]] -> correct
 data 4753 classified as: [[4]] -> correct
 data 4754 classified as: [[4]] -> correct
 data 4755 classified as: [[4]] -> correct
 data 4756 classified as: [[4]] -> correct
-data 4757 classified as: [[9]] -> WRONG!
+data 4757 classified as: [[4]] -> correct
 data 4758 classified as: [[4]] -> correct
 data 4759 classified as: [[4]] -> correct
 data 4760 classified as: [[9]] -> WRONG!
@@ -4930,9 +4980,9 @@ data 4849 classified as: [[4]] -> correct
 data 4850 classified as: [[4]] -> correct
 data 4851 classified as: [[4]] -> correct
 data 4852 classified as: [[4]] -> correct
-data 4853 classified as: [[9]] -> WRONG!
+data 4853 classified as: [[4]] -> correct
 data 4854 classified as: [[4]] -> correct
-data 4855 classified as: [[8]] -> WRONG!
+data 4855 classified as: [[4]] -> correct
 data 4856 classified as: [[4]] -> correct
 data 4857 classified as: [[4]] -> correct
 data 4858 classified as: [[4]] -> correct
@@ -4970,7 +5020,7 @@ data 4889 classified as: [[4]] -> correct
 data 4890 classified as: [[4]] -> correct
 data 4891 classified as: [[4]] -> correct
 data 4892 classified as: [[4]] -> correct
-data 4893 classified as: [[8]] -> WRONG!
+data 4893 classified as: [[9]] -> WRONG!
 data 4894 classified as: [[4]] -> correct
 data 4895 classified as: [[4]] -> correct
 data 4896 classified as: [[4]] -> correct
@@ -5077,7 +5127,7 @@ data 4996 classified as: [[4]] -> correct
 data 4997 classified as: [[4]] -> correct
 data 4998 classified as: [[4]] -> correct
 data 4999 classified as: [[9]] -> WRONG!
-data 5000 classified as: [[9]] -> WRONG!
+data 5000 classified as: [[4]] -> correct
 data 5001 classified as: [[4]] -> correct
 data 5002 classified as: [[4]] -> correct
 data 5003 classified as: [[4]] -> correct
@@ -5086,7 +5136,7 @@ data 5005 classified as: [[4]] -> correct
 data 5006 classified as: [[4]] -> correct
 data 5007 classified as: [[4]] -> correct
 data 5008 classified as: [[4]] -> correct
-data 5009 classified as: [[9]] -> WRONG!
+data 5009 classified as: [[4]] -> correct
 data 5010 classified as: [[4]] -> correct
 data 5011 classified as: [[4]] -> correct
 data 5012 classified as: [[4]] -> correct
@@ -5171,7 +5221,7 @@ data 5090 classified as: [[4]] -> correct
 data 5091 classified as: [[4]] -> correct
 data 5092 classified as: [[4]] -> correct
 data 5093 classified as: [[4]] -> correct
-data 5094 classified as: [[4]] -> correct
+data 5094 classified as: [[9]] -> WRONG!
 data 5095 classified as: [[4]] -> correct
 data 5096 classified as: [[4]] -> correct
 data 5097 classified as: [[4]] -> correct
@@ -5237,7 +5287,7 @@ data 5156 classified as: [[5]] -> correct
 data 5157 classified as: [[5]] -> correct
 data 5158 classified as: [[5]] -> correct
 data 5159 classified as: [[5]] -> correct
-data 5160 classified as: [[5]] -> correct
+data 5160 classified as: [[7]] -> WRONG!
 data 5161 classified as: [[5]] -> correct
 data 5162 classified as: [[5]] -> correct
 data 5163 classified as: [[5]] -> correct
@@ -5245,7 +5295,7 @@ data 5164 classified as: [[5]] -> correct
 data 5165 classified as: [[5]] -> correct
 data 5166 classified as: [[5]] -> correct
 data 5167 classified as: [[5]] -> correct
-data 5168 classified as: [[8]] -> WRONG!
+data 5168 classified as: [[5]] -> correct
 data 5169 classified as: [[5]] -> correct
 data 5170 classified as: [[5]] -> correct
 data 5171 classified as: [[3]] -> WRONG!
@@ -5264,7 +5314,7 @@ data 5183 classified as: [[5]] -> correct
 data 5184 classified as: [[5]] -> correct
 data 5185 classified as: [[8]] -> WRONG!
 data 5186 classified as: [[8]] -> WRONG!
-data 5187 classified as: [[0]] -> WRONG!
+data 5187 classified as: [[5]] -> correct
 data 5188 classified as: [[5]] -> correct
 data 5189 classified as: [[3]] -> WRONG!
 data 5190 classified as: [[5]] -> correct
@@ -5274,7 +5324,7 @@ data 5193 classified as: [[5]] -> correct
 data 5194 classified as: [[5]] -> correct
 data 5195 classified as: [[5]] -> correct
 data 5196 classified as: [[5]] -> correct
-data 5197 classified as: [[7]] -> WRONG!
+data 5197 classified as: [[5]] -> correct
 data 5198 classified as: [[5]] -> correct
 data 5199 classified as: [[5]] -> correct
 data 5200 classified as: [[5]] -> correct
@@ -5290,7 +5340,7 @@ data 5209 classified as: [[5]] -> correct
 data 5210 classified as: [[5]] -> correct
 data 5211 classified as: [[5]] -> correct
 data 5212 classified as: [[9]] -> WRONG!
-data 5213 classified as: [[8]] -> WRONG!
+data 5213 classified as: [[5]] -> correct
 data 5214 classified as: [[5]] -> correct
 data 5215 classified as: [[5]] -> correct
 data 5216 classified as: [[5]] -> correct
@@ -5307,7 +5357,7 @@ data 5226 classified as: [[5]] -> correct
 data 5227 classified as: [[9]] -> WRONG!
 data 5228 classified as: [[8]] -> WRONG!
 data 5229 classified as: [[5]] -> correct
-data 5230 classified as: [[8]] -> WRONG!
+data 5230 classified as: [[5]] -> correct
 data 5231 classified as: [[5]] -> correct
 data 5232 classified as: [[8]] -> WRONG!
 data 5233 classified as: [[3]] -> WRONG!
@@ -5315,7 +5365,7 @@ data 5234 classified as: [[5]] -> correct
 data 5235 classified as: [[5]] -> correct
 data 5236 classified as: [[5]] -> correct
 data 5237 classified as: [[5]] -> correct
-data 5238 classified as: [[9]] -> WRONG!
+data 5238 classified as: [[5]] -> correct
 data 5239 classified as: [[5]] -> correct
 data 5240 classified as: [[5]] -> correct
 data 5241 classified as: [[5]] -> correct
@@ -5337,21 +5387,21 @@ data 5256 classified as: [[7]] -> WRONG!
 data 5257 classified as: [[8]] -> WRONG!
 data 5258 classified as: [[5]] -> correct
 data 5259 classified as: [[5]] -> correct
-data 5260 classified as: [[8]] -> WRONG!
+data 5260 classified as: [[5]] -> correct
 data 5261 classified as: [[5]] -> correct
 data 5262 classified as: [[5]] -> correct
 data 5263 classified as: [[8]] -> WRONG!
 data 5264 classified as: [[3]] -> WRONG!
 data 5265 classified as: [[5]] -> correct
-data 5266 classified as: [[8]] -> WRONG!
+data 5266 classified as: [[5]] -> correct
 data 5267 classified as: [[5]] -> correct
 data 5268 classified as: [[5]] -> correct
 data 5269 classified as: [[5]] -> correct
-data 5270 classified as: [[5]] -> correct
+data 5270 classified as: [[3]] -> WRONG!
 data 5271 classified as: [[9]] -> WRONG!
 data 5272 classified as: [[5]] -> correct
 data 5273 classified as: [[5]] -> correct
-data 5274 classified as: [[0]] -> WRONG!
+data 5274 classified as: [[5]] -> correct
 data 5275 classified as: [[5]] -> correct
 data 5276 classified as: [[5]] -> correct
 data 5277 classified as: [[5]] -> correct
@@ -5370,7 +5420,7 @@ data 5289 classified as: [[5]] -> correct
 data 5290 classified as: [[5]] -> correct
 data 5291 classified as: [[5]] -> correct
 data 5292 classified as: [[5]] -> correct
-data 5293 classified as: [[6]] -> WRONG!
+data 5293 classified as: [[3]] -> WRONG!
 data 5294 classified as: [[5]] -> correct
 data 5295 classified as: [[5]] -> correct
 data 5296 classified as: [[5]] -> correct
@@ -5412,14 +5462,14 @@ data 5331 classified as: [[5]] -> correct
 data 5332 classified as: [[5]] -> correct
 data 5333 classified as: [[5]] -> correct
 data 5334 classified as: [[9]] -> WRONG!
-data 5335 classified as: [[4]] -> WRONG!
+data 5335 classified as: [[5]] -> correct
 data 5336 classified as: [[5]] -> correct
 data 5337 classified as: [[5]] -> correct
 data 5338 classified as: [[5]] -> correct
 data 5339 classified as: [[3]] -> WRONG!
 data 5340 classified as: [[5]] -> correct
-data 5341 classified as: [[8]] -> WRONG!
-data 5342 classified as: [[6]] -> WRONG!
+data 5341 classified as: [[5]] -> correct
+data 5342 classified as: [[8]] -> WRONG!
 data 5343 classified as: [[5]] -> correct
 data 5344 classified as: [[5]] -> correct
 data 5345 classified as: [[5]] -> correct
@@ -5437,7 +5487,7 @@ data 5356 classified as: [[5]] -> correct
 data 5357 classified as: [[8]] -> WRONG!
 data 5358 classified as: [[5]] -> correct
 data 5359 classified as: [[5]] -> correct
-data 5360 classified as: [[6]] -> WRONG!
+data 5360 classified as: [[5]] -> correct
 data 5361 classified as: [[5]] -> correct
 data 5362 classified as: [[5]] -> correct
 data 5363 classified as: [[5]] -> correct
@@ -5454,7 +5504,7 @@ data 5373 classified as: [[7]] -> WRONG!
 data 5374 classified as: [[5]] -> correct
 data 5375 classified as: [[5]] -> correct
 data 5376 classified as: [[5]] -> correct
-data 5377 classified as: [[3]] -> WRONG!
+data 5377 classified as: [[5]] -> correct
 data 5378 classified as: [[5]] -> correct
 data 5379 classified as: [[5]] -> correct
 data 5380 classified as: [[5]] -> correct
@@ -5465,7 +5515,7 @@ data 5384 classified as: [[8]] -> WRONG!
 data 5385 classified as: [[5]] -> correct
 data 5386 classified as: [[5]] -> correct
 data 5387 classified as: [[5]] -> correct
-data 5388 classified as: [[9]] -> WRONG!
+data 5388 classified as: [[5]] -> correct
 data 5389 classified as: [[5]] -> correct
 data 5390 classified as: [[5]] -> correct
 data 5391 classified as: [[8]] -> WRONG!
@@ -5476,8 +5526,8 @@ data 5395 classified as: [[5]] -> correct
 data 5396 classified as: [[5]] -> correct
 data 5397 classified as: [[5]] -> correct
 data 5398 classified as: [[5]] -> correct
-data 5399 classified as: [[9]] -> WRONG!
-data 5400 classified as: [[0]] -> WRONG!
+data 5399 classified as: [[8]] -> WRONG!
+data 5400 classified as: [[5]] -> correct
 data 5401 classified as: [[5]] -> correct
 data 5402 classified as: [[5]] -> correct
 data 5403 classified as: [[3]] -> WRONG!
@@ -5494,7 +5544,7 @@ data 5413 classified as: [[5]] -> correct
 data 5414 classified as: [[5]] -> correct
 data 5415 classified as: [[5]] -> correct
 data 5416 classified as: [[8]] -> WRONG!
-data 5417 classified as: [[8]] -> WRONG!
+data 5417 classified as: [[5]] -> correct
 data 5418 classified as: [[8]] -> WRONG!
 data 5419 classified as: [[7]] -> WRONG!
 data 5420 classified as: [[5]] -> correct
@@ -5514,7 +5564,7 @@ data 5433 classified as: [[5]] -> correct
 data 5434 classified as: [[5]] -> correct
 data 5435 classified as: [[9]] -> WRONG!
 data 5436 classified as: [[5]] -> correct
-data 5437 classified as: [[8]] -> WRONG!
+data 5437 classified as: [[5]] -> correct
 data 5438 classified as: [[8]] -> WRONG!
 data 5439 classified as: [[5]] -> correct
 data 5440 classified as: [[5]] -> correct
@@ -5530,12 +5580,12 @@ data 5449 classified as: [[5]] -> correct
 data 5450 classified as: [[5]] -> correct
 data 5451 classified as: [[5]] -> correct
 data 5452 classified as: [[5]] -> correct
-data 5453 classified as: [[3]] -> WRONG!
+data 5453 classified as: [[5]] -> correct
 data 5454 classified as: [[5]] -> correct
 data 5455 classified as: [[5]] -> correct
 data 5456 classified as: [[8]] -> WRONG!
 data 5457 classified as: [[5]] -> correct
-data 5458 classified as: [[6]] -> WRONG!
+data 5458 classified as: [[5]] -> correct
 data 5459 classified as: [[5]] -> correct
 data 5460 classified as: [[0]] -> WRONG!
 data 5461 classified as: [[5]] -> correct
@@ -5550,7 +5600,7 @@ data 5469 classified as: [[5]] -> correct
 data 5470 classified as: [[5]] -> correct
 data 5471 classified as: [[5]] -> correct
 data 5472 classified as: [[9]] -> WRONG!
-data 5473 classified as: [[9]] -> WRONG!
+data 5473 classified as: [[7]] -> WRONG!
 data 5474 classified as: [[8]] -> WRONG!
 data 5475 classified as: [[5]] -> correct
 data 5476 classified as: [[5]] -> correct
@@ -5559,12 +5609,12 @@ data 5478 classified as: [[5]] -> correct
 data 5479 classified as: [[5]] -> correct
 data 5480 classified as: [[5]] -> correct
 data 5481 classified as: [[5]] -> correct
-data 5482 classified as: [[9]] -> WRONG!
+data 5482 classified as: [[5]] -> correct
 data 5483 classified as: [[8]] -> WRONG!
 data 5484 classified as: [[5]] -> correct
 data 5485 classified as: [[5]] -> correct
 data 5486 classified as: [[5]] -> correct
-data 5487 classified as: [[9]] -> WRONG!
+data 5487 classified as: [[8]] -> WRONG!
 data 5488 classified as: [[5]] -> correct
 data 5489 classified as: [[5]] -> correct
 data 5490 classified as: [[5]] -> correct
@@ -5587,7 +5637,7 @@ data 5506 classified as: [[5]] -> correct
 data 5507 classified as: [[5]] -> correct
 data 5508 classified as: [[5]] -> correct
 data 5509 classified as: [[5]] -> correct
-data 5510 classified as: [[8]] -> WRONG!
+data 5510 classified as: [[5]] -> correct
 data 5511 classified as: [[5]] -> correct
 data 5512 classified as: [[5]] -> correct
 data 5513 classified as: [[5]] -> correct
@@ -5608,7 +5658,7 @@ data 5527 classified as: [[5]] -> correct
 data 5528 classified as: [[5]] -> correct
 data 5529 classified as: [[5]] -> correct
 data 5530 classified as: [[5]] -> correct
-data 5531 classified as: [[3]] -> WRONG!
+data 5531 classified as: [[5]] -> correct
 data 5532 classified as: [[5]] -> correct
 data 5533 classified as: [[8]] -> WRONG!
 data 5534 classified as: [[5]] -> correct
@@ -5642,7 +5692,7 @@ data 5561 classified as: [[5]] -> correct
 data 5562 classified as: [[5]] -> correct
 data 5563 classified as: [[5]] -> correct
 data 5564 classified as: [[5]] -> correct
-data 5565 classified as: [[8]] -> WRONG!
+data 5565 classified as: [[5]] -> correct
 data 5566 classified as: [[8]] -> WRONG!
 data 5567 classified as: [[5]] -> correct
 data 5568 classified as: [[5]] -> correct
@@ -5655,12 +5705,12 @@ data 5574 classified as: [[8]] -> WRONG!
 data 5575 classified as: [[5]] -> correct
 data 5576 classified as: [[5]] -> correct
 data 5577 classified as: [[5]] -> correct
-data 5578 classified as: [[6]] -> WRONG!
+data 5578 classified as: [[5]] -> correct
 data 5579 classified as: [[5]] -> correct
 data 5580 classified as: [[5]] -> correct
 data 5581 classified as: [[5]] -> correct
 data 5582 classified as: [[5]] -> correct
-data 5583 classified as: [[8]] -> WRONG!
+data 5583 classified as: [[5]] -> correct
 data 5584 classified as: [[5]] -> correct
 data 5585 classified as: [[5]] -> correct
 data 5586 classified as: [[5]] -> correct
@@ -5674,12 +5724,12 @@ data 5593 classified as: [[5]] -> correct
 data 5594 classified as: [[5]] -> correct
 data 5595 classified as: [[8]] -> WRONG!
 data 5596 classified as: [[5]] -> correct
-data 5597 classified as: [[8]] -> WRONG!
+data 5597 classified as: [[5]] -> correct
 data 5598 classified as: [[8]] -> WRONG!
 data 5599 classified as: [[5]] -> correct
 data 5600 classified as: [[5]] -> correct
 data 5601 classified as: [[5]] -> correct
-data 5602 classified as: [[8]] -> WRONG!
+data 5602 classified as: [[5]] -> correct
 data 5603 classified as: [[5]] -> correct
 data 5604 classified as: [[5]] -> correct
 data 5605 classified as: [[5]] -> correct
@@ -5723,7 +5773,7 @@ data 5642 classified as: [[5]] -> correct
 data 5643 classified as: [[5]] -> correct
 data 5644 classified as: [[5]] -> correct
 data 5645 classified as: [[5]] -> correct
-data 5646 classified as: [[8]] -> WRONG!
+data 5646 classified as: [[5]] -> correct
 data 5647 classified as: [[5]] -> correct
 data 5648 classified as: [[5]] -> correct
 data 5649 classified as: [[5]] -> correct
@@ -5797,10 +5847,10 @@ data 5716 classified as: [[6]] -> WRONG!
 data 5717 classified as: [[5]] -> correct
 data 5718 classified as: [[5]] -> correct
 data 5719 classified as: [[5]] -> correct
-data 5720 classified as: [[6]] -> WRONG!
+data 5720 classified as: [[5]] -> correct
 data 5721 classified as: [[5]] -> correct
 data 5722 classified as: [[5]] -> correct
-data 5723 classified as: [[2]] -> WRONG!
+data 5723 classified as: [[5]] -> correct
 data 5724 classified as: [[5]] -> correct
 data 5725 classified as: [[5]] -> correct
 data 5726 classified as: [[5]] -> correct
@@ -5817,19 +5867,19 @@ data 5736 classified as: [[5]] -> correct
 data 5737 classified as: [[5]] -> correct
 data 5738 classified as: [[5]] -> correct
 data 5739 classified as: [[5]] -> correct
-data 5740 classified as: [[2]] -> WRONG!
+data 5740 classified as: [[3]] -> WRONG!
 data 5741 classified as: [[5]] -> correct
 data 5742 classified as: [[5]] -> correct
 data 5743 classified as: [[5]] -> correct
 data 5744 classified as: [[5]] -> correct
 data 5745 classified as: [[7]] -> WRONG!
-data 5746 classified as: [[8]] -> WRONG!
+data 5746 classified as: [[5]] -> correct
 data 5747 classified as: [[5]] -> correct
 data 5748 classified as: [[4]] -> WRONG!
 data 5749 classified as: [[1]] -> WRONG!
-data 5750 classified as: [[8]] -> WRONG!
+data 5750 classified as: [[5]] -> correct
 data 5751 classified as: [[5]] -> correct
-data 5752 classified as: [[6]] -> WRONG!
+data 5752 classified as: [[5]] -> correct
 data 5753 classified as: [[5]] -> correct
 data 5754 classified as: [[5]] -> correct
 data 5755 classified as: [[5]] -> correct
@@ -5886,13 +5936,13 @@ data 5805 classified as: [[5]] -> correct
 data 5806 classified as: [[5]] -> correct
 data 5807 classified as: [[5]] -> correct
 data 5808 classified as: [[5]] -> correct
-data 5809 classified as: [[8]] -> WRONG!
+data 5809 classified as: [[6]] -> WRONG!
 data 5810 classified as: [[8]] -> WRONG!
 data 5811 classified as: [[5]] -> correct
 data 5812 classified as: [[5]] -> correct
 data 5813 classified as: [[5]] -> correct
 data 5814 classified as: [[3]] -> WRONG!
-data 5815 classified as: [[0]] -> WRONG!
+data 5815 classified as: [[5]] -> correct
 data 5816 classified as: [[5]] -> correct
 data 5817 classified as: [[5]] -> correct
 data 5818 classified as: [[4]] -> WRONG!
@@ -5921,9 +5971,9 @@ data 5840 classified as: [[5]] -> correct
 data 5841 classified as: [[5]] -> correct
 data 5842 classified as: [[5]] -> correct
 data 5843 classified as: [[6]] -> WRONG!
-data 5844 classified as: [[8]] -> WRONG!
+data 5844 classified as: [[5]] -> correct
 data 5845 classified as: [[5]] -> correct
-data 5846 classified as: [[8]] -> WRONG!
+data 5846 classified as: [[5]] -> correct
 data 5847 classified as: [[8]] -> WRONG!
 data 5848 classified as: [[8]] -> WRONG!
 data 5849 classified as: [[8]] -> WRONG!
@@ -5953,7 +6003,7 @@ data 5872 classified as: [[5]] -> correct
 data 5873 classified as: [[5]] -> correct
 data 5874 classified as: [[5]] -> correct
 data 5875 classified as: [[5]] -> correct
-data 5876 classified as: [[8]] -> WRONG!
+data 5876 classified as: [[5]] -> correct
 data 5877 classified as: [[5]] -> correct
 data 5878 classified as: [[5]] -> correct
 data 5879 classified as: [[5]] -> correct
@@ -5963,7 +6013,7 @@ data 5882 classified as: [[5]] -> correct
 data 5883 classified as: [[5]] -> correct
 data 5884 classified as: [[5]] -> correct
 data 5885 classified as: [[5]] -> correct
-data 5886 classified as: [[7]] -> WRONG!
+data 5886 classified as: [[5]] -> correct
 data 5887 classified as: [[5]] -> correct
 data 5888 classified as: [[5]] -> correct
 data 5889 classified as: [[5]] -> correct
@@ -5978,7 +6028,7 @@ data 5897 classified as: [[5]] -> correct
 data 5898 classified as: [[5]] -> correct
 data 5899 classified as: [[5]] -> correct
 data 5900 classified as: [[5]] -> correct
-data 5901 classified as: [[8]] -> WRONG!
+data 5901 classified as: [[5]] -> correct
 data 5902 classified as: [[5]] -> correct
 data 5903 classified as: [[5]] -> correct
 data 5904 classified as: [[3]] -> WRONG!
@@ -6015,7 +6065,7 @@ data 5934 classified as: [[5]] -> correct
 data 5935 classified as: [[5]] -> correct
 data 5936 classified as: [[5]] -> correct
 data 5937 classified as: [[5]] -> correct
-data 5938 classified as: [[8]] -> WRONG!
+data 5938 classified as: [[5]] -> correct
 data 5939 classified as: [[5]] -> correct
 data 5940 classified as: [[5]] -> correct
 data 5941 classified as: [[5]] -> correct
@@ -6068,7 +6118,7 @@ data 5987 classified as: [[5]] -> correct
 data 5988 classified as: [[3]] -> WRONG!
 data 5989 classified as: [[5]] -> correct
 data 5990 classified as: [[5]] -> correct
-data 5991 classified as: [[8]] -> WRONG!
+data 5991 classified as: [[5]] -> correct
 data 5992 classified as: [[5]] -> correct
 data 5993 classified as: [[5]] -> correct
 data 5994 classified as: [[5]] -> correct
@@ -6105,9 +6155,9 @@ data 6024 classified as: [[6]] -> WRONG!
 data 6025 classified as: [[5]] -> correct
 data 6026 classified as: [[6]] -> WRONG!
 data 6027 classified as: [[3]] -> WRONG!
-data 6028 classified as: [[6]] -> WRONG!
+data 6028 classified as: [[2]] -> WRONG!
 data 6029 classified as: [[5]] -> correct
-data 6030 classified as: [[8]] -> WRONG!
+data 6030 classified as: [[5]] -> correct
 data 6031 classified as: [[6]] -> correct
 data 6032 classified as: [[6]] -> correct
 data 6033 classified as: [[6]] -> correct
@@ -6145,13 +6195,13 @@ data 6064 classified as: [[6]] -> correct
 data 6065 classified as: [[6]] -> correct
 data 6066 classified as: [[0]] -> WRONG!
 data 6067 classified as: [[6]] -> correct
-data 6068 classified as: [[5]] -> WRONG!
+data 6068 classified as: [[6]] -> correct
 data 6069 classified as: [[6]] -> correct
 data 6070 classified as: [[6]] -> correct
 data 6071 classified as: [[6]] -> correct
 data 6072 classified as: [[6]] -> correct
 data 6073 classified as: [[6]] -> correct
-data 6074 classified as: [[8]] -> WRONG!
+data 6074 classified as: [[6]] -> correct
 data 6075 classified as: [[6]] -> correct
 data 6076 classified as: [[6]] -> correct
 data 6077 classified as: [[6]] -> correct
@@ -6195,7 +6245,7 @@ data 6114 classified as: [[0]] -> WRONG!
 data 6115 classified as: [[6]] -> correct
 data 6116 classified as: [[6]] -> correct
 data 6117 classified as: [[6]] -> correct
-data 6118 classified as: [[0]] -> WRONG!
+data 6118 classified as: [[5]] -> WRONG!
 data 6119 classified as: [[6]] -> correct
 data 6120 classified as: [[6]] -> correct
 data 6121 classified as: [[8]] -> WRONG!
@@ -6230,7 +6280,7 @@ data 6149 classified as: [[6]] -> correct
 data 6150 classified as: [[6]] -> correct
 data 6151 classified as: [[6]] -> correct
 data 6152 classified as: [[6]] -> correct
-data 6153 classified as: [[8]] -> WRONG!
+data 6153 classified as: [[6]] -> correct
 data 6154 classified as: [[7]] -> WRONG!
 data 6155 classified as: [[6]] -> correct
 data 6156 classified as: [[6]] -> correct
@@ -6283,7 +6333,7 @@ data 6202 classified as: [[6]] -> correct
 data 6203 classified as: [[6]] -> correct
 data 6204 classified as: [[6]] -> correct
 data 6205 classified as: [[4]] -> WRONG!
-data 6206 classified as: [[5]] -> WRONG!
+data 6206 classified as: [[8]] -> WRONG!
 data 6207 classified as: [[6]] -> correct
 data 6208 classified as: [[6]] -> correct
 data 6209 classified as: [[6]] -> correct
@@ -6310,7 +6360,7 @@ data 6229 classified as: [[6]] -> correct
 data 6230 classified as: [[6]] -> correct
 data 6231 classified as: [[6]] -> correct
 data 6232 classified as: [[6]] -> correct
-data 6233 classified as: [[2]] -> WRONG!
+data 6233 classified as: [[6]] -> correct
 data 6234 classified as: [[6]] -> correct
 data 6235 classified as: [[6]] -> correct
 data 6236 classified as: [[6]] -> correct
@@ -6335,7 +6385,7 @@ data 6254 classified as: [[6]] -> correct
 data 6255 classified as: [[6]] -> correct
 data 6256 classified as: [[6]] -> correct
 data 6257 classified as: [[6]] -> correct
-data 6258 classified as: [[2]] -> WRONG!
+data 6258 classified as: [[6]] -> correct
 data 6259 classified as: [[6]] -> correct
 data 6260 classified as: [[6]] -> correct
 data 6261 classified as: [[6]] -> correct
@@ -6344,7 +6394,7 @@ data 6263 classified as: [[6]] -> correct
 data 6264 classified as: [[6]] -> correct
 data 6265 classified as: [[6]] -> correct
 data 6266 classified as: [[6]] -> correct
-data 6267 classified as: [[8]] -> WRONG!
+data 6267 classified as: [[1]] -> WRONG!
 data 6268 classified as: [[6]] -> correct
 data 6269 classified as: [[6]] -> correct
 data 6270 classified as: [[6]] -> correct
@@ -6355,7 +6405,7 @@ data 6274 classified as: [[6]] -> correct
 data 6275 classified as: [[6]] -> correct
 data 6276 classified as: [[6]] -> correct
 data 6277 classified as: [[6]] -> correct
-data 6278 classified as: [[8]] -> WRONG!
+data 6278 classified as: [[6]] -> correct
 data 6279 classified as: [[0]] -> WRONG!
 data 6280 classified as: [[6]] -> correct
 data 6281 classified as: [[6]] -> correct
@@ -6405,15 +6455,15 @@ data 6324 classified as: [[6]] -> correct
 data 6325 classified as: [[6]] -> correct
 data 6326 classified as: [[6]] -> correct
 data 6327 classified as: [[6]] -> correct
-data 6328 classified as: [[5]] -> WRONG!
+data 6328 classified as: [[6]] -> correct
 data 6329 classified as: [[6]] -> correct
 data 6330 classified as: [[6]] -> correct
 data 6331 classified as: [[6]] -> correct
-data 6332 classified as: [[5]] -> WRONG!
+data 6332 classified as: [[6]] -> correct
 data 6333 classified as: [[2]] -> WRONG!
 data 6334 classified as: [[6]] -> correct
 data 6335 classified as: [[6]] -> correct
-data 6336 classified as: [[6]] -> correct
+data 6336 classified as: [[4]] -> WRONG!
 data 6337 classified as: [[6]] -> correct
 data 6338 classified as: [[6]] -> correct
 data 6339 classified as: [[6]] -> correct
@@ -6443,7 +6493,7 @@ data 6362 classified as: [[6]] -> correct
 data 6363 classified as: [[6]] -> correct
 data 6364 classified as: [[6]] -> correct
 data 6365 classified as: [[6]] -> correct
-data 6366 classified as: [[8]] -> WRONG!
+data 6366 classified as: [[6]] -> correct
 data 6367 classified as: [[6]] -> correct
 data 6368 classified as: [[6]] -> correct
 data 6369 classified as: [[6]] -> correct
@@ -6490,7 +6540,7 @@ data 6409 classified as: [[6]] -> correct
 data 6410 classified as: [[6]] -> correct
 data 6411 classified as: [[6]] -> correct
 data 6412 classified as: [[6]] -> correct
-data 6413 classified as: [[8]] -> WRONG!
+data 6413 classified as: [[6]] -> correct
 data 6414 classified as: [[6]] -> correct
 data 6415 classified as: [[6]] -> correct
 data 6416 classified as: [[5]] -> WRONG!
@@ -6503,7 +6553,7 @@ data 6422 classified as: [[6]] -> correct
 data 6423 classified as: [[6]] -> correct
 data 6424 classified as: [[6]] -> correct
 data 6425 classified as: [[5]] -> WRONG!
-data 6426 classified as: [[5]] -> WRONG!
+data 6426 classified as: [[6]] -> correct
 data 6427 classified as: [[6]] -> correct
 data 6428 classified as: [[6]] -> correct
 data 6429 classified as: [[6]] -> correct
@@ -6547,7 +6597,7 @@ data 6466 classified as: [[6]] -> correct
 data 6467 classified as: [[6]] -> correct
 data 6468 classified as: [[6]] -> correct
 data 6469 classified as: [[8]] -> WRONG!
-data 6470 classified as: [[8]] -> WRONG!
+data 6470 classified as: [[6]] -> correct
 data 6471 classified as: [[6]] -> correct
 data 6472 classified as: [[6]] -> correct
 data 6473 classified as: [[6]] -> correct
@@ -6568,7 +6618,7 @@ data 6487 classified as: [[6]] -> correct
 data 6488 classified as: [[6]] -> correct
 data 6489 classified as: [[6]] -> correct
 data 6490 classified as: [[6]] -> correct
-data 6491 classified as: [[5]] -> WRONG!
+data 6491 classified as: [[6]] -> correct
 data 6492 classified as: [[6]] -> correct
 data 6493 classified as: [[6]] -> correct
 data 6494 classified as: [[6]] -> correct
@@ -6640,14 +6690,14 @@ data 6559 classified as: [[6]] -> correct
 data 6560 classified as: [[6]] -> correct
 data 6561 classified as: [[6]] -> correct
 data 6562 classified as: [[6]] -> correct
-data 6563 classified as: [[6]] -> correct
+data 6563 classified as: [[4]] -> WRONG!
 data 6564 classified as: [[6]] -> correct
 data 6565 classified as: [[6]] -> correct
 data 6566 classified as: [[6]] -> correct
 data 6567 classified as: [[6]] -> correct
 data 6568 classified as: [[6]] -> correct
 data 6569 classified as: [[6]] -> correct
-data 6570 classified as: [[0]] -> WRONG!
+data 6570 classified as: [[6]] -> correct
 data 6571 classified as: [[6]] -> correct
 data 6572 classified as: [[6]] -> correct
 data 6573 classified as: [[6]] -> correct
@@ -6998,7 +7048,7 @@ data 6917 classified as: [[6]] -> correct
 data 6918 classified as: [[6]] -> correct
 data 6919 classified as: [[6]] -> correct
 data 6920 classified as: [[6]] -> correct
-data 6921 classified as: [[4]] -> WRONG!
+data 6921 classified as: [[6]] -> correct
 data 6922 classified as: [[6]] -> correct
 data 6923 classified as: [[6]] -> correct
 data 6924 classified as: [[6]] -> correct
@@ -7035,7 +7085,7 @@ data 6954 classified as: [[6]] -> correct
 data 6955 classified as: [[6]] -> correct
 data 6956 classified as: [[5]] -> WRONG!
 data 6957 classified as: [[6]] -> correct
-data 6958 classified as: [[6]] -> correct
+data 6958 classified as: [[5]] -> WRONG!
 data 6959 classified as: [[6]] -> correct
 data 6960 classified as: [[6]] -> correct
 data 6961 classified as: [[6]] -> correct
@@ -7059,7 +7109,7 @@ data 6978 classified as: [[6]] -> correct
 data 6979 classified as: [[6]] -> correct
 data 6980 classified as: [[6]] -> correct
 data 6981 classified as: [[6]] -> correct
-data 6982 classified as: [[0]] -> WRONG!
+data 6982 classified as: [[6]] -> correct
 data 6983 classified as: [[6]] -> correct
 data 6984 classified as: [[6]] -> correct
 data 6985 classified as: [[6]] -> correct
@@ -7077,24 +7127,24 @@ data 6996 classified as: [[7]] -> correct
 data 6997 classified as: [[7]] -> correct
 data 6998 classified as: [[7]] -> correct
 data 6999 classified as: [[7]] -> correct
-data 7000 classified as: [[9]] -> WRONG!
+data 7000 classified as: [[7]] -> correct
 data 7001 classified as: [[7]] -> correct
 data 7002 classified as: [[7]] -> correct
 data 7003 classified as: [[7]] -> correct
-data 7004 classified as: [[1]] -> WRONG!
+data 7004 classified as: [[7]] -> correct
 data 7005 classified as: [[7]] -> correct
 data 7006 classified as: [[7]] -> correct
 data 7007 classified as: [[4]] -> WRONG!
 data 7008 classified as: [[7]] -> correct
 data 7009 classified as: [[7]] -> correct
-data 7010 classified as: [[9]] -> WRONG!
+data 7010 classified as: [[7]] -> correct
 data 7011 classified as: [[7]] -> correct
 data 7012 classified as: [[7]] -> correct
 data 7013 classified as: [[7]] -> correct
 data 7014 classified as: [[7]] -> correct
 data 7015 classified as: [[7]] -> correct
 data 7016 classified as: [[7]] -> correct
-data 7017 classified as: [[4]] -> WRONG!
+data 7017 classified as: [[7]] -> correct
 data 7018 classified as: [[7]] -> correct
 data 7019 classified as: [[7]] -> correct
 data 7020 classified as: [[7]] -> correct
@@ -7104,7 +7154,7 @@ data 7023 classified as: [[7]] -> correct
 data 7024 classified as: [[9]] -> WRONG!
 data 7025 classified as: [[7]] -> correct
 data 7026 classified as: [[7]] -> correct
-data 7027 classified as: [[7]] -> correct
+data 7027 classified as: [[9]] -> WRONG!
 data 7028 classified as: [[7]] -> correct
 data 7029 classified as: [[7]] -> correct
 data 7030 classified as: [[7]] -> correct
@@ -7129,7 +7179,7 @@ data 7048 classified as: [[7]] -> correct
 data 7049 classified as: [[7]] -> correct
 data 7050 classified as: [[7]] -> correct
 data 7051 classified as: [[7]] -> correct
-data 7052 classified as: [[4]] -> WRONG!
+data 7052 classified as: [[7]] -> correct
 data 7053 classified as: [[7]] -> correct
 data 7054 classified as: [[1]] -> WRONG!
 data 7055 classified as: [[7]] -> correct
@@ -7147,7 +7197,7 @@ data 7066 classified as: [[7]] -> correct
 data 7067 classified as: [[7]] -> correct
 data 7068 classified as: [[7]] -> correct
 data 7069 classified as: [[7]] -> correct
-data 7070 classified as: [[9]] -> WRONG!
+data 7070 classified as: [[7]] -> correct
 data 7071 classified as: [[7]] -> correct
 data 7072 classified as: [[7]] -> correct
 data 7073 classified as: [[7]] -> correct
@@ -7159,7 +7209,7 @@ data 7078 classified as: [[8]] -> WRONG!
 data 7079 classified as: [[7]] -> correct
 data 7080 classified as: [[7]] -> correct
 data 7081 classified as: [[7]] -> correct
-data 7082 classified as: [[1]] -> WRONG!
+data 7082 classified as: [[7]] -> correct
 data 7083 classified as: [[7]] -> correct
 data 7084 classified as: [[7]] -> correct
 data 7085 classified as: [[2]] -> WRONG!
@@ -7180,7 +7230,7 @@ data 7099 classified as: [[7]] -> correct
 data 7100 classified as: [[2]] -> WRONG!
 data 7101 classified as: [[7]] -> correct
 data 7102 classified as: [[7]] -> correct
-data 7103 classified as: [[9]] -> WRONG!
+data 7103 classified as: [[7]] -> correct
 data 7104 classified as: [[7]] -> correct
 data 7105 classified as: [[7]] -> correct
 data 7106 classified as: [[7]] -> correct
@@ -7199,7 +7249,7 @@ data 7118 classified as: [[1]] -> WRONG!
 data 7119 classified as: [[7]] -> correct
 data 7120 classified as: [[2]] -> WRONG!
 data 7121 classified as: [[7]] -> correct
-data 7122 classified as: [[8]] -> WRONG!
+data 7122 classified as: [[2]] -> WRONG!
 data 7123 classified as: [[9]] -> WRONG!
 data 7124 classified as: [[7]] -> correct
 data 7125 classified as: [[9]] -> WRONG!
@@ -7234,16 +7284,16 @@ data 7153 classified as: [[7]] -> correct
 data 7154 classified as: [[7]] -> correct
 data 7155 classified as: [[7]] -> correct
 data 7156 classified as: [[7]] -> correct
-data 7157 classified as: [[7]] -> correct
+data 7157 classified as: [[9]] -> WRONG!
 data 7158 classified as: [[7]] -> correct
 data 7159 classified as: [[7]] -> correct
 data 7160 classified as: [[7]] -> correct
 data 7161 classified as: [[7]] -> correct
 data 7162 classified as: [[1]] -> WRONG!
-data 7163 classified as: [[4]] -> WRONG!
-data 7164 classified as: [[9]] -> WRONG!
+data 7163 classified as: [[9]] -> WRONG!
+data 7164 classified as: [[7]] -> correct
 data 7165 classified as: [[7]] -> correct
-data 7166 classified as: [[1]] -> WRONG!
+data 7166 classified as: [[7]] -> correct
 data 7167 classified as: [[7]] -> correct
 data 7168 classified as: [[2]] -> WRONG!
 data 7169 classified as: [[7]] -> correct
@@ -7275,7 +7325,7 @@ data 7194 classified as: [[2]] -> WRONG!
 data 7195 classified as: [[9]] -> WRONG!
 data 7196 classified as: [[7]] -> correct
 data 7197 classified as: [[7]] -> correct
-data 7198 classified as: [[7]] -> correct
+data 7198 classified as: [[9]] -> WRONG!
 data 7199 classified as: [[7]] -> correct
 data 7200 classified as: [[7]] -> correct
 data 7201 classified as: [[9]] -> WRONG!
@@ -7335,15 +7385,15 @@ data 7254 classified as: [[7]] -> correct
 data 7255 classified as: [[7]] -> correct
 data 7256 classified as: [[7]] -> correct
 data 7257 classified as: [[7]] -> correct
-data 7258 classified as: [[2]] -> WRONG!
+data 7258 classified as: [[7]] -> correct
 data 7259 classified as: [[7]] -> correct
 data 7260 classified as: [[7]] -> correct
 data 7261 classified as: [[7]] -> correct
 data 7262 classified as: [[7]] -> correct
 data 7263 classified as: [[8]] -> WRONG!
 data 7264 classified as: [[7]] -> correct
-data 7265 classified as: [[9]] -> WRONG!
-data 7266 classified as: [[9]] -> WRONG!
+data 7265 classified as: [[7]] -> correct
+data 7266 classified as: [[7]] -> correct
 data 7267 classified as: [[7]] -> correct
 data 7268 classified as: [[7]] -> correct
 data 7269 classified as: [[7]] -> correct
@@ -7354,7 +7404,7 @@ data 7273 classified as: [[7]] -> correct
 data 7274 classified as: [[7]] -> correct
 data 7275 classified as: [[7]] -> correct
 data 7276 classified as: [[7]] -> correct
-data 7277 classified as: [[9]] -> WRONG!
+data 7277 classified as: [[7]] -> correct
 data 7278 classified as: [[9]] -> WRONG!
 data 7279 classified as: [[7]] -> correct
 data 7280 classified as: [[7]] -> correct
@@ -7382,7 +7432,7 @@ data 7301 classified as: [[7]] -> correct
 data 7302 classified as: [[7]] -> correct
 data 7303 classified as: [[7]] -> correct
 data 7304 classified as: [[9]] -> WRONG!
-data 7305 classified as: [[9]] -> WRONG!
+data 7305 classified as: [[7]] -> correct
 data 7306 classified as: [[7]] -> correct
 data 7307 classified as: [[7]] -> correct
 data 7308 classified as: [[7]] -> correct
@@ -7402,7 +7452,7 @@ data 7321 classified as: [[7]] -> correct
 data 7322 classified as: [[7]] -> correct
 data 7323 classified as: [[1]] -> WRONG!
 data 7324 classified as: [[7]] -> correct
-data 7325 classified as: [[1]] -> WRONG!
+data 7325 classified as: [[7]] -> correct
 data 7326 classified as: [[7]] -> correct
 data 7327 classified as: [[7]] -> correct
 data 7328 classified as: [[7]] -> correct
@@ -7432,9 +7482,9 @@ data 7351 classified as: [[7]] -> correct
 data 7352 classified as: [[7]] -> correct
 data 7353 classified as: [[7]] -> correct
 data 7354 classified as: [[7]] -> correct
-data 7355 classified as: [[9]] -> WRONG!
+data 7355 classified as: [[7]] -> correct
 data 7356 classified as: [[7]] -> correct
-data 7357 classified as: [[2]] -> WRONG!
+data 7357 classified as: [[7]] -> correct
 data 7358 classified as: [[7]] -> correct
 data 7359 classified as: [[7]] -> correct
 data 7360 classified as: [[4]] -> WRONG!
@@ -7443,7 +7493,7 @@ data 7362 classified as: [[1]] -> WRONG!
 data 7363 classified as: [[7]] -> correct
 data 7364 classified as: [[7]] -> correct
 data 7365 classified as: [[7]] -> correct
-data 7366 classified as: [[6]] -> WRONG!
+data 7366 classified as: [[0]] -> WRONG!
 data 7367 classified as: [[7]] -> correct
 data 7368 classified as: [[7]] -> correct
 data 7369 classified as: [[7]] -> correct
@@ -7524,7 +7574,7 @@ data 7443 classified as: [[8]] -> WRONG!
 data 7444 classified as: [[7]] -> correct
 data 7445 classified as: [[7]] -> correct
 data 7446 classified as: [[7]] -> correct
-data 7447 classified as: [[8]] -> WRONG!
+data 7447 classified as: [[9]] -> WRONG!
 data 7448 classified as: [[7]] -> correct
 data 7449 classified as: [[7]] -> correct
 data 7450 classified as: [[7]] -> correct
@@ -7644,12 +7694,12 @@ data 7563 classified as: [[9]] -> WRONG!
 data 7564 classified as: [[7]] -> correct
 data 7565 classified as: [[9]] -> WRONG!
 data 7566 classified as: [[9]] -> WRONG!
-data 7567 classified as: [[9]] -> WRONG!
+data 7567 classified as: [[7]] -> correct
 data 7568 classified as: [[9]] -> WRONG!
 data 7569 classified as: [[7]] -> correct
 data 7570 classified as: [[7]] -> correct
 data 7571 classified as: [[9]] -> WRONG!
-data 7572 classified as: [[9]] -> WRONG!
+data 7572 classified as: [[7]] -> correct
 data 7573 classified as: [[9]] -> WRONG!
 data 7574 classified as: [[7]] -> correct
 data 7575 classified as: [[7]] -> correct
@@ -7664,16 +7714,16 @@ data 7583 classified as: [[7]] -> correct
 data 7584 classified as: [[7]] -> correct
 data 7585 classified as: [[7]] -> correct
 data 7586 classified as: [[7]] -> correct
-data 7587 classified as: [[9]] -> WRONG!
+data 7587 classified as: [[7]] -> correct
 data 7588 classified as: [[3]] -> WRONG!
 data 7589 classified as: [[7]] -> correct
-data 7590 classified as: [[9]] -> WRONG!
-data 7591 classified as: [[9]] -> WRONG!
+data 7590 classified as: [[7]] -> correct
+data 7591 classified as: [[7]] -> correct
 data 7592 classified as: [[7]] -> correct
 data 7593 classified as: [[7]] -> correct
 data 7594 classified as: [[7]] -> correct
 data 7595 classified as: [[7]] -> correct
-data 7596 classified as: [[7]] -> correct
+data 7596 classified as: [[9]] -> WRONG!
 data 7597 classified as: [[7]] -> correct
 data 7598 classified as: [[7]] -> correct
 data 7599 classified as: [[7]] -> correct
@@ -7698,7 +7748,7 @@ data 7617 classified as: [[7]] -> correct
 data 7618 classified as: [[7]] -> correct
 data 7619 classified as: [[7]] -> correct
 data 7620 classified as: [[7]] -> correct
-data 7621 classified as: [[9]] -> WRONG!
+data 7621 classified as: [[7]] -> correct
 data 7622 classified as: [[7]] -> correct
 data 7623 classified as: [[7]] -> correct
 data 7624 classified as: [[7]] -> correct
@@ -7732,7 +7782,7 @@ data 7651 classified as: [[7]] -> correct
 data 7652 classified as: [[7]] -> correct
 data 7653 classified as: [[7]] -> correct
 data 7654 classified as: [[7]] -> correct
-data 7655 classified as: [[8]] -> WRONG!
+data 7655 classified as: [[7]] -> correct
 data 7656 classified as: [[7]] -> correct
 data 7657 classified as: [[7]] -> correct
 data 7658 classified as: [[7]] -> correct
@@ -7756,7 +7806,7 @@ data 7675 classified as: [[7]] -> correct
 data 7676 classified as: [[7]] -> correct
 data 7677 classified as: [[7]] -> correct
 data 7678 classified as: [[7]] -> correct
-data 7679 classified as: [[8]] -> WRONG!
+data 7679 classified as: [[2]] -> WRONG!
 data 7680 classified as: [[7]] -> correct
 data 7681 classified as: [[7]] -> correct
 data 7682 classified as: [[7]] -> correct
@@ -7820,7 +7870,7 @@ data 7739 classified as: [[7]] -> correct
 data 7740 classified as: [[7]] -> correct
 data 7741 classified as: [[7]] -> correct
 data 7742 classified as: [[7]] -> correct
-data 7743 classified as: [[8]] -> WRONG!
+data 7743 classified as: [[2]] -> WRONG!
 data 7744 classified as: [[7]] -> correct
 data 7745 classified as: [[7]] -> correct
 data 7746 classified as: [[7]] -> correct
@@ -7836,7 +7886,7 @@ data 7755 classified as: [[7]] -> correct
 data 7756 classified as: [[7]] -> correct
 data 7757 classified as: [[7]] -> correct
 data 7758 classified as: [[7]] -> correct
-data 7759 classified as: [[9]] -> WRONG!
+data 7759 classified as: [[7]] -> correct
 data 7760 classified as: [[7]] -> correct
 data 7761 classified as: [[7]] -> correct
 data 7762 classified as: [[7]] -> correct
@@ -7865,7 +7915,7 @@ data 7784 classified as: [[7]] -> correct
 data 7785 classified as: [[7]] -> correct
 data 7786 classified as: [[7]] -> correct
 data 7787 classified as: [[7]] -> correct
-data 7788 classified as: [[9]] -> WRONG!
+data 7788 classified as: [[7]] -> correct
 data 7789 classified as: [[7]] -> correct
 data 7790 classified as: [[7]] -> correct
 data 7791 classified as: [[7]] -> correct
@@ -8041,7 +8091,7 @@ data 7960 classified as: [[7]] -> correct
 data 7961 classified as: [[9]] -> WRONG!
 data 7962 classified as: [[7]] -> correct
 data 7963 classified as: [[7]] -> correct
-data 7964 classified as: [[8]] -> WRONG!
+data 7964 classified as: [[3]] -> WRONG!
 data 7965 classified as: [[7]] -> correct
 data 7966 classified as: [[7]] -> correct
 data 7967 classified as: [[7]] -> correct
@@ -8085,7 +8135,7 @@ data 8004 classified as: [[7]] -> correct
 data 8005 classified as: [[7]] -> correct
 data 8006 classified as: [[7]] -> correct
 data 8007 classified as: [[9]] -> WRONG!
-data 8008 classified as: [[9]] -> WRONG!
+data 8008 classified as: [[7]] -> correct
 data 8009 classified as: [[7]] -> correct
 data 8010 classified as: [[7]] -> correct
 data 8011 classified as: [[7]] -> correct
@@ -8113,7 +8163,7 @@ data 8032 classified as: [[8]] -> correct
 data 8033 classified as: [[8]] -> correct
 data 8034 classified as: [[8]] -> correct
 data 8035 classified as: [[8]] -> correct
-data 8036 classified as: [[5]] -> WRONG!
+data 8036 classified as: [[4]] -> WRONG!
 data 8037 classified as: [[8]] -> correct
 data 8038 classified as: [[8]] -> correct
 data 8039 classified as: [[8]] -> correct
@@ -8139,7 +8189,7 @@ data 8058 classified as: [[8]] -> correct
 data 8059 classified as: [[8]] -> correct
 data 8060 classified as: [[8]] -> correct
 data 8061 classified as: [[8]] -> correct
-data 8062 classified as: [[6]] -> WRONG!
+data 8062 classified as: [[8]] -> correct
 data 8063 classified as: [[8]] -> correct
 data 8064 classified as: [[8]] -> correct
 data 8065 classified as: [[8]] -> correct
@@ -8182,7 +8232,7 @@ data 8101 classified as: [[8]] -> correct
 data 8102 classified as: [[9]] -> WRONG!
 data 8103 classified as: [[8]] -> correct
 data 8104 classified as: [[8]] -> correct
-data 8105 classified as: [[9]] -> WRONG!
+data 8105 classified as: [[8]] -> correct
 data 8106 classified as: [[8]] -> correct
 data 8107 classified as: [[8]] -> correct
 data 8108 classified as: [[8]] -> correct
@@ -8199,9 +8249,9 @@ data 8118 classified as: [[8]] -> correct
 data 8119 classified as: [[8]] -> correct
 data 8120 classified as: [[8]] -> correct
 data 8121 classified as: [[8]] -> correct
-data 8122 classified as: [[9]] -> WRONG!
+data 8122 classified as: [[8]] -> correct
 data 8123 classified as: [[4]] -> WRONG!
-data 8124 classified as: [[5]] -> WRONG!
+data 8124 classified as: [[8]] -> correct
 data 8125 classified as: [[5]] -> WRONG!
 data 8126 classified as: [[8]] -> correct
 data 8127 classified as: [[8]] -> correct
@@ -8239,7 +8289,7 @@ data 8158 classified as: [[8]] -> correct
 data 8159 classified as: [[8]] -> correct
 data 8160 classified as: [[7]] -> WRONG!
 data 8161 classified as: [[8]] -> correct
-data 8162 classified as: [[9]] -> WRONG!
+data 8162 classified as: [[8]] -> correct
 data 8163 classified as: [[8]] -> correct
 data 8164 classified as: [[8]] -> correct
 data 8165 classified as: [[8]] -> correct
@@ -8263,7 +8313,7 @@ data 8182 classified as: [[8]] -> correct
 data 8183 classified as: [[8]] -> correct
 data 8184 classified as: [[8]] -> correct
 data 8185 classified as: [[8]] -> correct
-data 8186 classified as: [[6]] -> WRONG!
+data 8186 classified as: [[8]] -> correct
 data 8187 classified as: [[5]] -> WRONG!
 data 8188 classified as: [[2]] -> WRONG!
 data 8189 classified as: [[5]] -> WRONG!
@@ -8286,7 +8336,7 @@ data 8205 classified as: [[8]] -> correct
 data 8206 classified as: [[8]] -> correct
 data 8207 classified as: [[1]] -> WRONG!
 data 8208 classified as: [[5]] -> WRONG!
-data 8209 classified as: [[9]] -> WRONG!
+data 8209 classified as: [[8]] -> correct
 data 8210 classified as: [[8]] -> correct
 data 8211 classified as: [[8]] -> correct
 data 8212 classified as: [[8]] -> correct
@@ -8331,7 +8381,7 @@ data 8250 classified as: [[5]] -> WRONG!
 data 8251 classified as: [[3]] -> WRONG!
 data 8252 classified as: [[8]] -> correct
 data 8253 classified as: [[9]] -> WRONG!
-data 8254 classified as: [[3]] -> WRONG!
+data 8254 classified as: [[8]] -> correct
 data 8255 classified as: [[8]] -> correct
 data 8256 classified as: [[8]] -> correct
 data 8257 classified as: [[8]] -> correct
@@ -8461,7 +8511,7 @@ data 8380 classified as: [[8]] -> correct
 data 8381 classified as: [[8]] -> correct
 data 8382 classified as: [[8]] -> correct
 data 8383 classified as: [[8]] -> correct
-data 8384 classified as: [[8]] -> correct
+data 8384 classified as: [[7]] -> WRONG!
 data 8385 classified as: [[8]] -> correct
 data 8386 classified as: [[8]] -> correct
 data 8387 classified as: [[8]] -> correct
@@ -8473,7 +8523,7 @@ data 8392 classified as: [[8]] -> correct
 data 8393 classified as: [[8]] -> correct
 data 8394 classified as: [[8]] -> correct
 data 8395 classified as: [[8]] -> correct
-data 8396 classified as: [[8]] -> correct
+data 8396 classified as: [[5]] -> WRONG!
 data 8397 classified as: [[9]] -> WRONG!
 data 8398 classified as: [[8]] -> correct
 data 8399 classified as: [[8]] -> correct
@@ -8496,10 +8546,10 @@ data 8415 classified as: [[8]] -> correct
 data 8416 classified as: [[8]] -> correct
 data 8417 classified as: [[8]] -> correct
 data 8418 classified as: [[8]] -> correct
-data 8419 classified as: [[3]] -> WRONG!
-data 8420 classified as: [[9]] -> WRONG!
+data 8419 classified as: [[2]] -> WRONG!
+data 8420 classified as: [[8]] -> correct
 data 8421 classified as: [[5]] -> WRONG!
-data 8422 classified as: [[3]] -> WRONG!
+data 8422 classified as: [[8]] -> correct
 data 8423 classified as: [[8]] -> correct
 data 8424 classified as: [[8]] -> correct
 data 8425 classified as: [[8]] -> correct
@@ -8611,7 +8661,7 @@ data 8530 classified as: [[8]] -> correct
 data 8531 classified as: [[8]] -> correct
 data 8532 classified as: [[9]] -> WRONG!
 data 8533 classified as: [[9]] -> WRONG!
-data 8534 classified as: [[8]] -> correct
+data 8534 classified as: [[0]] -> WRONG!
 data 8535 classified as: [[8]] -> correct
 data 8536 classified as: [[8]] -> correct
 data 8537 classified as: [[8]] -> correct
@@ -8719,7 +8769,7 @@ data 8638 classified as: [[8]] -> correct
 data 8639 classified as: [[8]] -> correct
 data 8640 classified as: [[8]] -> correct
 data 8641 classified as: [[8]] -> correct
-data 8642 classified as: [[9]] -> WRONG!
+data 8642 classified as: [[8]] -> correct
 data 8643 classified as: [[8]] -> correct
 data 8644 classified as: [[8]] -> correct
 data 8645 classified as: [[8]] -> correct
@@ -8743,7 +8793,7 @@ data 8662 classified as: [[8]] -> correct
 data 8663 classified as: [[9]] -> WRONG!
 data 8664 classified as: [[8]] -> correct
 data 8665 classified as: [[8]] -> correct
-data 8666 classified as: [[7]] -> WRONG!
+data 8666 classified as: [[8]] -> correct
 data 8667 classified as: [[8]] -> correct
 data 8668 classified as: [[8]] -> correct
 data 8669 classified as: [[5]] -> WRONG!
@@ -8836,7 +8886,7 @@ data 8755 classified as: [[8]] -> correct
 data 8756 classified as: [[8]] -> correct
 data 8757 classified as: [[8]] -> correct
 data 8758 classified as: [[8]] -> correct
-data 8759 classified as: [[5]] -> WRONG!
+data 8759 classified as: [[8]] -> correct
 data 8760 classified as: [[8]] -> correct
 data 8761 classified as: [[8]] -> correct
 data 8762 classified as: [[8]] -> correct
@@ -8875,7 +8925,7 @@ data 8794 classified as: [[8]] -> correct
 data 8795 classified as: [[8]] -> correct
 data 8796 classified as: [[8]] -> correct
 data 8797 classified as: [[8]] -> correct
-data 8798 classified as: [[9]] -> WRONG!
+data 8798 classified as: [[8]] -> correct
 data 8799 classified as: [[8]] -> correct
 data 8800 classified as: [[8]] -> correct
 data 8801 classified as: [[8]] -> correct
@@ -8908,7 +8958,7 @@ data 8827 classified as: [[8]] -> correct
 data 8828 classified as: [[8]] -> correct
 data 8829 classified as: [[8]] -> correct
 data 8830 classified as: [[6]] -> WRONG!
-data 8831 classified as: [[8]] -> correct
+data 8831 classified as: [[5]] -> WRONG!
 data 8832 classified as: [[8]] -> correct
 data 8833 classified as: [[8]] -> correct
 data 8834 classified as: [[8]] -> correct
@@ -8929,7 +8979,7 @@ data 8848 classified as: [[8]] -> correct
 data 8849 classified as: [[8]] -> correct
 data 8850 classified as: [[6]] -> WRONG!
 data 8851 classified as: [[8]] -> correct
-data 8852 classified as: [[5]] -> WRONG!
+data 8852 classified as: [[8]] -> correct
 data 8853 classified as: [[8]] -> correct
 data 8854 classified as: [[8]] -> correct
 data 8855 classified as: [[8]] -> correct
@@ -8983,7 +9033,7 @@ data 8902 classified as: [[8]] -> correct
 data 8903 classified as: [[8]] -> correct
 data 8904 classified as: [[8]] -> correct
 data 8905 classified as: [[8]] -> correct
-data 8906 classified as: [[9]] -> WRONG!
+data 8906 classified as: [[8]] -> correct
 data 8907 classified as: [[8]] -> correct
 data 8908 classified as: [[8]] -> correct
 data 8909 classified as: [[8]] -> correct
@@ -9024,7 +9074,7 @@ data 8943 classified as: [[9]] -> WRONG!
 data 8944 classified as: [[8]] -> correct
 data 8945 classified as: [[8]] -> correct
 data 8946 classified as: [[8]] -> correct
-data 8947 classified as: [[2]] -> WRONG!
+data 8947 classified as: [[8]] -> correct
 data 8948 classified as: [[8]] -> correct
 data 8949 classified as: [[8]] -> correct
 data 8950 classified as: [[8]] -> correct
@@ -9046,7 +9096,7 @@ data 8965 classified as: [[1]] -> WRONG!
 data 8966 classified as: [[8]] -> correct
 data 8967 classified as: [[8]] -> correct
 data 8968 classified as: [[8]] -> correct
-data 8969 classified as: [[1]] -> WRONG!
+data 8969 classified as: [[8]] -> correct
 data 8970 classified as: [[8]] -> correct
 data 8971 classified as: [[8]] -> correct
 data 8972 classified as: [[8]] -> correct
@@ -9103,7 +9153,7 @@ data 9022 classified as: [[9]] -> correct
 data 9023 classified as: [[9]] -> correct
 data 9024 classified as: [[9]] -> correct
 data 9025 classified as: [[9]] -> correct
-data 9026 classified as: [[1]] -> WRONG!
+data 9026 classified as: [[7]] -> WRONG!
 data 9027 classified as: [[9]] -> correct
 data 9028 classified as: [[9]] -> correct
 data 9029 classified as: [[9]] -> correct
@@ -9180,10 +9230,10 @@ data 9099 classified as: [[9]] -> correct
 data 9100 classified as: [[9]] -> correct
 data 9101 classified as: [[9]] -> correct
 data 9102 classified as: [[9]] -> correct
-data 9103 classified as: [[9]] -> correct
-data 9104 classified as: [[7]] -> WRONG!
+data 9103 classified as: [[4]] -> WRONG!
+data 9104 classified as: [[9]] -> correct
 data 9105 classified as: [[9]] -> correct
-data 9106 classified as: [[9]] -> correct
+data 9106 classified as: [[4]] -> WRONG!
 data 9107 classified as: [[0]] -> WRONG!
 data 9108 classified as: [[9]] -> correct
 data 9109 classified as: [[9]] -> correct
@@ -9290,13 +9340,13 @@ data 9209 classified as: [[9]] -> correct
 data 9210 classified as: [[2]] -> WRONG!
 data 9211 classified as: [[9]] -> correct
 data 9212 classified as: [[9]] -> correct
-data 9213 classified as: [[5]] -> WRONG!
+data 9213 classified as: [[9]] -> correct
 data 9214 classified as: [[9]] -> correct
 data 9215 classified as: [[9]] -> correct
 data 9216 classified as: [[9]] -> correct
 data 9217 classified as: [[9]] -> correct
 data 9218 classified as: [[9]] -> correct
-data 9219 classified as: [[2]] -> WRONG!
+data 9219 classified as: [[0]] -> WRONG!
 data 9220 classified as: [[1]] -> WRONG!
 data 9221 classified as: [[8]] -> WRONG!
 data 9222 classified as: [[9]] -> correct
@@ -9318,7 +9368,7 @@ data 9237 classified as: [[9]] -> correct
 data 9238 classified as: [[9]] -> correct
 data 9239 classified as: [[9]] -> correct
 data 9240 classified as: [[9]] -> correct
-data 9241 classified as: [[7]] -> WRONG!
+data 9241 classified as: [[9]] -> correct
 data 9242 classified as: [[9]] -> correct
 data 9243 classified as: [[9]] -> correct
 data 9244 classified as: [[9]] -> correct
@@ -9332,7 +9382,7 @@ data 9251 classified as: [[9]] -> correct
 data 9252 classified as: [[9]] -> correct
 data 9253 classified as: [[9]] -> correct
 data 9254 classified as: [[9]] -> correct
-data 9255 classified as: [[7]] -> WRONG!
+data 9255 classified as: [[9]] -> correct
 data 9256 classified as: [[9]] -> correct
 data 9257 classified as: [[9]] -> correct
 data 9258 classified as: [[9]] -> correct
@@ -9413,7 +9463,7 @@ data 9332 classified as: [[9]] -> correct
 data 9333 classified as: [[9]] -> correct
 data 9334 classified as: [[3]] -> WRONG!
 data 9335 classified as: [[9]] -> correct
-data 9336 classified as: [[4]] -> WRONG!
+data 9336 classified as: [[9]] -> correct
 data 9337 classified as: [[9]] -> correct
 data 9338 classified as: [[9]] -> correct
 data 9339 classified as: [[9]] -> correct
@@ -9437,12 +9487,12 @@ data 9356 classified as: [[9]] -> correct
 data 9357 classified as: [[9]] -> correct
 data 9358 classified as: [[9]] -> correct
 data 9359 classified as: [[9]] -> correct
-data 9360 classified as: [[9]] -> correct
+data 9360 classified as: [[4]] -> WRONG!
 data 9361 classified as: [[9]] -> correct
 data 9362 classified as: [[9]] -> correct
-data 9363 classified as: [[0]] -> WRONG!
+data 9363 classified as: [[9]] -> correct
 data 9364 classified as: [[9]] -> correct
-data 9365 classified as: [[2]] -> WRONG!
+data 9365 classified as: [[9]] -> correct
 data 9366 classified as: [[9]] -> correct
 data 9367 classified as: [[9]] -> correct
 data 9368 classified as: [[9]] -> correct
@@ -9456,7 +9506,7 @@ data 9375 classified as: [[9]] -> correct
 data 9376 classified as: [[9]] -> correct
 data 9377 classified as: [[9]] -> correct
 data 9378 classified as: [[9]] -> correct
-data 9379 classified as: [[9]] -> correct
+data 9379 classified as: [[4]] -> WRONG!
 data 9380 classified as: [[9]] -> correct
 data 9381 classified as: [[9]] -> correct
 data 9382 classified as: [[4]] -> WRONG!
@@ -9525,7 +9575,7 @@ data 9444 classified as: [[9]] -> correct
 data 9445 classified as: [[9]] -> correct
 data 9446 classified as: [[9]] -> correct
 data 9447 classified as: [[9]] -> correct
-data 9448 classified as: [[7]] -> WRONG!
+data 9448 classified as: [[9]] -> correct
 data 9449 classified as: [[9]] -> correct
 data 9450 classified as: [[9]] -> correct
 data 9451 classified as: [[9]] -> correct
@@ -9584,11 +9634,11 @@ data 9503 classified as: [[9]] -> correct
 data 9504 classified as: [[9]] -> correct
 data 9505 classified as: [[9]] -> correct
 data 9506 classified as: [[9]] -> correct
-data 9507 classified as: [[7]] -> WRONG!
+data 9507 classified as: [[9]] -> correct
 data 9508 classified as: [[9]] -> correct
 data 9509 classified as: [[9]] -> correct
 data 9510 classified as: [[9]] -> correct
-data 9511 classified as: [[4]] -> WRONG!
+data 9511 classified as: [[8]] -> WRONG!
 data 9512 classified as: [[9]] -> correct
 data 9513 classified as: [[9]] -> correct
 data 9514 classified as: [[9]] -> correct
@@ -9605,12 +9655,12 @@ data 9524 classified as: [[9]] -> correct
 data 9525 classified as: [[9]] -> correct
 data 9526 classified as: [[9]] -> correct
 data 9527 classified as: [[9]] -> correct
-data 9528 classified as: [[4]] -> WRONG!
+data 9528 classified as: [[9]] -> correct
 data 9529 classified as: [[9]] -> correct
 data 9530 classified as: [[9]] -> correct
 data 9531 classified as: [[9]] -> correct
 data 9532 classified as: [[9]] -> correct
-data 9533 classified as: [[9]] -> correct
+data 9533 classified as: [[7]] -> WRONG!
 data 9534 classified as: [[9]] -> correct
 data 9535 classified as: [[9]] -> correct
 data 9536 classified as: [[9]] -> correct
@@ -9701,9 +9751,9 @@ data 9620 classified as: [[5]] -> WRONG!
 data 9621 classified as: [[8]] -> WRONG!
 data 9622 classified as: [[8]] -> WRONG!
 data 9623 classified as: [[9]] -> correct
-data 9624 classified as: [[0]] -> WRONG!
+data 9624 classified as: [[8]] -> WRONG!
 data 9625 classified as: [[5]] -> WRONG!
-data 9626 classified as: [[8]] -> WRONG!
+data 9626 classified as: [[5]] -> WRONG!
 data 9627 classified as: [[5]] -> WRONG!
 data 9628 classified as: [[0]] -> WRONG!
 data 9629 classified as: [[9]] -> correct
@@ -9739,7 +9789,7 @@ data 9658 classified as: [[9]] -> correct
 data 9659 classified as: [[9]] -> correct
 data 9660 classified as: [[9]] -> correct
 data 9661 classified as: [[9]] -> correct
-data 9662 classified as: [[9]] -> correct
+data 9662 classified as: [[3]] -> WRONG!
 data 9663 classified as: [[9]] -> correct
 data 9664 classified as: [[4]] -> WRONG!
 data 9665 classified as: [[9]] -> correct
@@ -9748,7 +9798,7 @@ data 9667 classified as: [[9]] -> correct
 data 9668 classified as: [[9]] -> correct
 data 9669 classified as: [[9]] -> correct
 data 9670 classified as: [[8]] -> WRONG!
-data 9671 classified as: [[9]] -> correct
+data 9671 classified as: [[4]] -> WRONG!
 data 9672 classified as: [[9]] -> correct
 data 9673 classified as: [[9]] -> correct
 data 9674 classified as: [[9]] -> correct
@@ -9844,7 +9894,7 @@ data 9763 classified as: [[9]] -> correct
 data 9764 classified as: [[9]] -> correct
 data 9765 classified as: [[9]] -> correct
 data 9766 classified as: [[9]] -> correct
-data 9767 classified as: [[4]] -> WRONG!
+data 9767 classified as: [[9]] -> correct
 data 9768 classified as: [[9]] -> correct
 data 9769 classified as: [[9]] -> correct
 data 9770 classified as: [[9]] -> correct
@@ -9988,7 +10038,7 @@ data 9907 classified as: [[9]] -> correct
 data 9908 classified as: [[9]] -> correct
 data 9909 classified as: [[9]] -> correct
 data 9910 classified as: [[9]] -> correct
-data 9911 classified as: [[4]] -> WRONG!
+data 9911 classified as: [[9]] -> correct
 data 9912 classified as: [[9]] -> correct
 data 9913 classified as: [[9]] -> correct
 data 9914 classified as: [[9]] -> correct
@@ -10038,7 +10088,7 @@ data 9957 classified as: [[9]] -> correct
 data 9958 classified as: [[9]] -> correct
 data 9959 classified as: [[9]] -> correct
 data 9960 classified as: [[9]] -> correct
-data 9961 classified as: [[9]] -> correct
+data 9961 classified as: [[7]] -> WRONG!
 data 9962 classified as: [[9]] -> correct
 data 9963 classified as: [[9]] -> correct
 data 9964 classified as: [[9]] -> correct
@@ -10079,5 +10129,5 @@ data 9998 classified as: [[9]] -> correct
 data 9999 classified as: [[9]] -> correct
 
 
-accuracy: 89.02 %
-number of wrong classifications: 1098 out of 10000 images!
+accuracy: 91.03999999999999 %
+number of wrong classifications: 896 out of 10000 images!

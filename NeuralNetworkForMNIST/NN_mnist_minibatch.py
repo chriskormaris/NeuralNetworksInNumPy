@@ -148,7 +148,7 @@ def test(W1, W2, X):
 
 
 # Train using Stochastic Gradient Ascent
-def train(X, y, epochs=50, tol=1e-6, print_estimate=False):
+def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
     # Initialize the parameters to random values. We need to learn these.
@@ -282,7 +282,7 @@ X_test = X_test / 255
 NNParams.eta = 0.5 / len(X_train)
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, epochs=50, tol=1e-6, print_estimate=True)
+W1, W2 = train(X_train, y_train, epochs=100, tol=1e-6, print_estimate=True)
 
 # test the Neural Network Model
 predicted = test(W1, W2, X_test)
