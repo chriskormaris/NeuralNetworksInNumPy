@@ -129,7 +129,7 @@ def train(X, y, epochs=50, tol=1e-6, print_estimate=False):
     W1 = concat_ones_vector(W1)  # W1: MxD+1
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
-    # Run Stochastic gradient ascent
+    # Run Stochastic Gradient Ascent
     num_examples = X.shape[0]
     s_old = -np.inf
     for e in range(epochs):

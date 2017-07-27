@@ -147,7 +147,7 @@ def test(W1, W2, X):
     return np.argmax(o2, axis=1)
 
 
-# Train using Stochastic Gradient Ascent
+# Train using Mini-batch Gradient Ascent
 def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
@@ -162,7 +162,7 @@ def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
     W1 = concat_ones_vector(W1)  # W1: MxD+1
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
-    # Run Stochastic gradient ascent
+    # Run Mini-batch Gradient Ascent
     num_examples = X.shape[0]
     s_old = -np.inf
     for e in range(epochs):
