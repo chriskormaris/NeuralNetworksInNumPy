@@ -25,7 +25,7 @@ class NNParams:
     num_hidden_layers = 3  # M: number of nodes in the hidden layer
     num_output_layers = 2  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient descent parameters
-    eta = 0.01  # the learning rate of gradient descent
+    eta = 0.001  # the learning rate of gradient descent
     reg_lambda = 0.01  # the regularization parameter
 
 
