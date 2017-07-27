@@ -4,7 +4,6 @@
 # train algorithm: gradient ascent
 # Bias terms are used.
 
-
 # force the result of divisions to be float numbers
 from __future__ import division
 
