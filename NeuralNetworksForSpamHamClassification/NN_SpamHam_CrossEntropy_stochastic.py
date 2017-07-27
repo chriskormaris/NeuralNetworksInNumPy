@@ -67,7 +67,7 @@ def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTes
 
     # reading files
     for i in range(len(files)):
-        print('Reading ' + trainOrTest + ' file ' + files[i] + '...')
+        print("Reading " + trainOrTest + " file " + "'" + files[i] + "'" + "...")
 
         text = read_file(files_dir + files[i])
 
