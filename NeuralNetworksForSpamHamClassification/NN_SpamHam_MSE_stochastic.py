@@ -169,9 +169,9 @@ def train(X, y, epochs=50, tol = 1e-6, print_loss=False):
 
         s = 0
         for i in range(num_examples):
-            W1, W2 = grad_descent(X, t, W1, W2)
-            
-            s = s + loss_function(X, t, W1, W2)
+            W1, W2 = grad_descent(np.matrix(X[i, :]), np.matrix(t[i, :]), W1, W2)
+
+            s = s + loss_function(np.matrix(X[i, :]), np.matrix(t[i, :]), W1, W2)
 
         # Optionally print the loss.
         if print_loss:
