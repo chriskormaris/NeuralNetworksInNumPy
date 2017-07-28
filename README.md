@@ -22,7 +22,7 @@ File: "NN_mnist.py"
 
 Maximum Likelihood Estimate Function: Cross Entropy Function
 
-train algorithm: gradient ascent
+Train algorithm: Gradient Ascent
 
 Bias terms are used.
 
@@ -54,6 +54,8 @@ File: "SpamHamNeuralNetworkSqErr.py"
 
 Loss Function: Mean Squared Error Loss
 
+Train algorithm: Gradient Descent
+
 
 The first neural network that has been implemented uses
 the tanh activation function in the first input layer
@@ -73,6 +75,8 @@ File: "SpamHamNeuralNetworkCrossEntropy.py"
 2nd Activation Function: softmax
 
 Loss Function: Cross Entropy Loss
+
+Train algorithm: Gradient Descent
 
 
 The second neural network that has been implemented uses
