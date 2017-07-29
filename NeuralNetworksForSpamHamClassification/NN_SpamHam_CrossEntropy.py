@@ -167,7 +167,7 @@ def train(X, y, iterations=20000, tol=1e-6, print_loss=False):
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
     # Run Batch Gradient Descent
-    old_loss = -np.inf
+    loss_old = -np.inf
     for i in range(iterations):
 
         W1, W2 = grad_descent(X, t, W1, W2)
@@ -177,8 +177,9 @@ def train(X, y, iterations=20000, tol=1e-6, print_loss=False):
         if print_loss and i % 1000 == 0:
             loss = loss_function(X, t, W1, W2)
             print("Cross entropy loss after iteration %i: %f" % (i, loss))
-            if np.abs(loss - old_loss) <= tol:
+            if np.abs(loss - loss_old) < tol:
                 break
+            loss_old = loss
 
     return W1, W2
 

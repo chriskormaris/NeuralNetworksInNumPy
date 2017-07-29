@@ -117,7 +117,7 @@ def test(X, W1, W2):
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient ascent
 # - print_estimate: If True, print the estimate every 1000 iterations
-def train(X, y, iterations=500, print_estimate=False):
+def train(X, y, iterations=500, tol=1e-6, print_estimate=False):
     t = np.zeros((y.shape[0], NNParams.num_output_layers))
     t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
     # Initialize the parameters to random values. We need to learn these.
@@ -130,6 +130,7 @@ def train(X, y, iterations=500, print_estimate=False):
     W2 = concat_ones_vector(W2)  # W2: KxM+1
 
     # Run Batch Gradient Ascent
+    lik_old = -np.inf
     for i in range(iterations):
 
         W1, W2 = grad_ascent(X, t, W1, W2)
@@ -137,8 +138,12 @@ def train(X, y, iterations=500, print_estimate=False):
         # Optionally print the estimate.
         # This is expensive because it uses the whole dataset.
         if print_estimate:
-            print("Likelihood estimate after iteration %i: %f" % (i, likelihood(X, t, W1, W2)))
-
+			lik = likelihood(X, t, W1, W2)
+            print("Likelihood estimate after iteration %i: %f" % (i, lik))
+            if np.abs(lik - lik_old) < tol:
+                break
+            lik_old = lik
+            
     return W1, W2
 
 
@@ -236,7 +241,7 @@ X_test = X_test / 255
 NNParams.eta = 0.5 / len(X_train)
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, iterations=500, print_estimate=True)
+W1, W2 = train(X_train, y_train, iterations=500, tol=1e-6, print_estimate=True)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)

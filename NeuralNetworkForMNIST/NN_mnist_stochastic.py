@@ -145,7 +145,7 @@ def train(X, y, epochs=50, tol=1e-6, print_estimate=False):
         if print_estimate:
             print("Likelihood estimate after epoch %i: %f" % (e, s))
 
-        if np.abs(s - s_old) <= tol:
+        if np.abs(s - s_old) < tol:
             break
 
         s_old = s

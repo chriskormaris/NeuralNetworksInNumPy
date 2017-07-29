@@ -178,7 +178,7 @@ def train(X, y, epochs=50, tol=1e-6, print_loss=False):
         if print_loss:
             print("Mean squared error loss after epoch %i: %f" % (e, loss_function(X, t, W1, W2)))
 
-        if np.abs(s - s_old) <= tol:
+        if np.abs(s - s_old) < tol:
             break
 
         s_old = s
