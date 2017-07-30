@@ -24,106 +24,106 @@ Reading 'test8.txt'
 Reading 'test9.txt'
 
 
-Likelihood estimate after epoch 0: 91657.229274
-Likelihood estimate after epoch 1: 109711.111665
-Likelihood estimate after epoch 2: 129352.472871
-Likelihood estimate after epoch 3: 147448.972895
-Likelihood estimate after epoch 4: 163645.799696
-Likelihood estimate after epoch 5: 178105.269205
-Likelihood estimate after epoch 6: 191064.565365
-Likelihood estimate after epoch 7: 202750.021000
-Likelihood estimate after epoch 8: 213356.421963
-Likelihood estimate after epoch 9: 223044.564283
-Likelihood estimate after epoch 10: 231945.297069
-Likelihood estimate after epoch 11: 240165.120674
-Likelihood estimate after epoch 12: 247791.337138
-Likelihood estimate after epoch 13: 254896.200046
-Likelihood estimate after epoch 14: 261540.096702
-Likelihood estimate after epoch 15: 267773.957803
-Likelihood estimate after epoch 16: 273641.090534
-Likelihood estimate after epoch 17: 279178.589243
-Likelihood estimate after epoch 18: 284418.435595
-Likelihood estimate after epoch 19: 289388.367610
-Likelihood estimate after epoch 20: 294112.574083
-Likelihood estimate after epoch 21: 298612.255101
-Likelihood estimate after epoch 22: 302906.078501
-Likelihood estimate after epoch 23: 307010.554508
-Likelihood estimate after epoch 24: 310940.345364
-Likelihood estimate after epoch 25: 314708.522866
-Likelihood estimate after epoch 26: 318326.783787
-Likelihood estimate after epoch 27: 321805.631047
-Likelihood estimate after epoch 28: 325154.526811
-Likelihood estimate after epoch 29: 328382.022473
-Likelihood estimate after epoch 30: 331495.869483
-Likelihood estimate after epoch 31: 334503.114223
-Likelihood estimate after epoch 32: 337410.179559
-Likelihood estimate after epoch 33: 340222.935179
-Likelihood estimate after epoch 34: 342946.758484
-Likelihood estimate after epoch 35: 345586.587480
-Likelihood estimate after epoch 36: 348146.966867
-Likelihood estimate after epoch 37: 350632.088328
-Likelihood estimate after epoch 38: 353045.825854
-Likelihood estimate after epoch 39: 355391.766816
-Likelihood estimate after epoch 40: 357673.239354
-Likelihood estimate after epoch 41: 359893.336609
-Likelihood estimate after epoch 42: 362054.938200
-Likelihood estimate after epoch 43: 364160.729325
-Likelihood estimate after epoch 44: 366213.217772
-Likelihood estimate after epoch 45: 368214.749127
-Likelihood estimate after epoch 46: 370167.520385
-Likelihood estimate after epoch 47: 372073.592166
-Likelihood estimate after epoch 48: 373934.899705
-Likelihood estimate after epoch 49: 375753.262757
-Likelihood estimate after epoch 50: 377530.394542
-Likelihood estimate after epoch 51: 379267.909844
-Likelihood estimate after epoch 52: 380967.332351
-Likelihood estimate after epoch 53: 382630.101329
-Likelihood estimate after epoch 54: 384257.577689
-Likelihood estimate after epoch 55: 385851.049523
-Likelihood estimate after epoch 56: 387411.737161
-Likelihood estimate after epoch 57: 388940.797794
-Likelihood estimate after epoch 58: 390439.329712
-Likelihood estimate after epoch 59: 391908.376189
-Likelihood estimate after epoch 60: 393348.929060
-Likelihood estimate after epoch 61: 394761.932008
-Likelihood estimate after epoch 62: 396148.283594
-Likelihood estimate after epoch 63: 397508.840055
-Likelihood estimate after epoch 64: 398844.417888
-Likelihood estimate after epoch 65: 400155.796241
-Likelihood estimate after epoch 66: 401443.719128
-Likelihood estimate after epoch 67: 402708.897486
-Likelihood estimate after epoch 68: 403952.011080
-Likelihood estimate after epoch 69: 405173.710277
-Likelihood estimate after epoch 70: 406374.617698
-Likelihood estimate after epoch 71: 407555.329753
-Likelihood estimate after epoch 72: 408716.418075
-Likelihood estimate after epoch 73: 409858.430861
-Likelihood estimate after epoch 74: 410981.894118
-Likelihood estimate after epoch 75: 412087.312837
-Likelihood estimate after epoch 76: 413175.172082
-Likelihood estimate after epoch 77: 414245.938020
-Likelihood estimate after epoch 78: 415300.058880
-Likelihood estimate after epoch 79: 416337.965854
-Likelihood estimate after epoch 80: 417360.073950
-Likelihood estimate after epoch 81: 418366.782779
-Likelihood estimate after epoch 82: 419358.477313
-Likelihood estimate after epoch 83: 420335.528583
-Likelihood estimate after epoch 84: 421298.294348
-Likelihood estimate after epoch 85: 422247.119716
-Likelihood estimate after epoch 86: 423182.337740
-Likelihood estimate after epoch 87: 424104.269967
-Likelihood estimate after epoch 88: 425013.226972
-Likelihood estimate after epoch 89: 425909.508850
-Likelihood estimate after epoch 90: 426793.405686
-Likelihood estimate after epoch 91: 427665.197999
-Likelihood estimate after epoch 92: 428525.157167
-Likelihood estimate after epoch 93: 429373.545819
-Likelihood estimate after epoch 94: 430210.618215
-Likelihood estimate after epoch 95: 431036.620602
-Likelihood estimate after epoch 96: 431851.791557
-Likelihood estimate after epoch 97: 432656.362303
-Likelihood estimate after epoch 98: 433450.557017
-Likelihood estimate after epoch 99: 434234.593122
+Likelihood estimate after epoch 0: 91929.889335
+Likelihood estimate after epoch 1: 110039.749858
+Likelihood estimate after epoch 2: 129746.747188
+Likelihood estimate after epoch 3: 147898.614063
+Likelihood estimate after epoch 4: 164140.804161
+Likelihood estimate after epoch 5: 178638.000573
+Likelihood estimate after epoch 6: 191629.326213
+Likelihood estimate after epoch 7: 203342.499095
+Likelihood estimate after epoch 8: 213973.262732
+Likelihood estimate after epoch 9: 223683.079791
+Likelihood estimate after epoch 10: 232603.278530
+Likelihood estimate after epoch 11: 240840.718037
+Likelihood estimate after epoch 12: 248482.978901
+Likelihood estimate after epoch 13: 255602.536929
+Likelihood estimate after epoch 14: 262259.960072
+Likelihood estimate after epoch 15: 268506.327827
+Likelihood estimate after epoch 16: 274385.071182
+Likelihood estimate after epoch 17: 279933.388352
+Likelihood estimate after epoch 18: 285183.348784
+Likelihood estimate after epoch 19: 290162.765195
+Likelihood estimate after epoch 20: 294895.890347
+Likelihood estimate after epoch 21: 299403.979440
+Likelihood estimate after epoch 22: 303705.748064
+Likelihood estimate after epoch 23: 307817.748046
+Likelihood estimate after epoch 24: 311754.678063
+Likelihood estimate after epoch 25: 315529.641973
+Likelihood estimate after epoch 26: 319154.364898
+Likelihood estimate after epoch 27: 322639.374934
+Likelihood estimate after epoch 28: 325994.156698
+Likelihood estimate after epoch 29: 329227.281687
+Likelihood estimate after epoch 30: 332346.519417
+Likelihood estimate after epoch 31: 335358.932567
+Likelihood estimate after epoch 32: 338270.958751
+Likelihood estimate after epoch 33: 341088.481045
+Likelihood estimate after epoch 34: 343816.889041
+Likelihood estimate after epoch 35: 346461.131876
+Likelihood estimate after epoch 36: 349025.764443
+Likelihood estimate after epoch 37: 351514.987776
+Likelihood estimate after epoch 38: 353932.684473
+Likelihood estimate after epoch 39: 356282.449837
+Likelihood estimate after epoch 40: 358567.619336
+Likelihood estimate after epoch 41: 360791.292896
+Likelihood estimate after epoch 42: 362956.356426
+Likelihood estimate after epoch 43: 365065.500967
+Likelihood estimate after epoch 44: 367121.239745
+Likelihood estimate after epoch 45: 369125.923412
+Likelihood estimate after epoch 46: 371081.753693
+Likelihood estimate after epoch 47: 372990.795626
+Likelihood estimate after epoch 48: 374854.988581
+Likelihood estimate after epoch 49: 376676.156189
+Likelihood estimate after epoch 50: 378456.015303
+Likelihood estimate after epoch 51: 380196.184122
+Likelihood estimate after epoch 52: 381898.189543
+Likelihood estimate after epoch 53: 383563.473851
+Likelihood estimate after epoch 54: 385193.400803
+Likelihood estimate after epoch 55: 386789.261175
+Likelihood estimate after epoch 56: 388352.277828
+Likelihood estimate after epoch 57: 389883.610346
+Likelihood estimate after epoch 58: 391384.359278
+Likelihood estimate after epoch 59: 392855.570039
+Likelihood estimate after epoch 60: 394298.236489
+Likelihood estimate after epoch 61: 395713.304229
+Likelihood estimate after epoch 62: 397101.673639
+Likelihood estimate after epoch 63: 398464.202681
+Likelihood estimate after epoch 64: 399801.709489
+Likelihood estimate after epoch 65: 401114.974768
+Likelihood estimate after epoch 66: 402404.744009
+Likelihood estimate after epoch 67: 403671.729553
+Likelihood estimate after epoch 68: 404916.612500
+Likelihood estimate after epoch 69: 406140.044489
+Likelihood estimate after epoch 70: 407342.649350
+Likelihood estimate after epoch 71: 408525.024645
+Likelihood estimate after epoch 72: 409687.743104
+Likelihood estimate after epoch 73: 410831.353970
+Likelihood estimate after epoch 74: 411956.384247
+Likelihood estimate after epoch 75: 413063.339874
+Likelihood estimate after epoch 76: 414152.706823
+Likelihood estimate after epoch 77: 415224.952126
+Likelihood estimate after epoch 78: 416280.524838
+Likelihood estimate after epoch 79: 417319.856940
+Likelihood estimate after epoch 80: 418343.364190
+Likelihood estimate after epoch 81: 419351.446923
+Likelihood estimate after epoch 82: 420344.490796
+Likelihood estimate after epoch 83: 421322.867501
+Likelihood estimate after epoch 84: 422286.935426
+Likelihood estimate after epoch 85: 423237.040283
+Likelihood estimate after epoch 86: 424173.515701
+Likelihood estimate after epoch 87: 425096.683784
+Likelihood estimate after epoch 88: 426006.855637
+Likelihood estimate after epoch 89: 426904.331867
+Likelihood estimate after epoch 90: 427789.403049
+Likelihood estimate after epoch 91: 428662.350175
+Likelihood estimate after epoch 92: 429523.445078
+Likelihood estimate after epoch 93: 430372.950823
+Likelihood estimate after epoch 94: 431211.122094
+Likelihood estimate after epoch 95: 432038.205548
+Likelihood estimate after epoch 96: 432854.440156
+Likelihood estimate after epoch 97: 433660.057523
+Likelihood estimate after epoch 98: 434455.282199
+Likelihood estimate after epoch 99: 435240.331966
 
 
 checking predictions...
@@ -243,7 +243,7 @@ data 112 classified as: [[0]] -> correct
 data 113 classified as: [[0]] -> correct
 data 114 classified as: [[0]] -> correct
 data 115 classified as: [[0]] -> correct
-data 116 classified as: [[8]] -> WRONG!
+data 116 classified as: [[0]] -> correct
 data 117 classified as: [[0]] -> correct
 data 118 classified as: [[0]] -> correct
 data 119 classified as: [[0]] -> correct
@@ -480,7 +480,7 @@ data 349 classified as: [[0]] -> correct
 data 350 classified as: [[0]] -> correct
 data 351 classified as: [[0]] -> correct
 data 352 classified as: [[0]] -> correct
-data 353 classified as: [[6]] -> WRONG!
+data 353 classified as: [[0]] -> correct
 data 354 classified as: [[0]] -> correct
 data 355 classified as: [[0]] -> correct
 data 356 classified as: [[0]] -> correct
@@ -4873,7 +4873,7 @@ data 4742 classified as: [[7]] -> WRONG!
 data 4743 classified as: [[9]] -> WRONG!
 data 4744 classified as: [[0]] -> WRONG!
 data 4745 classified as: [[4]] -> correct
-data 4746 classified as: [[4]] -> correct
+data 4746 classified as: [[9]] -> WRONG!
 data 4747 classified as: [[9]] -> WRONG!
 data 4748 classified as: [[4]] -> correct
 data 4749 classified as: [[9]] -> WRONG!
@@ -5487,7 +5487,7 @@ data 5356 classified as: [[5]] -> correct
 data 5357 classified as: [[8]] -> WRONG!
 data 5358 classified as: [[5]] -> correct
 data 5359 classified as: [[5]] -> correct
-data 5360 classified as: [[5]] -> correct
+data 5360 classified as: [[6]] -> WRONG!
 data 5361 classified as: [[5]] -> correct
 data 5362 classified as: [[5]] -> correct
 data 5363 classified as: [[5]] -> correct
@@ -5729,7 +5729,7 @@ data 5598 classified as: [[8]] -> WRONG!
 data 5599 classified as: [[5]] -> correct
 data 5600 classified as: [[5]] -> correct
 data 5601 classified as: [[5]] -> correct
-data 5602 classified as: [[5]] -> correct
+data 5602 classified as: [[8]] -> WRONG!
 data 5603 classified as: [[5]] -> correct
 data 5604 classified as: [[5]] -> correct
 data 5605 classified as: [[5]] -> correct
@@ -8850,7 +8850,7 @@ data 8719 classified as: [[8]] -> correct
 data 8720 classified as: [[8]] -> correct
 data 8721 classified as: [[8]] -> correct
 data 8722 classified as: [[8]] -> correct
-data 8723 classified as: [[8]] -> correct
+data 8723 classified as: [[3]] -> WRONG!
 data 8724 classified as: [[8]] -> correct
 data 8725 classified as: [[8]] -> correct
 data 8726 classified as: [[8]] -> correct
@@ -9307,7 +9307,7 @@ data 9176 classified as: [[9]] -> correct
 data 9177 classified as: [[4]] -> WRONG!
 data 9178 classified as: [[9]] -> correct
 data 9179 classified as: [[9]] -> correct
-data 9180 classified as: [[8]] -> WRONG!
+data 9180 classified as: [[5]] -> WRONG!
 data 9181 classified as: [[9]] -> correct
 data 9182 classified as: [[9]] -> correct
 data 9183 classified as: [[9]] -> correct
@@ -9638,7 +9638,7 @@ data 9507 classified as: [[9]] -> correct
 data 9508 classified as: [[9]] -> correct
 data 9509 classified as: [[9]] -> correct
 data 9510 classified as: [[9]] -> correct
-data 9511 classified as: [[8]] -> WRONG!
+data 9511 classified as: [[4]] -> WRONG!
 data 9512 classified as: [[9]] -> correct
 data 9513 classified as: [[9]] -> correct
 data 9514 classified as: [[9]] -> correct
@@ -10129,5 +10129,5 @@ data 9998 classified as: [[9]] -> correct
 data 9999 classified as: [[9]] -> correct
 
 
-accuracy: 91.03999999999999 %
-number of wrong classifications: 896 out of 10000 images!
+accuracy: 91.02 %
+number of wrong classifications: 898 out of 10000 images!

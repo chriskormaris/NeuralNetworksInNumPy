@@ -171,7 +171,7 @@ def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
         iterations = int(np.ceil(num_examples / NNParams.batch_size))
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
-            end_index = int(i * NNParams.batch_size + NNParams.batch_size - 1)
+            end_index = int(i * NNParams.batch_size + NNParams.batch_size)
             W1, W2 = grad_ascent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
             s = s + likelihood(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
 

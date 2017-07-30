@@ -172,7 +172,7 @@ def train(X, y, epochs=50, tol=1e-6, print_loss=False):
         iterations = int(np.ceil(num_examples / NNParams.batch_size))
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
-            end_index = int(i * NNParams.batch_size + NNParams.batch_size - 1)
+            end_index = int(i * NNParams.batch_size + NNParams.batch_size)
             W1, W2 = grad_descent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
             s = s + loss_function(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
 
