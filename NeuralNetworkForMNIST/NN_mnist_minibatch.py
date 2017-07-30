@@ -68,6 +68,12 @@ def read_labels(path, testOrTrainFile):
     return y
 
 
+# concat ones column vector as the first column of the matrix (adds bias term)
+def concat_ones_vector(x):
+    ones_vector = np.ones((x.shape[0], 1))
+    return np.concatenate((ones_vector, x), axis=1)
+
+
 # activation function #1
 def h1(x):
     return np.log(1 + np.exp(x))
@@ -96,12 +102,6 @@ def sigmoid(x):
 def softmax(x):
     #return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
     return np.divide(np.exp(x), np.sum(np.exp(x), axis=1))
-
-
-# concat ones column vector as the first column of the matrix (adds bias term)
-def concat_ones_vector(x):
-    ones_vector = np.ones((x.shape[0], 1))
-    return np.concatenate((ones_vector, x), axis=1)
 
 
 # Forward propagation
