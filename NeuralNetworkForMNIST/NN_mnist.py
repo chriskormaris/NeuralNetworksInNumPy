@@ -56,6 +56,12 @@ def read_data(path, testOrTrainFile):
     return X
 
 
+# concat ones column vector as the first column of the matrix (adds bias term)
+def concat_ones_vector(x):
+    ones_vector = np.ones((x.shape[0], 1))
+    return np.concatenate((ones_vector, x), axis=1)
+
+
 def read_labels(path, testOrTrainFile):
     text_file = open(path + testOrTrainFile + ".txt", "r")
     lines = text_file.readlines()
@@ -73,12 +79,6 @@ def tanh_output_to_derivative(output):
 
 def softmax(x):
     return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
-
-
-# concat ones column vector as the first column of the matrix (adds bias term)
-def concat_ones_vector(x):
-    ones_vector = np.ones((x.shape[0], 1))
-    return np.concatenate((ones_vector, x), axis=1)
 
 
 # Forward propagation

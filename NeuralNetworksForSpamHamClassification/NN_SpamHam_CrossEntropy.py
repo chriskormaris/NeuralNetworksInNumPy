@@ -98,6 +98,12 @@ def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTes
     return X, y
 
 
+# concat ones column vector as the first column of the matrix
+def concat_ones_vector(x):
+    ones_vector = np.ones((x.shape[0], 1))
+    return np.concatenate((ones_vector, x), axis=1)
+
+
 def sigmoid(x):
     output = 1 / (1 + np.exp(-x))
     return np.matrix(output)
@@ -110,12 +116,6 @@ def sigmoid_output_to_derivative(output):
 def softmax(x):
     output = np.exp(x) / np.sum(np.exp(x), axis=1)
     return np.matrix(output)
-
-
-# concat ones column vector as the first column of the matrix
-def concat_ones_vector(x):
-    ones_vector = np.ones((x.shape[0], 1))
-    return np.concatenate((ones_vector, x), axis=1)
 
 
 # Forward propagation
