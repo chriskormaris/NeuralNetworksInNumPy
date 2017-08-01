@@ -50,9 +50,9 @@ def read_data(path, testOrTrainFile):
         for j in range(NNParams.num_input_layers):
             if j == NNParams.num_input_layers-1:
                 tokens[j] = tokens[j].replace("\n", "")
-            X[i][j] = np.float(tokens[j])
+            X[i][j] = np.int(tokens[j])
 
-    X = np.array(X).astype(np.float)  # convert classification parameter to the appropriate data type
+    X = np.array(X)  # convert classification parameter to the appropriate data type
     return X
 
 
@@ -63,7 +63,7 @@ def read_labels(path, testOrTrainFile):
 
     digit = np.int(re.sub('[^0-9]', '', testOrTrainFile))
     y = [digit] * len(lines)
-    y = np.array(y).astype(np.int)  # convert classification parameter to the appropriate data type
+    y = np.array(y)  # convert classification parameter to the appropriate data type
     return y
 
 
