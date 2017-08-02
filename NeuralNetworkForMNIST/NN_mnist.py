@@ -62,17 +62,6 @@ def concat_ones_vector(x):
     return np.concatenate((ones_vector, x), axis=1)
 
 
-def read_labels(path, testOrTrainFile):
-    text_file = open(path + testOrTrainFile + ".txt", "r")
-    lines = text_file.readlines()
-    text_file.close()
-
-    digit = np.int(re.sub('[^0-9]', '', testOrTrainFile))
-    y = [digit] * len(lines)
-    y = np.array(y)  # convert classification parameter to the appropriate data type
-    return y
-
-
 def tanh_output_to_derivative(output):
     return 1 - np.square(output)
 
@@ -182,16 +171,20 @@ def grad_ascent(X, t, W1, W2):
 mnist_dir = "./mnisttxt/"
 
 print("Reading TRAIN files...")
-X_train = np.array  # 2d array
-y_train = np.array  # 1d array
-for i in range(10):
+# read train images for digits 0,1, 2 and 3
+X_train = np.matrix
+y_train = np.matrix
+for i in range(NNParams.num_output_layers):
     print("Reading " + "'train" + str(i) + ".txt'")
-    if i == 0:  # read the first file
-        X_train = read_data(mnist_dir, 'train' + str(i))
-        y_train = read_labels(mnist_dir, 'train' + str(i))
+    X_train_class_i = read_data(mnist_dir, 'train' + str(i))
+    N_train_i = X_train_class_i.shape[0]
+    y_train_class_i = np.repeat(i, N_train_i, axis=0)
+    if i == 0:
+        X_train = X_train_class_i
+        y_train = y_train_class_i
     else:
-        X_train = np.concatenate((X_train, read_data(mnist_dir, 'train' + str(i))), axis=0)
-        y_train = np.concatenate((y_train, read_labels(mnist_dir, 'train' + str(i))), axis=0)
+        X_train = np.concatenate((X_train, X_train_class_i), axis=0)
+        y_train = np.concatenate((y_train, y_train_class_i), axis=0)
 
 '''
 print("\n Xtrain:")
@@ -203,19 +196,23 @@ print(df)
 print("ytrain: " + str(y_train))
 '''
 
-print("\n")
+print('\n')
 
 print("Reading TEST files...")
-X_test = np.array  # 2d array
-y_test_true = np.array  # 1d array
-for i in range(10):
+# read test images for digits 0,1, 2 and 3
+X_test = np.matrix
+y_test_true = np.matrix
+for i in range(NNParams.num_output_layers):
     print("Reading " + "'test" + str(i) + ".txt'")
-    if i == 0:  # read the first file
-        X_test = read_data(mnist_dir, 'test' + str(i))
-        y_test_true = read_labels(mnist_dir, 'test' + str(i))
+    X_test_class_i = read_data(mnist_dir, 'test' + str(i))
+    N_test_i = X_test_class_i.shape[0]
+    y_test_true_class_i = np.repeat(i, N_test_i, axis=0)
+    if i == 0:
+        X_test = X_test_class_i
+        y_test_true = y_test_true_class_i
     else:
-        X_test = np.concatenate((X_test, read_data(mnist_dir, 'test' + str(i))), axis=0)
-        y_test_true = np.concatenate((y_test_true, read_labels(mnist_dir, 'test' + str(i))), axis=0)
+        X_test = np.concatenate((X_test, X_test_class_i), axis=0)
+        y_test_true = np.concatenate((y_test_true, y_test_true_class_i), axis=0)
 
 '''
 print("\n Xtest:")
