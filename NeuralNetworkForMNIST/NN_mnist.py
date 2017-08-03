@@ -52,7 +52,7 @@ def read_data(path, testOrTrainFile):
                 tokens[j] = tokens[j].replace("\n", "")
             X[i][j] = np.int(tokens[j])
 
-    X = np.array(X)  # convert classification parameter to the appropriate data type
+    X = np.matrix(X)  # convert classification parameter to the appropriate data type
     return X
 
 
@@ -172,8 +172,8 @@ mnist_dir = "./mnisttxt/"
 
 print("Reading TRAIN files...")
 # read train images for digits 0,1, 2 and 3
-X_train = np.matrix
-y_train = np.matrix
+X_train = np.matrix  # 2D matrix
+y_train = np.matrix  # 1D matrix
 for i in range(NNParams.num_output_layers):
     print("Reading " + "'train" + str(i) + ".txt'")
     X_train_class_i = read_data(mnist_dir, 'train' + str(i))
@@ -200,8 +200,8 @@ print('\n')
 
 print("Reading TEST files...")
 # read test images for digits 0,1, 2 and 3
-X_test = np.matrix
-y_test_true = np.matrix
+X_test = np.matrix  # 2D matrix
+y_test_true = np.matrix  # 1D matrix
 for i in range(NNParams.num_output_layers):
     print("Reading " + "'test" + str(i) + ".txt'")
     X_test_class_i = read_data(mnist_dir, 'test' + str(i))
