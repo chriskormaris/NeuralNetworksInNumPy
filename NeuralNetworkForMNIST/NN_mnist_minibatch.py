@@ -237,7 +237,7 @@ print(df)
 print("ytrain: " + str(y_train))
 '''
 
-print('\n')
+print()
 
 print("Reading TEST files...")
 # read test images for digits 0,1, 2 and 3
@@ -296,7 +296,7 @@ for i in range(len(predicted)):
         print("data " + str(i) + ' classified as: ' + str(predicted[i]) + ' -> WRONG!')
         wrong_counter = wrong_counter + 1
 
-print('\n')
+print()
 
 # Accuracy
 

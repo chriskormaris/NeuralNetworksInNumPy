@@ -10,7 +10,6 @@ Reading 'train7.txt'
 Reading 'train8.txt'
 Reading 'train9.txt'
 
-
 Reading TEST files...
 Reading 'test0.txt'
 Reading 'test1.txt'
@@ -22,7 +21,6 @@ Reading 'test6.txt'
 Reading 'test7.txt'
 Reading 'test8.txt'
 Reading 'test9.txt'
-
 
 Likelihood estimate after epoch 0: 21885.975645
 Likelihood estimate after epoch 1: 40003.508799
@@ -74,7 +72,6 @@ Likelihood estimate after epoch 46: 266988.253281
 Likelihood estimate after epoch 47: 268168.734204
 Likelihood estimate after epoch 48: 269308.490547
 Likelihood estimate after epoch 49: 270409.372478
-
 
 checking predictions...
 data 0 classified as: [[0]] -> correct
@@ -10077,7 +10074,6 @@ data 9996 classified as: [[9]] -> correct
 data 9997 classified as: [[9]] -> correct
 data 9998 classified as: [[9]] -> correct
 data 9999 classified as: [[9]] -> correct
-
 
 accuracy: 88.19 %
 number of wrong classifications: 1181 out of 10000 images!

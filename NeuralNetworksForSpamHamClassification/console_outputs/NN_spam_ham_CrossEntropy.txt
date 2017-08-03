@@ -8513,8 +8513,6 @@ Reading train file '5999.2005-07-30.BG.spam.txt'...
 Reading train file '6000.2005-07-31.BG.spam.txt'...
 
 
-
-
 Reading TEST files...
 Reading test file '0001.2000-06-06.lokay.ham.txt'...
 Reading test file '0004.2004-08-01.BG.spam.txt'...
@@ -11093,8 +11091,6 @@ Reading test file '5988.2002-03-25.lokay.ham.txt'...
 Reading test file '5990.2002-03-25.lokay.ham.txt'...
 
 
-
-
 Cross entropy loss after iteration 0: 37988.282985
 Cross entropy loss after iteration 1000: 57.142313
 Cross entropy loss after iteration 2000: 46.837702
@@ -11115,7 +11111,6 @@ Cross entropy loss after iteration 16000: 26.013107
 Cross entropy loss after iteration 17000: 25.876425
 Cross entropy loss after iteration 18000: 25.755335
 Cross entropy loss after iteration 19000: 25.645529
-
 
 checking predictions...
 data0 classified as: HAM -> correct
@@ -13694,14 +13689,11 @@ data2572 classified as: HAM -> correct
 data2573 classified as: HAM -> correct
 data2574 classified as: HAM -> correct
 
-
 accuracy: 94.40776699029126 %
-
 
 number of wrong classifications: 144 out of 2575 files
 number of wrong spam classifications: 14 out of 1307 spam files
 number of wrong ham classifications: 130 out of 1268 ham files
-
 
 precision for spam files: 0.9086437104708363
 precision for ham files: 0.9878472222222222

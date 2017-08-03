@@ -8513,8 +8513,6 @@ Reading train file '5999.2005-07-30.BG.spam.txt'...
 Reading train file '6000.2005-07-31.BG.spam.txt'...
 
 
-
-
 Reading TEST files...
 Reading test file '0001.2000-06-06.lokay.ham.txt'...
 Reading test file '0004.2004-08-01.BG.spam.txt'...
@@ -11518,8 +11516,6 @@ Reading test file '5992.2002-03-25.lokay.ham.txt'...
 Reading test file '5996.2002-03-25.lokay.ham.txt'...
 
 
-
-
 Mean squared error loss after epoch 0: 0.084687
 Mean squared error loss after epoch 1: 0.037291
 Mean squared error loss after epoch 2: 0.025994
@@ -11570,7 +11566,6 @@ Mean squared error loss after epoch 46: 0.003553
 Mean squared error loss after epoch 47: 0.003493
 Mean squared error loss after epoch 48: 0.003435
 Mean squared error loss after epoch 49: 0.003380
-
 
 checking predictions...
 data0 classified as: HAM -> correct
@@ -14574,14 +14569,11 @@ data2997 classified as: HAM -> correct
 data2998 classified as: HAM -> correct
 data2999 classified as: HAM -> correct
 
-
 accuracy: 95.89999999999999 %
-
 
 number of wrong classifications: 123 out of 3000 files
 number of wrong spam classifications: 17 out of 1500 spam files
 number of wrong ham classifications: 106 out of 1500 ham files
-
 
 precision for spam files: 0.933291378225299
 precision for ham files: 0.9879518072289156

@@ -285,7 +285,7 @@ for i in range(len(predicted)):
         print("data" + str(i) + ' classified as: HAM -> correct')
         ham_counter = ham_counter + 1
 
-print('\n')
+print()
 
 # Accuracy
 

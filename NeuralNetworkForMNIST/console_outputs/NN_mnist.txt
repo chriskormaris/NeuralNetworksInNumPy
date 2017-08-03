@@ -10,7 +10,6 @@ Reading 'train7.txt'
 Reading 'train8.txt'
 Reading 'train9.txt'
 
-
 Reading TEST files...
 Reading 'test0.txt'
 Reading 'test1.txt'
@@ -22,7 +21,6 @@ Reading 'test6.txt'
 Reading 'test7.txt'
 Reading 'test8.txt'
 Reading 'test9.txt'
-
 
 Likelihood estimate after iteration 0: 86159.524648
 Likelihood estimate after iteration 1: 106522.277960
@@ -524,7 +522,6 @@ Likelihood estimate after iteration 496: 538774.082728
 Likelihood estimate after iteration 497: 538894.095089
 Likelihood estimate after iteration 498: 539013.902538
 Likelihood estimate after iteration 499: 539133.506106
-
 
 checking predictions...
 data 0 classified as: 0 -> correct
@@ -10527,7 +10524,6 @@ data 9996 classified as: 9 -> correct
 data 9997 classified as: 9 -> correct
 data 9998 classified as: 9 -> correct
 data 9999 classified as: 9 -> correct
-
 
 accuracy: 94.69999999999999 %
 number of wrong classifications: 530 out of 10000 images!
