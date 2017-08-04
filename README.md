@@ -5,7 +5,6 @@ Made by Chris Kormaris
 Programming Language: Python
 
 
-
 ## NeuralNetworkForMNIST
 
 Unzip the MNIST data from the file "mnisttxt.zip", in the same directory where the Python files are.
