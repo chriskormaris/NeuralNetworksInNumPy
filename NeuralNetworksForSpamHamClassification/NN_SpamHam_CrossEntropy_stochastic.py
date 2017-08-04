@@ -71,15 +71,7 @@ def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTes
 
         text = read_file(files_dir + files[i])
 
-        text_tokens = re.findall(r"[\w']+", text)
-
-        # remove digits, special characters and convert to lowercase
-        for k in range(len(text_tokens)):
-            text_tokens[k] = text_tokens[k].lower()
-            text_tokens[k] = text_tokens[k].replace("_", "")
-            text_tokens[k] = re.sub("[0-9]+", "", text_tokens[k])
-
-        text_tokens = set(text_tokens)  # remove duplicate tokens
+        text_tokens = getTokens(text)
 
         # the feature vector contains features with Boolean values
         feature_vector = [0] * len(feature_tokens)
@@ -97,6 +89,19 @@ def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTes
     y = np.array(labels)
 
     return X, y
+
+
+# extracts tokens from the given text
+def getTokens(text):
+    text_tokens = re.findall(r"[\w']+", text)
+    # remove digits, special characters and convert to lowercase
+    for k in range(len(text_tokens)):
+        text_tokens[k] = text_tokens[k].lower()
+        text_tokens[k] = text_tokens[k].replace("_", "")
+        text_tokens[k] = re.sub("[0-9]+", "", text_tokens[k])
+    text_tokens = set(text_tokens)  # remove duplicate tokens
+    
+    return text_tokens
 
 
 # concat ones column vector as the first column of the matrix
