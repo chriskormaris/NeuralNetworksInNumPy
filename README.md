@@ -8,9 +8,17 @@ Programming Language: Python
 ## NeuralNetworkForMNIST
 
 Unzip the MNIST data from the file "mnisttxt.zip", in the same directory where the Python files are.
-Then, run the Neural Network python code from the file "NN_mnist.py" as follows:
+Then, run the Neural Network that uses batch gradient descent, from the file "NN_mnist.py" as follows:
 ```python
 python NN_mnist.py
+```
+Alternatively, train the neural network using mini-batch gradient descent. The batch size can be changed from the code:
+```python
+python NN_mnist_minibatch.py
+```
+Alternatively, train the neural network using stochastic gradient descent:
+```python
+python NN_mnist_stochastic.py
 ```
 
 Neural Network details
@@ -37,7 +45,9 @@ First, run the python file "FeatureSelectionUsingIG.py" to generate the output f
 ```python
 python FeatureSelectionUsingIG.py
 ```
-Then, run the Neural Network of your choice between "SpamHamNeuralNetworkSqErr.py" and "SpamHamNeuralNetworkCrossEntropy.py".
+Then, run the Neural Network of your choice between "NN_SpamHam_MSE.py" and "NN_SpamHam_CrossEntropy.py".
+You can alternatively train the neural network using mini-batch gradient descent. Run the files "NN_SpamHam_MSE_minibatch.py" or "NN_SpamHam_CrossEntropy_minibatch.py".
+You can alternatively train the neural network using stochastic gradient descent. Run the files "NN_SpamHam_MSE_stochastic.py" or "NN_SpamHam_CrossEntropy_stochastic.py".
 
 **Notes:**
 <ol>
