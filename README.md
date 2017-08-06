@@ -5,7 +5,7 @@ Made by Chris Kormaris
 Programming Language: Python
 
 
-## NeuralNetworkForMNIST
+## Neural Network for Digit Classification of MNIST Dataset
 
 Unzip the MNIST data from the file "mnisttxt.zip", in the same directory where the Python files are.
 Then, run the Neural Network that uses batch gradient ascent, from the file "NN_mnist.py" as follows:
@@ -33,7 +33,7 @@ Bias terms are used.
 The precision that was achieved: **94.7 %**
 
 
-## NeuralNetworksSpamHamClassification
+## Neural Networks for Spam-Ham Classification
 
 Unzip the files "TRAIN.zip" and "TEST.zip", in the same directory where the Python files are.
 First, run the python file "FeatureSelectionUsingIG.py" to generate the output file
