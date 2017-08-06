@@ -16,12 +16,8 @@ Alternatively, train the neural network using mini-batch gradient descent. The b
 ```python
 python NN_mnist_minibatch.py
 ```
-Alternatively, train the neural network using stochastic gradient descent:
-```python
-python NN_mnist_stochastic.py
-```
 
-Neural Network details
+#### Neural Network details
 File: "NN_mnist.py"
 
 1st Activation Function: sigmoid
