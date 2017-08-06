@@ -12,7 +12,7 @@ Then, run the Neural Network that uses batch gradient descent, from the file "NN
 ```python
 python NN_mnist.py
 ```
-Alternatively, train the neural network using mini-batch gradient descent. The batch size can be changed from the code:
+Alternatively, train the neural network using mini-batch gradient descent. The batch size can be changed from within the code:
 ```python
 python NN_mnist_minibatch.py
 ```
@@ -42,7 +42,7 @@ First, run the python file "FeatureSelectionUsingIG.py" to generate the output f
 python FeatureSelectionUsingIG.py
 ```
 Then, run the Neural Network of your choice between "NN_SpamHam_MSE.py" and "NN_SpamHam_CrossEntropy.py".
-You can alternatively train the neural network using mini-batch gradient descent. Run the files "NN_SpamHam_MSE_minibatch.py" or "NN_SpamHam_CrossEntropy_minibatch.py".
+You can alternatively train the neural network using mini-batch gradient descent. The batch size can be changed from within the code. Run the files "NN_SpamHam_MSE_minibatch.py" or "NN_SpamHam_CrossEntropy_minibatch.py".
 You can alternatively train the neural network using stochastic gradient descent. Run the files "NN_SpamHam_MSE_stochastic.py" or "NN_SpamHam_CrossEntropy_stochastic.py".
 
 **Notes:**
