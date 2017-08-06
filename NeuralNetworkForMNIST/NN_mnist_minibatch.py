@@ -31,7 +31,7 @@ class NNParams:
     # Gradient ascent parameters
     eta = 0.01  # the learning rate for gradient ascent
     reg_lambda = 0.01  # the regularization parameter
-    batch_size = 500
+    batch_size = 1000
 
 
 ###############
@@ -279,7 +279,7 @@ X_test = X_test / 255
 NNParams.eta = 0.5 / len(X_train)
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, epochs=100, tol=1e-6, print_estimate=True)
+W1, W2 = train(X_train, y_train, epochs=150, tol=1e-6, print_estimate=True)
 
 # test the Neural Network Model
 predicted = test(W1, W2, X_test)
