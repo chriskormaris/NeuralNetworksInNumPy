@@ -30,7 +30,7 @@ Train algorithm: Gradient Ascent
 
 Bias terms are used.
 
-The precision that was achieved: 94.7 %
+The precision that was achieved: **94.7 %**
 
 
 ## NeuralNetworksSpamHamClassification
@@ -73,7 +73,7 @@ the tanh activation function in the first input layer
 and the sigmoid activation function in the last output layer.
 In the last node of the network the Mean Squared Error Loss formula (MSE loss function) is used.
 
-The precision that was achieved after training with batch gradient descent was: 94.33%.
+The precision that was achieved after training with batch gradient descent was: **94.33%**.
 
 ### Neural Network #2
 Run:
@@ -96,4 +96,4 @@ the sigmoid activation function in the first input layer
 and softmax sigmoid activation function in the last output layer.
 In the last node of the network the Cross Entropy Loss formula is used.
 
-The precision that was achieved after training with batch gradient descent was: 93.75%.
+The precision that was achieved after training with batch gradient descent was: **93.75%**.
