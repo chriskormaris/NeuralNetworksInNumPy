@@ -4,8 +4,7 @@ Made by Chris Kormaris
 
 Programming Language: Python
 
-The Neural Networks below are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised because during training we use labeled data.
-
+The Neural Networks below are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised, because during training, because during training labeled data are used.
 
 ## Neural Network for Digit Classification of MNIST Dataset
 
@@ -33,7 +32,6 @@ Train algorithm: Gradient Ascent
 Bias terms are used.
 
 The precision that was achieved: **94.7 %**
-
 
 ## Neural Networks for Spam-Ham Classification
 
