@@ -17,6 +17,7 @@ Alternatively, train the neural network using mini-batch gradient ascent. The ba
 ```python
 python NN_mnist_minibatch.py
 ```
+Implementating the neural network using stochastic gradient descent would be very slow, because of the big size of MNIST dataset and so that kind of implementation is omitted.
 
 #### Neural Network details
 File: "NN_mnist.py"
