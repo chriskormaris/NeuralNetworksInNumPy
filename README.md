@@ -4,7 +4,7 @@ Made by Chris Kormaris
 
 Programming Language: Python
 
-The Neural Networks below are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised, because during training, because during training labeled data are used.
+The Neural Networks implemented here are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised, because during training labeled data are used.
 
 ## Neural Network for Digit Classification of MNIST Dataset
 
