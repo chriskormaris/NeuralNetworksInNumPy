@@ -57,7 +57,7 @@ def read_data(path, testOrTrainFile):
     return X
 
 
-# concat ones column vector as the first column of the matrix (adds bias term)
+# concat ones column vector as the first column of the matrix (aka bias term)
 def concat_ones_vector(x):
     ones_vector = np.ones((x.shape[0], 1))
     return np.concatenate((ones_vector, x), axis=1)
