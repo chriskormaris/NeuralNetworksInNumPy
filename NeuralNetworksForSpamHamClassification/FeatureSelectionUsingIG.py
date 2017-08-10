@@ -158,7 +158,7 @@ feature_ham_cond_probability = dict()
 IG = dict()
 
 # First calculate the entropy of the dataset
-H_C = - ( spam_label_probability * math.log(spam_label_probability) + ham_label_probability * math.log(ham_label_probability) )
+H_C = - (spam_label_probability * math.log(spam_label_probability) + ham_label_probability * math.log(ham_label_probability))
 
 print('entropy of the dataset: H(C) = ' + str(H_C))
 
