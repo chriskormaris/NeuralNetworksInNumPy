@@ -89,7 +89,6 @@ def sigmoid(x):
 
 # activation function for the 2nd layer
 def softmax(x):
-    #return np.divide(np.exp(x), np.sum(np.exp(x), axis=1, keepdims=True))
     return np.divide(np.exp(x), np.sum(np.exp(x), axis=1))
 
 
@@ -123,7 +122,7 @@ def likelihood(X, t, W1, W2):
     _, _, _, s2, _ = forward(X, W1, W2)
 
     # Calculating the mle
-    mle = np.sum(np.sum(np.multiply(t, s2)))  # NxK .* NxK
+    mle = np.sum(np.multiply(t, s2))  # NxK .* NxK
 
     # Add regularization term to likelihood (optional)
     mle -= NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
