@@ -4,7 +4,7 @@ Made by Chris Kormaris
 
 Programming Language: Python
 
-The Neural Networks implemented here are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised, because during training labeled data are used.
+The Neural Networks implemented here are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised, because during training, labeled data are used.
 
 
 Slightly based on code from this repository: <a href="https://github.com/dennybritz/nn-from-scratch">Implementing a Neural Network from Scratch in Python</a>
