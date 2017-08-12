@@ -6,6 +6,9 @@ Programming Language: Python
 
 The Neural Networks implemented here are CNNs (Convolutional Neural Networks) that classify given data to multiple categories. The learning method is supervised, because during training labeled data are used.
 
+
+Slightly based on code from this repository: <a href="https://github.com/dennybritz/nn-from-scratch">Implementing a Neural Network from Scratch in Python</a>
+
 ## Neural Network for Digit Classification of MNIST Dataset
 
 Unzip the MNIST data from the file "mnisttxt.zip", in the same directory where the Python files are.
