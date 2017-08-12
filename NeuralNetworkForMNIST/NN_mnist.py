@@ -86,10 +86,10 @@ def likelihood(X, t, W1, W2):
     num_examples = len(X)  # N: training set size
 
     # Forward propagation to calculate our predictions
-    _, _, _, s2, _ = forward(X, W1, W2)
+    _, _, _, _, o2 = forward(X, W1, W2)
 
     # Calculating the mle
-    mle = np.sum(np.multiply(t, s2))  # NxK .* NxK
+    mle = np.sum(np.multiply(t, np.log(o2)))  # NxK .* NxK
 
     # Add regularization term to likelihood (optional)
     mle -= NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
