@@ -1,7 +1,7 @@
 # 1st Activation Function: tanh
 # 2nd Activation Function: softmax
 # Maximum Likelihood Estimate Function: Cross Entropy Function
-# train algorithm: gradient ascent
+# Train Algorithm: Batch Gradient Ascent
 # Bias terms are used.
 
 # force the result of divisions to be float numbers

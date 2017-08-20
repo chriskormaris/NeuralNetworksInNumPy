@@ -2,6 +2,8 @@
 # 1st Activation Function: tanh
 # 2nd Activation Function: sigmoid
 # Loss Function: Mean Squared Error Loss
+# Train Algorithm: Stochastic Gradient Descent
+# Bias terms are used.
 
 # force the result of divisions to be float numbers
 from __future__ import division

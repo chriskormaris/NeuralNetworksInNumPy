@@ -2,6 +2,8 @@
 # 1st Activation Function: sigmoid
 # 2nd Activation Function: softmax
 # Loss Function: Cross Entropy Loss
+# Train Algorithm: Mini-batch Gradient Descent
+# Bias terms are used.
 
 # force the result of divisions to be float numbers
 from __future__ import division
