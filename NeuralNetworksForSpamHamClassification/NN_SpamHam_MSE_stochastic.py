@@ -1,4 +1,3 @@
-# This is the same NEURAL NETWORK as in Exercise 9 (SLIDE 31), but with the rightmost SIGMOID.  #
 # 1st Activation Function: tanh
 # 2nd Activation Function: sigmoid
 # Loss Function: Mean Squared Error Loss
@@ -102,11 +101,11 @@ def getTokens(text):
         text_tokens[k] = text_tokens[k].replace("_", "")
         text_tokens[k] = re.sub("[0-9]+", "", text_tokens[k])
     text_tokens = set(text_tokens)  # remove duplicate tokens
-    
+
     return text_tokens
 
 
-# concat ones column vector as the first column of the matrix (aka bias term)
+# concat ones column vector as the first column of the matrix
 def concat_ones_vector(x):
     ones_vector = np.ones((x.shape[0], 1))
     return np.concatenate((ones_vector, x), axis=1)
@@ -157,17 +156,7 @@ def test(X, W1, W2):
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_loss: If True, print the loss.
-def train(X, y, epochs=50, tol=1e-6, print_loss=False):
-    t = np.zeros((y.shape[0], NNParams.num_output_layers))
-    t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
-    # Initialize the parameters to random values. We need to learn these.
-    np.random.seed(0)
-    W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(NNParams.num_input_layers)  # W1: MxD
-    W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(NNParams.num_hidden_layers)  # W2: KxM
-
-    # concat ones vector
-    W1 = concat_ones_vector(W1)  # W1: MxD+1
-    W2 = concat_ones_vector(W2)  # W2: KxM+1
+def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
     # Run Stochastic Gradient Descent
     num_examples = X.shape[0]
@@ -178,14 +167,14 @@ def train(X, y, epochs=50, tol=1e-6, print_loss=False):
         for i in range(num_examples):
             xi = np.matrix(X[i, :])
             ti = np.matrix(t[i, :])
-            W1, W2 = grad_descent(xi, ti, W1, W2)
+            W1, W2, _, _ = grad_descent(xi, ti, W1, W2)
             s = s + loss_function(xi, ti, W1, W2)
 
         # Optionally print the loss.
         if print_loss:
             print("Mean squared error loss after epoch %i: %f" % (e, loss_function(X, t, W1, W2)))
 
-        if np.abs(s - s_old) < tol:
+        if np.abs(s - s_old) <= tol:
             break
 
         s_old = s
@@ -218,7 +207,44 @@ def grad_descent(X, t, W1, W2):
     W1 = W1 - NNParams.eta * dW1
     W2 = W2 - NNParams.eta * dW2
 
-    return W1, W2
+    return W1, W2, dW1, dW2
+
+
+def gradcheck(X, t, W1, W2):
+    _, _, gradEw1, gradEw2 = grad_descent(X, t, W1, W2)
+    epsilon = 1e-6
+
+    # gradcheck for parameter W1
+    numgradEw1 = np.zeros(W1.shape)
+    for i in range(W1.shape[0]):
+        for j in range(W1.shape[1]):
+            W1tmp = W1
+            W1tmp[i, j] = W1[i, j] + epsilon
+            Ewplus = loss_function(X, t, W1tmp, W2)
+
+            W1tmp = W1
+            W1tmp[i, j] = W1[i, j] - epsilon
+            Ewminus = loss_function(X, t, W1tmp, W2)
+
+            numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+    diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
+    print('The maximum absolute norm for parameter W1, in the gradcheck is: ' + str(diff1))
+
+    # gradcheck for parameter W2
+    numgradEw2 = np.zeros(W2.shape)
+    for i in range(W2.shape[0]):
+        for j in range(W2.shape[1]):
+            W2tmp = W2
+            W2tmp[i, j] = W2[i, j] + epsilon
+            Ewplus = loss_function(X, t, W1, W2tmp)
+
+            W2tmp = W2
+            W2tmp[i, j] = W2[i, j] - epsilon
+            Ewminus = loss_function(X, t, W1, W2tmp)
+
+            numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+    diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
+    print('The maximum absolute norm for parameter W2, in the gradcheck is: ' + str(diff2))
 
 
 ###############
@@ -226,7 +252,7 @@ def grad_descent(X, t, W1, W2):
 # MAIN #
 
 train_dir = "TRAIN/"
-test_dir = "TEST/"
+train_dir = "TEST/"
 feature_dictionary_dir = "feature_dictionary.txt"
 
 # read feature dictionary from file
@@ -238,25 +264,49 @@ train_files = sorted([f for f in listdir(train_dir) if isfile(join(train_dir, f)
 train_labels = read_labels(train_files)
 X_train, y_train = get_classification_data(train_dir, train_files, train_labels, feature_tokens, 'train')
 
-print("\n")
+print()
 
 print("Reading TEST files...")
 test_files = sorted([f for f in listdir(test_dir) if isfile(join(test_dir, f))])
 test_labels = read_labels(test_files)
 X_test, y_test_true = get_classification_data(test_dir, test_files, test_labels, feature_tokens, 'test')
 
-print("\n")
+print()
+
+# normalize the data using mean normalization
+X_train = X_train - np.mean(X_train)
+X_test = X_test - np.mean(X_test)
 
 # concat ones vector
 X_train = concat_ones_vector(X_train)
 X_test = concat_ones_vector(X_test)
 
-# normalize the data using mean normalization
-X_train = X_train - np.mean(np.mean(X_train))
-X_test = X_test - np.mean(np.mean(X_test))
+# t: 1-hot matrix for the categories y_train
+t = np.zeros((y_train.shape[0], NNParams.num_output_layers))
+t[np.arange(y_train.shape[0]), y_train] = 1
+
+# Initialize the parameters to random values. We need to learn these.
+np.random.seed(0)
+W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
+    NNParams.num_input_layers)  # W1: MxD
+W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
+    NNParams.num_hidden_layers)  # W2: KxM
+
+# concat ones vector
+W1 = concat_ones_vector(W1)  # W1: MxD+1
+W2 = concat_ones_vector(W2)  # W2: KxM+1
+
+# Do a gradient check first
+# SKIP THIS PART FOR FASTER EXECUTION
+print('Running gradient check...')
+ch = np.random.permutation(X_train.shape[0])
+ch = ch[0:20]  # get the 20 first data
+gradcheck(X_train[ch, :], t[ch, :], W1, W2)
+
+print()
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, epochs=50, tol=1e-6, print_loss=True)
+W1, W2 = train(X_train, t, W1, W2, epochs=50, tol=1e-6, print_loss=True)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)
@@ -269,7 +319,7 @@ ham_counter = 0  # the number of ham files
 wrong_spam_counter = 0  # the number of spam files classified as ham
 wrong_ham_counter = 0  # the number of ham files classified as spam
 
-print("\n")
+print()
 print('checking predictions...')
 for i in range(len(predicted)):
     if predicted[i] == 1 and y_test_true[i] == 1:
@@ -295,7 +345,7 @@ print()
 
 accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
 print("accuracy: " + str(accuracy) + " %")
-print("\n")
+print()
 
 # Calculate Precision-Recall
 
@@ -303,7 +353,7 @@ print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + st
 print("number of wrong spam classifications: " + str(wrong_spam_counter) + ' out of ' + str(spam_counter) + ' spam files')
 print("number of wrong ham classifications: " + str(wrong_ham_counter) + ' out of ' + str(ham_counter) + ' ham files')
 
-print("\n")
+print()
 
 spam_precision = (spam_counter - wrong_spam_counter) / (spam_counter - wrong_spam_counter + wrong_ham_counter)
 print("precision for spam files: " + str(spam_precision))

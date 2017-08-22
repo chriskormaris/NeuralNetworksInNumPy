@@ -8,9 +8,8 @@
 from __future__ import division
 
 import numpy as np
-import re
-from pandas import DataFrame
-import pandas as pd
+#from pandas import DataFrame
+#import pandas as pd
 
 __author__ = 'c.kormaris'
 
@@ -18,8 +17,8 @@ __author__ = 'c.kormaris'
 np.seterr(all='ignore')
 
 # set options
-pd.set_option('display.width', 1000)
-pd.set_option('display.max_rows', 200)
+#pd.set_option('display.width', 1000)
+#pd.set_option('display.max_rows', 200)
 
 ###############
 
@@ -29,7 +28,7 @@ class NNParams:
     num_hidden_layers = 100  # M: number of nodes in the hidden layer
     num_output_layers = 10  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient ascent parameters
-    eta = 0.01  # the learning rate for gradient ascent; it is changed inside the main
+    eta = 0.1  # the learning rate for gradient ascent; it is changed inside the main
     reg_lambda = 0.01  # the regularization parameter
     batch_size = 1000
 
@@ -55,12 +54,6 @@ def read_data(path, testOrTrainFile):
 
     X = np.matrix(X)  # convert classification parameter to the appropriate data type
     return X
-
-
-# concat ones column vector as the first column of the matrix (aka bias term)
-def concat_ones_vector(x):
-    ones_vector = np.ones((x.shape[0], 1))
-    return np.concatenate((ones_vector, x), axis=1)
 
 
 # activation function #1
@@ -90,6 +83,12 @@ def sigmoid(x):
 # activation function for the 2nd layer
 def softmax(x):
     return np.divide(np.exp(x), np.sum(np.exp(x), axis=1))
+
+
+# concat ones column vector as the first column of the matrix (adds bias term)
+def concat_ones_vector(x):
+    ones_vector = np.ones((x.shape[0], 1))
+    return np.concatenate((ones_vector, x), axis=1)
 
 
 # Forward propagation
@@ -135,26 +134,14 @@ def likelihood(X, t, W1, W2):
     return mle
 
 
-def test(W1, W2, X):
+def test(X, W1, W2):
     # Forward propagation
     _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
 
 
 # Train using Mini-batch Gradient Ascent
-def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
-    t = np.zeros((y.shape[0], NNParams.num_output_layers))
-    t[np.arange(y.shape[0]), y] = 1  # t: 1-hot matrix for the categories y
-    # Initialize the parameters to random values. We need to learn these.
-    np.random.seed(0)
-    W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
-        NNParams.num_input_layers)  # W1: MxD
-    W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
-        NNParams.num_hidden_layers)  # W2: KxM
-
-    # concat ones vector
-    W1 = concat_ones_vector(W1)  # W1: MxD+1
-    W2 = concat_ones_vector(W2)  # W2: KxM+1
+def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False):
 
     # Run Mini-batch Gradient Ascent
     num_examples = X.shape[0]
@@ -166,7 +153,7 @@ def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
             end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            W1, W2 = grad_ascent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
+            W1, W2, _, _ = grad_ascent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
             s = s + likelihood(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
 
         # Optionally print the estimate.
@@ -177,7 +164,6 @@ def train(X, y, epochs=100, tol=1e-6, print_estimate=False):
             break
 
         s_old = s
-
 
     return W1, W2
 
@@ -207,7 +193,44 @@ def grad_ascent(X, t, W1, W2):
     W1 = W1 + NNParams.eta * dW1
     W2 = W2 + NNParams.eta * dW2
 
-    return W1, W2
+    return W1, W2, dW1, dW2
+
+
+def gradcheck(X, t, W1, W2):
+    _, _, gradEw1, gradEw2 = grad_ascent(X, t, W1, W2)
+    epsilon = 1e-6
+
+    # gradcheck for parameter W1
+    numgradEw1 = np.zeros(W1.shape)
+    for i in range(W1.shape[0]):
+        for j in range(W1.shape[1]):
+            W1tmp = W1
+            W1tmp[i, j] = W1[i, j] + epsilon
+            Ewplus = likelihood(X, t, W1tmp, W2)
+
+            W1tmp = W1
+            W1tmp[i, j] = W1[i, j] - epsilon
+            Ewminus = likelihood(X, t, W1tmp, W2)
+
+            numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+    diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
+    print('The maximum absolute norm for parameter W1, in the gradcheck is: ' + str(diff1))
+
+    # gradcheck for parameter W2
+    numgradEw2 = np.zeros(W2.shape)
+    for i in range(W2.shape[0]):
+        for j in range(W2.shape[1]):
+            W2tmp = W2
+            W2tmp[i, j] = W2[i, j] + epsilon
+            Ewplus = likelihood(X, t, W1, W2tmp)
+
+            W2tmp = W2
+            W2tmp[i, j] = W2[i, j] - epsilon
+            Ewminus = likelihood(X, t, W1, W2tmp)
+
+            numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+    diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
+    print('The maximum absolute norm for parameter W2, in the gradcheck is: ' + str(diff2))
 
 
 ###############
@@ -233,7 +256,8 @@ for i in range(NNParams.num_output_layers):
         y_train = np.concatenate((y_train, y_train_class_i), axis=0)
 
 '''
-print("\n Xtrain:")
+print()
+print("Xtrain:")
 df = DataFrame(X_train)
 df.index = range(X_train.shape[0])
 df.columns = range(X_train.shape[1])
@@ -261,7 +285,8 @@ for i in range(NNParams.num_output_layers):
         y_test_true = np.concatenate((y_test_true, y_test_true_class_i), axis=0)
 
 '''
-print("\n Xtest:")
+print()
+print("Xtest:")
 df = DataFrame(X_test)
 df.index = range(X_test.shape[0])
 df.columns = range(X_test.shape[1])
@@ -270,29 +295,55 @@ print(df)
 print("y_test_true: " + str(y_test_true))
 '''
 
-print("\n")
-
-# concat ones vector
-X_train = concat_ones_vector(X_train)
-X_test = concat_ones_vector(X_test)
+print()
 
 # normalize the data using range normalization
 X_train = X_train / 255
 X_test = X_test / 255
 
+# concat ones vector
+X_train = concat_ones_vector(X_train)
+X_test = concat_ones_vector(X_test)
+
+# construct t: 1-hot matrix for the categories y_train
+t = np.zeros((y_train.shape[0], NNParams.num_output_layers))
+t[np.arange(y_train.shape[0]), y_train] = 1
+
+# Initialize the parameters to random values. We need to learn these.
+np.random.seed(0)
+W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
+    NNParams.num_input_layers)  # W1: MxD
+W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
+    NNParams.num_hidden_layers)  # W2: KxM
+
+# concat ones vector
+W1 = concat_ones_vector(W1)  # W1: MxD+1
+W2 = concat_ones_vector(W2)  # W2: KxM+1
+
+# Do a gradient check first
+# SKIP THIS PART FOR FASTER EXECUTION
+'''
+print('Running gradient check...')
+ch = np.random.permutation(X_train.shape[0])
+ch = ch[0:20]  # get the 20 first data
+gradcheck(X_train[ch, :], t[ch, :], W1, W2)
+'''
+
+print()
+
 # define the learning rate based on the number of train data
-NNParams.eta = 0.5 / len(X_train)
+NNParams.eta = 1 / len(X_train)
 
 # train the Neural Network Model
-W1, W2 = train(X_train, y_train, epochs=150, tol=1e-6, print_estimate=True)
+W1, W2 = train(X_train, t, W1, W2, epochs=150, tol=1e-6, print_estimate=True)
 
 # test the Neural Network Model
-predicted = test(W1, W2, X_test)
+predicted = test(X_test, W1, W2)
 
 # check predictions
 wrong_counter = 0  # the number of wrong classifications made by the Neural Network
 
-print("\n")
+print()
 print('checking predictions...')
 for i in range(len(predicted)):
     if predicted[i] == y_test_true[i]:
