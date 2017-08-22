@@ -104,7 +104,7 @@ def concat_ones_vector(x):
     return np.concatenate((ones_vector, x), axis=1)
 
 
-# Forward propagation
+# Feed-Forward
 def forward(X, W1, W2):
     s1 = X.dot(W1.T)  # s1: NxM
 
@@ -130,7 +130,7 @@ def forward(X, W1, W2):
 def likelihood(X, t, W1, W2):
     num_examples = len(X)  # N: training set size
 
-    # Forward propagation to calculate our predictions
+    # Feed-Forward to calculate our predictions
     _, _, _, s2, _ = forward(X, W1, W2)
 
     A = s2
@@ -148,7 +148,7 @@ def likelihood(X, t, W1, W2):
 
 
 def test(X, W1, W2):
-    # Forward propagation
+    # Feed-Forward
     _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
 
@@ -182,10 +182,10 @@ def grad_ascent(X, t, W1, W2):
     # W1: MxD+1 = num_hidden_layers x num_of_features
     # W2: KxM+1 = num_of_categories x num_hidden_layers
 
-    # Forward propagation
+    # Feed-Forward
     _, o1, grad, s2, o2 = forward(X, W1, W2)
 
-    # Backpropagation
+    # Back-Propagation
     delta1 = t - o2  # delta1: 1xK
     W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
@@ -205,11 +205,11 @@ def grad_ascent(X, t, W1, W2):
     return W1, W2, dW1, dW2
 
 
-def grad_check(X, t, W1, W2):
+def gradient_check(X, t, W1, W2):
     _, _, gradEw1, gradEw2 = grad_ascent(X, t, W1, W2)
     epsilon = 1e-6
 
-    # grad_check for parameter W1
+    # gradient_check for parameter W1
     numgradEw1 = np.zeros(W1.shape)
     for i in range(W1.shape[0]):
         for j in range(W1.shape[1]):
@@ -223,9 +223,9 @@ def grad_check(X, t, W1, W2):
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
-    print('The maximum absolute norm for parameter W1, in the grad_check is: ' + str(diff1))
+    print('The maximum absolute norm for parameter W1, in the gradient_check is: ' + str(diff1))
 
-    # grad_check for parameter W2
+    # gradient_check for parameter W2
     numgradEw2 = np.zeros(W2.shape)
     for i in range(W2.shape[0]):
         for j in range(W2.shape[1]):
@@ -239,7 +239,7 @@ def grad_check(X, t, W1, W2):
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
-    print('The maximum absolute norm for parameter W2, in the grad_check is: ' + str(diff2))
+    print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
 
 ###############
@@ -335,7 +335,7 @@ W2 = concat_ones_vector(W2)  # W2: KxM+1
 print('Running gradient check...')
 ch = np.random.permutation(X_train.shape[0])
 ch = ch[0:20]  # get the 20 first data
-grad_check(X_train[ch, :], t[ch, :], W1, W2)
+gradient_check(X_train[ch, :], t[ch, :], W1, W2)
 '''
 
 print()
