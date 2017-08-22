@@ -155,8 +155,8 @@ def test(X, W1, W2):
 
 # Train using Batch Gradient Ascent
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
-# - iterations: Number of iterations through the training data for gradient ascent
-# - print_estimate: If True, print the estimate every 1000 iterations
+# - iterations: Number of iterations through the training data for gradient ascent.
+# - print_estimate: If True, print the estimate every 1000 iterations.
 def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False):
 
     # Run Batch Gradient Ascent
