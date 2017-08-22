@@ -215,11 +215,11 @@ def grad_descent(X, t, W1, W2):
     return W1, W2, dW1, dW2
 
 
-def gradcheck(X, t, W1, W2):
+def grad_check(X, t, W1, W2):
     _, _, gradEw1, gradEw2 = grad_descent(X, t, W1, W2)
     epsilon = 1e-6
 
-    # gradcheck for parameter W1
+    # grad_check for parameter W1
     numgradEw1 = np.zeros(W1.shape)
     for i in range(W1.shape[0]):
         for j in range(W1.shape[1]):
@@ -233,9 +233,9 @@ def gradcheck(X, t, W1, W2):
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
-    print('The maximum absolute norm for parameter W1, in the gradcheck is: ' + str(diff1))
+    print('The maximum absolute norm for parameter W1, in the grad_check is: ' + str(diff1))
 
-    # gradcheck for parameter W2
+    # grad_check for parameter W2
     numgradEw2 = np.zeros(W2.shape)
     for i in range(W2.shape[0]):
         for j in range(W2.shape[1]):
@@ -249,7 +249,7 @@ def gradcheck(X, t, W1, W2):
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
-    print('The maximum absolute norm for parameter W2, in the gradcheck is: ' + str(diff2))
+    print('The maximum absolute norm for parameter W2, in the grad_check is: ' + str(diff2))
 
 
 ###############
@@ -306,7 +306,7 @@ W2 = concat_ones_vector(W2)  # W2: KxM+1
 print('Running gradient check...')
 ch = np.random.permutation(X_train.shape[0])
 ch = ch[0:20]  # get the 20 first data
-gradcheck(X_train[ch, :], t[ch, :], W1, W2)
+grad_check(X_train[ch, :], t[ch, :], W1, W2)
 
 print()
 
