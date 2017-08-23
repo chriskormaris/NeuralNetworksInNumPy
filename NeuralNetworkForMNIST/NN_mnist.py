@@ -8,9 +8,6 @@
 from __future__ import division
 
 import numpy as np
-#import re
-#from pandas import DataFrame
-#import pandas as pd
 
 __author__ = 'c.kormaris'
 
@@ -54,19 +51,6 @@ def read_data(path, testOrTrainFile):
 
     X = np.matrix(X)  # convert classification parameter to the appropriate data type
     return X
-
-
-'''
-def read_labels(path, testOrTrainFile):
-    text_file = open(path + testOrTrainFile + ".txt", "r")
-    lines = text_file.readlines()
-    text_file.close()
-
-    digit = np.int(re.sub('[^0-9]', '', testOrTrainFile))
-    y = [digit] * len(lines)
-    y = np.matrix(y).T  # convert classification parameter to the appropriate data type
-    return y
-'''
 
 
 # activation function #1
@@ -264,17 +248,6 @@ for i in range(NNParams.num_output_layers):
         X_train = np.concatenate((X_train, X_train_class_i), axis=0)
         y_train = np.concatenate((y_train, y_train_class_i), axis=0)
 
-'''
-print()
-print("Xtrain:")
-df = DataFrame(X_train)
-df.index = range(X_train.shape[0])
-df.columns = range(X_train.shape[1])
-print(df)
-
-print("ytrain: " + str(y_train))
-'''
-
 print()
 
 print("Reading TEST files...")
@@ -292,17 +265,6 @@ for i in range(NNParams.num_output_layers):
     else:
         X_test = np.concatenate((X_test, X_test_class_i), axis=0)
         y_test_true = np.concatenate((y_test_true, y_test_true_class_i), axis=0)
-
-'''
-print()
-print("Xtest:")
-df = DataFrame(X_test)
-df.index = range(X_test.shape[0])
-df.columns = range(X_test.shape[1])
-print(df)
-
-print("y_test_true: " + str(y_test_true))
-'''
 
 print()
 

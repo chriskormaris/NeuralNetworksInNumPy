@@ -8,8 +8,6 @@
 from __future__ import division
 
 import numpy as np
-#from pandas import DataFrame
-#import pandas as pd
 
 __author__ = 'c.kormaris'
 
@@ -255,17 +253,6 @@ for i in range(NNParams.num_output_layers):
         X_train = np.concatenate((X_train, X_train_class_i), axis=0)
         y_train = np.concatenate((y_train, y_train_class_i), axis=0)
 
-'''
-print()
-print("Xtrain:")
-df = DataFrame(X_train)
-df.index = range(X_train.shape[0])
-df.columns = range(X_train.shape[1])
-print(df)
-
-print("ytrain: " + str(y_train))
-'''
-
 print()
 
 print("Reading TEST files...")
@@ -283,17 +270,6 @@ for i in range(NNParams.num_output_layers):
     else:
         X_test = np.concatenate((X_test, X_test_class_i), axis=0)
         y_test_true = np.concatenate((y_test_true, y_test_true_class_i), axis=0)
-
-'''
-print()
-print("Xtest:")
-df = DataFrame(X_test)
-df.index = range(X_test.shape[0])
-df.columns = range(X_test.shape[1])
-print(df)
-
-print("y_test_true: " + str(y_test_true))
-'''
 
 print()
 
