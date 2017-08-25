@@ -57,9 +57,9 @@ You can alternatively train the neural network using stochastic gradient descent
 ### Neural Network #1
 Run:
 ```python
-python SpamHamNeuralNetworkSqErr.py
+python NN_SpamHam_MSE.py
 ```
-File: "SpamHamNeuralNetworkSqErr.py"
+File: "NN_SpamHam_MSE.py"
 
 1st Activation Function: tanh
 
@@ -75,14 +75,14 @@ the tanh activation function in the first input layer
 and the sigmoid activation function in the last output layer.
 In the last node of the network the Mean Squared Error Loss formula (MSE loss function) is used.
 
-The precision that was achieved, after training with batch gradient descent, was: **94.33%**.
+The precision that was achieved, after training with batch gradient descent, was: **94.2 %**.
 
 ### Neural Network #2
 Run:
 ```python
-python SpamHamNeuralNetworkCrossEntropy.py
+python NN_SpamHam_CrossEntropy.py
 ```
-File: "SpamHamNeuralNetworkCrossEntropy.py"
+File: "NN_SpamHam_CrossEntropy.py"
 
 1st Activation Function: sigmoid
 
@@ -98,4 +98,4 @@ the sigmoid activation function in the first input layer
 and softmax sigmoid activation function in the last output layer.
 In the last node of the network the Cross Entropy Loss formula is used.
 
-The precision that was achieved, after training with batch gradient descent, was: **93.75%**.
+The precision that was achieved, after training with batch gradient descent, was: **92.93 %**.
