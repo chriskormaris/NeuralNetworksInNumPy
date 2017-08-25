@@ -11,7 +11,7 @@ Slightly based on code from this repository: <a href="https://github.com/dennybr
 
 ## Neural Network for Digit Classification of MNIST Dataset
 
-Unzip the MNIST data from the file "mnisttxt.zip", in the same directory where the Python files are.
+Unzip the MNIST data from the compressed file "mnisttxt.zip" in the same directory where the Python files are.
 Then, run the Neural Network that uses batch gradient ascent, from the file "NN_mnist.py" as follows:
 ```python
 python NN_mnist.py
@@ -35,11 +35,11 @@ Train algorithm: Gradient Ascent
 
 Bias terms are used.
 
-The precision that was achieved, after training with batch gradient descent was: **96.1 %**
+The precision that was achieved, after training with batch gradient descent, was: **96.1 %**
 
 ## Neural Networks for Spam-Ham Classification
 
-Unzip the files "TRAIN.zip" and "TEST.zip", in the same directory where the Python files are.
+Unzip the compressed files "TRAIN.zip" and "TEST.zip" in the same directory where the Python files are.
 First, run the python file "FeatureSelectionUsingIG.py" to generate the output file
 "feature_dictionary.txt", containing the features tokens that we'll use.
 ```python
@@ -75,7 +75,7 @@ the tanh activation function in the first input layer
 and the sigmoid activation function in the last output layer.
 In the last node of the network the Mean Squared Error Loss formula (MSE loss function) is used.
 
-The precision that was achieved, after training with batch gradient descent was: **94.33%**.
+The precision that was achieved, after training with batch gradient descent, was: **94.33%**.
 
 ### Neural Network #2
 Run:
@@ -98,4 +98,4 @@ the sigmoid activation function in the first input layer
 and softmax sigmoid activation function in the last output layer.
 In the last node of the network the Cross Entropy Loss formula is used.
 
-The precision that was achieved, after training with batch gradient descent was: **93.75%**.
+The precision that was achieved, after training with batch gradient descent, was: **93.75%**.
