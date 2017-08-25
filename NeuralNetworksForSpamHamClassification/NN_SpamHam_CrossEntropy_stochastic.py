@@ -237,8 +237,9 @@ def gradient_check(X, t, W1, W2):
             W1tmp[i, j] = W1[i, j] - epsilon
             Ewminus = loss_function(X, t, W1tmp, W2)
 
-            numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-    diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
+            #numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+            numgradEw1[i, j] = (Ewplus - Ewminus) / epsilon
+    diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1)
     print('The maximum absolute norm for parameter W1, in the gradient_check is: ' + str(diff1))
 
     # gradient_check for parameter W2
@@ -253,8 +254,9 @@ def gradient_check(X, t, W1, W2):
             W2tmp[i, j] = W2[i, j] - epsilon
             Ewminus = loss_function(X, t, W1, W2tmp)
 
-            numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-    diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
+            #numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+            numgradEw2[i, j] = (Ewplus - Ewminus) / epsilon
+    diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2)
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
 
@@ -263,7 +265,7 @@ def gradient_check(X, t, W1, W2):
 # MAIN #
 
 train_dir = "TRAIN/"
-train_dir = "TEST/"
+test_dir = "TEST/"
 feature_dictionary_dir = "feature_dictionary.txt"
 
 # read feature dictionary from file
@@ -371,7 +373,7 @@ print("precision for spam files: " + str(spam_precision))
 ham_precision = (ham_counter - wrong_ham_counter) / (ham_counter - wrong_ham_counter + wrong_spam_counter)
 print("precision for ham files: " + str(ham_precision))
 
-spam_recall = (spam_counter - wrong_spam_counter) / (spam_counter)
+spam_recall = (spam_counter - wrong_spam_counter) / spam_counter
 print("recall for spam files: " + str(spam_recall))
-ham_recall = (ham_counter - wrong_ham_counter) / (ham_counter)
+ham_recall = (ham_counter - wrong_ham_counter) / ham_counter
 print("recall for ham files: " + str(ham_recall))

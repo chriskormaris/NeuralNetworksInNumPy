@@ -1,0 +1,8 @@
+python FeatureSelectionUsingIG.py
+python NN_SpamHam_CrossEntropy_minibatch.py > console_outputs/NN_SpamHam_CrossEntropy_minibatch.txt
+python NN_SpamHam_CrossEntropy.py > console_outputs/NN_SpamHam_CrossEntropy.txt
+python NN_SpamHam_CrossEntropy_stochastic.py > console_outputs/NN_SpamHam_CrossEntropy_stochastic.txt
+python NN_SpamHam_MSE_minibatch.py > console_outputs/NN_SpamHam_MSE_minibatch.txt
+python NN_SpamHam_MSE.py > console_outputs/NN_SpamHam_MSE.txt
+python NN_SpamHam_MSE_stochastic.py > console_outputs/NN_SpamHam_MSE_stochastic.txt
+

@@ -114,6 +114,8 @@ feature_spam_frequency = dict()
 # a dictionary which has as a key how many train ham documents a feature appears in
 feature_ham_frequency = dict()
 
+print('Calculating the frequency of each token...')
+
 # calculate feature_frequencies dict
 for i in range(len(train_files)):
     train_text = read_file(train_dir + train_files[i])

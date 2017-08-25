@@ -8513,6 +8513,7 @@ Reading train file '5999.2005-07-30.BG.spam.txt'...
 Reading train file '6000.2005-07-31.BG.spam.txt'...
 
 
+
 Reading TEST files...
 Reading test file '0001.2000-06-06.lokay.ham.txt'...
 Reading test file '0004.2004-08-01.BG.spam.txt'...
@@ -8681,6 +8682,7 @@ Reading test file '0314.2004-09-01.BG.spam.txt'...
 Reading test file '0315.2000-07-12.lokay.ham.txt'...
 Reading test file '0316.2004-09-02.BG.spam.txt'...
 Reading test file '0318.2004-09-02.BG.spam.txt'...
+Reading test file '0320.2000-07-12.lokay.ham.txt'...
 Reading test file '0321.2000-07-12.lokay.ham.txt'...
 Reading test file '0321.2004-09-03.BG.spam.txt'...
 Reading test file '0323.2004-09-03.BG.spam.txt'...
@@ -11515,26 +11517,61 @@ Reading test file '5992.2002-03-25.lokay.ham.txt'...
 Reading test file '5996.2002-03-25.lokay.ham.txt'...
 
 
-Mean squared error loss after iteration 0: 0.335310
-Mean squared error loss after iteration 1000: 0.084192
-Mean squared error loss after iteration 2000: 0.070901
-Mean squared error loss after iteration 3000: 0.060557
-Mean squared error loss after iteration 4000: 0.051212
-Mean squared error loss after iteration 5000: 0.043782
-Mean squared error loss after iteration 6000: 0.037904
-Mean squared error loss after iteration 7000: 0.032021
-Mean squared error loss after iteration 8000: 0.026830
-Mean squared error loss after iteration 9000: 0.022964
-Mean squared error loss after iteration 10000: 0.019931
-Mean squared error loss after iteration 11000: 0.017046
-Mean squared error loss after iteration 12000: 0.015147
-Mean squared error loss after iteration 13000: 0.013569
-Mean squared error loss after iteration 14000: 0.012021
-Mean squared error loss after iteration 15000: 0.010807
-Mean squared error loss after iteration 16000: 0.110112
-Mean squared error loss after iteration 17000: 0.063712
-Mean squared error loss after iteration 18000: 0.048061
-Mean squared error loss after iteration 19000: 0.039201
+
+Running gradient check...
+The maximum absolute norm for parameter W1, in the gradient_check is: 0.500000085858
+The maximum absolute norm for parameter W2, in the gradient_check is: 0.500000000022
+
+Cross entropy loss after epoch 0: 6059.027638
+Cross entropy loss after epoch 1: 5097.142454
+Cross entropy loss after epoch 2: 3675.567618
+Cross entropy loss after epoch 3: 2646.739209
+Cross entropy loss after epoch 4: 2046.083916
+Cross entropy loss after epoch 5: 1683.925548
+Cross entropy loss after epoch 6: 1448.185869
+Cross entropy loss after epoch 7: 1283.645564
+Cross entropy loss after epoch 8: 1162.248619
+Cross entropy loss after epoch 9: 1068.747944
+Cross entropy loss after epoch 10: 994.272314
+Cross entropy loss after epoch 11: 933.342885
+Cross entropy loss after epoch 12: 882.403348
+Cross entropy loss after epoch 13: 839.048223
+Cross entropy loss after epoch 14: 801.593532
+Cross entropy loss after epoch 15: 768.825642
+Cross entropy loss after epoch 16: 739.847863
+Cross entropy loss after epoch 17: 713.983194
+Cross entropy loss after epoch 18: 690.710676
+Cross entropy loss after epoch 19: 669.622563
+Cross entropy loss after epoch 20: 650.394818
+Cross entropy loss after epoch 21: 632.766352
+Cross entropy loss after epoch 22: 616.524162
+Cross entropy loss after epoch 23: 601.492505
+Cross entropy loss after epoch 24: 587.524911
+Cross entropy loss after epoch 25: 574.498199
+Cross entropy loss after epoch 26: 562.307950
+Cross entropy loss after epoch 27: 550.865037
+Cross entropy loss after epoch 28: 540.092948
+Cross entropy loss after epoch 29: 529.925692
+Cross entropy loss after epoch 30: 520.306157
+Cross entropy loss after epoch 31: 511.184800
+Cross entropy loss after epoch 32: 502.518596
+Cross entropy loss after epoch 33: 494.270161
+Cross entropy loss after epoch 34: 486.406998
+Cross entropy loss after epoch 35: 478.900811
+Cross entropy loss after epoch 36: 471.726846
+Cross entropy loss after epoch 37: 464.863242
+Cross entropy loss after epoch 38: 458.290392
+Cross entropy loss after epoch 39: 451.990358
+Cross entropy loss after epoch 40: 445.946400
+Cross entropy loss after epoch 41: 440.142670
+Cross entropy loss after epoch 42: 434.564070
+Cross entropy loss after epoch 43: 429.196257
+Cross entropy loss after epoch 44: 424.025710
+Cross entropy loss after epoch 45: 419.039804
+Cross entropy loss after epoch 46: 414.226853
+Cross entropy loss after epoch 47: 409.576106
+Cross entropy loss after epoch 48: 405.077709
+Cross entropy loss after epoch 49: 400.722644
 
 checking predictions...
 data0 classified as: HAM -> correct
@@ -11549,14 +11586,14 @@ data8 classified as: SPAM -> correct
 data9 classified as: SPAM -> correct
 data10 classified as: HAM -> correct
 data11 classified as: SPAM -> correct
-data12 classified as: HAM -> correct
+data12 classified as: SPAM -> WRONG!
 data13 classified as: SPAM -> correct
 data14 classified as: SPAM -> correct
 data15 classified as: HAM -> correct
-data16 classified as: HAM -> WRONG!
+data16 classified as: SPAM -> correct
 data17 classified as: HAM -> correct
 data18 classified as: SPAM -> correct
-data19 classified as: HAM -> WRONG!
+data19 classified as: SPAM -> correct
 data20 classified as: HAM -> correct
 data21 classified as: SPAM -> correct
 data22 classified as: SPAM -> WRONG!
@@ -11569,7 +11606,7 @@ data28 classified as: HAM -> correct
 data29 classified as: SPAM -> correct
 data30 classified as: HAM -> correct
 data31 classified as: SPAM -> correct
-data32 classified as: HAM -> WRONG!
+data32 classified as: SPAM -> correct
 data33 classified as: HAM -> correct
 data34 classified as: HAM -> correct
 data35 classified as: SPAM -> correct
@@ -11583,7 +11620,7 @@ data42 classified as: HAM -> correct
 data43 classified as: SPAM -> correct
 data44 classified as: HAM -> correct
 data45 classified as: SPAM -> correct
-data46 classified as: SPAM -> WRONG!
+data46 classified as: HAM -> correct
 data47 classified as: SPAM -> correct
 data48 classified as: SPAM -> correct
 data49 classified as: HAM -> correct
@@ -11597,9 +11634,9 @@ data56 classified as: HAM -> correct
 data57 classified as: HAM -> correct
 data58 classified as: SPAM -> correct
 data59 classified as: SPAM -> correct
-data60 classified as: HAM -> correct
+data60 classified as: SPAM -> WRONG!
 data61 classified as: HAM -> correct
-data62 classified as: HAM -> correct
+data62 classified as: SPAM -> WRONG!
 data63 classified as: SPAM -> correct
 data64 classified as: HAM -> correct
 data65 classified as: SPAM -> correct
@@ -11625,7 +11662,7 @@ data84 classified as: HAM -> correct
 data85 classified as: SPAM -> correct
 data86 classified as: SPAM -> correct
 data87 classified as: HAM -> correct
-data88 classified as: SPAM -> WRONG!
+data88 classified as: HAM -> correct
 data89 classified as: SPAM -> correct
 data90 classified as: HAM -> correct
 data91 classified as: HAM -> correct
@@ -11645,7 +11682,7 @@ data104 classified as: SPAM -> correct
 data105 classified as: HAM -> correct
 data106 classified as: SPAM -> correct
 data107 classified as: HAM -> correct
-data108 classified as: HAM -> WRONG!
+data108 classified as: SPAM -> correct
 data109 classified as: HAM -> correct
 data110 classified as: SPAM -> correct
 data111 classified as: HAM -> correct
@@ -11660,7 +11697,7 @@ data119 classified as: HAM -> correct
 data120 classified as: SPAM -> correct
 data121 classified as: SPAM -> correct
 data122 classified as: SPAM -> correct
-data123 classified as: HAM -> WRONG!
+data123 classified as: SPAM -> correct
 data124 classified as: HAM -> correct
 data125 classified as: SPAM -> correct
 data126 classified as: HAM -> correct
@@ -11670,7 +11707,7 @@ data129 classified as: SPAM -> correct
 data130 classified as: HAM -> correct
 data131 classified as: SPAM -> correct
 data132 classified as: HAM -> correct
-data133 classified as: HAM -> WRONG!
+data133 classified as: SPAM -> correct
 data134 classified as: SPAM -> correct
 data135 classified as: HAM -> correct
 data136 classified as: SPAM -> correct
@@ -11692,7 +11729,7 @@ data151 classified as: SPAM -> correct
 data152 classified as: HAM -> correct
 data153 classified as: SPAM -> correct
 data154 classified as: HAM -> correct
-data155 classified as: HAM -> WRONG!
+data155 classified as: SPAM -> correct
 data156 classified as: HAM -> correct
 data157 classified as: SPAM -> correct
 data158 classified as: HAM -> correct
@@ -11707,35 +11744,35 @@ data166 classified as: SPAM -> correct
 data167 classified as: HAM -> correct
 data168 classified as: HAM -> correct
 data169 classified as: SPAM -> correct
-data170 classified as: HAM -> WRONG!
+data170 classified as: SPAM -> correct
 data171 classified as: HAM -> correct
 data172 classified as: SPAM -> correct
 data173 classified as: SPAM -> correct
 data174 classified as: HAM -> correct
 data175 classified as: SPAM -> correct
-data176 classified as: HAM -> WRONG!
+data176 classified as: SPAM -> correct
 data177 classified as: HAM -> correct
 data178 classified as: SPAM -> correct
 data179 classified as: SPAM -> correct
 data180 classified as: SPAM -> correct
 data181 classified as: HAM -> correct
-data182 classified as: SPAM -> correct
+data182 classified as: HAM -> WRONG!
 data183 classified as: SPAM -> correct
 data184 classified as: HAM -> correct
 data185 classified as: HAM -> correct
 data186 classified as: HAM -> correct
 data187 classified as: HAM -> correct
 data188 classified as: SPAM -> correct
-data189 classified as: HAM -> correct
+data189 classified as: SPAM -> WRONG!
 data190 classified as: SPAM -> correct
-data191 classified as: HAM -> WRONG!
+data191 classified as: SPAM -> correct
 data192 classified as: HAM -> correct
 data193 classified as: HAM -> correct
-data194 classified as: HAM -> WRONG!
+data194 classified as: SPAM -> correct
 data195 classified as: HAM -> correct
-data196 classified as: HAM -> WRONG!
+data196 classified as: SPAM -> correct
 data197 classified as: SPAM -> correct
-data198 classified as: HAM -> correct
+data198 classified as: SPAM -> WRONG!
 data199 classified as: SPAM -> correct
 data200 classified as: HAM -> correct
 data201 classified as: HAM -> correct
@@ -11760,33 +11797,33 @@ data219 classified as: HAM -> correct
 data220 classified as: SPAM -> WRONG!
 data221 classified as: HAM -> correct
 data222 classified as: SPAM -> correct
-data223 classified as: HAM -> correct
+data223 classified as: SPAM -> WRONG!
 data224 classified as: SPAM -> correct
-data225 classified as: HAM -> correct
-data226 classified as: HAM -> correct
+data225 classified as: SPAM -> WRONG!
+data226 classified as: SPAM -> WRONG!
 data227 classified as: HAM -> correct
 data228 classified as: SPAM -> correct
 data229 classified as: SPAM -> correct
 data230 classified as: HAM -> correct
 data231 classified as: SPAM -> correct
 data232 classified as: SPAM -> correct
-data233 classified as: HAM -> correct
+data233 classified as: SPAM -> WRONG!
 data234 classified as: SPAM -> correct
 data235 classified as: HAM -> correct
 data236 classified as: SPAM -> correct
 data237 classified as: SPAM -> correct
 data238 classified as: HAM -> correct
 data239 classified as: SPAM -> correct
-data240 classified as: HAM -> correct
+data240 classified as: SPAM -> WRONG!
 data241 classified as: SPAM -> correct
 data242 classified as: HAM -> correct
 data243 classified as: SPAM -> correct
-data244 classified as: HAM -> WRONG!
+data244 classified as: SPAM -> correct
 data245 classified as: HAM -> correct
 data246 classified as: SPAM -> correct
-data247 classified as: HAM -> correct
+data247 classified as: SPAM -> WRONG!
 data248 classified as: SPAM -> correct
-data249 classified as: HAM -> WRONG!
+data249 classified as: SPAM -> correct
 data250 classified as: HAM -> correct
 data251 classified as: SPAM -> correct
 data252 classified as: HAM -> correct
@@ -11808,7 +11845,7 @@ data267 classified as: HAM -> correct
 data268 classified as: SPAM -> correct
 data269 classified as: HAM -> correct
 data270 classified as: SPAM -> correct
-data271 classified as: SPAM -> WRONG!
+data271 classified as: HAM -> correct
 data272 classified as: SPAM -> correct
 data273 classified as: SPAM -> correct
 data274 classified as: SPAM -> WRONG!
@@ -11836,9 +11873,9 @@ data295 classified as: SPAM -> correct
 data296 classified as: HAM -> correct
 data297 classified as: SPAM -> correct
 data298 classified as: SPAM -> correct
-data299 classified as: HAM -> correct
-data300 classified as: HAM -> WRONG!
-data301 classified as: HAM -> correct
+data299 classified as: SPAM -> WRONG!
+data300 classified as: SPAM -> correct
+data301 classified as: SPAM -> WRONG!
 data302 classified as: SPAM -> correct
 data303 classified as: SPAM -> WRONG!
 data304 classified as: SPAM -> correct
@@ -11870,20 +11907,20 @@ data329 classified as: HAM -> correct
 data330 classified as: HAM -> correct
 data331 classified as: SPAM -> correct
 data332 classified as: SPAM -> correct
-data333 classified as: HAM -> correct
+data333 classified as: SPAM -> WRONG!
 data334 classified as: SPAM -> correct
-data335 classified as: HAM -> correct
+data335 classified as: SPAM -> WRONG!
 data336 classified as: SPAM -> correct
 data337 classified as: HAM -> correct
 data338 classified as: SPAM -> correct
 data339 classified as: HAM -> correct
 data340 classified as: SPAM -> correct
-data341 classified as: HAM -> correct
+data341 classified as: SPAM -> WRONG!
 data342 classified as: SPAM -> correct
 data343 classified as: HAM -> correct
 data344 classified as: HAM -> WRONG!
 data345 classified as: SPAM -> correct
-data346 classified as: HAM -> correct
+data346 classified as: SPAM -> WRONG!
 data347 classified as: SPAM -> correct
 data348 classified as: HAM -> correct
 data349 classified as: HAM -> correct
@@ -11898,7 +11935,7 @@ data357 classified as: HAM -> correct
 data358 classified as: SPAM -> correct
 data359 classified as: HAM -> correct
 data360 classified as: SPAM -> correct
-data361 classified as: HAM -> correct
+data361 classified as: SPAM -> WRONG!
 data362 classified as: SPAM -> correct
 data363 classified as: HAM -> correct
 data364 classified as: SPAM -> correct
@@ -11925,14 +11962,14 @@ data384 classified as: HAM -> correct
 data385 classified as: SPAM -> correct
 data386 classified as: HAM -> correct
 data387 classified as: SPAM -> correct
-data388 classified as: HAM -> correct
+data388 classified as: SPAM -> WRONG!
 data389 classified as: HAM -> correct
 data390 classified as: HAM -> correct
 data391 classified as: SPAM -> correct
 data392 classified as: HAM -> correct
 data393 classified as: SPAM -> correct
 data394 classified as: SPAM -> correct
-data395 classified as: HAM -> correct
+data395 classified as: SPAM -> WRONG!
 data396 classified as: SPAM -> correct
 data397 classified as: SPAM -> correct
 data398 classified as: SPAM -> WRONG!
@@ -11940,7 +11977,7 @@ data399 classified as: SPAM -> correct
 data400 classified as: SPAM -> correct
 data401 classified as: HAM -> correct
 data402 classified as: SPAM -> correct
-data403 classified as: HAM -> correct
+data403 classified as: SPAM -> WRONG!
 data404 classified as: SPAM -> correct
 data405 classified as: SPAM -> correct
 data406 classified as: SPAM -> correct
@@ -11992,7 +12029,7 @@ data451 classified as: SPAM -> correct
 data452 classified as: SPAM -> correct
 data453 classified as: HAM -> correct
 data454 classified as: SPAM -> correct
-data455 classified as: HAM -> WRONG!
+data455 classified as: SPAM -> correct
 data456 classified as: HAM -> correct
 data457 classified as: SPAM -> correct
 data458 classified as: HAM -> correct
@@ -12001,13 +12038,13 @@ data460 classified as: HAM -> correct
 data461 classified as: SPAM -> correct
 data462 classified as: HAM -> correct
 data463 classified as: HAM -> correct
-data464 classified as: HAM -> correct
+data464 classified as: SPAM -> WRONG!
 data465 classified as: HAM -> correct
 data466 classified as: SPAM -> correct
 data467 classified as: SPAM -> correct
 data468 classified as: HAM -> correct
 data469 classified as: HAM -> correct
-data470 classified as: HAM -> WRONG!
+data470 classified as: SPAM -> correct
 data471 classified as: HAM -> correct
 data472 classified as: SPAM -> correct
 data473 classified as: HAM -> correct
@@ -12016,8 +12053,8 @@ data475 classified as: HAM -> correct
 data476 classified as: SPAM -> correct
 data477 classified as: HAM -> correct
 data478 classified as: SPAM -> correct
-data479 classified as: HAM -> correct
-data480 classified as: HAM -> correct
+data479 classified as: SPAM -> WRONG!
+data480 classified as: SPAM -> WRONG!
 data481 classified as: HAM -> correct
 data482 classified as: SPAM -> correct
 data483 classified as: SPAM -> correct
@@ -12040,7 +12077,7 @@ data499 classified as: HAM -> correct
 data500 classified as: SPAM -> correct
 data501 classified as: HAM -> correct
 data502 classified as: SPAM -> correct
-data503 classified as: HAM -> correct
+data503 classified as: SPAM -> WRONG!
 data504 classified as: SPAM -> correct
 data505 classified as: HAM -> correct
 data506 classified as: SPAM -> correct
@@ -12052,8 +12089,8 @@ data511 classified as: SPAM -> correct
 data512 classified as: HAM -> correct
 data513 classified as: HAM -> correct
 data514 classified as: SPAM -> correct
-data515 classified as: HAM -> WRONG!
-data516 classified as: HAM -> correct
+data515 classified as: SPAM -> correct
+data516 classified as: SPAM -> WRONG!
 data517 classified as: HAM -> correct
 data518 classified as: SPAM -> WRONG!
 data519 classified as: SPAM -> correct
@@ -12085,8 +12122,8 @@ data544 classified as: SPAM -> correct
 data545 classified as: HAM -> correct
 data546 classified as: SPAM -> correct
 data547 classified as: SPAM -> correct
-data548 classified as: HAM -> WRONG!
-data549 classified as: HAM -> correct
+data548 classified as: SPAM -> correct
+data549 classified as: SPAM -> WRONG!
 data550 classified as: HAM -> correct
 data551 classified as: HAM -> correct
 data552 classified as: SPAM -> correct
@@ -12110,7 +12147,7 @@ data569 classified as: SPAM -> correct
 data570 classified as: SPAM -> correct
 data571 classified as: HAM -> correct
 data572 classified as: SPAM -> correct
-data573 classified as: SPAM -> WRONG!
+data573 classified as: HAM -> correct
 data574 classified as: SPAM -> correct
 data575 classified as: HAM -> correct
 data576 classified as: HAM -> correct
@@ -12120,22 +12157,22 @@ data579 classified as: HAM -> correct
 data580 classified as: SPAM -> correct
 data581 classified as: HAM -> correct
 data582 classified as: HAM -> correct
-data583 classified as: HAM -> correct
+data583 classified as: SPAM -> WRONG!
 data584 classified as: SPAM -> WRONG!
 data585 classified as: SPAM -> correct
 data586 classified as: HAM -> correct
-data587 classified as: SPAM -> correct
+data587 classified as: HAM -> WRONG!
 data588 classified as: HAM -> correct
 data589 classified as: SPAM -> correct
 data590 classified as: SPAM -> correct
 data591 classified as: HAM -> correct
 data592 classified as: SPAM -> correct
-data593 classified as: HAM -> correct
+data593 classified as: SPAM -> WRONG!
 data594 classified as: SPAM -> correct
 data595 classified as: SPAM -> correct
 data596 classified as: HAM -> correct
 data597 classified as: SPAM -> correct
-data598 classified as: SPAM -> correct
+data598 classified as: HAM -> WRONG!
 data599 classified as: SPAM -> WRONG!
 data600 classified as: SPAM -> correct
 data601 classified as: SPAM -> correct
@@ -12153,7 +12190,7 @@ data612 classified as: HAM -> correct
 data613 classified as: HAM -> correct
 data614 classified as: SPAM -> correct
 data615 classified as: HAM -> correct
-data616 classified as: HAM -> WRONG!
+data616 classified as: SPAM -> correct
 data617 classified as: SPAM -> correct
 data618 classified as: HAM -> correct
 data619 classified as: SPAM -> correct
@@ -12199,17 +12236,17 @@ data658 classified as: SPAM -> correct
 data659 classified as: HAM -> correct
 data660 classified as: SPAM -> correct
 data661 classified as: HAM -> correct
-data662 classified as: HAM -> WRONG!
-data663 classified as: SPAM -> WRONG!
+data662 classified as: SPAM -> correct
+data663 classified as: HAM -> correct
 data664 classified as: SPAM -> correct
-data665 classified as: HAM -> WRONG!
+data665 classified as: SPAM -> correct
 data666 classified as: SPAM -> correct
 data667 classified as: SPAM -> correct
 data668 classified as: HAM -> correct
-data669 classified as: HAM -> correct
+data669 classified as: SPAM -> WRONG!
 data670 classified as: HAM -> correct
 data671 classified as: SPAM -> correct
-data672 classified as: HAM -> WRONG!
+data672 classified as: SPAM -> correct
 data673 classified as: HAM -> correct
 data674 classified as: SPAM -> correct
 data675 classified as: HAM -> correct
@@ -12239,7 +12276,7 @@ data698 classified as: HAM -> correct
 data699 classified as: SPAM -> correct
 data700 classified as: HAM -> correct
 data701 classified as: SPAM -> correct
-data702 classified as: HAM -> correct
+data702 classified as: SPAM -> WRONG!
 data703 classified as: SPAM -> correct
 data704 classified as: SPAM -> correct
 data705 classified as: HAM -> correct
@@ -12255,18 +12292,18 @@ data714 classified as: HAM -> correct
 data715 classified as: HAM -> correct
 data716 classified as: HAM -> correct
 data717 classified as: SPAM -> correct
-data718 classified as: HAM -> WRONG!
+data718 classified as: SPAM -> correct
 data719 classified as: HAM -> correct
 data720 classified as: SPAM -> correct
 data721 classified as: HAM -> correct
-data722 classified as: HAM -> WRONG!
+data722 classified as: SPAM -> correct
 data723 classified as: HAM -> correct
 data724 classified as: SPAM -> correct
 data725 classified as: HAM -> correct
 data726 classified as: SPAM -> correct
 data727 classified as: SPAM -> correct
 data728 classified as: SPAM -> correct
-data729 classified as: HAM -> correct
+data729 classified as: SPAM -> WRONG!
 data730 classified as: SPAM -> correct
 data731 classified as: SPAM -> correct
 data732 classified as: HAM -> correct
@@ -12280,7 +12317,7 @@ data739 classified as: SPAM -> WRONG!
 data740 classified as: SPAM -> correct
 data741 classified as: SPAM -> correct
 data742 classified as: HAM -> correct
-data743 classified as: HAM -> WRONG!
+data743 classified as: SPAM -> correct
 data744 classified as: SPAM -> correct
 data745 classified as: HAM -> correct
 data746 classified as: SPAM -> correct
@@ -12294,7 +12331,7 @@ data753 classified as: HAM -> correct
 data754 classified as: SPAM -> correct
 data755 classified as: SPAM -> correct
 data756 classified as: HAM -> correct
-data757 classified as: HAM -> WRONG!
+data757 classified as: SPAM -> correct
 data758 classified as: HAM -> correct
 data759 classified as: HAM -> correct
 data760 classified as: SPAM -> correct
@@ -12316,10 +12353,10 @@ data775 classified as: SPAM -> correct
 data776 classified as: SPAM -> correct
 data777 classified as: HAM -> correct
 data778 classified as: HAM -> correct
-data779 classified as: HAM -> correct
+data779 classified as: SPAM -> WRONG!
 data780 classified as: SPAM -> correct
 data781 classified as: SPAM -> correct
-data782 classified as: HAM -> correct
+data782 classified as: SPAM -> WRONG!
 data783 classified as: HAM -> correct
 data784 classified as: SPAM -> correct
 data785 classified as: HAM -> correct
@@ -12336,12 +12373,12 @@ data795 classified as: SPAM -> WRONG!
 data796 classified as: SPAM -> correct
 data797 classified as: HAM -> correct
 data798 classified as: SPAM -> correct
-data799 classified as: HAM -> WRONG!
+data799 classified as: SPAM -> correct
 data800 classified as: HAM -> correct
 data801 classified as: SPAM -> correct
 data802 classified as: SPAM -> correct
 data803 classified as: HAM -> correct
-data804 classified as: HAM -> WRONG!
+data804 classified as: SPAM -> correct
 data805 classified as: HAM -> correct
 data806 classified as: HAM -> correct
 data807 classified as: SPAM -> correct
@@ -12364,10 +12401,10 @@ data823 classified as: HAM -> correct
 data824 classified as: SPAM -> correct
 data825 classified as: HAM -> correct
 data826 classified as: SPAM -> correct
-data827 classified as: HAM -> WRONG!
+data827 classified as: SPAM -> correct
 data828 classified as: HAM -> correct
 data829 classified as: SPAM -> correct
-data830 classified as: SPAM -> WRONG!
+data830 classified as: HAM -> correct
 data831 classified as: SPAM -> correct
 data832 classified as: SPAM -> correct
 data833 classified as: SPAM -> correct
@@ -12382,8 +12419,8 @@ data841 classified as: SPAM -> correct
 data842 classified as: SPAM -> correct
 data843 classified as: HAM -> correct
 data844 classified as: SPAM -> correct
-data845 classified as: HAM -> WRONG!
-data846 classified as: SPAM -> correct
+data845 classified as: SPAM -> correct
+data846 classified as: HAM -> WRONG!
 data847 classified as: HAM -> correct
 data848 classified as: HAM -> correct
 data849 classified as: HAM -> correct
@@ -12418,7 +12455,7 @@ data877 classified as: HAM -> correct
 data878 classified as: SPAM -> correct
 data879 classified as: HAM -> correct
 data880 classified as: HAM -> correct
-data881 classified as: HAM -> WRONG!
+data881 classified as: SPAM -> correct
 data882 classified as: SPAM -> correct
 data883 classified as: SPAM -> correct
 data884 classified as: HAM -> correct
@@ -12429,9 +12466,9 @@ data888 classified as: HAM -> correct
 data889 classified as: SPAM -> correct
 data890 classified as: HAM -> correct
 data891 classified as: SPAM -> correct
-data892 classified as: HAM -> WRONG!
+data892 classified as: SPAM -> correct
 data893 classified as: HAM -> correct
-data894 classified as: HAM -> WRONG!
+data894 classified as: SPAM -> correct
 data895 classified as: SPAM -> correct
 data896 classified as: HAM -> correct
 data897 classified as: SPAM -> correct
@@ -12451,7 +12488,7 @@ data910 classified as: HAM -> correct
 data911 classified as: SPAM -> correct
 data912 classified as: HAM -> correct
 data913 classified as: SPAM -> correct
-data914 classified as: HAM -> WRONG!
+data914 classified as: SPAM -> correct
 data915 classified as: HAM -> correct
 data916 classified as: SPAM -> correct
 data917 classified as: HAM -> correct
@@ -12475,14 +12512,14 @@ data934 classified as: HAM -> correct
 data935 classified as: SPAM -> correct
 data936 classified as: SPAM -> correct
 data937 classified as: HAM -> correct
-data938 classified as: HAM -> WRONG!
+data938 classified as: SPAM -> correct
 data939 classified as: HAM -> correct
 data940 classified as: HAM -> correct
 data941 classified as: SPAM -> correct
 data942 classified as: HAM -> correct
 data943 classified as: SPAM -> correct
 data944 classified as: SPAM -> correct
-data945 classified as: SPAM -> WRONG!
+data945 classified as: HAM -> correct
 data946 classified as: SPAM -> correct
 data947 classified as: HAM -> correct
 data948 classified as: SPAM -> correct
@@ -12502,7 +12539,7 @@ data961 classified as: SPAM -> correct
 data962 classified as: HAM -> correct
 data963 classified as: HAM -> correct
 data964 classified as: SPAM -> correct
-data965 classified as: HAM -> WRONG!
+data965 classified as: SPAM -> correct
 data966 classified as: HAM -> correct
 data967 classified as: HAM -> correct
 data968 classified as: SPAM -> correct
@@ -12515,16 +12552,16 @@ data974 classified as: SPAM -> correct
 data975 classified as: HAM -> correct
 data976 classified as: SPAM -> correct
 data977 classified as: HAM -> correct
-data978 classified as: HAM -> WRONG!
+data978 classified as: SPAM -> correct
 data979 classified as: HAM -> correct
 data980 classified as: SPAM -> correct
 data981 classified as: SPAM -> correct
 data982 classified as: HAM -> correct
-data983 classified as: HAM -> correct
+data983 classified as: SPAM -> WRONG!
 data984 classified as: HAM -> correct
 data985 classified as: HAM -> correct
 data986 classified as: HAM -> correct
-data987 classified as: HAM -> WRONG!
+data987 classified as: SPAM -> correct
 data988 classified as: SPAM -> correct
 data989 classified as: HAM -> correct
 data990 classified as: SPAM -> correct
@@ -12539,13 +12576,13 @@ data998 classified as: SPAM -> correct
 data999 classified as: HAM -> correct
 data1000 classified as: SPAM -> correct
 data1001 classified as: HAM -> correct
-data1002 classified as: HAM -> WRONG!
+data1002 classified as: SPAM -> correct
 data1003 classified as: HAM -> correct
 data1004 classified as: HAM -> correct
 data1005 classified as: HAM -> correct
 data1006 classified as: HAM -> correct
 data1007 classified as: SPAM -> correct
-data1008 classified as: HAM -> WRONG!
+data1008 classified as: SPAM -> correct
 data1009 classified as: HAM -> correct
 data1010 classified as: SPAM -> correct
 data1011 classified as: SPAM -> correct
@@ -12557,8 +12594,8 @@ data1016 classified as: HAM -> correct
 data1017 classified as: HAM -> correct
 data1018 classified as: SPAM -> correct
 data1019 classified as: HAM -> correct
-data1020 classified as: HAM -> WRONG!
-data1021 classified as: HAM -> WRONG!
+data1020 classified as: SPAM -> correct
+data1021 classified as: SPAM -> correct
 data1022 classified as: HAM -> correct
 data1023 classified as: SPAM -> correct
 data1024 classified as: HAM -> correct
@@ -12588,7 +12625,7 @@ data1047 classified as: SPAM -> correct
 data1048 classified as: HAM -> correct
 data1049 classified as: SPAM -> correct
 data1050 classified as: HAM -> correct
-data1051 classified as: HAM -> WRONG!
+data1051 classified as: SPAM -> correct
 data1052 classified as: HAM -> correct
 data1053 classified as: SPAM -> correct
 data1054 classified as: SPAM -> correct
@@ -12622,7 +12659,7 @@ data1081 classified as: HAM -> correct
 data1082 classified as: SPAM -> correct
 data1083 classified as: SPAM -> correct
 data1084 classified as: HAM -> correct
-data1085 classified as: SPAM -> correct
+data1085 classified as: HAM -> WRONG!
 data1086 classified as: SPAM -> correct
 data1087 classified as: HAM -> correct
 data1088 classified as: HAM -> correct
@@ -12646,7 +12683,7 @@ data1105 classified as: HAM -> correct
 data1106 classified as: SPAM -> correct
 data1107 classified as: HAM -> correct
 data1108 classified as: HAM -> correct
-data1109 classified as: HAM -> WRONG!
+data1109 classified as: SPAM -> correct
 data1110 classified as: SPAM -> correct
 data1111 classified as: HAM -> correct
 data1112 classified as: SPAM -> correct
@@ -12695,8 +12732,8 @@ data1154 classified as: HAM -> correct
 data1155 classified as: SPAM -> correct
 data1156 classified as: HAM -> correct
 data1157 classified as: HAM -> correct
-data1158 classified as: HAM -> WRONG!
-data1159 classified as: HAM -> WRONG!
+data1158 classified as: SPAM -> correct
+data1159 classified as: SPAM -> correct
 data1160 classified as: HAM -> correct
 data1161 classified as: SPAM -> correct
 data1162 classified as: SPAM -> correct
@@ -12710,7 +12747,7 @@ data1169 classified as: HAM -> correct
 data1170 classified as: SPAM -> correct
 data1171 classified as: SPAM -> correct
 data1172 classified as: HAM -> correct
-data1173 classified as: HAM -> correct
+data1173 classified as: SPAM -> WRONG!
 data1174 classified as: SPAM -> correct
 data1175 classified as: SPAM -> correct
 data1176 classified as: SPAM -> correct
@@ -12726,7 +12763,7 @@ data1185 classified as: SPAM -> correct
 data1186 classified as: HAM -> correct
 data1187 classified as: SPAM -> correct
 data1188 classified as: HAM -> correct
-data1189 classified as: HAM -> WRONG!
+data1189 classified as: SPAM -> correct
 data1190 classified as: HAM -> correct
 data1191 classified as: SPAM -> correct
 data1192 classified as: HAM -> correct
@@ -12758,7 +12795,7 @@ data1217 classified as: HAM -> correct
 data1218 classified as: SPAM -> WRONG!
 data1219 classified as: SPAM -> correct
 data1220 classified as: SPAM -> correct
-data1221 classified as: HAM -> correct
+data1221 classified as: SPAM -> WRONG!
 data1222 classified as: SPAM -> correct
 data1223 classified as: HAM -> correct
 data1224 classified as: SPAM -> correct
@@ -12790,7 +12827,7 @@ data1249 classified as: HAM -> correct
 data1250 classified as: HAM -> correct
 data1251 classified as: SPAM -> correct
 data1252 classified as: HAM -> correct
-data1253 classified as: HAM -> WRONG!
+data1253 classified as: SPAM -> correct
 data1254 classified as: SPAM -> correct
 data1255 classified as: HAM -> correct
 data1256 classified as: SPAM -> correct
@@ -12835,7 +12872,7 @@ data1294 classified as: SPAM -> correct
 data1295 classified as: SPAM -> correct
 data1296 classified as: HAM -> correct
 data1297 classified as: SPAM -> correct
-data1298 classified as: SPAM -> WRONG!
+data1298 classified as: HAM -> correct
 data1299 classified as: SPAM -> correct
 data1300 classified as: HAM -> correct
 data1301 classified as: SPAM -> correct
@@ -12872,7 +12909,7 @@ data1331 classified as: SPAM -> correct
 data1332 classified as: HAM -> correct
 data1333 classified as: SPAM -> correct
 data1334 classified as: SPAM -> correct
-data1335 classified as: HAM -> correct
+data1335 classified as: SPAM -> WRONG!
 data1336 classified as: HAM -> correct
 data1337 classified as: SPAM -> correct
 data1338 classified as: HAM -> correct
@@ -12888,7 +12925,7 @@ data1347 classified as: HAM -> correct
 data1348 classified as: SPAM -> correct
 data1349 classified as: SPAM -> WRONG!
 data1350 classified as: SPAM -> correct
-data1351 classified as: HAM -> correct
+data1351 classified as: SPAM -> WRONG!
 data1352 classified as: SPAM -> WRONG!
 data1353 classified as: HAM -> correct
 data1354 classified as: SPAM -> correct
@@ -12909,9 +12946,9 @@ data1368 classified as: HAM -> correct
 data1369 classified as: HAM -> correct
 data1370 classified as: SPAM -> correct
 data1371 classified as: HAM -> correct
-data1372 classified as: SPAM -> WRONG!
+data1372 classified as: HAM -> correct
 data1373 classified as: SPAM -> correct
-data1374 classified as: HAM -> correct
+data1374 classified as: SPAM -> WRONG!
 data1375 classified as: HAM -> correct
 data1376 classified as: SPAM -> correct
 data1377 classified as: HAM -> correct
@@ -12920,7 +12957,7 @@ data1379 classified as: SPAM -> correct
 data1380 classified as: SPAM -> correct
 data1381 classified as: SPAM -> correct
 data1382 classified as: HAM -> correct
-data1383 classified as: HAM -> WRONG!
+data1383 classified as: SPAM -> correct
 data1384 classified as: HAM -> correct
 data1385 classified as: HAM -> correct
 data1386 classified as: SPAM -> correct
@@ -13018,7 +13055,7 @@ data1477 classified as: SPAM -> correct
 data1478 classified as: HAM -> correct
 data1479 classified as: HAM -> correct
 data1480 classified as: SPAM -> correct
-data1481 classified as: HAM -> WRONG!
+data1481 classified as: SPAM -> correct
 data1482 classified as: HAM -> correct
 data1483 classified as: HAM -> correct
 data1484 classified as: SPAM -> correct
@@ -13026,12 +13063,12 @@ data1485 classified as: SPAM -> correct
 data1486 classified as: HAM -> correct
 data1487 classified as: HAM -> correct
 data1488 classified as: SPAM -> correct
-data1489 classified as: HAM -> correct
+data1489 classified as: SPAM -> WRONG!
 data1490 classified as: SPAM -> correct
-data1491 classified as: HAM -> WRONG!
+data1491 classified as: SPAM -> correct
 data1492 classified as: SPAM -> correct
-data1493 classified as: HAM -> correct
-data1494 classified as: HAM -> WRONG!
+data1493 classified as: SPAM -> WRONG!
+data1494 classified as: SPAM -> correct
 data1495 classified as: SPAM -> correct
 data1496 classified as: HAM -> correct
 data1497 classified as: SPAM -> correct
@@ -13050,7 +13087,7 @@ data1509 classified as: HAM -> correct
 data1510 classified as: SPAM -> correct
 data1511 classified as: HAM -> correct
 data1512 classified as: SPAM -> correct
-data1513 classified as: HAM -> WRONG!
+data1513 classified as: SPAM -> correct
 data1514 classified as: SPAM -> correct
 data1515 classified as: HAM -> correct
 data1516 classified as: SPAM -> correct
@@ -13063,16 +13100,16 @@ data1522 classified as: HAM -> correct
 data1523 classified as: SPAM -> correct
 data1524 classified as: HAM -> correct
 data1525 classified as: SPAM -> correct
-data1526 classified as: SPAM -> WRONG!
+data1526 classified as: HAM -> correct
 data1527 classified as: SPAM -> correct
-data1528 classified as: HAM -> correct
+data1528 classified as: SPAM -> WRONG!
 data1529 classified as: SPAM -> correct
 data1530 classified as: SPAM -> correct
 data1531 classified as: HAM -> correct
 data1532 classified as: SPAM -> correct
 data1533 classified as: SPAM -> correct
 data1534 classified as: SPAM -> correct
-data1535 classified as: HAM -> correct
+data1535 classified as: SPAM -> WRONG!
 data1536 classified as: HAM -> correct
 data1537 classified as: HAM -> correct
 data1538 classified as: SPAM -> correct
@@ -13133,11 +13170,11 @@ data1592 classified as: SPAM -> correct
 data1593 classified as: HAM -> correct
 data1594 classified as: HAM -> correct
 data1595 classified as: SPAM -> correct
-data1596 classified as: HAM -> correct
+data1596 classified as: SPAM -> WRONG!
 data1597 classified as: SPAM -> correct
 data1598 classified as: SPAM -> correct
 data1599 classified as: HAM -> correct
-data1600 classified as: HAM -> WRONG!
+data1600 classified as: SPAM -> correct
 data1601 classified as: HAM -> correct
 data1602 classified as: SPAM -> correct
 data1603 classified as: SPAM -> correct
@@ -13193,7 +13230,7 @@ data1652 classified as: SPAM -> correct
 data1653 classified as: HAM -> correct
 data1654 classified as: SPAM -> correct
 data1655 classified as: SPAM -> correct
-data1656 classified as: HAM -> correct
+data1656 classified as: SPAM -> WRONG!
 data1657 classified as: HAM -> correct
 data1658 classified as: SPAM -> correct
 data1659 classified as: HAM -> correct
@@ -13202,7 +13239,7 @@ data1661 classified as: HAM -> correct
 data1662 classified as: HAM -> correct
 data1663 classified as: SPAM -> correct
 data1664 classified as: SPAM -> correct
-data1665 classified as: HAM -> correct
+data1665 classified as: SPAM -> WRONG!
 data1666 classified as: SPAM -> correct
 data1667 classified as: HAM -> correct
 data1668 classified as: SPAM -> correct
@@ -13224,7 +13261,7 @@ data1683 classified as: SPAM -> correct
 data1684 classified as: SPAM -> correct
 data1685 classified as: HAM -> correct
 data1686 classified as: HAM -> correct
-data1687 classified as: HAM -> WRONG!
+data1687 classified as: SPAM -> correct
 data1688 classified as: SPAM -> correct
 data1689 classified as: HAM -> correct
 data1690 classified as: SPAM -> WRONG!
@@ -13248,7 +13285,7 @@ data1707 classified as: HAM -> correct
 data1708 classified as: HAM -> correct
 data1709 classified as: HAM -> correct
 data1710 classified as: SPAM -> correct
-data1711 classified as: SPAM -> WRONG!
+data1711 classified as: HAM -> correct
 data1712 classified as: HAM -> correct
 data1713 classified as: SPAM -> correct
 data1714 classified as: SPAM -> correct
@@ -13320,7 +13357,7 @@ data1779 classified as: SPAM -> correct
 data1780 classified as: SPAM -> WRONG!
 data1781 classified as: SPAM -> correct
 data1782 classified as: HAM -> correct
-data1783 classified as: HAM -> WRONG!
+data1783 classified as: SPAM -> correct
 data1784 classified as: HAM -> correct
 data1785 classified as: HAM -> correct
 data1786 classified as: SPAM -> correct
@@ -13333,7 +13370,7 @@ data1792 classified as: HAM -> correct
 data1793 classified as: HAM -> correct
 data1794 classified as: SPAM -> correct
 data1795 classified as: SPAM -> correct
-data1796 classified as: SPAM -> WRONG!
+data1796 classified as: HAM -> correct
 data1797 classified as: HAM -> correct
 data1798 classified as: SPAM -> correct
 data1799 classified as: SPAM -> correct
@@ -13347,7 +13384,7 @@ data1806 classified as: HAM -> correct
 data1807 classified as: SPAM -> correct
 data1808 classified as: HAM -> correct
 data1809 classified as: SPAM -> WRONG!
-data1810 classified as: HAM -> correct
+data1810 classified as: SPAM -> WRONG!
 data1811 classified as: SPAM -> correct
 data1812 classified as: HAM -> correct
 data1813 classified as: SPAM -> correct
@@ -13356,7 +13393,7 @@ data1815 classified as: HAM -> correct
 data1816 classified as: HAM -> correct
 data1817 classified as: SPAM -> correct
 data1818 classified as: HAM -> correct
-data1819 classified as: HAM -> WRONG!
+data1819 classified as: SPAM -> correct
 data1820 classified as: HAM -> correct
 data1821 classified as: SPAM -> correct
 data1822 classified as: HAM -> correct
@@ -13364,8 +13401,8 @@ data1823 classified as: SPAM -> correct
 data1824 classified as: SPAM -> correct
 data1825 classified as: HAM -> correct
 data1826 classified as: SPAM -> correct
-data1827 classified as: HAM -> WRONG!
-data1828 classified as: HAM -> correct
+data1827 classified as: SPAM -> correct
+data1828 classified as: SPAM -> WRONG!
 data1829 classified as: HAM -> correct
 data1830 classified as: HAM -> correct
 data1831 classified as: SPAM -> correct
@@ -13373,7 +13410,7 @@ data1832 classified as: SPAM -> correct
 data1833 classified as: SPAM -> WRONG!
 data1834 classified as: HAM -> correct
 data1835 classified as: HAM -> correct
-data1836 classified as: HAM -> correct
+data1836 classified as: SPAM -> WRONG!
 data1837 classified as: HAM -> correct
 data1838 classified as: HAM -> correct
 data1839 classified as: SPAM -> correct
@@ -13381,7 +13418,7 @@ data1840 classified as: HAM -> correct
 data1841 classified as: HAM -> correct
 data1842 classified as: SPAM -> correct
 data1843 classified as: SPAM -> correct
-data1844 classified as: HAM -> correct
+data1844 classified as: SPAM -> WRONG!
 data1845 classified as: SPAM -> correct
 data1846 classified as: SPAM -> correct
 data1847 classified as: HAM -> correct
@@ -13429,14 +13466,14 @@ data1888 classified as: HAM -> correct
 data1889 classified as: HAM -> correct
 data1890 classified as: SPAM -> correct
 data1891 classified as: HAM -> correct
-data1892 classified as: HAM -> WRONG!
+data1892 classified as: SPAM -> correct
 data1893 classified as: HAM -> correct
 data1894 classified as: SPAM -> correct
-data1895 classified as: HAM -> correct
-data1896 classified as: HAM -> WRONG!
+data1895 classified as: SPAM -> WRONG!
+data1896 classified as: SPAM -> correct
 data1897 classified as: SPAM -> correct
 data1898 classified as: SPAM -> correct
-data1899 classified as: HAM -> correct
+data1899 classified as: SPAM -> WRONG!
 data1900 classified as: SPAM -> correct
 data1901 classified as: SPAM -> correct
 data1902 classified as: HAM -> correct
@@ -13448,7 +13485,7 @@ data1907 classified as: SPAM -> correct
 data1908 classified as: HAM -> correct
 data1909 classified as: SPAM -> correct
 data1910 classified as: HAM -> correct
-data1911 classified as: HAM -> WRONG!
+data1911 classified as: SPAM -> correct
 data1912 classified as: SPAM -> correct
 data1913 classified as: HAM -> correct
 data1914 classified as: SPAM -> correct
@@ -13465,7 +13502,7 @@ data1924 classified as: HAM -> correct
 data1925 classified as: HAM -> correct
 data1926 classified as: SPAM -> correct
 data1927 classified as: SPAM -> correct
-data1928 classified as: HAM -> correct
+data1928 classified as: SPAM -> WRONG!
 data1929 classified as: SPAM -> correct
 data1930 classified as: SPAM -> correct
 data1931 classified as: SPAM -> WRONG!
@@ -13481,11 +13518,11 @@ data1940 classified as: SPAM -> correct
 data1941 classified as: HAM -> correct
 data1942 classified as: SPAM -> correct
 data1943 classified as: SPAM -> correct
-data1944 classified as: HAM -> WRONG!
+data1944 classified as: SPAM -> correct
 data1945 classified as: HAM -> correct
 data1946 classified as: SPAM -> correct
 data1947 classified as: HAM -> correct
-data1948 classified as: HAM -> correct
+data1948 classified as: SPAM -> WRONG!
 data1949 classified as: SPAM -> correct
 data1950 classified as: SPAM -> correct
 data1951 classified as: HAM -> correct
@@ -13508,7 +13545,7 @@ data1967 classified as: SPAM -> correct
 data1968 classified as: HAM -> correct
 data1969 classified as: SPAM -> correct
 data1970 classified as: SPAM -> correct
-data1971 classified as: HAM -> WRONG!
+data1971 classified as: SPAM -> correct
 data1972 classified as: HAM -> correct
 data1973 classified as: SPAM -> correct
 data1974 classified as: HAM -> correct
@@ -13521,12 +13558,12 @@ data1980 classified as: SPAM -> correct
 data1981 classified as: HAM -> correct
 data1982 classified as: HAM -> correct
 data1983 classified as: SPAM -> correct
-data1984 classified as: HAM -> correct
+data1984 classified as: SPAM -> WRONG!
 data1985 classified as: SPAM -> correct
 data1986 classified as: HAM -> correct
 data1987 classified as: SPAM -> correct
 data1988 classified as: SPAM -> correct
-data1989 classified as: HAM -> correct
+data1989 classified as: SPAM -> WRONG!
 data1990 classified as: HAM -> correct
 data1991 classified as: SPAM -> correct
 data1992 classified as: SPAM -> correct
@@ -13555,7 +13592,7 @@ data2014 classified as: HAM -> correct
 data2015 classified as: SPAM -> correct
 data2016 classified as: SPAM -> correct
 data2017 classified as: HAM -> correct
-data2018 classified as: HAM -> correct
+data2018 classified as: SPAM -> WRONG!
 data2019 classified as: HAM -> correct
 data2020 classified as: SPAM -> correct
 data2021 classified as: SPAM -> correct
@@ -13566,7 +13603,7 @@ data2025 classified as: HAM -> correct
 data2026 classified as: SPAM -> correct
 data2027 classified as: SPAM -> correct
 data2028 classified as: HAM -> correct
-data2029 classified as: HAM -> WRONG!
+data2029 classified as: SPAM -> correct
 data2030 classified as: HAM -> correct
 data2031 classified as: SPAM -> correct
 data2032 classified as: SPAM -> correct
@@ -13604,8 +13641,8 @@ data2063 classified as: SPAM -> correct
 data2064 classified as: SPAM -> correct
 data2065 classified as: HAM -> correct
 data2066 classified as: SPAM -> correct
-data2067 classified as: HAM -> WRONG!
-data2068 classified as: HAM -> correct
+data2067 classified as: SPAM -> correct
+data2068 classified as: SPAM -> WRONG!
 data2069 classified as: SPAM -> correct
 data2070 classified as: HAM -> correct
 data2071 classified as: SPAM -> correct
@@ -13620,14 +13657,14 @@ data2079 classified as: SPAM -> correct
 data2080 classified as: HAM -> correct
 data2081 classified as: HAM -> correct
 data2082 classified as: SPAM -> correct
-data2083 classified as: HAM -> WRONG!
+data2083 classified as: SPAM -> correct
 data2084 classified as: SPAM -> correct
 data2085 classified as: HAM -> correct
 data2086 classified as: SPAM -> correct
 data2087 classified as: HAM -> correct
 data2088 classified as: SPAM -> correct
 data2089 classified as: SPAM -> correct
-data2090 classified as: HAM -> correct
+data2090 classified as: SPAM -> WRONG!
 data2091 classified as: SPAM -> correct
 data2092 classified as: HAM -> correct
 data2093 classified as: SPAM -> correct
@@ -13704,7 +13741,7 @@ data2163 classified as: SPAM -> correct
 data2164 classified as: SPAM -> correct
 data2165 classified as: HAM -> correct
 data2166 classified as: SPAM -> correct
-data2167 classified as: HAM -> WRONG!
+data2167 classified as: SPAM -> correct
 data2168 classified as: HAM -> correct
 data2169 classified as: HAM -> correct
 data2170 classified as: SPAM -> correct
@@ -13730,7 +13767,7 @@ data2189 classified as: SPAM -> correct
 data2190 classified as: HAM -> correct
 data2191 classified as: SPAM -> correct
 data2192 classified as: HAM -> correct
-data2193 classified as: HAM -> correct
+data2193 classified as: SPAM -> WRONG!
 data2194 classified as: SPAM -> correct
 data2195 classified as: HAM -> correct
 data2196 classified as: SPAM -> correct
@@ -13738,7 +13775,7 @@ data2197 classified as: SPAM -> correct
 data2198 classified as: HAM -> correct
 data2199 classified as: HAM -> correct
 data2200 classified as: SPAM -> correct
-data2201 classified as: HAM -> correct
+data2201 classified as: SPAM -> WRONG!
 data2202 classified as: HAM -> correct
 data2203 classified as: SPAM -> correct
 data2204 classified as: SPAM -> correct
@@ -13749,7 +13786,7 @@ data2208 classified as: HAM -> correct
 data2209 classified as: HAM -> correct
 data2210 classified as: HAM -> correct
 data2211 classified as: HAM -> correct
-data2212 classified as: HAM -> WRONG!
+data2212 classified as: SPAM -> correct
 data2213 classified as: HAM -> correct
 data2214 classified as: SPAM -> correct
 data2215 classified as: SPAM -> correct
@@ -13762,7 +13799,7 @@ data2221 classified as: SPAM -> correct
 data2222 classified as: SPAM -> correct
 data2223 classified as: HAM -> correct
 data2224 classified as: HAM -> correct
-data2225 classified as: HAM -> WRONG!
+data2225 classified as: SPAM -> correct
 data2226 classified as: SPAM -> correct
 data2227 classified as: HAM -> correct
 data2228 classified as: HAM -> correct
@@ -13778,7 +13815,7 @@ data2237 classified as: HAM -> correct
 data2238 classified as: SPAM -> correct
 data2239 classified as: SPAM -> correct
 data2240 classified as: HAM -> correct
-data2241 classified as: SPAM -> WRONG!
+data2241 classified as: HAM -> correct
 data2242 classified as: SPAM -> correct
 data2243 classified as: HAM -> correct
 data2244 classified as: HAM -> correct
@@ -13808,7 +13845,7 @@ data2267 classified as: HAM -> correct
 data2268 classified as: HAM -> correct
 data2269 classified as: HAM -> correct
 data2270 classified as: SPAM -> correct
-data2271 classified as: HAM -> correct
+data2271 classified as: SPAM -> WRONG!
 data2272 classified as: SPAM -> correct
 data2273 classified as: HAM -> correct
 data2274 classified as: SPAM -> correct
@@ -13850,13 +13887,13 @@ data2309 classified as: SPAM -> correct
 data2310 classified as: HAM -> correct
 data2311 classified as: SPAM -> correct
 data2312 classified as: HAM -> correct
-data2313 classified as: HAM -> WRONG!
+data2313 classified as: SPAM -> correct
 data2314 classified as: HAM -> correct
 data2315 classified as: SPAM -> correct
 data2316 classified as: SPAM -> correct
 data2317 classified as: HAM -> correct
 data2318 classified as: SPAM -> correct
-data2319 classified as: HAM -> correct
+data2319 classified as: SPAM -> WRONG!
 data2320 classified as: SPAM -> correct
 data2321 classified as: SPAM -> correct
 data2322 classified as: SPAM -> correct
@@ -13917,7 +13954,7 @@ data2376 classified as: HAM -> correct
 data2377 classified as: SPAM -> correct
 data2378 classified as: HAM -> correct
 data2379 classified as: SPAM -> correct
-data2380 classified as: HAM -> WRONG!
+data2380 classified as: SPAM -> correct
 data2381 classified as: SPAM -> correct
 data2382 classified as: HAM -> correct
 data2383 classified as: SPAM -> correct
@@ -13939,7 +13976,7 @@ data2398 classified as: SPAM -> correct
 data2399 classified as: HAM -> correct
 data2400 classified as: SPAM -> correct
 data2401 classified as: HAM -> correct
-data2402 classified as: SPAM -> WRONG!
+data2402 classified as: HAM -> correct
 data2403 classified as: HAM -> correct
 data2404 classified as: HAM -> correct
 data2405 classified as: SPAM -> correct
@@ -14019,7 +14056,7 @@ data2478 classified as: SPAM -> correct
 data2479 classified as: HAM -> correct
 data2480 classified as: SPAM -> correct
 data2481 classified as: SPAM -> correct
-data2482 classified as: SPAM -> correct
+data2482 classified as: HAM -> WRONG!
 data2483 classified as: HAM -> correct
 data2484 classified as: HAM -> correct
 data2485 classified as: SPAM -> correct
@@ -14043,7 +14080,7 @@ data2502 classified as: HAM -> correct
 data2503 classified as: SPAM -> correct
 data2504 classified as: SPAM -> correct
 data2505 classified as: SPAM -> correct
-data2506 classified as: HAM -> correct
+data2506 classified as: SPAM -> WRONG!
 data2507 classified as: SPAM -> correct
 data2508 classified as: SPAM -> correct
 data2509 classified as: SPAM -> correct
@@ -14059,13 +14096,13 @@ data2518 classified as: HAM -> correct
 data2519 classified as: SPAM -> correct
 data2520 classified as: SPAM -> correct
 data2521 classified as: HAM -> correct
-data2522 classified as: HAM -> correct
+data2522 classified as: SPAM -> WRONG!
 data2523 classified as: SPAM -> correct
 data2524 classified as: SPAM -> correct
 data2525 classified as: SPAM -> correct
 data2526 classified as: HAM -> correct
 data2527 classified as: SPAM -> correct
-data2528 classified as: HAM -> WRONG!
+data2528 classified as: SPAM -> correct
 data2529 classified as: HAM -> correct
 data2530 classified as: SPAM -> correct
 data2531 classified as: SPAM -> correct
@@ -14076,7 +14113,7 @@ data2535 classified as: SPAM -> correct
 data2536 classified as: HAM -> correct
 data2537 classified as: HAM -> correct
 data2538 classified as: HAM -> correct
-data2539 classified as: HAM -> WRONG!
+data2539 classified as: SPAM -> correct
 data2540 classified as: SPAM -> correct
 data2541 classified as: HAM -> correct
 data2542 classified as: SPAM -> correct
@@ -14089,7 +14126,7 @@ data2548 classified as: SPAM -> correct
 data2549 classified as: HAM -> correct
 data2550 classified as: SPAM -> correct
 data2551 classified as: SPAM -> correct
-data2552 classified as: SPAM -> WRONG!
+data2552 classified as: HAM -> correct
 data2553 classified as: HAM -> correct
 data2554 classified as: HAM -> correct
 data2555 classified as: SPAM -> correct
@@ -14101,18 +14138,18 @@ data2560 classified as: HAM -> correct
 data2561 classified as: SPAM -> correct
 data2562 classified as: HAM -> correct
 data2563 classified as: SPAM -> correct
-data2564 classified as: HAM -> WRONG!
+data2564 classified as: SPAM -> correct
 data2565 classified as: HAM -> correct
 data2566 classified as: HAM -> correct
 data2567 classified as: SPAM -> correct
 data2568 classified as: HAM -> correct
 data2569 classified as: SPAM -> correct
-data2570 classified as: HAM -> correct
+data2570 classified as: SPAM -> WRONG!
 data2571 classified as: SPAM -> correct
 data2572 classified as: HAM -> correct
 data2573 classified as: SPAM -> correct
 data2574 classified as: HAM -> correct
-data2575 classified as: HAM -> correct
+data2575 classified as: SPAM -> WRONG!
 data2576 classified as: HAM -> correct
 data2577 classified as: SPAM -> correct
 data2578 classified as: HAM -> correct
@@ -14181,7 +14218,7 @@ data2640 classified as: SPAM -> correct
 data2641 classified as: HAM -> correct
 data2642 classified as: HAM -> correct
 data2643 classified as: HAM -> correct
-data2644 classified as: HAM -> correct
+data2644 classified as: SPAM -> WRONG!
 data2645 classified as: SPAM -> correct
 data2646 classified as: SPAM -> correct
 data2647 classified as: HAM -> correct
@@ -14199,16 +14236,16 @@ data2658 classified as: HAM -> correct
 data2659 classified as: HAM -> correct
 data2660 classified as: SPAM -> correct
 data2661 classified as: SPAM -> correct
-data2662 classified as: HAM -> correct
+data2662 classified as: SPAM -> WRONG!
 data2663 classified as: HAM -> correct
 data2664 classified as: SPAM -> correct
 data2665 classified as: HAM -> correct
 data2666 classified as: SPAM -> correct
 data2667 classified as: HAM -> correct
 data2668 classified as: SPAM -> correct
-data2669 classified as: HAM -> WRONG!
+data2669 classified as: SPAM -> correct
 data2670 classified as: SPAM -> correct
-data2671 classified as: HAM -> correct
+data2671 classified as: SPAM -> WRONG!
 data2672 classified as: HAM -> correct
 data2673 classified as: SPAM -> correct
 data2674 classified as: SPAM -> correct
@@ -14223,19 +14260,19 @@ data2682 classified as: SPAM -> correct
 data2683 classified as: HAM -> correct
 data2684 classified as: SPAM -> correct
 data2685 classified as: SPAM -> correct
-data2686 classified as: HAM -> correct
+data2686 classified as: SPAM -> WRONG!
 data2687 classified as: SPAM -> correct
 data2688 classified as: SPAM -> correct
 data2689 classified as: HAM -> correct
 data2690 classified as: SPAM -> correct
-data2691 classified as: HAM -> WRONG!
+data2691 classified as: SPAM -> correct
 data2692 classified as: HAM -> correct
 data2693 classified as: HAM -> correct
-data2694 classified as: HAM -> WRONG!
+data2694 classified as: SPAM -> correct
 data2695 classified as: SPAM -> correct
 data2696 classified as: SPAM -> WRONG!
 data2697 classified as: SPAM -> correct
-data2698 classified as: HAM -> correct
+data2698 classified as: SPAM -> WRONG!
 data2699 classified as: HAM -> correct
 data2700 classified as: HAM -> correct
 data2701 classified as: SPAM -> correct
@@ -14248,7 +14285,7 @@ data2707 classified as: SPAM -> correct
 data2708 classified as: HAM -> correct
 data2709 classified as: SPAM -> correct
 data2710 classified as: SPAM -> correct
-data2711 classified as: HAM -> correct
+data2711 classified as: SPAM -> WRONG!
 data2712 classified as: HAM -> correct
 data2713 classified as: SPAM -> correct
 data2714 classified as: HAM -> correct
@@ -14263,7 +14300,7 @@ data2722 classified as: SPAM -> correct
 data2723 classified as: HAM -> correct
 data2724 classified as: SPAM -> correct
 data2725 classified as: SPAM -> correct
-data2726 classified as: HAM -> correct
+data2726 classified as: SPAM -> WRONG!
 data2727 classified as: SPAM -> correct
 data2728 classified as: HAM -> correct
 data2729 classified as: SPAM -> correct
@@ -14279,9 +14316,9 @@ data2738 classified as: SPAM -> correct
 data2739 classified as: SPAM -> correct
 data2740 classified as: HAM -> correct
 data2741 classified as: SPAM -> correct
-data2742 classified as: HAM -> WRONG!
+data2742 classified as: SPAM -> correct
 data2743 classified as: HAM -> correct
-data2744 classified as: SPAM -> correct
+data2744 classified as: HAM -> WRONG!
 data2745 classified as: SPAM -> correct
 data2746 classified as: HAM -> correct
 data2747 classified as: SPAM -> correct
@@ -14330,7 +14367,7 @@ data2789 classified as: SPAM -> correct
 data2790 classified as: SPAM -> correct
 data2791 classified as: HAM -> correct
 data2792 classified as: SPAM -> correct
-data2793 classified as: HAM -> WRONG!
+data2793 classified as: SPAM -> correct
 data2794 classified as: HAM -> correct
 data2795 classified as: HAM -> correct
 data2796 classified as: SPAM -> correct
@@ -14345,7 +14382,7 @@ data2804 classified as: SPAM -> correct
 data2805 classified as: SPAM -> correct
 data2806 classified as: HAM -> correct
 data2807 classified as: SPAM -> correct
-data2808 classified as: HAM -> correct
+data2808 classified as: SPAM -> WRONG!
 data2809 classified as: SPAM -> correct
 data2810 classified as: SPAM -> correct
 data2811 classified as: HAM -> correct
@@ -14353,7 +14390,7 @@ data2812 classified as: SPAM -> correct
 data2813 classified as: HAM -> correct
 data2814 classified as: SPAM -> correct
 data2815 classified as: HAM -> correct
-data2816 classified as: SPAM -> WRONG!
+data2816 classified as: HAM -> correct
 data2817 classified as: HAM -> correct
 data2818 classified as: SPAM -> correct
 data2819 classified as: SPAM -> correct
@@ -14387,7 +14424,7 @@ data2846 classified as: HAM -> correct
 data2847 classified as: SPAM -> correct
 data2848 classified as: SPAM -> WRONG!
 data2849 classified as: SPAM -> correct
-data2850 classified as: SPAM -> correct
+data2850 classified as: HAM -> WRONG!
 data2851 classified as: HAM -> correct
 data2852 classified as: SPAM -> correct
 data2853 classified as: HAM -> correct
@@ -14421,22 +14458,22 @@ data2880 classified as: HAM -> correct
 data2881 classified as: HAM -> correct
 data2882 classified as: HAM -> correct
 data2883 classified as: HAM -> correct
-data2884 classified as: HAM -> correct
+data2884 classified as: SPAM -> WRONG!
 data2885 classified as: HAM -> correct
 data2886 classified as: SPAM -> WRONG!
 data2887 classified as: HAM -> correct
 data2888 classified as: HAM -> correct
 data2889 classified as: HAM -> correct
 data2890 classified as: HAM -> correct
-data2891 classified as: HAM -> correct
+data2891 classified as: SPAM -> WRONG!
 data2892 classified as: HAM -> correct
-data2893 classified as: HAM -> correct
+data2893 classified as: SPAM -> WRONG!
 data2894 classified as: HAM -> correct
 data2895 classified as: HAM -> correct
 data2896 classified as: HAM -> correct
 data2897 classified as: HAM -> correct
 data2898 classified as: HAM -> correct
-data2899 classified as: SPAM -> WRONG!
+data2899 classified as: HAM -> correct
 data2900 classified as: HAM -> correct
 data2901 classified as: HAM -> correct
 data2902 classified as: SPAM -> WRONG!
@@ -14474,7 +14511,7 @@ data2933 classified as: HAM -> correct
 data2934 classified as: HAM -> correct
 data2935 classified as: HAM -> correct
 data2936 classified as: HAM -> correct
-data2937 classified as: HAM -> correct
+data2937 classified as: SPAM -> WRONG!
 data2938 classified as: HAM -> correct
 data2939 classified as: HAM -> correct
 data2940 classified as: HAM -> correct
@@ -14485,7 +14522,7 @@ data2944 classified as: HAM -> correct
 data2945 classified as: HAM -> correct
 data2946 classified as: HAM -> correct
 data2947 classified as: SPAM -> WRONG!
-data2948 classified as: HAM -> correct
+data2948 classified as: SPAM -> WRONG!
 data2949 classified as: HAM -> correct
 data2950 classified as: HAM -> correct
 data2951 classified as: HAM -> correct
@@ -14498,12 +14535,12 @@ data2957 classified as: HAM -> correct
 data2958 classified as: HAM -> correct
 data2959 classified as: HAM -> correct
 data2960 classified as: HAM -> correct
-data2961 classified as: SPAM -> WRONG!
+data2961 classified as: HAM -> correct
 data2962 classified as: HAM -> correct
 data2963 classified as: HAM -> correct
 data2964 classified as: HAM -> correct
 data2965 classified as: HAM -> correct
-data2966 classified as: HAM -> correct
+data2966 classified as: SPAM -> WRONG!
 data2967 classified as: HAM -> correct
 data2968 classified as: HAM -> correct
 data2969 classified as: HAM -> correct
@@ -14512,7 +14549,7 @@ data2971 classified as: SPAM -> WRONG!
 data2972 classified as: HAM -> correct
 data2973 classified as: HAM -> correct
 data2974 classified as: HAM -> correct
-data2975 classified as: SPAM -> WRONG!
+data2975 classified as: HAM -> correct
 data2976 classified as: HAM -> correct
 data2977 classified as: HAM -> correct
 data2978 classified as: SPAM -> WRONG!
@@ -14528,7 +14565,7 @@ data2987 classified as: HAM -> correct
 data2988 classified as: HAM -> correct
 data2989 classified as: HAM -> correct
 data2990 classified as: HAM -> correct
-data2991 classified as: SPAM -> WRONG!
+data2991 classified as: HAM -> correct
 data2992 classified as: HAM -> correct
 data2993 classified as: HAM -> correct
 data2994 classified as: HAM -> correct
@@ -14538,13 +14575,13 @@ data2997 classified as: HAM -> correct
 data2998 classified as: HAM -> correct
 data2999 classified as: HAM -> correct
 
-accuracy: 94.33333333333334 %
+accuracy: 94.66666666666667 %
 
-number of wrong classifications: 170 out of 3000 files
-number of wrong spam classifications: 84 out of 1500 spam files
-number of wrong ham classifications: 86 out of 1500 ham files
+number of wrong classifications: 160 out of 3000 files
+number of wrong spam classifications: 12 out of 1500 spam files
+number of wrong ham classifications: 148 out of 1500 ham files
 
-precision for spam files: 0.9427430093209055
-precision for ham files: 0.9439252336448598
-recall for spam files: 0.944
-recall for ham files: 0.9426666666666667
+precision for spam files: 0.9095354523227384
+precision for ham files: 0.9912023460410557
+recall for spam files: 0.992
+recall for ham files: 0.9013333333333333
