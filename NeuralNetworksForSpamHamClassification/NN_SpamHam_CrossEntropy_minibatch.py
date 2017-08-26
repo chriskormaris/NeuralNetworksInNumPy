@@ -8,7 +8,7 @@
 from __future__ import division
 
 import numpy as np
-import numpy.matlib
+#import numpy.matlib
 import re
 
 # I/O Libraries
@@ -63,7 +63,7 @@ def read_labels(files):
     return labels
 
 
-def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTest):
+def get_classification_data(spam_files_dir, ham_files_dir, files, labels, feature_tokens, trainOrTest):
     # classification parameter X
     X_2d_list = [[0 for _ in range(len(feature_tokens))] for _ in
                        range(len(files))]  # X: len(files) x len(feature_tokens)
@@ -72,8 +72,11 @@ def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTes
     for i in range(len(files)):
         print("Reading " + trainOrTest + " file " + "'" + files[i] + "'" + "...")
 
-        text = read_file(files_dir + files[i])
-
+        text = ''
+        if labels[i] == 1:  # 1 is for class "SPAM"
+            text = read_file(spam_files_dir + files[i])
+        elif labels[i] == 0:  # 0 is for class "HAM"
+            text = read_file(ham_files_dir + files[i])
         text_tokens = getTokens(text)
 
         # the feature vector contains features with Boolean values
@@ -92,7 +95,6 @@ def get_classification_data(files_dir, files, labels, feature_tokens, trainOrTes
     y = np.array(labels)
 
     return X, y
-
 
 # extracts tokens from the given text
 def getTokens(text):
@@ -140,7 +142,6 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the total loss of the dataset
 def loss_function(X, t, W1, W2):
-    num_examples = len(X)  # N: training set size
 
     # Feed-Forward to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
@@ -239,8 +240,9 @@ def gradient_check(X, t, W1, W2):
             W1tmp[i, j] = W1[i, j] - epsilon
             Ewminus = loss_function(X, t, W1tmp, W2)
 
-            numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-    diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1)
+            #numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+            numgradEw1[i, j] = (Ewplus - Ewminus) / epsilon
+    diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1 + numgradEw1)
     print('The maximum absolute norm for parameter W1, in the gradient_check is: ' + str(diff1))
 
     # gradient_check for parameter W2
@@ -255,8 +257,9 @@ def gradient_check(X, t, W1, W2):
             W2tmp[i, j] = W2[i, j] - epsilon
             Ewminus = loss_function(X, t, W1, W2tmp)
 
-            numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-    diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2)
+            #numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
+            numgradEw2[i, j] = (Ewplus - Ewminus) / epsilon
+    diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2 + numgradEw2)
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
 
@@ -264,25 +267,36 @@ def gradient_check(X, t, W1, W2):
 
 # MAIN #
 
-train_dir = "TRAIN/"
-test_dir = "TEST/"
 feature_dictionary_dir = "feature_dictionary.txt"
+
+spam_train_dir = "LingspamDataset/spam-train/"
+ham_train_dir = "LingspamDataset/nonspam-train/"
+spam_test_dir = "LingspamDataset/spam-test/"
+ham_test_dir = "LingspamDataset/nonspam-test/"
 
 # read feature dictionary from file
 feature_tokens = read_dictionary_file(feature_dictionary_dir)
 NNParams.num_input_layers = len(feature_tokens)
 
 print("Reading TRAIN files...")
-train_files = sorted([f for f in listdir(train_dir) if isfile(join(train_dir, f))])
-train_labels = read_labels(train_files)
-X_train, y_train = get_classification_data(train_dir, train_files, train_labels, feature_tokens, 'train')
+spam_train_files = sorted([f for f in listdir(spam_train_dir) if isfile(join(spam_train_dir, f))])
+ham_train_files = sorted([f for f in listdir(ham_train_dir) if isfile(join(ham_train_dir, f))])
+train_files = list(spam_train_files)
+train_files.extend(ham_train_files)
+train_labels = [1] * len(spam_train_files)
+train_labels.extend([0] * len(ham_train_files))
+X_train, y_train = get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
 
 print()
 
 print("Reading TEST files...")
-test_files = sorted([f for f in listdir(test_dir) if isfile(join(test_dir, f))])
-test_labels = read_labels(test_files)
-X_test, y_test_true = get_classification_data(test_dir, test_files, test_labels, feature_tokens, 'test')
+spam_test_files = sorted([f for f in listdir(spam_test_dir) if isfile(join(spam_test_dir, f))])
+ham_test_files = sorted([f for f in listdir(ham_test_dir) if isfile(join(ham_test_dir, f))])
+test_files = list(spam_test_files)
+test_files.extend(ham_test_files)
+test_true_labels = [1] * len(spam_test_files)
+test_true_labels.extend([0] * len(ham_test_files))
+X_test, y_test_true = get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
 
 print()
 
