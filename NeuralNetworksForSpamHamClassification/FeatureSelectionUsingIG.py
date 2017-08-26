@@ -28,10 +28,10 @@ def read_labels(files):
     return labels
 
 
-def get_label_frequency(train_labels, label):
+def get_label_frequency(train_labels, class_label):
     frequency = 0
     for train_label in train_labels:
-        if train_label == label:
+        if train_label == class_label:
             frequency = frequency + 1
     return frequency
 
@@ -95,15 +95,15 @@ stopwords = getStopwords(stopwords_dir)
 
 no_of_train_files = len(train_files)
 
-spam_label_frequency = len(spam_train_files)  # 1 is for SPAM, 0 is for HAM
-print("number of SPAM train documents: " + str(spam_label_frequency))
-ham_label_frequency = len(ham_train_files)  # 1 is for SPAM, 0 is for HAM
-print("number of HAM train documents: " + str(ham_label_frequency))
+spam_class_frequency = len(spam_train_files)  # 1 is for SPAM, 0 is for HAM
+print("number of SPAM train documents: " + str(spam_class_frequency))
+ham_class_frequency = len(ham_train_files)  # 1 is for SPAM, 0 is for HAM
+print("number of HAM train documents: " + str(ham_class_frequency))
 
-spam_label_probability = spam_label_frequency / (len(spam_train_files) + len(ham_train_files))
-print("SPAM train document probability: " + str(spam_label_probability))
-ham_label_probability = ham_label_frequency / (len(spam_train_files) + len(ham_train_files))
-print("HAM train document probability: " + str(ham_label_probability))
+spam_class_probability = spam_class_frequency / (len(spam_train_files) + len(ham_train_files))
+print("SPAM train document probability: " + str(spam_class_probability))
+ham_class_probability = ham_class_frequency / (len(spam_train_files) + len(ham_train_files))
+print("HAM train document probability: " + str(ham_class_probability))
 
 print('')
 
@@ -174,7 +174,7 @@ feature_ham_cond_probability = dict()
 IG = dict()
 
 # First calculate the entropy of the dataset
-H_C = - (spam_label_probability * math.log(spam_label_probability) + ham_label_probability * math.log(ham_label_probability))
+H_C = - (spam_class_probability * math.log(spam_class_probability) + ham_class_probability * math.log(ham_class_probability))
 
 print('entropy of the dataset: H(C) = ' + str(H_C))
 
@@ -187,21 +187,21 @@ error = 1e-7
 for (i, token) in enumerate(feature_frequency):
     if token != "":  # exclude the empty string ""
         feature_probability[token] = feature_frequency[token] / no_of_train_files  # P(Xi=1)
-        feature_ham_cond_probability[token] = feature_ham_frequency[token] / ham_label_frequency  # P(Xi=1|C=0)
-        feature_spam_cond_probability[token] = feature_spam_frequency[token] / spam_label_frequency  # P(Xi=1|C=1)
+        feature_ham_cond_probability[token] = feature_ham_frequency[token] / ham_class_frequency  # P(Xi=1|C=0)
+        feature_spam_cond_probability[token] = feature_spam_frequency[token] / spam_class_frequency  # P(Xi=1|C=1)
 
         # bayes rule: P(C=1|Xi=1) = P(Xi=1|C=1) * P(C=1) / P(Xi=1)
-        P_C1_given_X1 = feature_spam_cond_probability[token] * spam_label_probability / (feature_probability[token] + error)
+        P_C1_given_X1 = feature_spam_cond_probability[token] * spam_class_probability / (feature_probability[token] + error)
         # bayes rule: P(C=0|Xi=1) = P(Xi=1|C=0) * P(C=0) / P(Xi=1)
-        P_C0_given_X1 = feature_ham_cond_probability[token] * ham_label_probability / (feature_probability[token] + error)
+        P_C0_given_X1 = feature_ham_cond_probability[token] * ham_class_probability / (feature_probability[token] + error)
 
         # conditional entropy: H(C|Xi=1)
         H_C_given_X1 = - (P_C1_given_X1 * math.log(P_C1_given_X1 + error) + P_C0_given_X1 * math.log(P_C0_given_X1 + error))
 
         # bayes rule: P(C=1|Xi=0) = P(Xi=0|C=1) * P(C=1) / P(Xi=0)
-        P_C1_given_X0 = (1 - feature_spam_cond_probability[token]) * spam_label_probability / (1 - feature_probability[token] + error)
+        P_C1_given_X0 = (1 - feature_spam_cond_probability[token]) * spam_class_probability / (1 - feature_probability[token] + error)
         # bayes rule: P(C=0|Xi=0) = P(Xi=0|C=0) * P(C=0) / P(Xi=0)
-        P_C0_given_X0 = (1 - feature_ham_cond_probability[token]) * ham_label_probability / (1 - feature_probability[token] + error)
+        P_C0_given_X0 = (1 - feature_ham_cond_probability[token]) * ham_class_probability / (1 - feature_probability[token] + error)
 
         # conditional entropy: H(C|Xi=0)
         H_C_given_X0 = - (P_C1_given_X0 * math.log(P_C1_given_X0 + error) + P_C0_given_X0 * math.log(P_C0_given_X0 + error))
@@ -223,8 +223,8 @@ feature_spam_probability = dict()
 for (i, token) in enumerate(feature_frequency):
     if token != "":  # exclude the empty string ""
         feature_probability[token] = feature_frequency[token] / no_of_train_files
-        feature_ham_probability[token] = feature_ham_frequency[token] / ham_label_frequency
-        feature_spam_probability[token] = feature_spam_frequency[token] / spam_label_frequency
+        feature_ham_probability[token] = feature_ham_frequency[token] / ham_class_frequency
+        feature_spam_probability[token] = feature_spam_frequency[token] / spam_class_frequency
 
         #IG[token] = feature_probability[token] * abs(feature_ham_probability[token] - feature_spam_probability[token])
         IG[token] = abs(feature_ham_probability[token] - feature_spam_probability[token])
