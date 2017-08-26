@@ -105,7 +105,7 @@ print("SPAM train document probability: " + str(spam_label_probability))
 ham_label_probability = ham_label_frequency / (len(spam_train_files) + len(ham_train_files))
 print("HAM train document probability: " + str(ham_label_probability))
 
-print()
+print('')
 
 ###############
 
@@ -238,7 +238,7 @@ for (i, token) in enumerate(feature_frequency):
 # sort IG dictionary in descending order by score (the higher score the better)
 IG = OrderedDict(sorted(IG.items(), key=itemgetter(1), reverse=True))
 
-print()
+print('')
 
 feature_tokens = []
 
@@ -251,7 +251,7 @@ for (i, token) in enumerate(IG):
         print(token + ", information gain score: " + str(IG[token]))
     else:
         break
-print()
+print('')
 
 #write feature_tokens to file
 write_tokens_to_file(feature_tokens, feature_dictionary_dir)

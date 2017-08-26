@@ -88,7 +88,7 @@ def get_classification_data(spam_files_dir, ham_files_dir, files, labels, featur
 
         X_2d_list[i][:] = feature_vector
 
-    print("\n")
+    print('')
 
     # convert classification parameters to the appropriate data type
     X = np.array(X_2d_list)
@@ -287,7 +287,7 @@ train_labels = [1] * len(spam_train_files)
 train_labels.extend([0] * len(ham_train_files))
 X_train, y_train = get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
 
-print()
+print('')
 
 print("Reading TEST files...")
 spam_test_files = sorted([f for f in listdir(spam_test_dir) if isfile(join(spam_test_dir, f))])
@@ -298,7 +298,7 @@ test_true_labels = [1] * len(spam_test_files)
 test_true_labels.extend([0] * len(ham_test_files))
 X_test, y_test_true = get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
 
-print()
+print('')
 
 # normalize the data using mean normalization
 X_train = X_train - np.mean(X_train)
@@ -330,7 +330,7 @@ ch = np.random.permutation(X_train.shape[0])
 ch = ch[0:20]  # get the 20 first data
 gradient_check(X_train[ch, :], t[ch, :], W1, W2)
 
-print()
+print('')
 
 # train the Neural Network Model
 W1, W2 = train(X_train, t, W1, W2, epochs=50, tol=1e-6, print_loss=True)
@@ -346,7 +346,7 @@ ham_counter = 0  # the number of ham files
 wrong_spam_counter = 0  # the number of spam files classified as ham
 wrong_ham_counter = 0  # the number of ham files classified as spam
 
-print()
+print('')
 print('checking predictions...')
 for i in range(len(predicted)):
     if predicted[i] == 1 and y_test_true[i] == 1:
@@ -366,13 +366,13 @@ for i in range(len(predicted)):
         print("data" + str(i) + ' classified as: HAM -> correct')
         ham_counter = ham_counter + 1
 
-print()
+print('')
 
 # Accuracy
 
 accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
 print("accuracy: " + str(accuracy) + " %")
-print()
+print('')
 
 # Calculate Precision-Recall
 
@@ -380,7 +380,7 @@ print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + st
 print("number of wrong spam classifications: " + str(wrong_spam_counter) + ' out of ' + str(spam_counter) + ' spam files')
 print("number of wrong ham classifications: " + str(wrong_ham_counter) + ' out of ' + str(ham_counter) + ' ham files')
 
-print()
+print('')
 
 spam_precision = (spam_counter - wrong_spam_counter) / (spam_counter - wrong_spam_counter + wrong_ham_counter)
 print("precision for spam files: " + str(spam_precision))

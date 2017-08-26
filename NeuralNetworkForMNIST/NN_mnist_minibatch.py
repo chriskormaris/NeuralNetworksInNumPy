@@ -253,7 +253,7 @@ for i in range(NNParams.num_output_layers):
         X_train = np.concatenate((X_train, X_train_class_i), axis=0)
         y_train = np.concatenate((y_train, y_train_class_i), axis=0)
 
-print()
+print('')
 
 print("Reading TEST files...")
 # read test images for digits 0,1, 2 and 3
@@ -271,7 +271,7 @@ for i in range(NNParams.num_output_layers):
         X_test = np.concatenate((X_test, X_test_class_i), axis=0)
         y_test_true = np.concatenate((y_test_true, y_test_true_class_i), axis=0)
 
-print()
+print('')
 
 # normalize the data using range normalization
 X_train = X_train / 255
@@ -305,7 +305,7 @@ ch = ch[0:20]  # get the 20 first data
 gradient_check(X_train[ch, :], t[ch, :], W1, W2)
 '''
 
-print()
+print('')
 
 # define the learning rate based on the number of train data
 NNParams.eta = 1 / len(X_train)
@@ -319,7 +319,7 @@ predicted = test(X_test, W1, W2)
 # check predictions
 wrong_counter = 0  # the number of wrong classifications made by the Neural Network
 
-print()
+print('')
 print('checking predictions...')
 for i in range(len(predicted)):
     if predicted[i] == y_test_true[i]:
@@ -328,7 +328,7 @@ for i in range(len(predicted)):
         print("data " + str(i) + ' classified as: ' + str(predicted[i]) + ' -> WRONG!')
         wrong_counter = wrong_counter + 1
 
-print()
+print('')
 
 # Accuracy
 
