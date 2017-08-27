@@ -112,7 +112,7 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the likelihood on the train dataset.
 def likelihood(X, t, W1, W2):
-    num_examples = len(X)  # N: training set size
+    #num_examples = len(X)  # N: training set size
 
     # Feed-Forward to calculate our predictions
     _, _, _, s2, _ = forward(X, W1, W2)
