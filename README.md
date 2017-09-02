@@ -94,3 +94,8 @@ and softmax sigmoid activation function in the last output layer.
 In the last node of the network the Cross Entropy Loss formula is used.
 
 The precision that was achieved, after training with batch gradient descent, was: **97.69 %**.
+
+
+**Notes**
+
+* Gradient check has been implemented as well. However, it does not behave as expected, yet!
