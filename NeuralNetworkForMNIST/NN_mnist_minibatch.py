@@ -245,7 +245,7 @@ for i in range(NNParams.num_output_layers):
     print("Reading " + "'train" + str(i) + ".txt'")
     X_train_class_i = read_data(mnist_dir, 'train' + str(i))
     N_train_i = X_train_class_i.shape[0]
-    y_train_class_i = np.repeat(i, N_train_i, axis=0)
+    y_train_class_i = np.repeat([i], N_train_i, axis=0)
     if i == 0:
         X_train = X_train_class_i
         y_train = y_train_class_i
@@ -263,7 +263,7 @@ for i in range(NNParams.num_output_layers):
     print("Reading " + "'test" + str(i) + ".txt'")
     X_test_class_i = read_data(mnist_dir, 'test' + str(i))
     N_test_i = X_test_class_i.shape[0]
-    y_test_true_class_i = np.repeat(i, N_test_i, axis=0)
+    y_test_true_class_i = np.repeat([i], N_test_i, axis=0)
     if i == 0:
         X_test = X_test_class_i
         y_test_true = y_test_true_class_i
