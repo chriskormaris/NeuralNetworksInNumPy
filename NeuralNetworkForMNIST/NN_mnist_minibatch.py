@@ -18,6 +18,7 @@ __author__ = 'c.kormaris'
 # ignore errors
 np.seterr(all='ignore')
 
+
 ###############
 
 
@@ -121,7 +122,7 @@ def test(X, W1, W2):
 
 
 # Train using Mini-batch Gradient Ascent
-def train(X, t, W1, W2, epochs=200, tol=1e-6, print_estimate=False, X_test=None):
+def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_test=None):
 
     # Run Mini-batch Gradient Ascent
     num_examples = X.shape[0]
@@ -141,14 +142,14 @@ def train(X, t, W1, W2, epochs=200, tol=1e-6, print_estimate=False, X_test=None)
         # Optionally print the estimate.
         if print_estimate:
             if X_test is None:
-                print("Epoch %i (out of %i), likelihood estimate: %f" % (e, epochs, s))
+                print("Epoch %i (out of %i), likelihood estimate: %f" % ((e+1), epochs, s))
             else:
                 # Print the estimate along with the accuracy on every epoch
                 predicted = test(X_test, W1, W2)
                 err = np.not_equal(predicted, y_test_true)
                 totalerrors = np.sum(err)
                 acc = ((len(X_test) - totalerrors) / len(X_test)) * 100
-                print("Epoch %i (out of %i), likelihood estimate: %f, accuracy: %f %%" % (e, epochs, s, float(acc)))
+                print("Epoch %i (out of %i), likelihood estimate: %f, accuracy: %.2f %%" % ((e+1), epochs, s, float(acc)))
 
         if np.abs(s - s_old) < tol:
             break
@@ -279,7 +280,7 @@ print('learning rate: ' + str(NNParams.eta))
 print('')
 
 # train the Neural Network Model
-W1, W2 = train(X_train, t, W1, W2, epochs=200, tol=1e-6, print_estimate=True, X_test=X_test)
+W1, W2 = train(X_train, t, W1, W2, epochs=250, tol=1e-6, print_estimate=True, X_test=X_test)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)

@@ -14,7 +14,7 @@ Slightly based on code from this repository: <a href="https://github.com/dennybr
 Unzip the MNIST data from the compressed file "mnisttxt.zip" in the same directory where the Python files are.
 Then, run the Neural Network that uses batch gradient ascent, from the file "NN_mnist.py" as follows:
 ```python
-python NN_mnist.py
+python NN_mnist_batch_grad_ascent.py
 ```
 Alternatively, train the neural network using mini-batch gradient ascent. The batch size can be changed from within the code:
 ```python
@@ -23,7 +23,7 @@ python NN_mnist_minibatch.py
 Implementating the neural network using stochastic gradient descent would be very slow, because of the big size of MNIST dataset and so that kind of implementation is omitted.
 
 #### Neural Network details
-File: "NN_mnist.py"
+File: "NN_mnist_batch_grad_ascent.py"
 
 1st Activation Function: sigmoid
 
@@ -35,7 +35,7 @@ Train algorithm: Gradient Ascent
 
 Bias terms are used.
 
-The precision that was achieved, after training with batch gradient descent, was: **96.1 %**
+The precision that was achieved, after training with batch gradient ascent, was: **94.67 %**
 
 ## Neural Networks for Spam-Ham Classification
 

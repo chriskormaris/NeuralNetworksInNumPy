@@ -18,6 +18,7 @@ __author__ = 'c.kormaris'
 # ignore errors
 np.seterr(all='ignore')
 
+
 ###############
 
 
@@ -136,14 +137,14 @@ def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_test=N
         if print_estimate:
             lik = likelihood(X, t, W1, W2)
             if X_test is None:
-                print("Iteration %i (out of %i), likelihood estimate: %f" % (i, iterations, float(lik)))
+                print("Iteration %i (out of %i), likelihood estimate: %f" % ((i+1), iterations, float(lik)))
             else:
                 # Print the estimate along with the accuracy on every epoch
                 predicted = test(X_test, W1, W2)
                 err = np.not_equal(predicted, y_test_true)
                 totalerrors = np.sum(err)
                 acc = ((len(X_test) - totalerrors) / len(X_test)) * 100
-                print("Iteration %i (out of %i), likelihood estimate: %f, accuracy: %f %%" % (i, iterations, float(lik), float(acc)))
+                print("Iteration %i (out of %i), likelihood estimate: %f, accuracy: %.2f %%" % ((i+1), iterations, float(lik), float(acc)))
 
             if np.abs(lik - lik_old) < tol:
                 break
@@ -274,6 +275,12 @@ print('')
 
 # train the Neural Network Model
 W1, W2 = train(X_train, t, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_test=X_test)
+
+# print the learned weights
+'''
+print('W1: ' + str(W1))
+print('W2: ' + str(W2))
+'''
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)

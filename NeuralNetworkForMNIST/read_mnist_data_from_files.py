@@ -35,6 +35,19 @@ def read_data(path, testOrTrainFile):
     return X
 
 
+'''
+def read_labels(path, testOrTrainFile):
+    text_file = open(path + testOrTrainFile + ".txt", "r")
+    lines = text_file.readlines()
+    text_file.close()
+
+    digit = np.int(re.sub('[^0-9]', '', testOrTrainFile))
+    y = [digit] * len(lines)
+    y = np.matrix(y).T  # convert classification parameter to the appropriate data type
+    return y
+'''
+
+
 def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
     print('Reading ' + trainOrTest + ' files...')
 
@@ -65,3 +78,43 @@ def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
     else:
         return X, Y
 
+
+###############
+
+# MAIN #
+
+if __name__ == "__main__":
+
+    mnist_dir = "./mnisttxt/"
+
+    X_train, t = get_mnist_data(mnist_dir, 'train', one_hot=True)
+    # y_train: the true categories vector for the train data
+    y_train = np.argmax(t, axis=1)
+    y_train = np.matrix(y_train).T
+
+    print('')
+    print("Xtrain:")
+    df = DataFrame(X_train)
+    df.index = range(X_train.shape[0])
+    df.columns = range(X_train.shape[1])
+    print(df)
+
+    print("ytrain: " + str(y_train))
+
+    print('')
+
+    X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
+    # y_test_true: the true categories vector for the test data
+    y_test_true = np.argmax(t_test_true, axis=1)
+    y_test_true = np.matrix(y_test_true).T
+
+    print('')
+    print("Xtest:")
+    df = DataFrame(X_test)
+    df.index = range(X_test.shape[0])
+    df.columns = range(X_test.shape[1])
+    print(df)
+
+    print("y_test_true: " + str(y_test_true))
+
+    print('')

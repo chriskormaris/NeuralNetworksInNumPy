@@ -25,206 +25,256 @@ Reading 'test9.txt'
 
 learning rate: 1.6666666666666667e-05
 
-Epoch 0 (out of 200), likelihood estimate: -64852.871428, accuracy: 10.090000 %
-Epoch 1 (out of 200), likelihood estimate: -64888.399460, accuracy: 10.090000 %
-Epoch 2 (out of 200), likelihood estimate: -58960.868989, accuracy: 11.610000 %
-Epoch 3 (out of 200), likelihood estimate: -51856.800208, accuracy: 25.430000 %
-Epoch 4 (out of 200), likelihood estimate: -45865.890428, accuracy: 42.170000 %
-Epoch 5 (out of 200), likelihood estimate: -41300.881211, accuracy: 51.340000 %
-Epoch 6 (out of 200), likelihood estimate: -37853.455820, accuracy: 57.450000 %
-Epoch 7 (out of 200), likelihood estimate: -35195.311111, accuracy: 62.420000 %
-Epoch 8 (out of 200), likelihood estimate: -33088.137317, accuracy: 66.320000 %
-Epoch 9 (out of 200), likelihood estimate: -31373.360216, accuracy: 69.220000 %
-Epoch 10 (out of 200), likelihood estimate: -29946.886837, accuracy: 71.210000 %
-Epoch 11 (out of 200), likelihood estimate: -28739.066601, accuracy: 73.170000 %
-Epoch 12 (out of 200), likelihood estimate: -27701.810504, accuracy: 74.750000 %
-Epoch 13 (out of 200), likelihood estimate: -26800.759823, accuracy: 76.030000 %
-Epoch 14 (out of 200), likelihood estimate: -26010.547019, accuracy: 77.280000 %
-Epoch 15 (out of 200), likelihood estimate: -25311.894170, accuracy: 78.340000 %
-Epoch 16 (out of 200), likelihood estimate: -24689.795489, accuracy: 79.220000 %
-Epoch 17 (out of 200), likelihood estimate: -24132.342569, accuracy: 80.040000 %
-Epoch 18 (out of 200), likelihood estimate: -23629.937686, accuracy: 80.910000 %
-Epoch 19 (out of 200), likelihood estimate: -23174.748202, accuracy: 81.610000 %
-Epoch 20 (out of 200), likelihood estimate: -22760.315925, accuracy: 82.080000 %
-Epoch 21 (out of 200), likelihood estimate: -22381.269653, accuracy: 82.680000 %
-Epoch 22 (out of 200), likelihood estimate: -22033.108748, accuracy: 83.050000 %
-Epoch 23 (out of 200), likelihood estimate: -21712.037106, accuracy: 83.480000 %
-Epoch 24 (out of 200), likelihood estimate: -21414.833838, accuracy: 83.870000 %
-Epoch 25 (out of 200), likelihood estimate: -21138.751291, accuracy: 84.250000 %
-Epoch 26 (out of 200), likelihood estimate: -20881.433783, accuracy: 84.540000 %
-Epoch 27 (out of 200), likelihood estimate: -20640.852297, accuracy: 84.880000 %
-Epoch 28 (out of 200), likelihood estimate: -20415.251586, accuracy: 85.140000 %
-Epoch 29 (out of 200), likelihood estimate: -20203.107037, accuracy: 85.550000 %
-Epoch 30 (out of 200), likelihood estimate: -20003.089275, accuracy: 85.760000 %
-Epoch 31 (out of 200), likelihood estimate: -19814.034940, accuracy: 85.910000 %
-Epoch 32 (out of 200), likelihood estimate: -19634.922433, accuracy: 86.150000 %
-Epoch 33 (out of 200), likelihood estimate: -19464.851677, accuracy: 86.440000 %
-Epoch 34 (out of 200), likelihood estimate: -19303.027153, accuracy: 86.620000 %
-Epoch 35 (out of 200), likelihood estimate: -19148.743610, accuracy: 86.810000 %
-Epoch 36 (out of 200), likelihood estimate: -19001.373991, accuracy: 87.060000 %
-Epoch 37 (out of 200), likelihood estimate: -18860.359178, accuracy: 87.220000 %
-Epoch 38 (out of 200), likelihood estimate: -18725.199264, accuracy: 87.430000 %
-Epoch 39 (out of 200), likelihood estimate: -18595.446087, accuracy: 87.550000 %
-Epoch 40 (out of 200), likelihood estimate: -18470.696842, accuracy: 87.680000 %
-Epoch 41 (out of 200), likelihood estimate: -18350.588577, accuracy: 87.820000 %
-Epoch 42 (out of 200), likelihood estimate: -18234.793452, accuracy: 88.000000 %
-Epoch 43 (out of 200), likelihood estimate: -18123.014643, accuracy: 88.090000 %
-Epoch 44 (out of 200), likelihood estimate: -18014.982782, accuracy: 88.220000 %
-Epoch 45 (out of 200), likelihood estimate: -17910.452867, accuracy: 88.330000 %
-Epoch 46 (out of 200), likelihood estimate: -17809.201571, accuracy: 88.430000 %
-Epoch 47 (out of 200), likelihood estimate: -17711.024883, accuracy: 88.540000 %
-Epoch 48 (out of 200), likelihood estimate: -17615.736051, accuracy: 88.650000 %
-Epoch 49 (out of 200), likelihood estimate: -17523.163768, accuracy: 88.770000 %
-Epoch 50 (out of 200), likelihood estimate: -17433.150582, accuracy: 88.830000 %
-Epoch 51 (out of 200), likelihood estimate: -17345.551494, accuracy: 88.910000 %
-Epoch 52 (out of 200), likelihood estimate: -17260.232715, accuracy: 88.970000 %
-Epoch 53 (out of 200), likelihood estimate: -17177.070573, accuracy: 89.040000 %
-Epoch 54 (out of 200), likelihood estimate: -17095.950540, accuracy: 89.110000 %
-Epoch 55 (out of 200), likelihood estimate: -17016.766375, accuracy: 89.150000 %
-Epoch 56 (out of 200), likelihood estimate: -16939.419348, accuracy: 89.220000 %
-Epoch 57 (out of 200), likelihood estimate: -16863.817570, accuracy: 89.300000 %
-Epoch 58 (out of 200), likelihood estimate: -16789.875373, accuracy: 89.360000 %
-Epoch 59 (out of 200), likelihood estimate: -16717.512778, accuracy: 89.420000 %
-Epoch 60 (out of 200), likelihood estimate: -16646.654998, accuracy: 89.410000 %
-Epoch 61 (out of 200), likelihood estimate: -16577.232013, accuracy: 89.470000 %
-Epoch 62 (out of 200), likelihood estimate: -16509.178171, accuracy: 89.570000 %
-Epoch 63 (out of 200), likelihood estimate: -16442.431840, accuracy: 89.610000 %
-Epoch 64 (out of 200), likelihood estimate: -16376.935092, accuracy: 89.740000 %
-Epoch 65 (out of 200), likelihood estimate: -16312.633415, accuracy: 89.820000 %
-Epoch 66 (out of 200), likelihood estimate: -16249.475454, accuracy: 89.850000 %
-Epoch 67 (out of 200), likelihood estimate: -16187.412779, accuracy: 89.850000 %
-Epoch 68 (out of 200), likelihood estimate: -16126.399671, accuracy: 89.900000 %
-Epoch 69 (out of 200), likelihood estimate: -16066.392929, accuracy: 89.910000 %
-Epoch 70 (out of 200), likelihood estimate: -16007.351694, accuracy: 89.950000 %
-Epoch 71 (out of 200), likelihood estimate: -15949.237287, accuracy: 90.020000 %
-Epoch 72 (out of 200), likelihood estimate: -15892.013063, accuracy: 90.080000 %
-Epoch 73 (out of 200), likelihood estimate: -15835.644279, accuracy: 90.120000 %
-Epoch 74 (out of 200), likelihood estimate: -15780.097966, accuracy: 90.180000 %
-Epoch 75 (out of 200), likelihood estimate: -15725.342820, accuracy: 90.200000 %
-Epoch 76 (out of 200), likelihood estimate: -15671.349095, accuracy: 90.220000 %
-Epoch 77 (out of 200), likelihood estimate: -15618.088510, accuracy: 90.240000 %
-Epoch 78 (out of 200), likelihood estimate: -15565.534158, accuracy: 90.290000 %
-Epoch 79 (out of 200), likelihood estimate: -15513.660428, accuracy: 90.310000 %
-Epoch 80 (out of 200), likelihood estimate: -15462.442925, accuracy: 90.340000 %
-Epoch 81 (out of 200), likelihood estimate: -15411.858402, accuracy: 90.450000 %
-Epoch 82 (out of 200), likelihood estimate: -15361.884699, accuracy: 90.480000 %
-Epoch 83 (out of 200), likelihood estimate: -15312.500676, accuracy: 90.510000 %
-Epoch 84 (out of 200), likelihood estimate: -15263.686162, accuracy: 90.530000 %
-Epoch 85 (out of 200), likelihood estimate: -15215.421902, accuracy: 90.540000 %
-Epoch 86 (out of 200), likelihood estimate: -15167.689508, accuracy: 90.560000 %
-Epoch 87 (out of 200), likelihood estimate: -15120.471411, accuracy: 90.630000 %
-Epoch 88 (out of 200), likelihood estimate: -15073.750826, accuracy: 90.680000 %
-Epoch 89 (out of 200), likelihood estimate: -15027.511703, accuracy: 90.700000 %
-Epoch 90 (out of 200), likelihood estimate: -14981.738698, accuracy: 90.680000 %
-Epoch 91 (out of 200), likelihood estimate: -14936.417132, accuracy: 90.750000 %
-Epoch 92 (out of 200), likelihood estimate: -14891.532963, accuracy: 90.780000 %
-Epoch 93 (out of 200), likelihood estimate: -14847.072753, accuracy: 90.800000 %
-Epoch 94 (out of 200), likelihood estimate: -14803.023638, accuracy: 90.850000 %
-Epoch 95 (out of 200), likelihood estimate: -14759.373302, accuracy: 90.890000 %
-Epoch 96 (out of 200), likelihood estimate: -14716.109953, accuracy: 90.930000 %
-Epoch 97 (out of 200), likelihood estimate: -14673.222293, accuracy: 90.940000 %
-Epoch 98 (out of 200), likelihood estimate: -14630.699502, accuracy: 90.980000 %
-Epoch 99 (out of 200), likelihood estimate: -14588.531212, accuracy: 91.010000 %
-Epoch 100 (out of 200), likelihood estimate: -14546.707485, accuracy: 91.040000 %
-Epoch 101 (out of 200), likelihood estimate: -14505.218798, accuracy: 91.050000 %
-Epoch 102 (out of 200), likelihood estimate: -14464.056020, accuracy: 91.070000 %
-Epoch 103 (out of 200), likelihood estimate: -14423.210396, accuracy: 91.090000 %
-Epoch 104 (out of 200), likelihood estimate: -14382.673530, accuracy: 91.170000 %
-Epoch 105 (out of 200), likelihood estimate: -14342.437369, accuracy: 91.260000 %
-Epoch 106 (out of 200), likelihood estimate: -14302.494188, accuracy: 91.280000 %
-Epoch 107 (out of 200), likelihood estimate: -14262.836573, accuracy: 91.340000 %
-Epoch 108 (out of 200), likelihood estimate: -14223.457410, accuracy: 91.400000 %
-Epoch 109 (out of 200), likelihood estimate: -14184.349870, accuracy: 91.400000 %
-Epoch 110 (out of 200), likelihood estimate: -14145.507398, accuracy: 91.420000 %
-Epoch 111 (out of 200), likelihood estimate: -14106.923699, accuracy: 91.430000 %
-Epoch 112 (out of 200), likelihood estimate: -14068.592726, accuracy: 91.460000 %
-Epoch 113 (out of 200), likelihood estimate: -14030.508671, accuracy: 91.460000 %
-Epoch 114 (out of 200), likelihood estimate: -13992.665953, accuracy: 91.500000 %
-Epoch 115 (out of 200), likelihood estimate: -13955.059210, accuracy: 91.530000 %
-Epoch 116 (out of 200), likelihood estimate: -13917.683287, accuracy: 91.560000 %
-Epoch 117 (out of 200), likelihood estimate: -13880.533227, accuracy: 91.560000 %
-Epoch 118 (out of 200), likelihood estimate: -13843.604264, accuracy: 91.590000 %
-Epoch 119 (out of 200), likelihood estimate: -13806.891815, accuracy: 91.590000 %
-Epoch 120 (out of 200), likelihood estimate: -13770.391469, accuracy: 91.610000 %
-Epoch 121 (out of 200), likelihood estimate: -13734.098983, accuracy: 91.650000 %
-Epoch 122 (out of 200), likelihood estimate: -13698.010274, accuracy: 91.670000 %
-Epoch 123 (out of 200), likelihood estimate: -13662.121410, accuracy: 91.690000 %
-Epoch 124 (out of 200), likelihood estimate: -13626.428608, accuracy: 91.710000 %
-Epoch 125 (out of 200), likelihood estimate: -13590.928223, accuracy: 91.720000 %
-Epoch 126 (out of 200), likelihood estimate: -13555.616747, accuracy: 91.730000 %
-Epoch 127 (out of 200), likelihood estimate: -13520.490799, accuracy: 91.750000 %
-Epoch 128 (out of 200), likelihood estimate: -13485.547122, accuracy: 91.760000 %
-Epoch 129 (out of 200), likelihood estimate: -13450.782580, accuracy: 91.780000 %
-Epoch 130 (out of 200), likelihood estimate: -13416.194150, accuracy: 91.820000 %
-Epoch 131 (out of 200), likelihood estimate: -13381.778917, accuracy: 91.850000 %
-Epoch 132 (out of 200), likelihood estimate: -13347.534076, accuracy: 91.880000 %
-Epoch 133 (out of 200), likelihood estimate: -13313.456919, accuracy: 91.880000 %
-Epoch 134 (out of 200), likelihood estimate: -13279.544837, accuracy: 91.930000 %
-Epoch 135 (out of 200), likelihood estimate: -13245.795317, accuracy: 91.940000 %
-Epoch 136 (out of 200), likelihood estimate: -13212.205933, accuracy: 91.990000 %
-Epoch 137 (out of 200), likelihood estimate: -13178.774349, accuracy: 92.010000 %
-Epoch 138 (out of 200), likelihood estimate: -13145.498311, accuracy: 92.020000 %
-Epoch 139 (out of 200), likelihood estimate: -13112.375647, accuracy: 92.030000 %
-Epoch 140 (out of 200), likelihood estimate: -13079.404261, accuracy: 92.040000 %
-Epoch 141 (out of 200), likelihood estimate: -13046.582133, accuracy: 92.040000 %
-Epoch 142 (out of 200), likelihood estimate: -13013.907316, accuracy: 92.060000 %
-Epoch 143 (out of 200), likelihood estimate: -12981.377932, accuracy: 92.080000 %
-Epoch 144 (out of 200), likelihood estimate: -12948.992170, accuracy: 92.100000 %
-Epoch 145 (out of 200), likelihood estimate: -12916.748282, accuracy: 92.120000 %
-Epoch 146 (out of 200), likelihood estimate: -12884.644585, accuracy: 92.200000 %
-Epoch 147 (out of 200), likelihood estimate: -12852.679454, accuracy: 92.230000 %
-Epoch 148 (out of 200), likelihood estimate: -12820.851323, accuracy: 92.240000 %
-Epoch 149 (out of 200), likelihood estimate: -12789.158680, accuracy: 92.290000 %
-Epoch 150 (out of 200), likelihood estimate: -12757.600068, accuracy: 92.300000 %
-Epoch 151 (out of 200), likelihood estimate: -12726.174082, accuracy: 92.320000 %
-Epoch 152 (out of 200), likelihood estimate: -12694.879364, accuracy: 92.320000 %
-Epoch 153 (out of 200), likelihood estimate: -12663.714606, accuracy: 92.330000 %
-Epoch 154 (out of 200), likelihood estimate: -12632.678545, accuracy: 92.330000 %
-Epoch 155 (out of 200), likelihood estimate: -12601.769962, accuracy: 92.370000 %
-Epoch 156 (out of 200), likelihood estimate: -12570.987681, accuracy: 92.390000 %
-Epoch 157 (out of 200), likelihood estimate: -12540.330565, accuracy: 92.420000 %
-Epoch 158 (out of 200), likelihood estimate: -12509.797518, accuracy: 92.440000 %
-Epoch 159 (out of 200), likelihood estimate: -12479.387480, accuracy: 92.450000 %
-Epoch 160 (out of 200), likelihood estimate: -12449.099427, accuracy: 92.480000 %
-Epoch 161 (out of 200), likelihood estimate: -12418.932371, accuracy: 92.520000 %
-Epoch 162 (out of 200), likelihood estimate: -12388.885354, accuracy: 92.530000 %
-Epoch 163 (out of 200), likelihood estimate: -12358.957452, accuracy: 92.540000 %
-Epoch 164 (out of 200), likelihood estimate: -12329.147771, accuracy: 92.550000 %
-Epoch 165 (out of 200), likelihood estimate: -12299.455445, accuracy: 92.570000 %
-Epoch 166 (out of 200), likelihood estimate: -12269.879635, accuracy: 92.570000 %
-Epoch 167 (out of 200), likelihood estimate: -12240.419530, accuracy: 92.610000 %
-Epoch 168 (out of 200), likelihood estimate: -12211.074344, accuracy: 92.640000 %
-Epoch 169 (out of 200), likelihood estimate: -12181.843314, accuracy: 92.660000 %
-Epoch 170 (out of 200), likelihood estimate: -12152.725702, accuracy: 92.690000 %
-Epoch 171 (out of 200), likelihood estimate: -12123.720789, accuracy: 92.730000 %
-Epoch 172 (out of 200), likelihood estimate: -12094.827879, accuracy: 92.760000 %
-Epoch 173 (out of 200), likelihood estimate: -12066.046296, accuracy: 92.760000 %
-Epoch 174 (out of 200), likelihood estimate: -12037.375383, accuracy: 92.760000 %
-Epoch 175 (out of 200), likelihood estimate: -12008.814500, accuracy: 92.770000 %
-Epoch 176 (out of 200), likelihood estimate: -11980.363025, accuracy: 92.790000 %
-Epoch 177 (out of 200), likelihood estimate: -11952.020354, accuracy: 92.810000 %
-Epoch 178 (out of 200), likelihood estimate: -11923.785896, accuracy: 92.830000 %
-Epoch 179 (out of 200), likelihood estimate: -11895.659077, accuracy: 92.860000 %
-Epoch 180 (out of 200), likelihood estimate: -11867.639336, accuracy: 92.880000 %
-Epoch 181 (out of 200), likelihood estimate: -11839.726126, accuracy: 92.880000 %
-Epoch 182 (out of 200), likelihood estimate: -11811.918913, accuracy: 92.920000 %
-Epoch 183 (out of 200), likelihood estimate: -11784.217176, accuracy: 92.930000 %
-Epoch 184 (out of 200), likelihood estimate: -11756.620404, accuracy: 92.960000 %
-Epoch 185 (out of 200), likelihood estimate: -11729.128098, accuracy: 92.980000 %
-Epoch 186 (out of 200), likelihood estimate: -11701.739770, accuracy: 92.990000 %
-Epoch 187 (out of 200), likelihood estimate: -11674.454942, accuracy: 93.010000 %
-Epoch 188 (out of 200), likelihood estimate: -11647.273144, accuracy: 93.010000 %
-Epoch 189 (out of 200), likelihood estimate: -11620.193918, accuracy: 93.020000 %
-Epoch 190 (out of 200), likelihood estimate: -11593.216811, accuracy: 93.040000 %
-Epoch 191 (out of 200), likelihood estimate: -11566.341382, accuracy: 93.070000 %
-Epoch 192 (out of 200), likelihood estimate: -11539.567194, accuracy: 93.100000 %
-Epoch 193 (out of 200), likelihood estimate: -11512.893822, accuracy: 93.110000 %
-Epoch 194 (out of 200), likelihood estimate: -11486.320843, accuracy: 93.120000 %
-Epoch 195 (out of 200), likelihood estimate: -11459.847845, accuracy: 93.100000 %
-Epoch 196 (out of 200), likelihood estimate: -11433.474420, accuracy: 93.120000 %
-Epoch 197 (out of 200), likelihood estimate: -11407.200166, accuracy: 93.140000 %
-Epoch 198 (out of 200), likelihood estimate: -11381.024689, accuracy: 93.150000 %
-Epoch 199 (out of 200), likelihood estimate: -11354.947597, accuracy: 93.170000 %
+Epoch 1 (out of 250), likelihood estimate: -64852.871428, accuracy: 10.09 %
+Epoch 2 (out of 250), likelihood estimate: -64888.399460, accuracy: 10.09 %
+Epoch 3 (out of 250), likelihood estimate: -58960.868989, accuracy: 11.61 %
+Epoch 4 (out of 250), likelihood estimate: -51856.800208, accuracy: 25.43 %
+Epoch 5 (out of 250), likelihood estimate: -45865.890428, accuracy: 42.17 %
+Epoch 6 (out of 250), likelihood estimate: -41300.881211, accuracy: 51.34 %
+Epoch 7 (out of 250), likelihood estimate: -37853.455820, accuracy: 57.45 %
+Epoch 8 (out of 250), likelihood estimate: -35195.311111, accuracy: 62.42 %
+Epoch 9 (out of 250), likelihood estimate: -33088.137317, accuracy: 66.32 %
+Epoch 10 (out of 250), likelihood estimate: -31373.360216, accuracy: 69.22 %
+Epoch 11 (out of 250), likelihood estimate: -29946.886837, accuracy: 71.21 %
+Epoch 12 (out of 250), likelihood estimate: -28739.066601, accuracy: 73.17 %
+Epoch 13 (out of 250), likelihood estimate: -27701.810504, accuracy: 74.75 %
+Epoch 14 (out of 250), likelihood estimate: -26800.759823, accuracy: 76.03 %
+Epoch 15 (out of 250), likelihood estimate: -26010.547019, accuracy: 77.28 %
+Epoch 16 (out of 250), likelihood estimate: -25311.894170, accuracy: 78.34 %
+Epoch 17 (out of 250), likelihood estimate: -24689.795489, accuracy: 79.22 %
+Epoch 18 (out of 250), likelihood estimate: -24132.342569, accuracy: 80.04 %
+Epoch 19 (out of 250), likelihood estimate: -23629.937686, accuracy: 80.91 %
+Epoch 20 (out of 250), likelihood estimate: -23174.748202, accuracy: 81.61 %
+Epoch 21 (out of 250), likelihood estimate: -22760.315925, accuracy: 82.08 %
+Epoch 22 (out of 250), likelihood estimate: -22381.269653, accuracy: 82.68 %
+Epoch 23 (out of 250), likelihood estimate: -22033.108748, accuracy: 83.05 %
+Epoch 24 (out of 250), likelihood estimate: -21712.037106, accuracy: 83.48 %
+Epoch 25 (out of 250), likelihood estimate: -21414.833838, accuracy: 83.87 %
+Epoch 26 (out of 250), likelihood estimate: -21138.751291, accuracy: 84.25 %
+Epoch 27 (out of 250), likelihood estimate: -20881.433783, accuracy: 84.54 %
+Epoch 28 (out of 250), likelihood estimate: -20640.852297, accuracy: 84.88 %
+Epoch 29 (out of 250), likelihood estimate: -20415.251586, accuracy: 85.14 %
+Epoch 30 (out of 250), likelihood estimate: -20203.107037, accuracy: 85.55 %
+Epoch 31 (out of 250), likelihood estimate: -20003.089275, accuracy: 85.76 %
+Epoch 32 (out of 250), likelihood estimate: -19814.034940, accuracy: 85.91 %
+Epoch 33 (out of 250), likelihood estimate: -19634.922433, accuracy: 86.15 %
+Epoch 34 (out of 250), likelihood estimate: -19464.851677, accuracy: 86.44 %
+Epoch 35 (out of 250), likelihood estimate: -19303.027153, accuracy: 86.62 %
+Epoch 36 (out of 250), likelihood estimate: -19148.743610, accuracy: 86.81 %
+Epoch 37 (out of 250), likelihood estimate: -19001.373991, accuracy: 87.06 %
+Epoch 38 (out of 250), likelihood estimate: -18860.359178, accuracy: 87.22 %
+Epoch 39 (out of 250), likelihood estimate: -18725.199264, accuracy: 87.43 %
+Epoch 40 (out of 250), likelihood estimate: -18595.446087, accuracy: 87.55 %
+Epoch 41 (out of 250), likelihood estimate: -18470.696842, accuracy: 87.68 %
+Epoch 42 (out of 250), likelihood estimate: -18350.588577, accuracy: 87.82 %
+Epoch 43 (out of 250), likelihood estimate: -18234.793452, accuracy: 88.00 %
+Epoch 44 (out of 250), likelihood estimate: -18123.014643, accuracy: 88.09 %
+Epoch 45 (out of 250), likelihood estimate: -18014.982782, accuracy: 88.22 %
+Epoch 46 (out of 250), likelihood estimate: -17910.452867, accuracy: 88.33 %
+Epoch 47 (out of 250), likelihood estimate: -17809.201571, accuracy: 88.43 %
+Epoch 48 (out of 250), likelihood estimate: -17711.024883, accuracy: 88.54 %
+Epoch 49 (out of 250), likelihood estimate: -17615.736051, accuracy: 88.65 %
+Epoch 50 (out of 250), likelihood estimate: -17523.163768, accuracy: 88.77 %
+Epoch 51 (out of 250), likelihood estimate: -17433.150582, accuracy: 88.83 %
+Epoch 52 (out of 250), likelihood estimate: -17345.551494, accuracy: 88.91 %
+Epoch 53 (out of 250), likelihood estimate: -17260.232715, accuracy: 88.97 %
+Epoch 54 (out of 250), likelihood estimate: -17177.070573, accuracy: 89.04 %
+Epoch 55 (out of 250), likelihood estimate: -17095.950540, accuracy: 89.11 %
+Epoch 56 (out of 250), likelihood estimate: -17016.766375, accuracy: 89.15 %
+Epoch 57 (out of 250), likelihood estimate: -16939.419348, accuracy: 89.22 %
+Epoch 58 (out of 250), likelihood estimate: -16863.817570, accuracy: 89.30 %
+Epoch 59 (out of 250), likelihood estimate: -16789.875373, accuracy: 89.36 %
+Epoch 60 (out of 250), likelihood estimate: -16717.512778, accuracy: 89.42 %
+Epoch 61 (out of 250), likelihood estimate: -16646.654998, accuracy: 89.41 %
+Epoch 62 (out of 250), likelihood estimate: -16577.232013, accuracy: 89.47 %
+Epoch 63 (out of 250), likelihood estimate: -16509.178171, accuracy: 89.57 %
+Epoch 64 (out of 250), likelihood estimate: -16442.431840, accuracy: 89.61 %
+Epoch 65 (out of 250), likelihood estimate: -16376.935092, accuracy: 89.74 %
+Epoch 66 (out of 250), likelihood estimate: -16312.633415, accuracy: 89.82 %
+Epoch 67 (out of 250), likelihood estimate: -16249.475454, accuracy: 89.85 %
+Epoch 68 (out of 250), likelihood estimate: -16187.412779, accuracy: 89.85 %
+Epoch 69 (out of 250), likelihood estimate: -16126.399671, accuracy: 89.90 %
+Epoch 70 (out of 250), likelihood estimate: -16066.392929, accuracy: 89.91 %
+Epoch 71 (out of 250), likelihood estimate: -16007.351694, accuracy: 89.95 %
+Epoch 72 (out of 250), likelihood estimate: -15949.237287, accuracy: 90.02 %
+Epoch 73 (out of 250), likelihood estimate: -15892.013063, accuracy: 90.08 %
+Epoch 74 (out of 250), likelihood estimate: -15835.644279, accuracy: 90.12 %
+Epoch 75 (out of 250), likelihood estimate: -15780.097966, accuracy: 90.18 %
+Epoch 76 (out of 250), likelihood estimate: -15725.342820, accuracy: 90.20 %
+Epoch 77 (out of 250), likelihood estimate: -15671.349095, accuracy: 90.22 %
+Epoch 78 (out of 250), likelihood estimate: -15618.088510, accuracy: 90.24 %
+Epoch 79 (out of 250), likelihood estimate: -15565.534158, accuracy: 90.29 %
+Epoch 80 (out of 250), likelihood estimate: -15513.660428, accuracy: 90.31 %
+Epoch 81 (out of 250), likelihood estimate: -15462.442925, accuracy: 90.34 %
+Epoch 82 (out of 250), likelihood estimate: -15411.858402, accuracy: 90.45 %
+Epoch 83 (out of 250), likelihood estimate: -15361.884699, accuracy: 90.48 %
+Epoch 84 (out of 250), likelihood estimate: -15312.500676, accuracy: 90.51 %
+Epoch 85 (out of 250), likelihood estimate: -15263.686162, accuracy: 90.53 %
+Epoch 86 (out of 250), likelihood estimate: -15215.421902, accuracy: 90.54 %
+Epoch 87 (out of 250), likelihood estimate: -15167.689508, accuracy: 90.56 %
+Epoch 88 (out of 250), likelihood estimate: -15120.471411, accuracy: 90.63 %
+Epoch 89 (out of 250), likelihood estimate: -15073.750826, accuracy: 90.68 %
+Epoch 90 (out of 250), likelihood estimate: -15027.511703, accuracy: 90.70 %
+Epoch 91 (out of 250), likelihood estimate: -14981.738698, accuracy: 90.68 %
+Epoch 92 (out of 250), likelihood estimate: -14936.417132, accuracy: 90.75 %
+Epoch 93 (out of 250), likelihood estimate: -14891.532963, accuracy: 90.78 %
+Epoch 94 (out of 250), likelihood estimate: -14847.072753, accuracy: 90.80 %
+Epoch 95 (out of 250), likelihood estimate: -14803.023638, accuracy: 90.85 %
+Epoch 96 (out of 250), likelihood estimate: -14759.373302, accuracy: 90.89 %
+Epoch 97 (out of 250), likelihood estimate: -14716.109953, accuracy: 90.93 %
+Epoch 98 (out of 250), likelihood estimate: -14673.222293, accuracy: 90.94 %
+Epoch 99 (out of 250), likelihood estimate: -14630.699502, accuracy: 90.98 %
+Epoch 100 (out of 250), likelihood estimate: -14588.531212, accuracy: 91.01 %
+Epoch 101 (out of 250), likelihood estimate: -14546.707485, accuracy: 91.04 %
+Epoch 102 (out of 250), likelihood estimate: -14505.218798, accuracy: 91.05 %
+Epoch 103 (out of 250), likelihood estimate: -14464.056020, accuracy: 91.07 %
+Epoch 104 (out of 250), likelihood estimate: -14423.210396, accuracy: 91.09 %
+Epoch 105 (out of 250), likelihood estimate: -14382.673530, accuracy: 91.17 %
+Epoch 106 (out of 250), likelihood estimate: -14342.437369, accuracy: 91.26 %
+Epoch 107 (out of 250), likelihood estimate: -14302.494188, accuracy: 91.28 %
+Epoch 108 (out of 250), likelihood estimate: -14262.836573, accuracy: 91.34 %
+Epoch 109 (out of 250), likelihood estimate: -14223.457410, accuracy: 91.40 %
+Epoch 110 (out of 250), likelihood estimate: -14184.349870, accuracy: 91.40 %
+Epoch 111 (out of 250), likelihood estimate: -14145.507398, accuracy: 91.42 %
+Epoch 112 (out of 250), likelihood estimate: -14106.923699, accuracy: 91.43 %
+Epoch 113 (out of 250), likelihood estimate: -14068.592726, accuracy: 91.46 %
+Epoch 114 (out of 250), likelihood estimate: -14030.508671, accuracy: 91.46 %
+Epoch 115 (out of 250), likelihood estimate: -13992.665953, accuracy: 91.50 %
+Epoch 116 (out of 250), likelihood estimate: -13955.059210, accuracy: 91.53 %
+Epoch 117 (out of 250), likelihood estimate: -13917.683287, accuracy: 91.56 %
+Epoch 118 (out of 250), likelihood estimate: -13880.533227, accuracy: 91.56 %
+Epoch 119 (out of 250), likelihood estimate: -13843.604264, accuracy: 91.59 %
+Epoch 120 (out of 250), likelihood estimate: -13806.891815, accuracy: 91.59 %
+Epoch 121 (out of 250), likelihood estimate: -13770.391469, accuracy: 91.61 %
+Epoch 122 (out of 250), likelihood estimate: -13734.098983, accuracy: 91.65 %
+Epoch 123 (out of 250), likelihood estimate: -13698.010274, accuracy: 91.67 %
+Epoch 124 (out of 250), likelihood estimate: -13662.121410, accuracy: 91.69 %
+Epoch 125 (out of 250), likelihood estimate: -13626.428608, accuracy: 91.71 %
+Epoch 126 (out of 250), likelihood estimate: -13590.928223, accuracy: 91.72 %
+Epoch 127 (out of 250), likelihood estimate: -13555.616747, accuracy: 91.73 %
+Epoch 128 (out of 250), likelihood estimate: -13520.490799, accuracy: 91.75 %
+Epoch 129 (out of 250), likelihood estimate: -13485.547122, accuracy: 91.76 %
+Epoch 130 (out of 250), likelihood estimate: -13450.782580, accuracy: 91.78 %
+Epoch 131 (out of 250), likelihood estimate: -13416.194150, accuracy: 91.82 %
+Epoch 132 (out of 250), likelihood estimate: -13381.778917, accuracy: 91.85 %
+Epoch 133 (out of 250), likelihood estimate: -13347.534076, accuracy: 91.88 %
+Epoch 134 (out of 250), likelihood estimate: -13313.456919, accuracy: 91.88 %
+Epoch 135 (out of 250), likelihood estimate: -13279.544837, accuracy: 91.93 %
+Epoch 136 (out of 250), likelihood estimate: -13245.795317, accuracy: 91.94 %
+Epoch 137 (out of 250), likelihood estimate: -13212.205933, accuracy: 91.99 %
+Epoch 138 (out of 250), likelihood estimate: -13178.774349, accuracy: 92.01 %
+Epoch 139 (out of 250), likelihood estimate: -13145.498311, accuracy: 92.02 %
+Epoch 140 (out of 250), likelihood estimate: -13112.375647, accuracy: 92.03 %
+Epoch 141 (out of 250), likelihood estimate: -13079.404261, accuracy: 92.04 %
+Epoch 142 (out of 250), likelihood estimate: -13046.582133, accuracy: 92.04 %
+Epoch 143 (out of 250), likelihood estimate: -13013.907316, accuracy: 92.06 %
+Epoch 144 (out of 250), likelihood estimate: -12981.377932, accuracy: 92.08 %
+Epoch 145 (out of 250), likelihood estimate: -12948.992170, accuracy: 92.10 %
+Epoch 146 (out of 250), likelihood estimate: -12916.748282, accuracy: 92.12 %
+Epoch 147 (out of 250), likelihood estimate: -12884.644585, accuracy: 92.20 %
+Epoch 148 (out of 250), likelihood estimate: -12852.679454, accuracy: 92.23 %
+Epoch 149 (out of 250), likelihood estimate: -12820.851323, accuracy: 92.24 %
+Epoch 150 (out of 250), likelihood estimate: -12789.158680, accuracy: 92.29 %
+Epoch 151 (out of 250), likelihood estimate: -12757.600068, accuracy: 92.30 %
+Epoch 152 (out of 250), likelihood estimate: -12726.174082, accuracy: 92.32 %
+Epoch 153 (out of 250), likelihood estimate: -12694.879364, accuracy: 92.32 %
+Epoch 154 (out of 250), likelihood estimate: -12663.714606, accuracy: 92.33 %
+Epoch 155 (out of 250), likelihood estimate: -12632.678545, accuracy: 92.33 %
+Epoch 156 (out of 250), likelihood estimate: -12601.769962, accuracy: 92.37 %
+Epoch 157 (out of 250), likelihood estimate: -12570.987681, accuracy: 92.39 %
+Epoch 158 (out of 250), likelihood estimate: -12540.330565, accuracy: 92.42 %
+Epoch 159 (out of 250), likelihood estimate: -12509.797518, accuracy: 92.44 %
+Epoch 160 (out of 250), likelihood estimate: -12479.387480, accuracy: 92.45 %
+Epoch 161 (out of 250), likelihood estimate: -12449.099427, accuracy: 92.48 %
+Epoch 162 (out of 250), likelihood estimate: -12418.932371, accuracy: 92.52 %
+Epoch 163 (out of 250), likelihood estimate: -12388.885354, accuracy: 92.53 %
+Epoch 164 (out of 250), likelihood estimate: -12358.957452, accuracy: 92.54 %
+Epoch 165 (out of 250), likelihood estimate: -12329.147771, accuracy: 92.55 %
+Epoch 166 (out of 250), likelihood estimate: -12299.455445, accuracy: 92.57 %
+Epoch 167 (out of 250), likelihood estimate: -12269.879635, accuracy: 92.57 %
+Epoch 168 (out of 250), likelihood estimate: -12240.419530, accuracy: 92.61 %
+Epoch 169 (out of 250), likelihood estimate: -12211.074344, accuracy: 92.64 %
+Epoch 170 (out of 250), likelihood estimate: -12181.843314, accuracy: 92.66 %
+Epoch 171 (out of 250), likelihood estimate: -12152.725702, accuracy: 92.69 %
+Epoch 172 (out of 250), likelihood estimate: -12123.720789, accuracy: 92.73 %
+Epoch 173 (out of 250), likelihood estimate: -12094.827879, accuracy: 92.76 %
+Epoch 174 (out of 250), likelihood estimate: -12066.046296, accuracy: 92.76 %
+Epoch 175 (out of 250), likelihood estimate: -12037.375383, accuracy: 92.76 %
+Epoch 176 (out of 250), likelihood estimate: -12008.814500, accuracy: 92.77 %
+Epoch 177 (out of 250), likelihood estimate: -11980.363025, accuracy: 92.79 %
+Epoch 178 (out of 250), likelihood estimate: -11952.020354, accuracy: 92.81 %
+Epoch 179 (out of 250), likelihood estimate: -11923.785896, accuracy: 92.83 %
+Epoch 180 (out of 250), likelihood estimate: -11895.659077, accuracy: 92.86 %
+Epoch 181 (out of 250), likelihood estimate: -11867.639336, accuracy: 92.88 %
+Epoch 182 (out of 250), likelihood estimate: -11839.726126, accuracy: 92.88 %
+Epoch 183 (out of 250), likelihood estimate: -11811.918913, accuracy: 92.92 %
+Epoch 184 (out of 250), likelihood estimate: -11784.217176, accuracy: 92.93 %
+Epoch 185 (out of 250), likelihood estimate: -11756.620404, accuracy: 92.96 %
+Epoch 186 (out of 250), likelihood estimate: -11729.128098, accuracy: 92.98 %
+Epoch 187 (out of 250), likelihood estimate: -11701.739770, accuracy: 92.99 %
+Epoch 188 (out of 250), likelihood estimate: -11674.454942, accuracy: 93.01 %
+Epoch 189 (out of 250), likelihood estimate: -11647.273144, accuracy: 93.01 %
+Epoch 190 (out of 250), likelihood estimate: -11620.193918, accuracy: 93.02 %
+Epoch 191 (out of 250), likelihood estimate: -11593.216811, accuracy: 93.04 %
+Epoch 192 (out of 250), likelihood estimate: -11566.341382, accuracy: 93.07 %
+Epoch 193 (out of 250), likelihood estimate: -11539.567194, accuracy: 93.10 %
+Epoch 194 (out of 250), likelihood estimate: -11512.893822, accuracy: 93.11 %
+Epoch 195 (out of 250), likelihood estimate: -11486.320843, accuracy: 93.12 %
+Epoch 196 (out of 250), likelihood estimate: -11459.847845, accuracy: 93.10 %
+Epoch 197 (out of 250), likelihood estimate: -11433.474420, accuracy: 93.12 %
+Epoch 198 (out of 250), likelihood estimate: -11407.200166, accuracy: 93.14 %
+Epoch 199 (out of 250), likelihood estimate: -11381.024689, accuracy: 93.15 %
+Epoch 200 (out of 250), likelihood estimate: -11354.947597, accuracy: 93.17 %
+Epoch 201 (out of 250), likelihood estimate: -11328.968507, accuracy: 93.19 %
+Epoch 202 (out of 250), likelihood estimate: -11303.087037, accuracy: 93.21 %
+Epoch 203 (out of 250), likelihood estimate: -11277.302814, accuracy: 93.22 %
+Epoch 204 (out of 250), likelihood estimate: -11251.615466, accuracy: 93.24 %
+Epoch 205 (out of 250), likelihood estimate: -11226.024627, accuracy: 93.24 %
+Epoch 206 (out of 250), likelihood estimate: -11200.529933, accuracy: 93.26 %
+Epoch 207 (out of 250), likelihood estimate: -11175.131027, accuracy: 93.29 %
+Epoch 208 (out of 250), likelihood estimate: -11149.827554, accuracy: 93.33 %
+Epoch 209 (out of 250), likelihood estimate: -11124.619160, accuracy: 93.36 %
+Epoch 210 (out of 250), likelihood estimate: -11099.505499, accuracy: 93.36 %
+Epoch 211 (out of 250), likelihood estimate: -11074.486225, accuracy: 93.39 %
+Epoch 212 (out of 250), likelihood estimate: -11049.560994, accuracy: 93.39 %
+Epoch 213 (out of 250), likelihood estimate: -11024.729468, accuracy: 93.41 %
+Epoch 214 (out of 250), likelihood estimate: -10999.991310, accuracy: 93.44 %
+Epoch 215 (out of 250), likelihood estimate: -10975.346184, accuracy: 93.43 %
+Epoch 216 (out of 250), likelihood estimate: -10950.793759, accuracy: 93.44 %
+Epoch 217 (out of 250), likelihood estimate: -10926.333704, accuracy: 93.45 %
+Epoch 218 (out of 250), likelihood estimate: -10901.965691, accuracy: 93.48 %
+Epoch 219 (out of 250), likelihood estimate: -10877.689395, accuracy: 93.48 %
+Epoch 220 (out of 250), likelihood estimate: -10853.504491, accuracy: 93.49 %
+Epoch 221 (out of 250), likelihood estimate: -10829.410656, accuracy: 93.50 %
+Epoch 222 (out of 250), likelihood estimate: -10805.407572, accuracy: 93.53 %
+Epoch 223 (out of 250), likelihood estimate: -10781.494917, accuracy: 93.53 %
+Epoch 224 (out of 250), likelihood estimate: -10757.672375, accuracy: 93.56 %
+Epoch 225 (out of 250), likelihood estimate: -10733.939630, accuracy: 93.58 %
+Epoch 226 (out of 250), likelihood estimate: -10710.296367, accuracy: 93.60 %
+Epoch 227 (out of 250), likelihood estimate: -10686.742273, accuracy: 93.64 %
+Epoch 228 (out of 250), likelihood estimate: -10663.277035, accuracy: 93.65 %
+Epoch 229 (out of 250), likelihood estimate: -10639.900342, accuracy: 93.65 %
+Epoch 230 (out of 250), likelihood estimate: -10616.611885, accuracy: 93.66 %
+Epoch 231 (out of 250), likelihood estimate: -10593.411354, accuracy: 93.68 %
+Epoch 232 (out of 250), likelihood estimate: -10570.298443, accuracy: 93.68 %
+Epoch 233 (out of 250), likelihood estimate: -10547.272843, accuracy: 93.71 %
+Epoch 234 (out of 250), likelihood estimate: -10524.334249, accuracy: 93.72 %
+Epoch 235 (out of 250), likelihood estimate: -10501.482356, accuracy: 93.74 %
+Epoch 236 (out of 250), likelihood estimate: -10478.716860, accuracy: 93.75 %
+Epoch 237 (out of 250), likelihood estimate: -10456.037457, accuracy: 93.75 %
+Epoch 238 (out of 250), likelihood estimate: -10433.443845, accuracy: 93.75 %
+Epoch 239 (out of 250), likelihood estimate: -10410.935722, accuracy: 93.76 %
+Epoch 240 (out of 250), likelihood estimate: -10388.512787, accuracy: 93.79 %
+Epoch 241 (out of 250), likelihood estimate: -10366.174740, accuracy: 93.81 %
+Epoch 242 (out of 250), likelihood estimate: -10343.921280, accuracy: 93.84 %
+Epoch 243 (out of 250), likelihood estimate: -10321.752108, accuracy: 93.86 %
+Epoch 244 (out of 250), likelihood estimate: -10299.666927, accuracy: 93.87 %
+Epoch 245 (out of 250), likelihood estimate: -10277.665438, accuracy: 93.89 %
+Epoch 246 (out of 250), likelihood estimate: -10255.747344, accuracy: 93.90 %
+Epoch 247 (out of 250), likelihood estimate: -10233.912348, accuracy: 93.93 %
+Epoch 248 (out of 250), likelihood estimate: -10212.160154, accuracy: 93.96 %
+Epoch 249 (out of 250), likelihood estimate: -10190.490467, accuracy: 93.98 %
+Epoch 250 (out of 250), likelihood estimate: -10168.902991, accuracy: 93.98 %
 
 checking predictions...
 data 0 classified as: 0 -> correct
@@ -457,7 +507,7 @@ data 226 classified as: 0 -> correct
 data 227 classified as: 0 -> correct
 data 228 classified as: 0 -> correct
 data 229 classified as: 0 -> correct
-data 230 classified as: 6 -> WRONG!
+data 230 classified as: 0 -> correct
 data 231 classified as: 0 -> correct
 data 232 classified as: 0 -> correct
 data 233 classified as: 0 -> correct
@@ -763,7 +813,7 @@ data 532 classified as: 0 -> correct
 data 533 classified as: 0 -> correct
 data 534 classified as: 0 -> correct
 data 535 classified as: 0 -> correct
-data 536 classified as: 8 -> WRONG!
+data 536 classified as: 0 -> correct
 data 537 classified as: 0 -> correct
 data 538 classified as: 0 -> correct
 data 539 classified as: 0 -> correct
@@ -1513,7 +1563,7 @@ data 1282 classified as: 1 -> correct
 data 1283 classified as: 1 -> correct
 data 1284 classified as: 1 -> correct
 data 1285 classified as: 1 -> correct
-data 1286 classified as: 8 -> WRONG!
+data 1286 classified as: 1 -> correct
 data 1287 classified as: 1 -> correct
 data 1288 classified as: 1 -> correct
 data 1289 classified as: 1 -> correct
@@ -1611,7 +1661,7 @@ data 1380 classified as: 1 -> correct
 data 1381 classified as: 1 -> correct
 data 1382 classified as: 1 -> correct
 data 1383 classified as: 1 -> correct
-data 1384 classified as: 8 -> WRONG!
+data 1384 classified as: 1 -> correct
 data 1385 classified as: 1 -> correct
 data 1386 classified as: 1 -> correct
 data 1387 classified as: 1 -> correct
@@ -1827,7 +1877,7 @@ data 1596 classified as: 1 -> correct
 data 1597 classified as: 1 -> correct
 data 1598 classified as: 1 -> correct
 data 1599 classified as: 1 -> correct
-data 1600 classified as: 8 -> WRONG!
+data 1600 classified as: 1 -> correct
 data 1601 classified as: 1 -> correct
 data 1602 classified as: 1 -> correct
 data 1603 classified as: 1 -> correct
@@ -2100,7 +2150,7 @@ data 1869 classified as: 1 -> correct
 data 1870 classified as: 1 -> correct
 data 1871 classified as: 1 -> correct
 data 1872 classified as: 8 -> WRONG!
-data 1873 classified as: 8 -> WRONG!
+data 1873 classified as: 1 -> correct
 data 1874 classified as: 1 -> correct
 data 1875 classified as: 1 -> correct
 data 1876 classified as: 1 -> correct
@@ -2422,8 +2472,8 @@ data 2191 classified as: 2 -> correct
 data 2192 classified as: 2 -> correct
 data 2193 classified as: 8 -> WRONG!
 data 2194 classified as: 2 -> correct
-data 2195 classified as: 8 -> WRONG!
-data 2196 classified as: 8 -> WRONG!
+data 2195 classified as: 2 -> correct
+data 2196 classified as: 2 -> correct
 data 2197 classified as: 2 -> correct
 data 2198 classified as: 2 -> correct
 data 2199 classified as: 2 -> correct
@@ -2449,7 +2499,7 @@ data 2218 classified as: 2 -> correct
 data 2219 classified as: 2 -> correct
 data 2220 classified as: 7 -> WRONG!
 data 2221 classified as: 2 -> correct
-data 2222 classified as: 5 -> WRONG!
+data 2222 classified as: 2 -> correct
 data 2223 classified as: 2 -> correct
 data 2224 classified as: 2 -> correct
 data 2225 classified as: 3 -> WRONG!
@@ -2463,7 +2513,7 @@ data 2232 classified as: 2 -> correct
 data 2233 classified as: 2 -> correct
 data 2234 classified as: 2 -> correct
 data 2235 classified as: 2 -> correct
-data 2236 classified as: 6 -> WRONG!
+data 2236 classified as: 2 -> correct
 data 2237 classified as: 2 -> correct
 data 2238 classified as: 2 -> correct
 data 2239 classified as: 2 -> correct
@@ -2478,11 +2528,11 @@ data 2247 classified as: 2 -> correct
 data 2248 classified as: 2 -> correct
 data 2249 classified as: 2 -> correct
 data 2250 classified as: 2 -> correct
-data 2251 classified as: 6 -> WRONG!
+data 2251 classified as: 2 -> correct
 data 2252 classified as: 2 -> correct
 data 2253 classified as: 2 -> correct
 data 2254 classified as: 2 -> correct
-data 2255 classified as: 6 -> WRONG!
+data 2255 classified as: 2 -> correct
 data 2256 classified as: 5 -> WRONG!
 data 2257 classified as: 2 -> correct
 data 2258 classified as: 2 -> correct
@@ -2502,7 +2552,7 @@ data 2271 classified as: 2 -> correct
 data 2272 classified as: 2 -> correct
 data 2273 classified as: 2 -> correct
 data 2274 classified as: 2 -> correct
-data 2275 classified as: 7 -> WRONG!
+data 2275 classified as: 2 -> correct
 data 2276 classified as: 2 -> correct
 data 2277 classified as: 2 -> correct
 data 2278 classified as: 6 -> WRONG!
@@ -2515,7 +2565,7 @@ data 2284 classified as: 2 -> correct
 data 2285 classified as: 2 -> correct
 data 2286 classified as: 2 -> correct
 data 2287 classified as: 2 -> correct
-data 2288 classified as: 8 -> WRONG!
+data 2288 classified as: 2 -> correct
 data 2289 classified as: 2 -> correct
 data 2290 classified as: 2 -> correct
 data 2291 classified as: 2 -> correct
@@ -2524,18 +2574,18 @@ data 2293 classified as: 2 -> correct
 data 2294 classified as: 2 -> correct
 data 2295 classified as: 2 -> correct
 data 2296 classified as: 6 -> WRONG!
-data 2297 classified as: 2 -> correct
+data 2297 classified as: 3 -> WRONG!
 data 2298 classified as: 2 -> correct
 data 2299 classified as: 2 -> correct
 data 2300 classified as: 2 -> correct
 data 2301 classified as: 2 -> correct
 data 2302 classified as: 2 -> correct
-data 2303 classified as: 5 -> WRONG!
+data 2303 classified as: 2 -> correct
 data 2304 classified as: 2 -> correct
 data 2305 classified as: 2 -> correct
 data 2306 classified as: 2 -> correct
 data 2307 classified as: 2 -> correct
-data 2308 classified as: 6 -> WRONG!
+data 2308 classified as: 2 -> correct
 data 2309 classified as: 2 -> correct
 data 2310 classified as: 2 -> correct
 data 2311 classified as: 9 -> WRONG!
@@ -2575,7 +2625,7 @@ data 2344 classified as: 2 -> correct
 data 2345 classified as: 2 -> correct
 data 2346 classified as: 2 -> correct
 data 2347 classified as: 2 -> correct
-data 2348 classified as: 8 -> WRONG!
+data 2348 classified as: 2 -> correct
 data 2349 classified as: 2 -> correct
 data 2350 classified as: 2 -> correct
 data 2351 classified as: 2 -> correct
@@ -2746,7 +2796,7 @@ data 2515 classified as: 2 -> correct
 data 2516 classified as: 2 -> correct
 data 2517 classified as: 2 -> correct
 data 2518 classified as: 3 -> WRONG!
-data 2519 classified as: 8 -> WRONG!
+data 2519 classified as: 2 -> correct
 data 2520 classified as: 2 -> correct
 data 2521 classified as: 2 -> correct
 data 2522 classified as: 2 -> correct
@@ -2776,7 +2826,7 @@ data 2545 classified as: 2 -> correct
 data 2546 classified as: 8 -> WRONG!
 data 2547 classified as: 2 -> correct
 data 2548 classified as: 2 -> correct
-data 2549 classified as: 4 -> WRONG!
+data 2549 classified as: 2 -> correct
 data 2550 classified as: 7 -> WRONG!
 data 2551 classified as: 2 -> correct
 data 2552 classified as: 2 -> correct
@@ -2857,7 +2907,7 @@ data 2626 classified as: 2 -> correct
 data 2627 classified as: 2 -> correct
 data 2628 classified as: 2 -> correct
 data 2629 classified as: 2 -> correct
-data 2630 classified as: 3 -> WRONG!
+data 2630 classified as: 2 -> correct
 data 2631 classified as: 2 -> correct
 data 2632 classified as: 8 -> WRONG!
 data 2633 classified as: 2 -> correct
@@ -2868,7 +2918,7 @@ data 2637 classified as: 2 -> correct
 data 2638 classified as: 2 -> correct
 data 2639 classified as: 2 -> correct
 data 2640 classified as: 2 -> correct
-data 2641 classified as: 3 -> WRONG!
+data 2641 classified as: 2 -> correct
 data 2642 classified as: 2 -> correct
 data 2643 classified as: 2 -> correct
 data 2644 classified as: 2 -> correct
@@ -2892,7 +2942,7 @@ data 2661 classified as: 2 -> correct
 data 2662 classified as: 2 -> correct
 data 2663 classified as: 2 -> correct
 data 2664 classified as: 2 -> correct
-data 2665 classified as: 8 -> WRONG!
+data 2665 classified as: 2 -> correct
 data 2666 classified as: 2 -> correct
 data 2667 classified as: 2 -> correct
 data 2668 classified as: 2 -> correct
@@ -2926,7 +2976,7 @@ data 2695 classified as: 2 -> correct
 data 2696 classified as: 2 -> correct
 data 2697 classified as: 2 -> correct
 data 2698 classified as: 2 -> correct
-data 2699 classified as: 8 -> WRONG!
+data 2699 classified as: 2 -> correct
 data 2700 classified as: 2 -> correct
 data 2701 classified as: 2 -> correct
 data 2702 classified as: 2 -> correct
@@ -2979,7 +3029,7 @@ data 2748 classified as: 2 -> correct
 data 2749 classified as: 2 -> correct
 data 2750 classified as: 2 -> correct
 data 2751 classified as: 2 -> correct
-data 2752 classified as: 8 -> WRONG!
+data 2752 classified as: 2 -> correct
 data 2753 classified as: 2 -> correct
 data 2754 classified as: 2 -> correct
 data 2755 classified as: 2 -> correct
@@ -3020,7 +3070,7 @@ data 2789 classified as: 2 -> correct
 data 2790 classified as: 2 -> correct
 data 2791 classified as: 2 -> correct
 data 2792 classified as: 2 -> correct
-data 2793 classified as: 6 -> WRONG!
+data 2793 classified as: 2 -> correct
 data 2794 classified as: 2 -> correct
 data 2795 classified as: 2 -> correct
 data 2796 classified as: 2 -> correct
@@ -3124,7 +3174,7 @@ data 2893 classified as: 2 -> correct
 data 2894 classified as: 2 -> correct
 data 2895 classified as: 2 -> correct
 data 2896 classified as: 2 -> correct
-data 2897 classified as: 7 -> WRONG!
+data 2897 classified as: 2 -> correct
 data 2898 classified as: 2 -> correct
 data 2899 classified as: 2 -> correct
 data 2900 classified as: 2 -> correct
@@ -3194,7 +3244,7 @@ data 2963 classified as: 2 -> correct
 data 2964 classified as: 2 -> correct
 data 2965 classified as: 2 -> correct
 data 2966 classified as: 2 -> correct
-data 2967 classified as: 4 -> WRONG!
+data 2967 classified as: 2 -> correct
 data 2968 classified as: 2 -> correct
 data 2969 classified as: 2 -> correct
 data 2970 classified as: 2 -> correct
@@ -3240,7 +3290,7 @@ data 3009 classified as: 2 -> correct
 data 3010 classified as: 2 -> correct
 data 3011 classified as: 2 -> correct
 data 3012 classified as: 2 -> correct
-data 3013 classified as: 3 -> WRONG!
+data 3013 classified as: 2 -> correct
 data 3014 classified as: 2 -> correct
 data 3015 classified as: 2 -> correct
 data 3016 classified as: 2 -> correct
@@ -3280,7 +3330,7 @@ data 3049 classified as: 8 -> WRONG!
 data 3050 classified as: 2 -> correct
 data 3051 classified as: 2 -> correct
 data 3052 classified as: 2 -> correct
-data 3053 classified as: 8 -> WRONG!
+data 3053 classified as: 2 -> correct
 data 3054 classified as: 2 -> correct
 data 3055 classified as: 2 -> correct
 data 3056 classified as: 2 -> correct
@@ -3334,7 +3384,7 @@ data 3103 classified as: 2 -> correct
 data 3104 classified as: 2 -> correct
 data 3105 classified as: 2 -> correct
 data 3106 classified as: 2 -> correct
-data 3107 classified as: 8 -> WRONG!
+data 3107 classified as: 2 -> correct
 data 3108 classified as: 2 -> correct
 data 3109 classified as: 2 -> correct
 data 3110 classified as: 2 -> correct
@@ -3343,7 +3393,7 @@ data 3112 classified as: 2 -> correct
 data 3113 classified as: 7 -> WRONG!
 data 3114 classified as: 2 -> correct
 data 3115 classified as: 2 -> correct
-data 3116 classified as: 6 -> WRONG!
+data 3116 classified as: 2 -> correct
 data 3117 classified as: 2 -> correct
 data 3118 classified as: 2 -> correct
 data 3119 classified as: 5 -> WRONG!
@@ -3360,7 +3410,7 @@ data 3129 classified as: 2 -> correct
 data 3130 classified as: 7 -> WRONG!
 data 3131 classified as: 2 -> correct
 data 3132 classified as: 2 -> correct
-data 3133 classified as: 8 -> WRONG!
+data 3133 classified as: 2 -> correct
 data 3134 classified as: 8 -> WRONG!
 data 3135 classified as: 8 -> WRONG!
 data 3136 classified as: 2 -> correct
@@ -3422,7 +3472,7 @@ data 3191 classified as: 3 -> correct
 data 3192 classified as: 3 -> correct
 data 3193 classified as: 3 -> correct
 data 3194 classified as: 5 -> WRONG!
-data 3195 classified as: 8 -> WRONG!
+data 3195 classified as: 3 -> correct
 data 3196 classified as: 3 -> correct
 data 3197 classified as: 3 -> correct
 data 3198 classified as: 3 -> correct
@@ -3437,7 +3487,7 @@ data 3206 classified as: 8 -> WRONG!
 data 3207 classified as: 3 -> correct
 data 3208 classified as: 3 -> correct
 data 3209 classified as: 3 -> correct
-data 3210 classified as: 9 -> WRONG!
+data 3210 classified as: 3 -> correct
 data 3211 classified as: 3 -> correct
 data 3212 classified as: 3 -> correct
 data 3213 classified as: 3 -> correct
@@ -3475,7 +3525,7 @@ data 3244 classified as: 3 -> correct
 data 3245 classified as: 3 -> correct
 data 3246 classified as: 3 -> correct
 data 3247 classified as: 5 -> WRONG!
-data 3248 classified as: 8 -> WRONG!
+data 3248 classified as: 3 -> correct
 data 3249 classified as: 3 -> correct
 data 3250 classified as: 3 -> correct
 data 3251 classified as: 3 -> correct
@@ -3509,10 +3559,10 @@ data 3278 classified as: 3 -> correct
 data 3279 classified as: 3 -> correct
 data 3280 classified as: 3 -> correct
 data 3281 classified as: 3 -> correct
-data 3282 classified as: 5 -> WRONG!
+data 3282 classified as: 3 -> correct
 data 3283 classified as: 3 -> correct
 data 3284 classified as: 7 -> WRONG!
-data 3285 classified as: 5 -> WRONG!
+data 3285 classified as: 3 -> correct
 data 3286 classified as: 3 -> correct
 data 3287 classified as: 3 -> correct
 data 3288 classified as: 3 -> correct
@@ -3724,7 +3774,7 @@ data 3493 classified as: 3 -> correct
 data 3494 classified as: 3 -> correct
 data 3495 classified as: 3 -> correct
 data 3496 classified as: 3 -> correct
-data 3497 classified as: 8 -> WRONG!
+data 3497 classified as: 3 -> correct
 data 3498 classified as: 3 -> correct
 data 3499 classified as: 3 -> correct
 data 3500 classified as: 3 -> correct
@@ -3772,7 +3822,7 @@ data 3541 classified as: 3 -> correct
 data 3542 classified as: 3 -> correct
 data 3543 classified as: 3 -> correct
 data 3544 classified as: 3 -> correct
-data 3545 classified as: 8 -> WRONG!
+data 3545 classified as: 3 -> correct
 data 3546 classified as: 5 -> WRONG!
 data 3547 classified as: 3 -> correct
 data 3548 classified as: 3 -> correct
@@ -3786,7 +3836,7 @@ data 3555 classified as: 3 -> correct
 data 3556 classified as: 3 -> correct
 data 3557 classified as: 3 -> correct
 data 3558 classified as: 3 -> correct
-data 3559 classified as: 5 -> WRONG!
+data 3559 classified as: 3 -> correct
 data 3560 classified as: 3 -> correct
 data 3561 classified as: 3 -> correct
 data 3562 classified as: 3 -> correct
@@ -3877,7 +3927,7 @@ data 3646 classified as: 3 -> correct
 data 3647 classified as: 3 -> correct
 data 3648 classified as: 3 -> correct
 data 3649 classified as: 3 -> correct
-data 3650 classified as: 8 -> WRONG!
+data 3650 classified as: 3 -> correct
 data 3651 classified as: 3 -> correct
 data 3652 classified as: 8 -> WRONG!
 data 3653 classified as: 3 -> correct
@@ -3965,8 +4015,8 @@ data 3734 classified as: 3 -> correct
 data 3735 classified as: 3 -> correct
 data 3736 classified as: 3 -> correct
 data 3737 classified as: 3 -> correct
-data 3738 classified as: 8 -> WRONG!
-data 3739 classified as: 8 -> WRONG!
+data 3738 classified as: 3 -> correct
+data 3739 classified as: 3 -> correct
 data 3740 classified as: 8 -> WRONG!
 data 3741 classified as: 8 -> WRONG!
 data 3742 classified as: 3 -> correct
@@ -4022,8 +4072,8 @@ data 3791 classified as: 3 -> correct
 data 3792 classified as: 3 -> correct
 data 3793 classified as: 3 -> correct
 data 3794 classified as: 3 -> correct
-data 3795 classified as: 5 -> WRONG!
-data 3796 classified as: 5 -> WRONG!
+data 3795 classified as: 3 -> correct
+data 3796 classified as: 3 -> correct
 data 3797 classified as: 3 -> correct
 data 3798 classified as: 3 -> correct
 data 3799 classified as: 3 -> correct
@@ -4031,10 +4081,10 @@ data 3800 classified as: 3 -> correct
 data 3801 classified as: 3 -> correct
 data 3802 classified as: 3 -> correct
 data 3803 classified as: 3 -> correct
-data 3804 classified as: 7 -> WRONG!
+data 3804 classified as: 3 -> correct
 data 3805 classified as: 3 -> correct
 data 3806 classified as: 3 -> correct
-data 3807 classified as: 5 -> WRONG!
+data 3807 classified as: 3 -> correct
 data 3808 classified as: 3 -> correct
 data 3809 classified as: 5 -> WRONG!
 data 3810 classified as: 3 -> correct
@@ -4101,7 +4151,7 @@ data 3870 classified as: 3 -> correct
 data 3871 classified as: 3 -> correct
 data 3872 classified as: 3 -> correct
 data 3873 classified as: 3 -> correct
-data 3874 classified as: 5 -> WRONG!
+data 3874 classified as: 3 -> correct
 data 3875 classified as: 3 -> correct
 data 3876 classified as: 3 -> correct
 data 3877 classified as: 3 -> correct
@@ -4148,7 +4198,7 @@ data 3917 classified as: 3 -> correct
 data 3918 classified as: 3 -> correct
 data 3919 classified as: 3 -> correct
 data 3920 classified as: 3 -> correct
-data 3921 classified as: 5 -> WRONG!
+data 3921 classified as: 3 -> correct
 data 3922 classified as: 3 -> correct
 data 3923 classified as: 3 -> correct
 data 3924 classified as: 3 -> correct
@@ -4352,7 +4402,7 @@ data 4121 classified as: 3 -> correct
 data 4122 classified as: 3 -> correct
 data 4123 classified as: 3 -> correct
 data 4124 classified as: 3 -> correct
-data 4125 classified as: 8 -> WRONG!
+data 4125 classified as: 3 -> correct
 data 4126 classified as: 3 -> correct
 data 4127 classified as: 3 -> correct
 data 4128 classified as: 3 -> correct
@@ -4424,7 +4474,7 @@ data 4193 classified as: 4 -> correct
 data 4194 classified as: 6 -> WRONG!
 data 4195 classified as: 4 -> correct
 data 4196 classified as: 4 -> correct
-data 4197 classified as: 9 -> WRONG!
+data 4197 classified as: 4 -> correct
 data 4198 classified as: 4 -> correct
 data 4199 classified as: 4 -> correct
 data 4200 classified as: 4 -> correct
@@ -4435,7 +4485,7 @@ data 4204 classified as: 4 -> correct
 data 4205 classified as: 4 -> correct
 data 4206 classified as: 4 -> correct
 data 4207 classified as: 4 -> correct
-data 4208 classified as: 4 -> correct
+data 4208 classified as: 9 -> WRONG!
 data 4209 classified as: 4 -> correct
 data 4210 classified as: 4 -> correct
 data 4211 classified as: 4 -> correct
@@ -4549,7 +4599,7 @@ data 4318 classified as: 4 -> correct
 data 4319 classified as: 9 -> WRONG!
 data 4320 classified as: 9 -> WRONG!
 data 4321 classified as: 4 -> correct
-data 4322 classified as: 6 -> WRONG!
+data 4322 classified as: 4 -> correct
 data 4323 classified as: 4 -> correct
 data 4324 classified as: 4 -> correct
 data 4325 classified as: 4 -> correct
@@ -4561,7 +4611,7 @@ data 4330 classified as: 6 -> WRONG!
 data 4331 classified as: 4 -> correct
 data 4332 classified as: 4 -> correct
 data 4333 classified as: 4 -> correct
-data 4334 classified as: 9 -> WRONG!
+data 4334 classified as: 4 -> correct
 data 4335 classified as: 4 -> correct
 data 4336 classified as: 4 -> correct
 data 4337 classified as: 4 -> correct
@@ -4667,7 +4717,7 @@ data 4436 classified as: 4 -> correct
 data 4437 classified as: 4 -> correct
 data 4438 classified as: 4 -> correct
 data 4439 classified as: 4 -> correct
-data 4440 classified as: 4 -> correct
+data 4440 classified as: 8 -> WRONG!
 data 4441 classified as: 4 -> correct
 data 4442 classified as: 4 -> correct
 data 4443 classified as: 4 -> correct
@@ -4732,7 +4782,7 @@ data 4501 classified as: 4 -> correct
 data 4502 classified as: 4 -> correct
 data 4503 classified as: 4 -> correct
 data 4504 classified as: 4 -> correct
-data 4505 classified as: 9 -> WRONG!
+data 4505 classified as: 4 -> correct
 data 4506 classified as: 4 -> correct
 data 4507 classified as: 4 -> correct
 data 4508 classified as: 4 -> correct
@@ -4771,7 +4821,7 @@ data 4540 classified as: 4 -> correct
 data 4541 classified as: 4 -> correct
 data 4542 classified as: 4 -> correct
 data 4543 classified as: 4 -> correct
-data 4544 classified as: 4 -> correct
+data 4544 classified as: 9 -> WRONG!
 data 4545 classified as: 4 -> correct
 data 4546 classified as: 4 -> correct
 data 4547 classified as: 4 -> correct
@@ -4831,7 +4881,7 @@ data 4600 classified as: 4 -> correct
 data 4601 classified as: 9 -> WRONG!
 data 4602 classified as: 4 -> correct
 data 4603 classified as: 4 -> correct
-data 4604 classified as: 9 -> WRONG!
+data 4604 classified as: 4 -> correct
 data 4605 classified as: 4 -> correct
 data 4606 classified as: 4 -> correct
 data 4607 classified as: 4 -> correct
@@ -4892,7 +4942,7 @@ data 4661 classified as: 4 -> correct
 data 4662 classified as: 4 -> correct
 data 4663 classified as: 4 -> correct
 data 4664 classified as: 4 -> correct
-data 4665 classified as: 1 -> WRONG!
+data 4665 classified as: 4 -> correct
 data 4666 classified as: 4 -> correct
 data 4667 classified as: 4 -> correct
 data 4668 classified as: 4 -> correct
@@ -4945,14 +4995,14 @@ data 4714 classified as: 4 -> correct
 data 4715 classified as: 4 -> correct
 data 4716 classified as: 4 -> correct
 data 4717 classified as: 4 -> correct
-data 4718 classified as: 9 -> WRONG!
+data 4718 classified as: 4 -> correct
 data 4719 classified as: 4 -> correct
 data 4720 classified as: 4 -> correct
 data 4721 classified as: 9 -> WRONG!
 data 4722 classified as: 4 -> correct
 data 4723 classified as: 4 -> correct
 data 4724 classified as: 4 -> correct
-data 4725 classified as: 6 -> WRONG!
+data 4725 classified as: 4 -> correct
 data 4726 classified as: 4 -> correct
 data 4727 classified as: 4 -> correct
 data 4728 classified as: 4 -> correct
@@ -5099,7 +5149,7 @@ data 4868 classified as: 4 -> correct
 data 4869 classified as: 4 -> correct
 data 4870 classified as: 4 -> correct
 data 4871 classified as: 4 -> correct
-data 4872 classified as: 9 -> WRONG!
+data 4872 classified as: 4 -> correct
 data 4873 classified as: 4 -> correct
 data 4874 classified as: 4 -> correct
 data 4875 classified as: 4 -> correct
@@ -5287,7 +5337,7 @@ data 5056 classified as: 4 -> correct
 data 5057 classified as: 4 -> correct
 data 5058 classified as: 8 -> WRONG!
 data 5059 classified as: 4 -> correct
-data 5060 classified as: 8 -> WRONG!
+data 5060 classified as: 7 -> WRONG!
 data 5061 classified as: 4 -> correct
 data 5062 classified as: 4 -> correct
 data 5063 classified as: 4 -> correct
@@ -5490,8 +5540,8 @@ data 5259 classified as: 5 -> correct
 data 5260 classified as: 5 -> correct
 data 5261 classified as: 5 -> correct
 data 5262 classified as: 5 -> correct
-data 5263 classified as: 8 -> WRONG!
-data 5264 classified as: 5 -> correct
+data 5263 classified as: 6 -> WRONG!
+data 5264 classified as: 3 -> WRONG!
 data 5265 classified as: 5 -> correct
 data 5266 classified as: 5 -> correct
 data 5267 classified as: 5 -> correct
@@ -5574,7 +5624,7 @@ data 5343 classified as: 5 -> correct
 data 5344 classified as: 5 -> correct
 data 5345 classified as: 5 -> correct
 data 5346 classified as: 5 -> correct
-data 5347 classified as: 8 -> WRONG!
+data 5347 classified as: 5 -> correct
 data 5348 classified as: 5 -> correct
 data 5349 classified as: 5 -> correct
 data 5350 classified as: 5 -> correct
@@ -5630,7 +5680,7 @@ data 5399 classified as: 5 -> correct
 data 5400 classified as: 5 -> correct
 data 5401 classified as: 5 -> correct
 data 5402 classified as: 5 -> correct
-data 5403 classified as: 3 -> WRONG!
+data 5403 classified as: 5 -> correct
 data 5404 classified as: 5 -> correct
 data 5405 classified as: 5 -> correct
 data 5406 classified as: 5 -> correct
@@ -5745,11 +5795,11 @@ data 5514 classified as: 5 -> correct
 data 5515 classified as: 5 -> correct
 data 5516 classified as: 5 -> correct
 data 5517 classified as: 3 -> WRONG!
-data 5518 classified as: 8 -> WRONG!
+data 5518 classified as: 5 -> correct
 data 5519 classified as: 5 -> correct
 data 5520 classified as: 5 -> correct
 data 5521 classified as: 5 -> correct
-data 5522 classified as: 1 -> WRONG!
+data 5522 classified as: 5 -> correct
 data 5523 classified as: 1 -> WRONG!
 data 5524 classified as: 5 -> correct
 data 5525 classified as: 5 -> correct
@@ -5764,7 +5814,7 @@ data 5533 classified as: 5 -> correct
 data 5534 classified as: 5 -> correct
 data 5535 classified as: 5 -> correct
 data 5536 classified as: 9 -> WRONG!
-data 5537 classified as: 8 -> WRONG!
+data 5537 classified as: 5 -> correct
 data 5538 classified as: 5 -> correct
 data 5539 classified as: 5 -> correct
 data 5540 classified as: 5 -> correct
@@ -5805,7 +5855,7 @@ data 5574 classified as: 5 -> correct
 data 5575 classified as: 5 -> correct
 data 5576 classified as: 5 -> correct
 data 5577 classified as: 5 -> correct
-data 5578 classified as: 6 -> WRONG!
+data 5578 classified as: 5 -> correct
 data 5579 classified as: 5 -> correct
 data 5580 classified as: 5 -> correct
 data 5581 classified as: 5 -> correct
@@ -5920,7 +5970,7 @@ data 5689 classified as: 5 -> correct
 data 5690 classified as: 5 -> correct
 data 5691 classified as: 5 -> correct
 data 5692 classified as: 5 -> correct
-data 5693 classified as: 8 -> WRONG!
+data 5693 classified as: 5 -> correct
 data 5694 classified as: 5 -> correct
 data 5695 classified as: 5 -> correct
 data 5696 classified as: 5 -> correct
@@ -5967,7 +6017,7 @@ data 5736 classified as: 5 -> correct
 data 5737 classified as: 5 -> correct
 data 5738 classified as: 5 -> correct
 data 5739 classified as: 5 -> correct
-data 5740 classified as: 3 -> WRONG!
+data 5740 classified as: 5 -> correct
 data 5741 classified as: 5 -> correct
 data 5742 classified as: 5 -> correct
 data 5743 classified as: 5 -> correct
@@ -6041,7 +6091,7 @@ data 5810 classified as: 5 -> correct
 data 5811 classified as: 5 -> correct
 data 5812 classified as: 5 -> correct
 data 5813 classified as: 5 -> correct
-data 5814 classified as: 3 -> WRONG!
+data 5814 classified as: 5 -> correct
 data 5815 classified as: 5 -> correct
 data 5816 classified as: 5 -> correct
 data 5817 classified as: 5 -> correct
@@ -6070,16 +6120,16 @@ data 5839 classified as: 5 -> correct
 data 5840 classified as: 5 -> correct
 data 5841 classified as: 5 -> correct
 data 5842 classified as: 5 -> correct
-data 5843 classified as: 8 -> WRONG!
+data 5843 classified as: 6 -> WRONG!
 data 5844 classified as: 5 -> correct
 data 5845 classified as: 5 -> correct
 data 5846 classified as: 5 -> correct
-data 5847 classified as: 8 -> WRONG!
+data 5847 classified as: 5 -> correct
 data 5848 classified as: 8 -> WRONG!
 data 5849 classified as: 8 -> WRONG!
 data 5850 classified as: 8 -> WRONG!
-data 5851 classified as: 8 -> WRONG!
-data 5852 classified as: 4 -> WRONG!
+data 5851 classified as: 5 -> correct
+data 5852 classified as: 8 -> WRONG!
 data 5853 classified as: 8 -> WRONG!
 data 5854 classified as: 5 -> correct
 data 5855 classified as: 5 -> correct
@@ -6284,7 +6334,7 @@ data 6053 classified as: 0 -> WRONG!
 data 6054 classified as: 6 -> correct
 data 6055 classified as: 6 -> correct
 data 6056 classified as: 6 -> correct
-data 6057 classified as: 4 -> WRONG!
+data 6057 classified as: 6 -> correct
 data 6058 classified as: 6 -> correct
 data 6059 classified as: 6 -> correct
 data 6060 classified as: 6 -> correct
@@ -6391,7 +6441,7 @@ data 6160 classified as: 6 -> correct
 data 6161 classified as: 6 -> correct
 data 6162 classified as: 6 -> correct
 data 6163 classified as: 6 -> correct
-data 6164 classified as: 4 -> WRONG!
+data 6164 classified as: 6 -> correct
 data 6165 classified as: 6 -> correct
 data 6166 classified as: 6 -> correct
 data 6167 classified as: 6 -> correct
@@ -6416,7 +6466,7 @@ data 6185 classified as: 6 -> correct
 data 6186 classified as: 6 -> correct
 data 6187 classified as: 6 -> correct
 data 6188 classified as: 6 -> correct
-data 6189 classified as: 4 -> WRONG!
+data 6189 classified as: 6 -> correct
 data 6190 classified as: 6 -> correct
 data 6191 classified as: 6 -> correct
 data 6192 classified as: 6 -> correct
@@ -6449,7 +6499,7 @@ data 6218 classified as: 6 -> correct
 data 6219 classified as: 6 -> correct
 data 6220 classified as: 6 -> correct
 data 6221 classified as: 5 -> WRONG!
-data 6222 classified as: 6 -> correct
+data 6222 classified as: 2 -> WRONG!
 data 6223 classified as: 1 -> WRONG!
 data 6224 classified as: 6 -> correct
 data 6225 classified as: 6 -> correct
@@ -6676,18 +6726,18 @@ data 6445 classified as: 6 -> correct
 data 6446 classified as: 6 -> correct
 data 6447 classified as: 6 -> correct
 data 6448 classified as: 6 -> correct
-data 6449 classified as: 6 -> correct
+data 6449 classified as: 5 -> WRONG!
 data 6450 classified as: 6 -> correct
 data 6451 classified as: 6 -> correct
 data 6452 classified as: 6 -> correct
-data 6453 classified as: 2 -> WRONG!
+data 6453 classified as: 8 -> WRONG!
 data 6454 classified as: 6 -> correct
 data 6455 classified as: 6 -> correct
 data 6456 classified as: 6 -> correct
 data 6457 classified as: 6 -> correct
 data 6458 classified as: 6 -> correct
 data 6459 classified as: 6 -> correct
-data 6460 classified as: 8 -> WRONG!
+data 6460 classified as: 6 -> correct
 data 6461 classified as: 6 -> correct
 data 6462 classified as: 6 -> correct
 data 6463 classified as: 6 -> correct
@@ -7251,7 +7301,7 @@ data 7020 classified as: 7 -> correct
 data 7021 classified as: 7 -> correct
 data 7022 classified as: 7 -> correct
 data 7023 classified as: 7 -> correct
-data 7024 classified as: 9 -> WRONG!
+data 7024 classified as: 7 -> correct
 data 7025 classified as: 7 -> correct
 data 7026 classified as: 7 -> correct
 data 7027 classified as: 9 -> WRONG!
@@ -7285,7 +7335,7 @@ data 7054 classified as: 7 -> correct
 data 7055 classified as: 7 -> correct
 data 7056 classified as: 7 -> correct
 data 7057 classified as: 2 -> WRONG!
-data 7058 classified as: 9 -> WRONG!
+data 7058 classified as: 7 -> correct
 data 7059 classified as: 7 -> correct
 data 7060 classified as: 7 -> correct
 data 7061 classified as: 7 -> correct
@@ -7312,7 +7362,7 @@ data 7081 classified as: 7 -> correct
 data 7082 classified as: 7 -> correct
 data 7083 classified as: 7 -> correct
 data 7084 classified as: 7 -> correct
-data 7085 classified as: 2 -> WRONG!
+data 7085 classified as: 9 -> WRONG!
 data 7086 classified as: 7 -> correct
 data 7087 classified as: 7 -> correct
 data 7088 classified as: 7 -> correct
@@ -7327,7 +7377,7 @@ data 7096 classified as: 7 -> correct
 data 7097 classified as: 7 -> correct
 data 7098 classified as: 7 -> correct
 data 7099 classified as: 7 -> correct
-data 7100 classified as: 9 -> WRONG!
+data 7100 classified as: 7 -> correct
 data 7101 classified as: 7 -> correct
 data 7102 classified as: 7 -> correct
 data 7103 classified as: 7 -> correct
@@ -7340,7 +7390,7 @@ data 7109 classified as: 9 -> WRONG!
 data 7110 classified as: 7 -> correct
 data 7111 classified as: 7 -> correct
 data 7112 classified as: 9 -> WRONG!
-data 7113 classified as: 2 -> WRONG!
+data 7113 classified as: 9 -> WRONG!
 data 7114 classified as: 7 -> correct
 data 7115 classified as: 2 -> WRONG!
 data 7116 classified as: 7 -> correct
@@ -7384,7 +7434,7 @@ data 7153 classified as: 7 -> correct
 data 7154 classified as: 7 -> correct
 data 7155 classified as: 7 -> correct
 data 7156 classified as: 7 -> correct
-data 7157 classified as: 9 -> WRONG!
+data 7157 classified as: 7 -> correct
 data 7158 classified as: 7 -> correct
 data 7159 classified as: 7 -> correct
 data 7160 classified as: 7 -> correct
@@ -7427,7 +7477,7 @@ data 7196 classified as: 7 -> correct
 data 7197 classified as: 7 -> correct
 data 7198 classified as: 9 -> WRONG!
 data 7199 classified as: 7 -> correct
-data 7200 classified as: 5 -> WRONG!
+data 7200 classified as: 7 -> correct
 data 7201 classified as: 9 -> WRONG!
 data 7202 classified as: 7 -> correct
 data 7203 classified as: 7 -> correct
@@ -7601,7 +7651,7 @@ data 7370 classified as: 7 -> correct
 data 7371 classified as: 7 -> correct
 data 7372 classified as: 7 -> correct
 data 7373 classified as: 7 -> correct
-data 7374 classified as: 9 -> WRONG!
+data 7374 classified as: 7 -> correct
 data 7375 classified as: 7 -> correct
 data 7376 classified as: 7 -> correct
 data 7377 classified as: 7 -> correct
@@ -7617,7 +7667,7 @@ data 7386 classified as: 7 -> correct
 data 7387 classified as: 3 -> WRONG!
 data 7388 classified as: 9 -> WRONG!
 data 7389 classified as: 1 -> WRONG!
-data 7390 classified as: 3 -> WRONG!
+data 7390 classified as: 7 -> correct
 data 7391 classified as: 7 -> correct
 data 7392 classified as: 7 -> correct
 data 7393 classified as: 7 -> correct
@@ -7670,7 +7720,7 @@ data 7439 classified as: 7 -> correct
 data 7440 classified as: 7 -> correct
 data 7441 classified as: 7 -> correct
 data 7442 classified as: 7 -> correct
-data 7443 classified as: 8 -> WRONG!
+data 7443 classified as: 9 -> WRONG!
 data 7444 classified as: 7 -> correct
 data 7445 classified as: 7 -> correct
 data 7446 classified as: 7 -> correct
@@ -7812,9 +7862,9 @@ data 7581 classified as: 7 -> correct
 data 7582 classified as: 9 -> WRONG!
 data 7583 classified as: 7 -> correct
 data 7584 classified as: 7 -> correct
-data 7585 classified as: 9 -> WRONG!
+data 7585 classified as: 7 -> correct
 data 7586 classified as: 7 -> correct
-data 7587 classified as: 9 -> WRONG!
+data 7587 classified as: 7 -> correct
 data 7588 classified as: 5 -> WRONG!
 data 7589 classified as: 7 -> correct
 data 7590 classified as: 7 -> correct
@@ -8346,7 +8396,7 @@ data 8115 classified as: 8 -> correct
 data 8116 classified as: 8 -> correct
 data 8117 classified as: 8 -> correct
 data 8118 classified as: 8 -> correct
-data 8119 classified as: 9 -> WRONG!
+data 8119 classified as: 8 -> correct
 data 8120 classified as: 8 -> correct
 data 8121 classified as: 8 -> correct
 data 8122 classified as: 8 -> correct
@@ -8368,7 +8418,7 @@ data 8137 classified as: 8 -> correct
 data 8138 classified as: 3 -> WRONG!
 data 8139 classified as: 8 -> correct
 data 8140 classified as: 8 -> correct
-data 8141 classified as: 8 -> correct
+data 8141 classified as: 6 -> WRONG!
 data 8142 classified as: 8 -> correct
 data 8143 classified as: 8 -> correct
 data 8144 classified as: 8 -> correct
@@ -8633,7 +8683,7 @@ data 8402 classified as: 8 -> correct
 data 8403 classified as: 8 -> correct
 data 8404 classified as: 8 -> correct
 data 8405 classified as: 8 -> correct
-data 8406 classified as: 5 -> WRONG!
+data 8406 classified as: 0 -> WRONG!
 data 8407 classified as: 8 -> correct
 data 8408 classified as: 8 -> correct
 data 8409 classified as: 8 -> correct
@@ -8683,7 +8733,7 @@ data 8452 classified as: 7 -> WRONG!
 data 8453 classified as: 8 -> correct
 data 8454 classified as: 8 -> correct
 data 8455 classified as: 8 -> correct
-data 8456 classified as: 3 -> WRONG!
+data 8456 classified as: 8 -> correct
 data 8457 classified as: 8 -> correct
 data 8458 classified as: 8 -> correct
 data 8459 classified as: 8 -> correct
@@ -8760,7 +8810,7 @@ data 8529 classified as: 8 -> correct
 data 8530 classified as: 8 -> correct
 data 8531 classified as: 8 -> correct
 data 8532 classified as: 9 -> WRONG!
-data 8533 classified as: 9 -> WRONG!
+data 8533 classified as: 8 -> correct
 data 8534 classified as: 8 -> correct
 data 8535 classified as: 8 -> correct
 data 8536 classified as: 8 -> correct
@@ -9253,7 +9303,7 @@ data 9022 classified as: 9 -> correct
 data 9023 classified as: 9 -> correct
 data 9024 classified as: 9 -> correct
 data 9025 classified as: 9 -> correct
-data 9026 classified as: 1 -> WRONG!
+data 9026 classified as: 7 -> WRONG!
 data 9027 classified as: 9 -> correct
 data 9028 classified as: 9 -> correct
 data 9029 classified as: 9 -> correct
@@ -9267,7 +9317,7 @@ data 9036 classified as: 9 -> correct
 data 9037 classified as: 8 -> WRONG!
 data 9038 classified as: 9 -> correct
 data 9039 classified as: 9 -> correct
-data 9040 classified as: 8 -> WRONG!
+data 9040 classified as: 9 -> correct
 data 9041 classified as: 9 -> correct
 data 9042 classified as: 9 -> correct
 data 9043 classified as: 9 -> correct
@@ -9369,7 +9419,7 @@ data 9138 classified as: 9 -> correct
 data 9139 classified as: 9 -> correct
 data 9140 classified as: 8 -> WRONG!
 data 9141 classified as: 9 -> correct
-data 9142 classified as: 7 -> WRONG!
+data 9142 classified as: 9 -> correct
 data 9143 classified as: 9 -> correct
 data 9144 classified as: 9 -> correct
 data 9145 classified as: 9 -> correct
@@ -9387,7 +9437,7 @@ data 9156 classified as: 9 -> correct
 data 9157 classified as: 9 -> correct
 data 9158 classified as: 5 -> WRONG!
 data 9159 classified as: 9 -> correct
-data 9160 classified as: 9 -> correct
+data 9160 classified as: 5 -> WRONG!
 data 9161 classified as: 9 -> correct
 data 9162 classified as: 9 -> correct
 data 9163 classified as: 9 -> correct
@@ -9529,7 +9579,7 @@ data 9298 classified as: 9 -> correct
 data 9299 classified as: 9 -> correct
 data 9300 classified as: 9 -> correct
 data 9301 classified as: 9 -> correct
-data 9302 classified as: 3 -> WRONG!
+data 9302 classified as: 8 -> WRONG!
 data 9303 classified as: 9 -> correct
 data 9304 classified as: 9 -> correct
 data 9305 classified as: 9 -> correct
@@ -9851,7 +9901,7 @@ data 9620 classified as: 8 -> WRONG!
 data 9621 classified as: 9 -> correct
 data 9622 classified as: 9 -> correct
 data 9623 classified as: 9 -> correct
-data 9624 classified as: 0 -> WRONG!
+data 9624 classified as: 9 -> correct
 data 9625 classified as: 3 -> WRONG!
 data 9626 classified as: 9 -> correct
 data 9627 classified as: 0 -> WRONG!
@@ -10217,7 +10267,7 @@ data 9986 classified as: 4 -> WRONG!
 data 9987 classified as: 9 -> correct
 data 9988 classified as: 9 -> correct
 data 9989 classified as: 9 -> correct
-data 9990 classified as: 5 -> WRONG!
+data 9990 classified as: 9 -> correct
 data 9991 classified as: 9 -> correct
 data 9992 classified as: 9 -> correct
 data 9993 classified as: 9 -> correct
@@ -10228,5 +10278,5 @@ data 9997 classified as: 9 -> correct
 data 9998 classified as: 9 -> correct
 data 9999 classified as: 9 -> correct
 
-accuracy: 93.17 %
-number of wrong classifications: 683 out of 10000 images!
+accuracy: 93.97999999999999 %
+number of wrong classifications: 602 out of 10000 images!
