@@ -9,14 +9,14 @@ from __future__ import division
 
 import numpy as np
 
+# import local python files
+import imp
+read_mnist_data_from_files = imp.load_source('read_mnist_data_from_files', 'read_mnist_data_from_files.py')
+
 __author__ = 'c.kormaris'
 
 # ignore errors
 np.seterr(all='ignore')
-
-# set options
-#pd.set_option('display.width', 1000)
-#pd.set_option('display.max_rows', 200)
 
 ###############
 
@@ -26,7 +26,7 @@ class NNParams:
     num_hidden_layers = 100  # M: number of nodes in the hidden layer
     num_output_layers = 10  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient ascent parameters
-    eta = 0.1  # the learning rate for gradient ascent; it is changed inside the main
+    eta = 0.1  # the learning rate for gradient ascent; it is modified according to the number of train data
     reg_lambda = 0.01  # the regularization parameter
     batch_size = 1000
 
@@ -34,24 +34,6 @@ class NNParams:
 ###############
 
 # FUNCTIONS #
-
-
-def read_data(path, testOrTrainFile):
-    text_file = open(path + testOrTrainFile + ".txt", "r")
-    lines = text_file.readlines()
-    text_file.close()
-
-    X = [[0 for _ in range(NNParams.num_input_layers)] for _ in
-         range(len(lines))]  # X: len(lines) x num_input_layers
-    for i in range(len(lines)):
-        tokens = lines[i].split(" ")
-        for j in range(NNParams.num_input_layers):
-            if j == NNParams.num_input_layers-1:
-                tokens[j] = tokens[j].replace("\n", "")
-            X[i][j] = np.int(tokens[j])
-
-    X = np.matrix(X)  # convert classification parameter to the appropriate data type
-    return X
 
 
 # activation function #1
@@ -139,7 +121,7 @@ def test(X, W1, W2):
 
 
 # Train using Mini-batch Gradient Ascent
-def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False):
+def train(X, t, W1, W2, epochs=200, tol=1e-6, print_estimate=False, X_test=None):
 
     # Run Mini-batch Gradient Ascent
     num_examples = X.shape[0]
@@ -151,12 +133,22 @@ def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False):
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
             end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            W1, W2, _, _ = grad_ascent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
-            s = s + likelihood(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
+            batch_X = np.matrix(X[start_index:end_index, :])
+            batch_t = np.matrix(t[start_index:end_index, :])
+            W1, W2, _, _ = grad_ascent(batch_X, batch_t, W1, W2)
+            s = s + likelihood(batch_X, batch_t, W1, W2)
 
         # Optionally print the estimate.
         if print_estimate:
-            print("Likelihood estimate after epoch %i: %f" % (e, s))
+            if X_test is None:
+                print("Epoch %i (out of %i), likelihood estimate: %f" % (e, epochs, s))
+            else:
+                # Print the estimate along with the accuracy on every epoch
+                predicted = test(X_test, W1, W2)
+                err = np.not_equal(predicted, y_test_true)
+                totalerrors = np.sum(err)
+                acc = ((len(X_test) - totalerrors) / len(X_test)) * 100
+                print("Epoch %i (out of %i), likelihood estimate: %f, accuracy: %f %%" % (e, epochs, s, float(acc)))
 
         if np.abs(s - s_old) < tol:
             break
@@ -237,39 +229,17 @@ def gradient_check(X, t, W1, W2):
 
 mnist_dir = "./mnisttxt/"
 
-print("Reading TRAIN files...")
-# read train images for digits 0,1, 2 and 3
-X_train = np.matrix  # 2D matrix
-y_train = np.matrix  # 1D matrix
-for i in range(NNParams.num_output_layers):
-    print("Reading " + "'train" + str(i) + ".txt'")
-    X_train_class_i = read_data(mnist_dir, 'train' + str(i))
-    N_train_i = X_train_class_i.shape[0]
-    y_train_class_i = np.repeat([i], N_train_i, axis=0)
-    if i == 0:
-        X_train = X_train_class_i
-        y_train = y_train_class_i
-    else:
-        X_train = np.concatenate((X_train, X_train_class_i), axis=0)
-        y_train = np.concatenate((y_train, y_train_class_i), axis=0)
+X_train, t = read_mnist_data_from_files.get_mnist_data(mnist_dir, 'train', one_hot=True)
+# y_train: the true categories vector for the train data
+y_train = np.argmax(t, axis=1)
+y_train = np.matrix(y_train).T
 
 print('')
 
-print("Reading TEST files...")
-# read test images for digits 0,1, 2 and 3
-X_test = np.matrix  # 2D matrix
-y_test_true = np.matrix  # 1D matrix
-for i in range(NNParams.num_output_layers):
-    print("Reading " + "'test" + str(i) + ".txt'")
-    X_test_class_i = read_data(mnist_dir, 'test' + str(i))
-    N_test_i = X_test_class_i.shape[0]
-    y_test_true_class_i = np.repeat([i], N_test_i, axis=0)
-    if i == 0:
-        X_test = X_test_class_i
-        y_test_true = y_test_true_class_i
-    else:
-        X_test = np.concatenate((X_test, X_test_class_i), axis=0)
-        y_test_true = np.concatenate((y_test_true, y_test_true_class_i), axis=0)
+X_test, t_test_true = read_mnist_data_from_files.get_mnist_data(mnist_dir, "test", one_hot=True)
+# y_test_true: the true categories vector for the test data
+y_test_true = np.argmax(t_test_true, axis=1)
+y_test_true = np.matrix(y_test_true).T
 
 print('')
 
@@ -280,10 +250,6 @@ X_test = X_test / 255
 # concat ones vector
 X_train = concat_ones_vector(X_train)
 X_test = concat_ones_vector(X_test)
-
-# construct t: 1-hot matrix for the categories y_train
-t = np.zeros((y_train.shape[0], NNParams.num_output_layers))
-t[np.arange(y_train.shape[0]), y_train] = 1
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
@@ -309,9 +275,11 @@ print('')
 
 # define the learning rate based on the number of train data
 NNParams.eta = 1 / len(X_train)
+print('learning rate: ' + str(NNParams.eta))
+print('')
 
 # train the Neural Network Model
-W1, W2 = train(X_train, t, W1, W2, epochs=150, tol=1e-6, print_estimate=True)
+W1, W2 = train(X_train, t, W1, W2, epochs=200, tol=1e-6, print_estimate=True, X_test=X_test)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)
@@ -320,12 +288,13 @@ predicted = test(X_test, W1, W2)
 wrong_counter = 0  # the number of wrong classifications made by the Neural Network
 
 print('')
+
 print('checking predictions...')
 for i in range(len(predicted)):
     if predicted[i] == y_test_true[i]:
-        print("data " + str(i) + ' classified as: ' + str(predicted[i]) + ' -> correct')
+        print("data " + str(i) + ' classified as: ' + str(int(predicted[i])) + ' -> correct')
     elif predicted[i] != y_test_true[i]:
-        print("data " + str(i) + ' classified as: ' + str(predicted[i]) + ' -> WRONG!')
+        print("data " + str(i) + ' classified as: ' + str(int(predicted[i])) + ' -> WRONG!')
         wrong_counter = wrong_counter + 1
 
 print('')
@@ -335,3 +304,12 @@ print('')
 accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
 print("accuracy: " + str(accuracy) + " %")
 print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(len(X_test)) + ' images!')
+
+# ALTERNATIVE for calculating accuracy
+'''
+err = np.not_equal(predicted, y_test_true)
+totalerrors = np.sum(err)
+accuracy = ((len(X_test) - totalerrors) / len(X_test)) * 100
+print("accuracy: " + str(accuracy) + " %")
+print("number of wrong classifications: " + str(totalerrors) + ' out of ' + str(len(X_test)) + ' images!')
+'''
