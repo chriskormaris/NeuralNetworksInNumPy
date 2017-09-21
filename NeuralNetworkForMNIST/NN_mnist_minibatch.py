@@ -277,6 +277,7 @@ print('')
 # define the learning rate based on the number of train data
 NNParams.eta = 1 / len(X_train)
 print('learning rate: ' + str(NNParams.eta))
+print('batch size: ' + str(NNParams.batch_size))
 print('')
 
 # train the Neural Network Model

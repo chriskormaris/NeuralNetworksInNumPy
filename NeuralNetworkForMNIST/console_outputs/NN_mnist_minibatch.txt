@@ -24,6 +24,7 @@ Reading 'test9.txt'
 
 
 learning rate: 1.6666666666666667e-05
+batch size: 1000
 
 Epoch 1 (out of 250), likelihood estimate: -64852.871428, accuracy: 10.09 %
 Epoch 2 (out of 250), likelihood estimate: -64888.399460, accuracy: 10.09 %
