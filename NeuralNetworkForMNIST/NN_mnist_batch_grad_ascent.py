@@ -124,7 +124,7 @@ def test(X, W1, W2):
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient ascent.
 # - print_estimate: If True, print the estimate every 1000 iterations.
-def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_test=None):
+def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=None):
 
     # Run Batch Gradient Ascent
     lik_old = -np.inf
@@ -136,15 +136,16 @@ def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_test=N
         # This is expensive because it uses the whole dataset.
         if print_estimate:
             lik = likelihood(X, t, W1, W2)
-            if X_test is None:
+            if X_val is None:
                 print("Iteration %i (out of %i), likelihood estimate: %f" % ((i+1), iterations, float(lik)))
             else:
                 # Print the estimate along with the accuracy on every epoch
-                predicted = test(X_test, W1, W2)
+                predicted = test(X_val, W1, W2)
                 err = np.not_equal(predicted, y_test_true)
                 totalerrors = np.sum(err)
-                acc = ((len(X_test) - totalerrors) / len(X_test)) * 100
-                print("Iteration %i (out of %i), likelihood estimate: %f, accuracy: %.2f %%" % ((i+1), iterations, float(lik), float(acc)))
+                acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
+                print("Iteration %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
+					  % ((i+1), iterations, float(lik), float(acc)))
 
             if np.abs(lik - lik_old) < tol:
                 break
@@ -248,10 +249,10 @@ X_test = concat_ones_vector(X_test)
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
-W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
-    NNParams.num_input_layers)  # W1: MxD
-W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
-    NNParams.num_hidden_layers)  # W2: KxM
+W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / \
+	 np.sqrt(NNParams.num_input_layers)  # W1: MxD
+W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / \
+	 np.sqrt(NNParams.num_hidden_layers)  # W2: KxM
 
 # concat ones vector
 W1 = concat_ones_vector(W1)  # W1: MxD+1
@@ -274,7 +275,7 @@ print('learning rate: ' + str(NNParams.eta))
 print('')
 
 # train the Neural Network Model
-W1, W2 = train(X_train, t, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_test=X_test)
+W1, W2 = train(X_train, t, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_val=X_test)
 
 # print the learned weights
 '''

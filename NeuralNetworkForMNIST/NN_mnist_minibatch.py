@@ -122,7 +122,7 @@ def test(X, W1, W2):
 
 
 # Train using Mini-batch Gradient Ascent
-def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_test=None):
+def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None):
 
     # Run Mini-batch Gradient Ascent
     num_examples = X.shape[0]
@@ -141,15 +141,16 @@ def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_test=None)
 
         # Optionally print the estimate.
         if print_estimate:
-            if X_test is None:
+            if X_val is None:
                 print("Epoch %i (out of %i), likelihood estimate: %f" % ((e+1), epochs, s))
             else:
                 # Print the estimate along with the accuracy on every epoch
-                predicted = test(X_test, W1, W2)
+                predicted = test(X_val, W1, W2)
                 err = np.not_equal(predicted, y_test_true)
                 totalerrors = np.sum(err)
-                acc = ((len(X_test) - totalerrors) / len(X_test)) * 100
-                print("Epoch %i (out of %i), likelihood estimate: %f, accuracy: %.2f %%" % ((e+1), epochs, s, float(acc)))
+                acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
+                print("Epoch %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
+					  % ((e+1), epochs, s, float(acc)))
 
         if np.abs(s - s_old) < tol:
             break
@@ -254,10 +255,10 @@ X_test = concat_ones_vector(X_test)
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
-W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
-    NNParams.num_input_layers)  # W1: MxD
-W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
-    NNParams.num_hidden_layers)  # W2: KxM
+W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / \
+	 np.sqrt(NNParams.num_input_layers)  # W1: MxD
+W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / \
+	 np.sqrt(NNParams.num_hidden_layers)  # W2: KxM
 
 # concat ones vector
 W1 = concat_ones_vector(W1)  # W1: MxD+1
@@ -281,7 +282,7 @@ print('batch size: ' + str(NNParams.batch_size))
 print('')
 
 # train the Neural Network Model
-W1, W2 = train(X_train, t, W1, W2, epochs=250, tol=1e-6, print_estimate=True, X_test=X_test)
+W1, W2 = train(X_train, t, W1, W2, epochs=250, tol=1e-6, print_estimate=True, X_val=X_test)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)
