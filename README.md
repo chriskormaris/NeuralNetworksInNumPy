@@ -25,7 +25,7 @@ Implementating the neural network using stochastic gradient descent would be ver
 #### Neural Network details
 File: "NN_mnist_batch_grad_ascent.py"
 
-1st Activation Function: sigmoid
+1st Activation Function: tanh
 
 2nd Activation Function: softmax
 
