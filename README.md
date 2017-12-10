@@ -18,9 +18,13 @@ python NN_mnist_batch_grad_ascent.py
 ```
 Alternatively, train the neural network using mini-batch gradient ascent. The batch size can be changed from within the code:
 ```python
-python NN_mnist_minibatch.py
+python NN_mnist_minibatch_grad_ascent.py
 ```
-Implementating the neural network using stochastic gradient descent would be very slow, because of the big size of MNIST dataset and so that kind of implementation is omitted.
+Alternatively, train the neural network using stochastic gradient ascent. The batch size for stochastic gradient ascent is set to 1:
+```python
+python NN_mnist_stochstic_grad_ascent.py
+```
+Implementating the neural network using stochastic gradient ascent is very slow, because of the big amount of data of the MNIST dataset.
 
 #### Neural Network details
 File: "NN_mnist_batch_grad_ascent.py"
@@ -45,16 +49,16 @@ First, run the python file "FeatureSelectionUsingIG.py" to generate the output f
 ```python
 python FeatureSelectionUsingIG.py
 ```
-Then, run the Neural Network of your choice between **"NN_SpamHam_MSE.py"** and **"NN_SpamHam_CrossEntropy.py"**.
-You can alternatively train the neural network using mini-batch gradient descent. The batch size can be changed from within the code. Run the files **"NN_SpamHam_MSE_minibatch.py"** or **"NN_SpamHam_CrossEntropy_minibatch.py"**.
-You can alternatively train the neural network using stochastic gradient descent. Run the files **"NN_SpamHam_MSE_stochastic.py"** or **"NN_SpamHam_CrossEntropy_stochastic.py"**.
+Then, run the Neural Network of your choice between **"NN_SpamHam_MSE_batch_gradient_descent.py"** and **"NN_SpamHam_CrossEntropy_batch_gradient_descent.py"**.
+You can alternatively train the neural network using mini-batch gradient descent. The batch size can be changed from within the code. Run the files **"NN_SpamHam_MSE_minibatch_gradient_descent.py"** or **"NN_SpamHam_CrossEntropy_minibatch_gradient_descent.py"**.
+You can alternatively train the neural network using stochastic gradient descent. Run the files **"NN_SpamHam_MSE_stochastic_gradient_descent.py"** or **"NN_SpamHam_CrossEntropy_stochastic_gradient_descent.py"**.
 
 ### Neural Network #1
 Run:
 ```python
-python NN_SpamHam_MSE.py
+python NN_SpamHam_MSE_batch_gradient_descent.py
 ```
-File: "NN_SpamHam_MSE.py"
+File: "NN_SpamHam_MSE_batch_gradient_descent.py"
 
 1st Activation Function: tanh
 
@@ -75,9 +79,9 @@ The precision that was achieved, after training with batch gradient descent, was
 ### Neural Network #2
 Run:
 ```python
-python NN_SpamHam_CrossEntropy.py
+python NN_SpamHam_CrossEntropy_batch_gradient_descent.py
 ```
-File: "NN_SpamHam_CrossEntropy.py"
+File: "NN_SpamHam_CrossEntropy_batch_gradient_descent.py"
 
 1st Activation Function: sigmoid
 
