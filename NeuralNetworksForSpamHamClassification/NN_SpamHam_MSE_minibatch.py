@@ -64,9 +64,9 @@ def read_labels(files):
 
 
 def get_classification_data(spam_files_dir, ham_files_dir, files, labels, feature_tokens, trainOrTest):
-    # classification parameter X
+    # classification parameter X_train
     X_2d_list = [[0 for _ in range(len(feature_tokens))] for _ in
-                       range(len(files))]  # X: len(files) x len(feature_tokens)
+                       range(len(files))]  # X_train: len(files) X_train len(feature_tokens)
 
     # reading files
     for i in range(len(files)):
@@ -91,10 +91,10 @@ def get_classification_data(spam_files_dir, ham_files_dir, files, labels, featur
     print('')
 
     # convert classification parameters to the appropriate data type
-    X = np.array(X_2d_list)
-    y = np.array(labels)
+    X_train = np.array(X_2d_list)
+    y_train = np.array(labels)
 
-    return X, y
+    return X_train, y_train
 
 
 # extracts tokens from the given text
@@ -111,40 +111,40 @@ def getTokens(text):
 
 
 # concat ones column vector as the first column of the matrix
-def concat_ones_vector(x):
-    ones_vector = np.ones((x.shape[0], 1))
-    return np.concatenate((ones_vector, x), axis=1)
+def concat_ones_vector(X_train):
+    ones_vector = np.ones((X_train.shape[0], 1))
+    return np.concatenate((ones_vector, X_train), axis=1)
 
 
 def tanh_output_to_derivative(output):
     return 1 - np.square(output)
 
 
-def sigmoid(x):
-    output = 1 / (1 + np.exp(-x))
+def sigmoid(X_train):
+    output = 1 / (1 + np.exp(-X_train))
     return np.matrix(output)
 
 
 # Feed-Forward
-def forward(X, W1, W2):
-    s1 = X.dot(W1.T)  # s1: NxM
+def forward(X_train, W1, W2):
+    s1 = X_train.dot(W1.t_train)  # s1: NxM
     o1 = np.tanh(s1)  # o1: NxM
     grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
     o1 = concat_ones_vector(o1)  # o1: NxM+1
-    s2 = o1.dot(W2.T)  # s2: NxK
+    s2 = o1.dot(W2.t_train)  # s2: NxK
     o2 = sigmoid(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
 
 # Helper function to evaluate the total loss of the dataset
-def loss_function(X, t, W1, W2):
-    num_examples = len(X)  # N: training set size
+def loss_function(X_train, t_train, W1, W2):
+    num_examples = len(X_train)  # N: training set size
 
     # Feed-Forward to calculate our predictions
-    _, _, _, _, o2 = forward(X, W1, W2)
+    _, _, _, _, o2 = forward(X_train, W1, W2)
 
     # Calculating the mean square error loss
-    squared_error = np.square(o2 - t)
+    squared_error = np.square(o2 - t_train)
     data_loss = np.sum(squared_error) / 2
 
     # Add regularization term to loss (optional)
@@ -152,19 +152,19 @@ def loss_function(X, t, W1, W2):
     return data_loss / num_examples  # divide by number of examples and return
 
 
-def test(X, W1, W2):
+def test(X_train, W1, W2):
     # Feed-Forward
-    _, _, _, _, o2 = forward(X, W1, W2)
+    _, _, _, _, o2 = forward(X_train, W1, W2)
     return np.argmax(o2, axis=1)
 
 
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_loss: If True, print the loss.
-def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
+def train(X_train, t_train, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
     # Run Mini-batch Gradient Descent
-    num_examples = X.shape[0]
+    num_examples = X_train.shape[0]
     s_old = -np.inf
     for e in range(epochs):
 
@@ -173,12 +173,12 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
             end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            W1, W2, _, _ = grad_descent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
-            s = s + loss_function(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
+            W1, W2, _, _ = grad_descent(np.matrix(X_train[start_index:end_index, :]), np.matrix(t_train[start_index:end_index, :]), W1, W2)
+            s = s + loss_function(np.matrix(X_train[start_index:end_index, :]), np.matrix(t_train[start_index:end_index, :]), W1, W2)
 
         # Optionally print the loss.
         if print_loss:
-            print("Mean squared error loss after epoch %i: %f" % (e, loss_function(X, t, W1, W2)))
+            print("Mean squared error loss after epoch %i: %f" % (e, loss_function(X_train, t_train, W1, W2)))
 
         if np.abs(s - s_old) < tol:
             break
@@ -189,26 +189,26 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
 
 # Update the Weight matrices using Gradient Descent
-def grad_descent(X, t, W1, W2):
-    # W1: MxD+1 = num_hidden_layers x num_of_features
-    # W2: KxM+1 = num_of_categories x num_hidden_layers
+def grad_descent(X_train, t_train, W1, W2):
+    # W1: MxD+1 = num_hidden_layers X_train num_of_features
+    # W2: KxM+1 = num_of_categories X_train num_hidden_layers
 
     # Feed-Forward
-    _, o1, grad, _, o2 = forward(X, W1, W2)
+    _, o1, grad, _, o2 = forward(X_train, W1, W2)
 
     # Back-Propagation
 
-    # sum1 = np.matrix(np.sum(t, axis=1)).T  # sum1: Nx1
-    # T = np.matlib.repmat(sum1, 1, K)  # T: NxK, each row contains the same sum values in each column
-    # delta1 = np.multiply(o2, T) - t  # delta1: NxK
-    delta1 = o2 - t  # delta1: NxK, since t is one-hot matrix, then T=1, so we can omit it
+    # sum1 = np.matrix(np.sum(t_train, axis=1)).t_train  # sum1: Nx1
+    # t_train = np.matlib.repmat(sum1, 1, K)  # t_train: NxK, each row contains the same sum values in each column
+    # delta1 = np.multiply(o2, t_train) - t_train  # delta1: NxK
+    delta1 = o2 - t_train  # delta1: NxK, since t_train is one-hot matrix, then t_train=1, so we can omit it
 
     W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
 
-    dW1 = np.dot(delta3.T, X)  # MxD+1
-    dW2 = np.dot(delta1.T, o1)  # KxM+1
+    dW1 = np.dot(delta3.t_train, X_train)  # MxD+1
+    dW2 = np.dot(delta1.t_train, o1)  # KxM+1
 
     # Add regularization terms
     dW1 = dW1 + NNParams.reg_lambda * W1
@@ -221,8 +221,8 @@ def grad_descent(X, t, W1, W2):
     return W1, W2, dW1, dW2
 
 
-def gradient_check(X, t, W1, W2):
-    _, _, gradEw1, gradEw2 = grad_descent(X, t, W1, W2)
+def gradient_check(X_train, t_train, W1, W2):
+    _, _, gradEw1, gradEw2 = grad_descent(X_train, t_train, W1, W2)
     epsilon = 1e-6
 
     # gradient_check for parameter W1
@@ -231,11 +231,11 @@ def gradient_check(X, t, W1, W2):
         for j in range(W1.shape[1]):
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] + epsilon
-            Ewplus = loss_function(X, t, W1tmp, W2)
+            Ewplus = loss_function(X_train, t_train, W1tmp, W2)
 
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] - epsilon
-            Ewminus = loss_function(X, t, W1tmp, W2)
+            Ewminus = loss_function(X_train, t_train, W1tmp, W2)
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1 + numgradEw1)
@@ -247,11 +247,11 @@ def gradient_check(X, t, W1, W2):
         for j in range(W2.shape[1]):
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] + epsilon
-            Ewplus = loss_function(X, t, W1, W2tmp)
+            Ewplus = loss_function(X_train, t_train, W1, W2tmp)
 
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] - epsilon
-            Ewminus = loss_function(X, t, W1, W2tmp)
+            Ewminus = loss_function(X_train, t_train, W1, W2tmp)
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2 + numgradEw2)
@@ -303,9 +303,9 @@ X_test = X_test - np.mean(X_test)
 X_train = concat_ones_vector(X_train)
 X_test = concat_ones_vector(X_test)
 
-# t: 1-hot matrix for the categories y_train
-t = np.zeros((y_train.shape[0], NNParams.num_output_layers))
-t[np.arange(y_train.shape[0]), y_train] = 1
+# t_train: 1-hot matrix for the categories y_train
+t_train = np.zeros((y_train.shape[0], NNParams.num_output_layers))
+t_train[np.arange(y_train.shape[0]), y_train] = 1
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
@@ -323,12 +323,12 @@ W2 = concat_ones_vector(W2)  # W2: KxM+1
 print('Running gradient check...')
 ch = np.random.permutation(X_train.shape[0])
 ch = ch[0:20]  # get the 20 first data
-gradient_check(X_train[ch, :], t[ch, :], W1, W2)
+gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
 
 print('')
 
 # train the Neural Network Model
-W1, W2 = train(X_train, t, W1, W2, epochs=50, tol=1e-6, print_loss=True)
+W1, W2 = train(X_train, t_train, W1, W2, epochs=50, tol=1e-6, print_loss=True)
 
 # test the Neural Network Model
 predicted = test(X_test, W1, W2)
