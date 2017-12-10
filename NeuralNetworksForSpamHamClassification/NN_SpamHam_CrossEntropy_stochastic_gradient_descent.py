@@ -131,11 +131,11 @@ def softmax(X_train):
 
 # Feed-Forward
 def forward(X_train, W1, W2):
-    s1 = X_train.dot(W1.t_train)  # s1: NxM
+    s1 = X_train.dot(W1.T)  # s1: NxM
     o1 = sigmoid(s1)  # o1: NxM
     grad = sigmoid_output_to_derivative(o1)  # the gradient of sigmoid function, grad: NxM
     o1 = concat_ones_vector(o1)  # o1: NxM+1
-    s2 = o1.dot(W2.t_train)  # s2: NxK
+    s2 = o1.dot(W2.T)  # s2: NxK
     o2 = softmax(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
@@ -200,7 +200,7 @@ def grad_descent(X_train, t_train, W1, W2):
 
     # Back-Propagation
 
-    #sum1 = np.matrix(np.sum(t_train, axis=1)).t_train  # sum1: Nx1
+    #sum1 = np.matrix(np.sum(t_train, axis=1)).T  # sum1: Nx1
     #t_train = np.matlib.repmat(sum1, 1, K)  # t_train: NxK, each row contains the same sum values in each column
     #delta1 = np.multiply(o2, t_train) - t_train  # delta1: NxK
     delta1 = o2 - t_train  # delta1: NxK, since t_train is one-hot matrix, then t_train=1, so we can omit it
@@ -209,8 +209,8 @@ def grad_descent(X_train, t_train, W1, W2):
     delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
 
-    dW1 = np.dot(delta3.t_train, X_train)  # MxD+1
-    dW2 = np.dot(delta1.t_train, o1)  # KxM+1
+    dW1 = np.dot(delta3T, X_train)  # MxD+1
+    dW2 = np.dot(delta1T, o1)  # KxM+1
 
     # Add regularization terms
     dW1 = dW1 + NNParams.reg_lambda * W1

@@ -43,7 +43,7 @@ def read_labels(path, testOrTrainFile):
 
     digit = np.int(re.sub('[^0-9]', '', testOrTrainFile))
     y_train = [digit] * len(lines)
-    y_train = np.matrix(y_train).t_train  # convert classification parameter to the appropriate data type
+    y_train = np.matrix(y_train).T  # convert classification parameter to the appropriate data type
     return y_train
 '''
 
@@ -67,7 +67,7 @@ def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
             X_train = np.concatenate((X_train, X_class_i), axis=0)
             y_train = np.concatenate((y_train, Y_class_i), axis=0)
 
-    y_train = np.matrix(y_train).t_train
+    y_train = np.matrix(y_train).T
 
     if one_hot:
         # construct t_train: 1-hot matrix for the categories y_train
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
     # y_train: the true categories vector for the train data
     y_train = np.argmax(t_train, axis=1)
-    y_train = np.matrix(y_train).t_train
+    y_train = np.matrix(y_train).T
 
     print('')
     print("Xtrain:")
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
     # y_test_true: the true categories vector for the test data
     y_test_true = np.argmax(t_test_true, axis=1)
-    y_test_true = np.matrix(y_test_true).t_train
+    y_test_true = np.matrix(y_test_true).T
 
     print('')
     print("Xtest:")

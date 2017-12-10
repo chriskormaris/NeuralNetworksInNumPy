@@ -71,7 +71,7 @@ def concat_ones_vector(X_train):
 
 # Feed-Forward
 def forward(X_train, W1, W2):
-    s1 = X_train.dot(W1.t_train)  # s1: NxM
+    s1 = X_train.dot(W1.T)  # s1: NxM
 
     # activation function #1
     #o1 = np.tanh(s1)  # o1: NxM
@@ -86,7 +86,7 @@ def forward(X_train, W1, W2):
     #grad = cos_output_to_derivative(o1)  # the gradient of cos function, grad: NxM
 
     o1 = concat_ones_vector(o1)  # o1: NxM+1
-    s2 = o1.dot(W2.t_train)  # s2: NxK
+    s2 = o1.dot(W2.T)  # s2: NxK
     o2 = softmax(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
@@ -171,8 +171,8 @@ def grad_ascent(X_train, t_train, W1, W2):
     delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: 1xM
 
-    dW1 = np.dot(delta3.t_train, X_train)  # MxD+1
-    dW2 = np.dot(delta1.t_train, o1)  # KxM+1
+    dW1 = np.dot(delta3T, X_train)  # MxD+1
+    dW2 = np.dot(delta1T, o1)  # KxM+1
 
     # Add regularization terms
     dW1 = dW1 - NNParams.reg_lambda * W1
@@ -231,14 +231,14 @@ mnist_dir = "./mnisttxt/"
 X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
 # y_train: the true categories vector for the train data
 y_train = np.argmax(t_train, axis=1)
-y_train = np.matrix(y_train).t_train
+y_train = np.matrix(y_train).T
 
 print('')
 
 X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
 # y_test_true: the true categories vector for the test data
 y_test_true = np.argmax(t_test_true, axis=1)
-y_test_true = np.matrix(y_test_true).t_train
+y_test_true = np.matrix(y_test_true).T
 
 print('')
 
