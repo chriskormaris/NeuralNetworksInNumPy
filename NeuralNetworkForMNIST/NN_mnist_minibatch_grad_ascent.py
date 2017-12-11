@@ -8,7 +8,10 @@
 from __future__ import division
 
 import numpy as np
-from nnMnist.read_mnist_data_from_files import get_mnist_data
+
+# import local python files
+import imp
+read_mnist_data_from_files = imp.load_source('read_mnist_data_from_files', 'read_mnist_data_from_files.py')
 
 __author__ = 'c.kormaris'
 
@@ -228,14 +231,14 @@ def gradient_check(X_train, t_train, W1, W2):
 
 mnist_dir = "./mnisttxt/"
 
-X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
+X_train, t_train = read_mnist_data_from_files.get_mnist_data(mnist_dir, 'train', one_hot=True)
 # y_train: the true categories vector for the train data
 y_train = np.argmax(t_train, axis=1)
 y_train = np.matrix(y_train).T
 
 print('')
 
-X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
+X_test, t_test_true = read_mnist_data_from_files.get_mnist_data(mnist_dir, "test", one_hot=True)
 # y_test_true: the true categories vector for the test data
 y_test_true = np.argmax(t_test_true, axis=1)
 y_test_true = np.matrix(y_test_true).T
