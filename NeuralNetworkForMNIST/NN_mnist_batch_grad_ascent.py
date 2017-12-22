@@ -95,7 +95,7 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the likelihood on the train dataset.
 def likelihood(X, t, W1, W2):
-    #num_examples = len(X_train)  # N: training set size
+    #num_examples = len(X)  # N: training set size
 
     # Feed-Forward to calculate our predictions
     _, _, _, s2, _ = forward(X, W1, W2)
@@ -107,7 +107,8 @@ def likelihood(X, t, W1, W2):
     maximum = np.max(A, axis=1)
     mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
-    #mle = np.sum(np.multiply(t_train, np.logs(o2)))
+    #mle = np.sum(np.multiply(t, np.log(o2)))
+    mle *= 2  # for the gradient check to work
 
     # Add regularization term to likelihood (optional)
     mle -= NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
