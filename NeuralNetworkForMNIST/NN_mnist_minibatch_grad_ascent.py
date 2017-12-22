@@ -95,37 +95,37 @@ def forward(X, W1, W2):
 
 
 # Helper function to evaluate the likelihood on the train dataset.
-def likelihood(X_train, t_train, W1, W2):
-    #num_examples = len(X_train)  # N: training set size
+def likelihood(X, t, W1, W2):
+    #num_examples = len(X)  # N: training set size
 
     # Feed-Forward to calculate our predictions
-    _, _, _, s2, _ = forward(X_train, W1, W2)
+    _, _, _, s2, _ = forward(X, W1, W2)
 
     A = s2
     K = NNParams.num_output_layers
 
     # Calculating the mle using the logsumexp trick
     maximum = np.max(A, axis=1)
-    mle = np.sum(np.multiply(t_train, A)) - np.sum(maximum, axis=0) \
+    mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
-    #mle = np.sum(np.multiply(t_train, np.logs(o2)))
+    #mle = np.sum(np.multiply(t, np.logs(o2)))
 
     # Add regularization term to likelihood (optional)
     mle -= NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
     return mle
 
 
-def test(X_train, W1, W2):
+def test(X, W1, W2):
     # Feed-Forward
-    _, _, _, _, o2 = forward(X_train, W1, W2)
+    _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
 
 
 # Train using Mini-batch Gradient Ascent
-def train(X_train, t_train, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None):
+def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None):
 
     # Run Mini-batch Gradient Ascent
-    num_examples = X_train.shape[0]
+    num_examples = X.shape[0]
     s_old = -np.inf
     for e in range(epochs):
 
@@ -134,8 +134,8 @@ def train(X_train, t_train, W1, W2, epochs=250, tol=1e-6, print_estimate=False, 
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
             end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            batch_X = np.matrix(X_train[start_index:end_index, :])
-            batch_t = np.matrix(t_train[start_index:end_index, :])
+            batch_X = np.matrix(X[start_index:end_index, :])
+            batch_t = np.matrix(t[start_index:end_index, :])
             W1, W2, _, _ = grad_ascent(batch_X, batch_t, W1, W2)
             s = s + likelihood(batch_X, batch_t, W1, W2)
 
@@ -161,20 +161,20 @@ def train(X_train, t_train, W1, W2, epochs=250, tol=1e-6, print_estimate=False, 
 
 
 # Update the Weight matrices using Gradient Ascent
-def grad_ascent(X_train, t_train, W1, W2):
-    # W1: MxD+1 = num_hidden_layers X_train num_of_features
-    # W2: KxM+1 = num_of_categories X_train num_hidden_layers
+def grad_ascent(X, t, W1, W2):
+    # W1: MxD+1 = num_hidden_layers X num_of_features
+    # W2: KxM+1 = num_of_categories X num_hidden_layers
 
     # Feed-Forward
-    _, o1, grad, s2, o2 = forward(X_train, W1, W2)
+    _, o1, grad, s2, o2 = forward(X, W1, W2)
 
     # Back-Propagation
-    delta1 = t_train - o2  # delta1: 1xK
+    delta1 = t - o2  # delta1: 1xK
     W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: 1xM
 
-    dW1 = np.dot(delta3.T, X_train)  # MxD+1
+    dW1 = np.dot(delta3.T, X)  # MxD+1
     dW2 = np.dot(delta1.T, o1)  # KxM+1
 
     # Add regularization terms
@@ -188,8 +188,8 @@ def grad_ascent(X_train, t_train, W1, W2):
     return W1, W2, dW1, dW2
 
 
-def gradient_check(X_train, t_train, W1, W2):
-    _, _, gradEw1, gradEw2 = grad_ascent(X_train, t_train, W1, W2)
+def gradient_check(X, t, W1, W2):
+    _, _, gradEw1, gradEw2 = grad_ascent(X, t, W1, W2)
     epsilon = 1e-6
 
     # gradient_check for parameter W1
@@ -198,11 +198,11 @@ def gradient_check(X_train, t_train, W1, W2):
         for j in range(W1.shape[1]):
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] + epsilon
-            Ewplus = likelihood(X_train, t_train, W1tmp, W2)
+            Ewplus = likelihood(X, t, W1tmp, W2)
 
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] - epsilon
-            Ewminus = likelihood(X_train, t_train, W1tmp, W2)
+            Ewminus = likelihood(X, t, W1tmp, W2)
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
@@ -214,11 +214,11 @@ def gradient_check(X_train, t_train, W1, W2):
         for j in range(W2.shape[1]):
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] + epsilon
-            Ewplus = likelihood(X_train, t_train, W1, W2tmp)
+            Ewplus = likelihood(X, t, W1, W2tmp)
 
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] - epsilon
-            Ewminus = likelihood(X_train, t_train, W1, W2tmp)
+            Ewminus = likelihood(X, t, W1, W2tmp)
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
