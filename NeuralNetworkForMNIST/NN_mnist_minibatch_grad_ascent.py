@@ -38,8 +38,8 @@ class NNParams:
 
 
 # activation function #1
-def h1(X_train):
-    return np.log(1 + np.exp(X_train))
+def h1(X):
+    return np.log(1 + np.exp(X))
 
 
 # activation function #1 derivative / the same as the sigmoid function
@@ -57,24 +57,24 @@ def cos_output_to_derivative(output):
     return -np.sin(output)
 
 
-def sigmoid(X_train):
-    return np.matrix(1 / (1 + np.exp(-X_train)))
+def sigmoid(X):
+    return np.matrix(1 / (1 + np.exp(-X)))
 
 
 # activation function for the 2nd layer
-def softmax(X_train):
-    return np.divide(np.exp(X_train), np.sum(np.exp(X_train), axis=1))
+def softmax(X):
+    return np.divide(np.exp(X), np.sum(np.exp(X), axis=1))
 
 
 # concat ones column vector as the first column of the matrix (adds bias term)
-def concat_ones_vector(X_train):
-    ones_vector = np.ones((X_train.shape[0], 1))
-    return np.concatenate((ones_vector, X_train), axis=1)
+def concat_ones_vector(X):
+    ones_vector = np.ones((X.shape[0], 1))
+    return np.concatenate((ones_vector, X), axis=1)
 
 
 # Feed-Forward
-def forward(X_train, W1, W2):
-    s1 = X_train.dot(W1.T)  # s1: NxM
+def forward(X, W1, W2):
+    s1 = X.dot(W1.T)  # s1: NxM
 
     # activation function #1
     #o1 = np.tanh(s1)  # o1: NxM
@@ -174,8 +174,8 @@ def grad_ascent(X_train, t_train, W1, W2):
     delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: 1xM
 
-    dW1 = np.dot(delta3T, X_train)  # MxD+1
-    dW2 = np.dot(delta1T, o1)  # KxM+1
+    dW1 = np.dot(delta3.T, X_train)  # MxD+1
+    dW2 = np.dot(delta1.T, o1)  # KxM+1
 
     # Add regularization terms
     dW1 = dW1 - NNParams.reg_lambda * W1

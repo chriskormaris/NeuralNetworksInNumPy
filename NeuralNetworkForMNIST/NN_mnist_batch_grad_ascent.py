@@ -37,8 +37,8 @@ class NNParams:
 
 
 # activation function #1
-def h1(X_train):
-    return np.log(1 + np.exp(X_train))
+def h1(X):
+    return np.log(1 + np.exp(X))
 
 
 # activation function #1 derivative / the same as the sigmoid function
@@ -56,24 +56,24 @@ def cos_output_to_derivative(output):
     return -np.sin(output)
 
 
-def sigmoid(X_train):
-    return np.matrix(1 / (1 + np.exp(-X_train)))
+def sigmoid(X):
+    return np.matrix(1 / (1 + np.exp(-X)))
 
 
 # activation function for the 2nd layer
-def softmax(X_train):
-    return np.divide(np.exp(X_train), np.sum(np.exp(X_train), axis=1))
+def softmax(X):
+    return np.divide(np.exp(X), np.sum(np.exp(X), axis=1))
 
 
 # concat ones column vector as the first column of the matrix (adds bias term)
-def concat_ones_vector(X_train):
-    ones_vector = np.ones((X_train.shape[0], 1))
-    return np.concatenate((ones_vector, X_train), axis=1)
+def concat_ones_vector(X):
+    ones_vector = np.ones((X.shape[0], 1))
+    return np.concatenate((ones_vector, X), axis=1)
 
 
 # Feed-Forward
-def forward(X_train, W1, W2):
-    s1 = X_train.dot(W1.T)  # s1: NxM
+def forward(X, W1, W2):
+    s1 = X.dot(W1.T)  # s1: NxM
 
     # activation function #1
     #o1 = np.tanh(s1)  # o1: NxM
@@ -94,29 +94,29 @@ def forward(X_train, W1, W2):
 
 
 # Helper function to evaluate the likelihood on the train dataset.
-def likelihood(X_train, t_train, W1, W2):
+def likelihood(X, t, W1, W2):
     #num_examples = len(X_train)  # N: training set size
 
     # Feed-Forward to calculate our predictions
-    _, _, _, s2, _ = forward(X_train, W1, W2)
+    _, _, _, s2, _ = forward(X, W1, W2)
 
     A = s2
     K = NNParams.num_output_layers
 
     # Calculating the mle using the logsumexp trick
     maximum = np.max(A, axis=1)
-    mle = np.sum(np.multiply(t_train, A)) - np.sum(maximum, axis=0) \
+    mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
-    #mle = np.sum(np.multiply(t_train, np.log(o2)))
+    #mle = np.sum(np.multiply(t_train, np.logs(o2)))
 
     # Add regularization term to likelihood (optional)
     mle -= NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
     return mle
 
 
-def test(X_train, W1, W2):
+def test(X, W1, W2):
     # Feed-Forward
-    _, _, _, _, o2 = forward(X_train, W1, W2)
+    _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
 
 
@@ -124,18 +124,18 @@ def test(X_train, W1, W2):
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient ascent.
 # - print_estimate: If True, print the estimate every 1000 iterations.
-def train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=None):
+def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=None):
 
     # Run Batch Gradient Ascent
     lik_old = -np.inf
     for i in range(iterations):
 
-        W1, W2, _, _ = grad_ascent(X_train, t_train, W1, W2)
+        W1, W2, _, _ = grad_ascent(X, t, W1, W2)
 
         # Optionally print the estimate.
         # This is expensive because it uses the whole dataset.
         if print_estimate:
-            lik = likelihood(X_train, t_train, W1, W2)
+            lik = likelihood(X, t, W1, W2)
             if X_val is None:
                 print("Iteration %i (out of %i), likelihood estimate: %f" % ((i+1), iterations, float(lik)))
             else:
@@ -145,7 +145,7 @@ def train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=Fal
                 totalerrors = np.sum(err)
                 acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
                 print("Iteration %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
-					  % ((i+1), iterations, float(lik), float(acc)))
+                      % ((i+1), iterations, float(lik), float(acc)))
 
             if np.abs(lik - lik_old) < tol:
                 break
@@ -155,21 +155,21 @@ def train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=Fal
 
 
 # Update the Weight matrices using Gradient Ascent
-def grad_ascent(X_train, t_train, W1, W2):
+def grad_ascent(X, t, W1, W2):
     # W1: MxD+1 = num_hidden_layers X_train num_of_features
     # W2: KxM+1 = num_of_categories X_train num_hidden_layers
 
     # Feed-Forward
-    _, o1, grad, s2, o2 = forward(X_train, W1, W2)
+    _, o1, grad, s2, o2 = forward(X, W1, W2)
 
     # Back-Propagation
-    delta1 = t_train - o2  # delta1: 1xK
+    delta1 = t - o2  # delta1: 1xK
     W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: 1xM
 
-    dW1 = np.dot(delta3T, X_train)  # MxD+1
-    dW2 = np.dot(delta1T, o1)  # KxM+1
+    dW1 = np.dot(delta3.T, X)  # MxD+1
+    dW2 = np.dot(delta1.T, o1)  # KxM+1
 
     # Add regularization terms
     dW1 = dW1 - NNParams.reg_lambda * W1
@@ -182,8 +182,8 @@ def grad_ascent(X_train, t_train, W1, W2):
     return W1, W2, dW1, dW2
 
 
-def gradient_check(X_train, t_train, W1, W2):
-    _, _, gradEw1, gradEw2 = grad_ascent(X_train, t_train, W1, W2)
+def gradient_check(X, t, W1, W2):
+    _, _, gradEw1, gradEw2 = grad_ascent(X, t, W1, W2)
     epsilon = 1e-6
 
     # gradient_check for parameter W1
@@ -192,11 +192,11 @@ def gradient_check(X_train, t_train, W1, W2):
         for j in range(W1.shape[1]):
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] + epsilon
-            Ewplus = likelihood(X_train, t_train, W1tmp, W2)
+            Ewplus = likelihood(X, t, W1tmp, W2)
 
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] - epsilon
-            Ewminus = likelihood(X_train, t_train, W1tmp, W2)
+            Ewminus = likelihood(X, t, W1tmp, W2)
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
