@@ -22,6 +22,9 @@ Reading 'test7.txt'
 Reading 'test8.txt'
 Reading 'test9.txt'
 
+Running gradient check...
+The maximum absolute norm for parameter W1, in the gradient_check is: 0.00302023072783
+The maximum absolute norm for parameter W2, in the gradient_check is: 0.000313710181074
 
 learning rate: 8.333333333333334e-06
 
