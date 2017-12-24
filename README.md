@@ -14,20 +14,20 @@ Slightly based on code from this repository: <a href="https://github.com/dennybr
 Unzip the MNIST data from the compressed file "mnisttxt.zip" in the same directory where the Python files are.
 Then, run the Neural Network that uses batch gradient ascent, from the file "NN_mnist.py" as follows:
 ```python
-python NN_mnist_batch_grad_ascent.py
+python NN_mnist_batch_gradient_ascent.py
 ```
 Alternatively, train the neural network using mini-batch gradient ascent. The batch size can be changed from within the code:
 ```python
-python NN_mnist_minibatch_grad_ascent.py
+python NN_mnist_minibatch_gradient_ascent.py
 ```
 Alternatively, train the neural network using stochastic gradient ascent. The batch size for stochastic gradient ascent is set to 1:
 ```python
-python NN_mnist_stochstic_grad_ascent.py
+python NN_mnist_stochstic_gradient_ascent.py
 ```
 Implementating the neural network using stochastic gradient ascent is very slow, because of the big amount of data of the MNIST dataset.
 
 #### Neural Network details
-File: "NN_mnist_batch_grad_ascent.py"
+File: "NN_mnist_batch_gradient_ascent.py"
 
 1st Activation Function: tanh
 

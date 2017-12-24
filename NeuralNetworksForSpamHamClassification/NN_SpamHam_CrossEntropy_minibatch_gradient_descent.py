@@ -7,17 +7,25 @@
 # force the result of divisions to be float numbers
 from __future__ import division
 
-import numpy as np
-#import numpy.matlib
-import re
+from pandas import DataFrame
+import pandas as pd
 
 # I/O Libraries
 from os import listdir
 from os.path import isfile, join
 
+# import local python files
+import imp
+read_mnist_data_from_files = imp.load_source('read_mnist_data_from_files', 'read_mnist_data_from_files.py')
+Utilities = imp.load_source('Utilities', 'Utilities.py')
+
+import numpy as np
+
 __author__ = 'c.kormaris'
 
-np.seterr(all='ignore')
+# set options
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_rows', 200)
 
 
 ###############
@@ -30,114 +38,21 @@ class NNParams:
     # Gradient descent parameters
     eta = 0.001  # the learning rate of gradient descent
     reg_lambda = 0.01  # the regularization parameter
-    batch_size = 200
+    batch_size = 50
 
 
 ###############
 
 # FUNCTIONS #
 
-
-def read_dictionary_file(filename):
-    text_file = open(filename, "r")
-    lines = text_file.readlines()
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace("\n", "")
-    return lines
-
-
-def read_file(filename):
-    text_file = open(filename, "r")
-    text = text_file.read()
-    return text
-
-
-# defines the label of the files based on their names
-def read_labels(files):
-    labels = []
-    for file in files:
-        if "spam" in str(file):
-            labels.append(1)
-        elif "ham" in str(file):
-            labels.append(0)
-    return labels
-
-
-def get_classification_data(spam_files_dir, ham_files_dir, files, labels, feature_tokens, trainOrTest):
-    # classification parameter X_train
-    X_2d_list = [[0 for _ in range(len(feature_tokens))] for _ in
-                       range(len(files))]  # X_train: len(files) X_train len(feature_tokens)
-
-    # reading files
-    for i in range(len(files)):
-        print("Reading " + trainOrTest + " file " + "'" + files[i] + "'" + "...")
-
-        text = ''
-        if labels[i] == 1:  # 1 is for class "SPAM"
-            text = read_file(spam_files_dir + files[i])
-        elif labels[i] == 0:  # 0 is for class "HAM"
-            text = read_file(ham_files_dir + files[i])
-        text_tokens = getTokens(text)
-
-        # the feature vector contains features with Boolean values
-        feature_vector = [0] * len(feature_tokens)
-        for j in range(len(feature_tokens)):
-            if text_tokens.__contains__(feature_tokens[j]):
-                feature_vector[j] = 1
-        feature_vector = tuple(feature_vector)
-
-        X_2d_list[i][:] = feature_vector
-
-    print('')
-
-    # convert classification parameters to the appropriate data type
-    X_train = np.array(X_2d_list)
-    y_train = np.array(labels)
-
-    return X_train, y_train
-
-
-# extracts tokens from the given text
-def getTokens(text):
-    text_tokens = re.findall(r"[\w']+", text)
-    # remove digits, special characters and convert to lowercase
-    for k in range(len(text_tokens)):
-        text_tokens[k] = text_tokens[k].lower()
-        text_tokens[k] = text_tokens[k].replace("_", "")
-        text_tokens[k] = re.sub("[0-9]+", "", text_tokens[k])
-    text_tokens = set(text_tokens)  # remove duplicate tokens
-
-    return text_tokens
-
-
-# concat ones column vector as the first column of the matrix
-def concat_ones_vector(X):
-    ones_vector = np.ones((X.shape[0], 1))
-    return np.concatenate((ones_vector, X), axis=1)
-
-
-def sigmoid(X):
-    output = 1 / (1 + np.exp(-X))
-    return np.matrix(output)
-
-
-def sigmoid_output_to_derivative(output):
-    return np.multiply(output, (1-output))
-
-
-def softmax(X):
-    output = np.exp(X) / np.sum(np.exp(X), axis=1)
-    return np.matrix(output)
-
-
 # Feed-Forward
 def forward(X, W1, W2):
     s1 = X.dot(W1.T)  # s1: NxM
-    o1 = sigmoid(s1)  # o1: NxM
-    grad = sigmoid_output_to_derivative(o1)  # the gradient of sigmoid function, grad: NxM
-    o1 = concat_ones_vector(o1)  # o1: NxM+1
+    o1 = Utilities.sigmoid(s1)  # o1: NxM
+    grad = Utilities.sigmoid_output_to_derivative(o1)  # the gradient of sigmoid function, grad: NxM
+    o1 = Utilities.concat_ones_vector(o1)  # o1: NxM+1
     s2 = o1.dot(W2.T)  # s2: NxK
-    o2 = softmax(s2)  # o2: NxK
+    o2 = Utilities.softmax(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
 
@@ -150,6 +65,8 @@ def loss_function(X, t, W1, W2):
     # Calculating the loss
     logprobs = -np.multiply(t, np.log(o2))
     data_loss = np.sum(logprobs)  # cross entropy loss
+    
+    data_loss *= 2  # for the gradient check to work
 
     # Add regularization term to loss (optional)
     data_loss += NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
@@ -177,7 +94,7 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
             end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            W1, W2, _, _ = grad_descent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
+            W1, W2, _, _ = gradient_descent(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
             s = s + loss_function(np.matrix(X[start_index:end_index, :]), np.matrix(t[start_index:end_index, :]), W1, W2)
 
             # Optionally print the loss.
@@ -193,7 +110,7 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
 
 # Update the Weight matrices using Gradient Descent
-def grad_descent(X, t, W1, W2):
+def gradient_descent(X, t, W1, W2):
     # W1: MxD+1 = num_hidden_layers X_train num_of_features
     # W2: KxM+1 = num_of_categories X_train num_hidden_layers
 
@@ -226,7 +143,7 @@ def grad_descent(X, t, W1, W2):
 
 
 def gradient_check(X, t, W1, W2):
-    _, _, gradEw1, gradEw2 = grad_descent(X, t, W1, W2)
+    _, _, gradEw1, gradEw2 = gradient_descent(X, t, W1, W2)
     epsilon = 1e-6
 
     # gradient_check for parameter W1
@@ -242,19 +159,9 @@ def gradient_check(X, t, W1, W2):
             Ewminus = loss_function(X, t, W1tmp, W2)
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-            #numgradEw1[i, j] = (Ewplus - Ewminus) / epsilon
-    print('gradEw1: ')
-    df = DataFrame(gradEw1)
-    df.index = range(gradEw1.shape[0])
-    df.columns = range(gradEw1.shape[1])
-    print(df)
-    print('numgradEw1: ')
-    df = DataFrame(numgradEw1)
-    df.index = range(numgradEw1.shape[0])
-    df.columns = range(numgradEw1.shape[1])
-    print(df)
+    # print('gradEw1: ' + str(gradEw1))
+    # print('numgradEw1: ' + str(numgradEw1))
     diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1 + numgradEw1)
-    #diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1 + numgradEw1))
     print('The maximum absolute norm for parameter W1, in the gradient_check is: ' + str(diff1))
 
     print('')
@@ -272,17 +179,8 @@ def gradient_check(X, t, W1, W2):
             Ewminus = loss_function(X, t, W1, W2tmp)
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-            #numgradEw2[i, j] = (Ewplus - Ewminus) / epsilon
-    print('gradEw2: ')
-    df = DataFrame(gradEw2)
-    df.index = range(gradEw2.shape[0])
-    df.columns = range(gradEw2.shape[1])
-    print(df)
-    print('numgradEw2: ')
-    df = DataFrame(numgradEw2)
-    df.index = range(numgradEw2.shape[0])
-    df.columns = range(numgradEw2.shape[1])
-    print(df)
+    # print('gradEw2: ' + str(gradEw2))
+    # print('numgradEw2: ' + str(numgradEw2))
     diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2 + numgradEw2)
     #diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2 + numgradEw2))
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
@@ -294,13 +192,13 @@ def gradient_check(X, t, W1, W2):
 
 feature_dictionary_dir = "feature_dictionary.txt"
 
-spam_train_dir = "LingspamDataset/spam-train/"
-ham_train_dir = "LingspamDataset/nonspam-train/"
-spam_test_dir = "LingspamDataset/spam-test/"
-ham_test_dir = "LingspamDataset/nonspam-test/"
+spam_train_dir = "./LingspamDataset/spam-train/"
+ham_train_dir = "./LingspamDataset/nonspam-train/"
+spam_test_dir = "./LingspamDataset/spam-test/"
+ham_test_dir = "./LingspamDataset/nonspam-test/"
 
 # read feature dictionary from file
-feature_tokens = read_dictionary_file(feature_dictionary_dir)
+feature_tokens = read_mnist_data_from_files.read_dictionary_file(feature_dictionary_dir)
 NNParams.num_input_layers = len(feature_tokens)
 
 print("Reading TRAIN files...")
@@ -310,7 +208,7 @@ train_files = list(spam_train_files)
 train_files.extend(ham_train_files)
 train_labels = [1] * len(spam_train_files)
 train_labels.extend([0] * len(ham_train_files))
-X_train, y_train = get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
+X_train, y_train = read_mnist_data_from_files.get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
 
 print('')
 
@@ -321,7 +219,7 @@ test_files = list(spam_test_files)
 test_files.extend(ham_test_files)
 test_true_labels = [1] * len(spam_test_files)
 test_true_labels.extend([0] * len(ham_test_files))
-X_test, y_test_true = get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
+X_test, y_test_true = read_mnist_data_from_files.get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
 
 print('')
 
@@ -330,8 +228,8 @@ X_train = X_train - np.mean(X_train)
 X_test = X_test - np.mean(X_test)
 
 # concat ones vector
-X_train = concat_ones_vector(X_train)
-X_test = concat_ones_vector(X_test)
+X_train = Utilities.concat_ones_vector(X_train)
+X_test = Utilities.concat_ones_vector(X_test)
 
 # t_train: 1-hot matrix for the categories y_train
 t_train = np.zeros((y_train.shape[0], NNParams.num_output_layers))
@@ -345,15 +243,17 @@ W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / n
     NNParams.num_hidden_layers)  # W2: KxM
 
 # concat ones vector
-W1 = concat_ones_vector(W1)  # W1: MxD+1
-W2 = concat_ones_vector(W2)  # W2: KxM+1
+W1 = Utilities.concat_ones_vector(W1)  # W1: MxD+1
+W2 = Utilities.concat_ones_vector(W2)  # W2: KxM+1
 
 # Do a gradient check first
 # SKIP THIS PART FOR FASTER EXECUTION
+'''
 print('Running gradient check...')
 ch = np.random.permutation(X_train.shape[0])
 ch = ch[0:20]  # get the 20 first data
 gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
+'''
 
 print('')
 

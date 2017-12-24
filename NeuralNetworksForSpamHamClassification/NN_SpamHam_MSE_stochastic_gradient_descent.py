@@ -7,16 +7,18 @@
 # force the result of divisions to be float numbers
 from __future__ import division
 
-import numpy as np
-import re
-
 # I/O Libraries
 from os import listdir
 from os.path import isfile, join
 
-__author__ = 'c.kormaris'
+# import local python files
+import imp
+read_mnist_data_from_files = imp.load_source('read_mnist_data_from_files', 'read_mnist_data_from_files.py')
+Utilities = imp.load_source('Utilities', 'Utilities.py')
 
-np.seterr(all='ignore')
+import numpy as np
+
+__author__ = 'c.kormaris'
 
 
 ###############
@@ -36,101 +38,14 @@ class NNParams:
 # FUNCTIONS #
 
 
-def read_dictionary_file(filename):
-    text_file = open(filename, "r")
-    lines = text_file.readlines()
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace("\n", "")
-    return lines
-
-
-def read_file(filename):
-    text_file = open(filename, "r")
-    text = text_file.read()
-    return text
-
-
-# defines the label of the files based on their names
-def read_labels(files):
-    labels = []
-    for file in files:
-        if "spam" in str(file):
-            labels.append(1)
-        elif "ham" in str(file):
-            labels.append(0)
-    return labels
-
-
-def get_classification_data(spam_files_dir, ham_files_dir, files, labels, feature_tokens, trainOrTest):
-    # classification parameter X_train
-    X_2d_list = [[0 for _ in range(len(feature_tokens))] for _ in
-                       range(len(files))]  # X_train: len(files) X_train len(feature_tokens)
-
-    # reading files
-    for i in range(len(files)):
-        print("Reading " + trainOrTest + " file " + "'" + files[i] + "'" + "...")
-
-        text = ''
-        if labels[i] == 1:  # 1 is for class "SPAM"
-            text = read_file(spam_files_dir + files[i])
-        elif labels[i] == 0:  # 0 is for class "HAM"
-            text = read_file(ham_files_dir + files[i])
-        text_tokens = getTokens(text)
-
-        # the feature vector contains features with Boolean values
-        feature_vector = [0] * len(feature_tokens)
-        for j in range(len(feature_tokens)):
-            if text_tokens.__contains__(feature_tokens[j]):
-                feature_vector[j] = 1
-        feature_vector = tuple(feature_vector)
-
-        X_2d_list[i][:] = feature_vector
-
-    print('')
-
-    # convert classification parameters to the appropriate data type
-    X_train = np.array(X_2d_list)
-    y_train = np.array(labels)
-
-    return X_train, y_train
-
-
-# extracts tokens from the given text
-def getTokens(text):
-    text_tokens = re.findall(r"[\w']+", text)
-    # remove digits, special characters and convert to lowercase
-    for k in range(len(text_tokens)):
-        text_tokens[k] = text_tokens[k].lower()
-        text_tokens[k] = text_tokens[k].replace("_", "")
-        text_tokens[k] = re.sub("[0-9]+", "", text_tokens[k])
-    text_tokens = set(text_tokens)  # remove duplicate tokens
-
-    return text_tokens
-
-
-# concat ones column vector as the first column of the matrix
-def concat_ones_vector(X):
-    ones_vector = np.ones((X.shape[0], 1))
-    return np.concatenate((ones_vector, X), axis=1)
-
-
-def tanh_output_to_derivative(output):
-    return 1 - np.square(output)
-
-
-def sigmoid(X):
-    output = 1 / (1 + np.exp(-X))
-    return np.matrix(output)
-
-
 # Feed-Forward
 def forward(X, W1, W2):
     s1 = X.dot(W1.T)  # s1: NxM
     o1 = np.tanh(s1)  # o1: NxM
-    grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
-    o1 = concat_ones_vector(o1)  # o1: NxM+1
+    grad = Utilities.tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
+    o1 = Utilities.concat_ones_vector(o1)  # o1: NxM+1
     s2 = o1.dot(W2.T)  # s2: NxK
-    o2 = sigmoid(s2)  # o2: NxK
+    o2 = Utilities.sigmoid(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
 
@@ -170,7 +85,7 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
         for i in range(num_examples):
             xi = np.matrix(X[i, :])
             ti = np.matrix(t[i, :])
-            W1, W2, _, _ = grad_descent(xi, ti, W1, W2)
+            W1, W2, _, _ = gradient_descent(xi, ti, W1, W2)
             s = s + loss_function(xi, ti, W1, W2)
 
         # Optionally print the loss.
@@ -186,7 +101,7 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
 
 # Update the Weight matrices using Gradient Descent
-def grad_descent(X, t, W1, W2):
+def gradient_descent(X, t, W1, W2):
     # W1: MxD+1 = num_hidden_layers X_train num_of_features
     # W2: KxM+1 = num_of_categories X_train num_hidden_layers
 
@@ -213,8 +128,9 @@ def grad_descent(X, t, W1, W2):
     return W1, W2, dW1, dW2
 
 
+# IT DOES NOT WORK CORRECTLY YET!
 def gradient_check(X, t, W1, W2):
-    _, _, gradEw1, gradEw2 = grad_descent(X, t, W1, W2)
+    _, _, gradEw1, gradEw2 = gradient_descent(X, t, W1, W2)
     epsilon = 1e-6
 
     # gradient_check for parameter W1
@@ -256,13 +172,13 @@ def gradient_check(X, t, W1, W2):
 
 feature_dictionary_dir = "feature_dictionary.txt"
 
-spam_train_dir = "LingspamDataset/spam-train/"
-ham_train_dir = "LingspamDataset/nonspam-train/"
-spam_test_dir = "LingspamDataset/spam-test/"
-ham_test_dir = "LingspamDataset/nonspam-test/"
+spam_train_dir = "./LingspamDataset/spam-train/"
+ham_train_dir = "./LingspamDataset/nonspam-train/"
+spam_test_dir = "./LingspamDataset/spam-test/"
+ham_test_dir = "./LingspamDataset/nonspam-test/"
 
 # read feature dictionary from file
-feature_tokens = read_dictionary_file(feature_dictionary_dir)
+feature_tokens = read_mnist_data_from_files.read_dictionary_file(feature_dictionary_dir)
 NNParams.num_input_layers = len(feature_tokens)
 
 print("Reading TRAIN files...")
@@ -272,7 +188,7 @@ train_files = list(spam_train_files)
 train_files.extend(ham_train_files)
 train_labels = [1] * len(spam_train_files)
 train_labels.extend([0] * len(ham_train_files))
-X_train, y_train = get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
+X_train, y_train = read_mnist_data_from_files.get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
 
 print('')
 
@@ -283,7 +199,7 @@ test_files = list(spam_test_files)
 test_files.extend(ham_test_files)
 test_true_labels = [1] * len(spam_test_files)
 test_true_labels.extend([0] * len(ham_test_files))
-X_test, y_test_true = get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
+X_test, y_test_true = read_mnist_data_from_files.get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
 
 print('')
 
@@ -292,8 +208,8 @@ X_train = X_train - np.mean(X_train)
 X_test = X_test - np.mean(X_test)
 
 # concat ones vector
-X_train = concat_ones_vector(X_train)
-X_test = concat_ones_vector(X_test)
+X_train = Utilities.concat_ones_vector(X_train)
+X_test = Utilities.concat_ones_vector(X_test)
 
 # t_train: 1-hot matrix for the categories y_train
 t_train = np.zeros((y_train.shape[0], NNParams.num_output_layers))
@@ -307,15 +223,17 @@ W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / n
     NNParams.num_hidden_layers)  # W2: KxM
 
 # concat ones vector
-W1 = concat_ones_vector(W1)  # W1: MxD+1
-W2 = concat_ones_vector(W2)  # W2: KxM+1
+W1 = Utilities.concat_ones_vector(W1)  # W1: MxD+1
+W2 = Utilities.concat_ones_vector(W2)  # W2: KxM+1
 
 # Do a gradient check first
 # SKIP THIS PART FOR FASTER EXECUTION
+'''
 print('Running gradient check...')
 ch = np.random.permutation(X_train.shape[0])
 ch = ch[0:20]  # get the 20 first data
 gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
+'''
 
 print('')
 
