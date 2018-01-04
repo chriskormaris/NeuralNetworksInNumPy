@@ -12,9 +12,8 @@ from os import listdir
 from os.path import isfile, join
 
 # import local python files
-import imp
-read_mnist_data_from_files = imp.load_source('read_mnist_data_from_files', 'read_mnist_data_from_files.py')
-Utilities = imp.load_source('Utilities', 'Utilities.py')
+from read_mnist_data_from_files import *
+from Utilities import *
 
 import numpy as np
 
@@ -42,10 +41,10 @@ class NNParams:
 def forward(X, W1, W2):
     s1 = X.dot(W1.T)  # s1: NxM
     o1 = np.tanh(s1)  # o1: NxM
-    grad = Utilities.tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
-    o1 = Utilities.concat_ones_vector(o1)  # o1: NxM+1
+    grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
+    o1 = concat_ones_vector(o1)  # o1: NxM+1
     s2 = o1.dot(W2.T)  # s2: NxK
-    o2 = Utilities.sigmoid(s2)  # o2: NxK
+    o2 = sigmoid(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
 
@@ -184,7 +183,7 @@ spam_test_dir = "./LingspamDataset/spam-test/"
 ham_test_dir = "./LingspamDataset/nonspam-test/"
 
 # read feature dictionary from file
-feature_tokens = read_mnist_data_from_files.read_dictionary_file(feature_dictionary_dir)
+feature_tokens = read_dictionary_file(feature_dictionary_dir)
 NNParams.num_input_layers = len(feature_tokens)
 
 print("Reading TRAIN files...")
@@ -194,7 +193,7 @@ train_files = list(spam_train_files)
 train_files.extend(ham_train_files)
 train_labels = [1] * len(spam_train_files)
 train_labels.extend([0] * len(ham_train_files))
-X_train, y_train = read_mnist_data_from_files.get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
+X_train, y_train = get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
 
 print('')
 
@@ -205,7 +204,7 @@ test_files = list(spam_test_files)
 test_files.extend(ham_test_files)
 test_true_labels = [1] * len(spam_test_files)
 test_true_labels.extend([0] * len(ham_test_files))
-X_test, y_test_true = read_mnist_data_from_files.get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
+X_test, y_test_true = get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
 
 print('')
 
@@ -214,8 +213,8 @@ X_train = X_train - np.mean(X_train)
 X_test = X_test - np.mean(X_test)
 
 # concat ones vector
-X_train = Utilities.concat_ones_vector(X_train)
-X_test = Utilities.concat_ones_vector(X_test)
+X_train = concat_ones_vector(X_train)
+X_test = concat_ones_vector(X_test)
 
 # t_train: 1-hot matrix for the categories y_train
 t_train = np.zeros((y_train.shape[0], NNParams.num_output_layers))
@@ -229,8 +228,8 @@ W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / n
     NNParams.num_hidden_layers)  # W2: KxM
 
 # concat ones vector
-W1 = Utilities.concat_ones_vector(W1)  # W1: MxD+1
-W2 = Utilities.concat_ones_vector(W2)  # W2: KxM+1
+W1 = concat_ones_vector(W1)  # W1: MxD+1
+W2 = concat_ones_vector(W2)  # W2: KxM+1
 
 # Do a gradient check first
 # SKIP THIS PART FOR FASTER EXECUTION
