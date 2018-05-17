@@ -20,9 +20,9 @@ __author__ = 'c.kormaris'
 
 
 class NNParams:
-    num_input_layers = 784  # D: number of nodes in the input layers (aka: no of features)
-    num_hidden_layers = 100  # M: number of nodes in the hidden layer
-    num_output_layers = 10  # K: number of nodes in the output layer (aka: no of categories)
+    num_input_nodes = 784  # D: number of nodes in the input layers (aka: no of features)
+    num_hidden_nodes = 100  # M: number of nodes in the hidden layer
+    num_output_nodes = 10  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient ascent parameters
     eta = 0.1  # the learning rate for gradient ascent; it is modified according to the number of train data
     reg_lambda = 0.01  # the regularization parameter
@@ -62,7 +62,7 @@ def likelihood(X, t, W1, W2):
     _, _, _, s2, _ = forward(X, W1, W2)
 
     A = s2
-    K = NNParams.num_output_layers
+    K = NNParams.num_output_nodes
 
     # Calculating the mle using the logsumexp trick
     maximum = np.max(A, axis=1)
@@ -120,8 +120,8 @@ def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=No
 
 # Update the Weight matrices using Gradient Ascent
 def grad_ascent(X, t, W1, W2):
-    # W1: MxD+1 = num_hidden_layers X_train num_of_features
-    # W2: KxM+1 = num_of_categories X_train num_hidden_layers
+    # W1: MxD+1 = num_hidden_nodes X_train num_of_features
+    # W2: KxM+1 = num_of_categories X_train num_hidden_nodes
 
     # Feed-Forward
     _, o1, grad, s2, o2 = forward(X, W1, W2)
@@ -213,10 +213,10 @@ X_test = concat_ones_vector(X_test)
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
-W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / \
-     np.sqrt(NNParams.num_input_layers)  # W1: MxD
-W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / \
-     np.sqrt(NNParams.num_hidden_layers)  # W2: KxM
+W1 = np.random.randn(NNParams.num_hidden_nodes, NNParams.num_input_nodes) / \
+     np.sqrt(NNParams.num_input_nodes)  # W1: MxD
+W2 = np.random.randn(NNParams.num_output_nodes, NNParams.num_hidden_nodes) / \
+     np.sqrt(NNParams.num_hidden_nodes)  # W2: KxM
 
 # concat ones vector
 W1 = concat_ones_vector(W1)  # W1: MxD+1

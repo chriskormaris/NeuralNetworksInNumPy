@@ -24,9 +24,9 @@ __author__ = 'c.kormaris'
 
 
 class NNParams:
-    num_input_layers = 1000  # D: number of nodes in the input layers (aka: no of features)
-    num_hidden_layers = 3  # M: number of nodes in the hidden layer
-    num_output_layers = 2  # K: number of nodes in the output layer (aka: no of categories)
+    num_input_nodes = 1000  # D: number of nodes in the input layers (aka: no of features)
+    num_hidden_nodes = 3  # M: number of nodes in the hidden layer
+    num_output_nodes = 2  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient descent parameters
     eta = 0.001  # the learning rate of gradient descent
     reg_lambda = 0.01  # the regularization parameter
@@ -102,8 +102,8 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
 # Update the Weight matrices using Gradient Descent
 def gradient_descent(X, t, W1, W2):
-    # W1: MxD+1 = num_hidden_layers X_train num_of_features
-    # W2: KxM+1 = num_of_categories X_train num_hidden_layers
+    # W1: MxD+1 = num_hidden_nodes X_train num_of_features
+    # W2: KxM+1 = num_of_categories X_train num_hidden_nodes
 
     # Feed-Forward
     _, o1, grad, _, o2 = forward(X, W1, W2)
@@ -184,7 +184,7 @@ ham_test_dir = "./LingspamDataset/nonspam-test/"
 
 # read feature dictionary from file
 feature_tokens = read_dictionary_file(feature_dictionary_dir)
-NNParams.num_input_layers = len(feature_tokens)
+NNParams.num_input_nodes = len(feature_tokens)
 
 print("Reading TRAIN files...")
 spam_train_files = sorted([f for f in listdir(spam_train_dir) if isfile(join(spam_train_dir, f))])
@@ -217,15 +217,15 @@ X_train = concat_ones_vector(X_train)
 X_test = concat_ones_vector(X_test)
 
 # t_train: 1-hot matrix for the categories y_train
-t_train = np.zeros((y_train.shape[0], NNParams.num_output_layers))
+t_train = np.zeros((y_train.shape[0], NNParams.num_output_nodes))
 t_train[np.arange(y_train.shape[0]), y_train] = 1
 
 # Initialize the parameters to random values. We need to learn these.
 np.random.seed(0)
-W1 = np.random.randn(NNParams.num_hidden_layers, NNParams.num_input_layers) / np.sqrt(
-    NNParams.num_input_layers)  # W1: MxD
-W2 = np.random.randn(NNParams.num_output_layers, NNParams.num_hidden_layers) / np.sqrt(
-    NNParams.num_hidden_layers)  # W2: KxM
+W1 = np.random.randn(NNParams.num_hidden_nodes, NNParams.num_input_nodes) / np.sqrt(
+    NNParams.num_input_nodes)  # W1: MxD
+W2 = np.random.randn(NNParams.num_output_nodes, NNParams.num_hidden_nodes) / np.sqrt(
+    NNParams.num_hidden_nodes)  # W2: KxM
 
 # concat ones vector
 W1 = concat_ones_vector(W1)  # W1: MxD+1
