@@ -1,3 +1,4 @@
+# This is the same NEURAL NETWORK as in Exercise 9 (SLIDE 31), but with the rightmost SIGMOID. #
 # 1st Activation Function: tanh
 # 2nd Activation Function: sigmoid
 # Loss Function: Mean Squared Error Loss
@@ -7,30 +8,28 @@
 # force the result of divisions to be float numbers
 from __future__ import division
 
-# I/O Libraries
-from os import listdir
-from os.path import isfile, join
-
-# import local python files
-from read_mnist_data_from_files import *
-from Utilities import *
+from part04NNLingspamDataset.read_lingspam_dataset import *
+from part04NNLingspamDataset.Utilities import *
 
 import numpy as np
 
 __author__ = 'c.kormaris'
 
+feature_dictionary_dir = "./feature_dictionary.txt"
+path = "./LingspamDataset"
 
 ###############
 
 
 class NNParams:
-    num_input_nodes = 1000  # D: number of nodes in the input layers (aka: no of features)
-    num_hidden_nodes = 3  # M: number of nodes in the hidden layer
-    num_output_nodes = 2  # K: number of nodes in the output layer (aka: no of categories)
+    num_input_units = 1000  # D: number of nodes in the input layers (aka: no of features)
+    num_hidden_units = 3  # M: number of nodes in the hidden layer
+    num_output_units = 2  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient descent parameters
     eta = 0.001  # the learning rate of gradient descent
     reg_lambda = 0.01  # the regularization parameter
-
+    epochs = 50
+    tol = 1e-6
 
 ###############
 
@@ -101,15 +100,15 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_loss=False):
 
 # Update the Weight matrices using Gradient Descent
 def gradient_descent(X, t, W1, W2):
-    # W1: MxD+1 = num_hidden_nodes X_train num_of_features
-    # W2: KxM+1 = num_of_categories X_train num_hidden_nodes
+    # W1: MxD+1 = num_hidden_layers X_train num_of_features
+    # W2: KxM+1 = num_of_categories X_train num_hidden_layers
 
     # Feed-Forward
     _, o1, grad, _, o2 = forward(X, W1, W2)
 
     # Back-Propagation
     delta1 = o2 - t  # delta1: NxK
-    W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
+    W2_reduce = skip_first_column(W2)  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
 
@@ -169,129 +168,105 @@ def gradient_check(X, t, W1, W2):
 
 # MAIN #
 
-feature_dictionary_dir = "feature_dictionary.txt"
+if __name__ == '__main__':
 
-spam_train_dir = "./LingspamDataset/spam-train/"
-ham_train_dir = "./LingspamDataset/nonspam-train/"
-spam_test_dir = "./LingspamDataset/spam-test/"
-ham_test_dir = "./LingspamDataset/nonspam-test/"
+    # read feature dictionary from file
+    feature_tokens = read_dictionary_file(feature_dictionary_dir)
+    NNParams.num_input_units = len(feature_tokens)
 
-# read feature dictionary from file
-feature_tokens = read_dictionary_file(feature_dictionary_dir)
-NNParams.num_input_nodes = len(feature_tokens)
+    print("Getting train and test data...")
+    X_train, y_train, X_test, y_test = get_classification_data(path, feature_dictionary_dir)
 
-print("Reading TRAIN files...")
-spam_train_files = sorted([f for f in listdir(spam_train_dir) if isfile(join(spam_train_dir, f))])
-ham_train_files = sorted([f for f in listdir(ham_train_dir) if isfile(join(ham_train_dir, f))])
-train_files = list(spam_train_files)
-train_files.extend(ham_train_files)
-train_labels = [1] * len(spam_train_files)
-train_labels.extend([0] * len(ham_train_files))
-X_train, y_train = get_classification_data(spam_train_dir, ham_train_dir, train_files, train_labels, feature_tokens, 'train')
+    print('')
 
-print('')
+    # normalize the data using mean normalization
+    X_train = X_train - np.mean(X_train)
+    X_test = X_test - np.mean(X_test)
 
-print("Reading TEST files...")
-spam_test_files = sorted([f for f in listdir(spam_test_dir) if isfile(join(spam_test_dir, f))])
-ham_test_files = sorted([f for f in listdir(ham_test_dir) if isfile(join(ham_test_dir, f))])
-test_files = list(spam_test_files)
-test_files.extend(ham_test_files)
-test_true_labels = [1] * len(spam_test_files)
-test_true_labels.extend([0] * len(ham_test_files))
-X_test, y_test_true = get_classification_data(spam_test_dir, ham_test_dir, test_files, test_true_labels, feature_tokens, 'test')
+    # concat ones vector
+    X_train = concat_ones_vector(X_train)
+    X_test = concat_ones_vector(X_test)
 
-print('')
+    # t_train: 1-hot matrix for the categories y_train
+    t_train = np.zeros((y_train.shape[0], NNParams.num_output_units))
+    t_train[np.arange(y_train.shape[0]), y_train] = 1
 
-# normalize the data using mean normalization
-X_train = X_train - np.mean(X_train)
-X_test = X_test - np.mean(X_test)
+    # Initialize the parameters to random values. We need to learn these.
+    np.random.seed(0)
+    W1 = np.random.randn(NNParams.num_hidden_units, NNParams.num_input_units) / np.sqrt(
+        NNParams.num_input_units)  # W1: MxD
+    W2 = np.random.randn(NNParams.num_output_units, NNParams.num_hidden_units) / np.sqrt(
+        NNParams.num_hidden_units)  # W2: KxM
 
-# concat ones vector
-X_train = concat_ones_vector(X_train)
-X_test = concat_ones_vector(X_test)
+    # concat ones vector
+    W1 = concat_ones_vector(W1)  # W1: MxD+1
+    W2 = concat_ones_vector(W2)  # W2: KxM+1
 
-# t_train: 1-hot matrix for the categories y_train
-t_train = np.zeros((y_train.shape[0], NNParams.num_output_nodes))
-t_train[np.arange(y_train.shape[0]), y_train] = 1
+    # Do a gradient check first
+    # SKIP THIS PART FOR FASTER EXECUTION
+    print('Running gradient check...')
+    ch = np.random.permutation(X_train.shape[0])
+    ch = ch[0:20]  # get the 20 first data
+    gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
 
-# Initialize the parameters to random values. We need to learn these.
-np.random.seed(0)
-W1 = np.random.randn(NNParams.num_hidden_nodes, NNParams.num_input_nodes) / np.sqrt(
-    NNParams.num_input_nodes)  # W1: MxD
-W2 = np.random.randn(NNParams.num_output_nodes, NNParams.num_hidden_nodes) / np.sqrt(
-    NNParams.num_hidden_nodes)  # W2: KxM
+    print('')
 
-# concat ones vector
-W1 = concat_ones_vector(W1)  # W1: MxD+1
-W2 = concat_ones_vector(W2)  # W2: KxM+1
+    # train the Neural Network Model
+    W1, W2 = train(X_train, t_train, W1, W2, epochs=NNParams.epochs, tol=NNParams.tol, print_loss=True)
 
-# Do a gradient check first
-# SKIP THIS PART FOR FASTER EXECUTION
-'''
-print('Running gradient check...')
-ch = np.random.permutation(X_train.shape[0])
-ch = ch[0:20]  # get the 20 first data
-gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
-'''
-
-print('')
-
-# train the Neural Network Model
-W1, W2 = train(X_train, t_train, W1, W2, epochs=50, tol=1e-6, print_loss=True)
-
-# test the Neural Network Model
-predicted = test(X_test, W1, W2)
+    # test the Neural Network Model
+    y_test_predicted = test(X_test, W1, W2)
 
 
-# check predictions
-wrong_counter = 0  # the number of wrong classifications made by Logistic Regression
-spam_counter = 0  # the number of spam files
-ham_counter = 0  # the number of ham files
-wrong_spam_counter = 0  # the number of spam files classified as ham
-wrong_ham_counter = 0  # the number of ham files classified as spam
+    # check predictions
+    wrong_counter = 0  # the number of wrong classifications made by the NN
+    spam_counter = 0  # the number of spam files
+    ham_counter = 0  # the number of ham files
+    wrong_spam_counter = 0  # the number of spam files classified as ham
+    wrong_ham_counter = 0  # the number of ham files classified as spam
 
-print('')
-print('checking predictions...')
-for i in range(len(predicted)):
-    if predicted[i] == 1 and y_test_true[i] == 1:
-        print("data" + str(i) + ' classified as: SPAM -> correct')
-        spam_counter = spam_counter + 1
-    elif predicted[i] == 1 and y_test_true[i] == 0:
-        print("data" + str(i) + ' classified as: SPAM -> WRONG!')
-        ham_counter = ham_counter + 1
-        wrong_ham_counter = wrong_ham_counter + 1
-        wrong_counter = wrong_counter + 1
-    elif predicted[i] == 0 and y_test_true[i] == 1:
-        print("data" + str(i) + ' classified as: HAM -> WRONG!')
-        spam_counter = spam_counter + 1
-        wrong_spam_counter = wrong_spam_counter + 1
-        wrong_counter = wrong_counter + 1
-    elif predicted[i] == 0 and y_test_true[i] == 0:
-        print("data" + str(i) + ' classified as: HAM -> correct')
-        ham_counter = ham_counter + 1
+    print('')
+    print('checking predictions...')
+    for i in range(len(y_test_predicted)):
+        if y_test_predicted[i] == 1 and y_test[i] == 1:
+            print("data" + str(i) + ' classified as: SPAM -> correct')
+            spam_counter = spam_counter + 1
+        elif y_test_predicted[i] == 1 and y_test[i] == 0:
+            print("data" + str(i) + ' classified as: SPAM -> WRONG!')
+            ham_counter = ham_counter + 1
+            wrong_ham_counter = wrong_ham_counter + 1
+            wrong_counter = wrong_counter + 1
+        elif y_test_predicted[i] == 0 and y_test[i] == 1:
+            print("data" + str(i) + ' classified as: HAM -> WRONG!')
+            spam_counter = spam_counter + 1
+            wrong_spam_counter = wrong_spam_counter + 1
+            wrong_counter = wrong_counter + 1
+        elif y_test_predicted[i] == 0 and y_test[i] == 0:
+            print("data" + str(i) + ' classified as: HAM -> correct')
+            ham_counter = ham_counter + 1
 
-print('')
+    print('')
 
-# Accuracy
+    # Accuracy
 
-accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
-print("accuracy: " + str(accuracy) + " %")
-print('')
+    accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
+    print("accuracy: " + str(accuracy) + " %")
+    print('')
 
-# Calculate Precision-Recall
+    # Calculate Precision-Recall
 
-print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(len(X_test)) + ' files')
-print("number of wrong spam classifications: " + str(wrong_spam_counter) + ' out of ' + str(spam_counter) + ' spam files')
-print("number of wrong ham classifications: " + str(wrong_ham_counter) + ' out of ' + str(ham_counter) + ' ham files')
+    print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(len(X_test)) + ' files')
+    print("number of wrong spam classifications: " + str(wrong_spam_counter) + ' out of ' + str(spam_counter) + ' spam files')
+    print("number of wrong ham classifications: " + str(wrong_ham_counter) + ' out of ' + str(ham_counter) + ' ham files')
 
-print('')
+    print('')
 
-spam_precision = (spam_counter - wrong_spam_counter) / (spam_counter - wrong_spam_counter + wrong_ham_counter)
-print("precision for spam files: " + str(spam_precision))
-ham_precision = (ham_counter - wrong_ham_counter) / (ham_counter - wrong_ham_counter + wrong_spam_counter)
-print("precision for ham files: " + str(ham_precision))
+    spam_precision = (spam_counter - wrong_spam_counter) / (spam_counter - wrong_spam_counter + wrong_ham_counter)
+    print("precision for spam files: " + str(spam_precision))
+    ham_precision = (ham_counter - wrong_ham_counter) / (ham_counter - wrong_ham_counter + wrong_spam_counter)
+    print("precision for ham files: " + str(ham_precision))
 
-spam_recall = (spam_counter - wrong_spam_counter) / spam_counter
-print("recall for spam files: " + str(spam_recall))
-ham_recall = (ham_counter - wrong_ham_counter) / ham_counter
-print("recall for ham files: " + str(ham_recall))
+    spam_recall = (spam_counter - wrong_spam_counter) / spam_counter
+    print("recall for spam files: " + str(spam_recall))
+    ham_recall = (ham_counter - wrong_ham_counter) / ham_counter
+    print("recall for ham files: " + str(ham_recall))

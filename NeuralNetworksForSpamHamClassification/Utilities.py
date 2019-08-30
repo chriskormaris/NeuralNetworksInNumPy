@@ -18,7 +18,7 @@ def concat_ones_vector(X):
 
 def sigmoid(X):
     output = 1 / (1 + np.exp(-X))
-    return np.matrix(output)
+    return np.array(output)
 
 
 def sigmoid_output_to_derivative(output):
@@ -26,9 +26,15 @@ def sigmoid_output_to_derivative(output):
 
 
 def softmax(X):
-    output = np.exp(X) / np.sum(np.exp(X), axis=1)
-    return np.matrix(output)
+    denominator = np.sum(np.exp(X), axis=1)
+    denominator = np.reshape(denominator, (X.shape[0], 1))
+    output = np.exp(X) / denominator
+    return np.array(output)
 
 
 def tanh_output_to_derivative(output):
     return 1 - np.square(output)
+
+
+def skip_first_column(X):
+    return X[:, 1:]
