@@ -192,14 +192,14 @@ mnist_dir = "./mnisttxt/"
 X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
 # y_train: the true categories vector for the train data
 y_train = np.argmax(t_train, axis=1)
-y_train = np.matrix(y_train).T
+y_train = np.array(y_train).T
 
 print('')
 
 X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
 # y_test_true: the true categories vector for the test data
 y_test_true = np.argmax(t_test_true, axis=1)
-y_test_true = np.matrix(y_test_true).T
+y_test_true = np.array(y_test_true).T
 
 print('')
 

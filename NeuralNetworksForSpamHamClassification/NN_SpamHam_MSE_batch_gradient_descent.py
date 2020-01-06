@@ -1,15 +1,15 @@
 # This is the same NEURAL NETWORK as in Exercise 9 (SLIDE 31), but with the rightmost SIGMOID. #
 # 1st Activation Function: tanh
 # 2nd Activation Function: sigmoid
-# Loss Function: Mean Squared Error Loss
+# cost Function: Mean Squared Error cost
 # Train Algorithm: Batch Gradient Descent
 # Bias terms are used.
 
 # force the result of divisions to be float numbers
 from __future__ import division
 
-from part04NNLingspamDataset.read_lingspam_dataset import *
-from part04NNLingspamDataset.Utilities import *
+from read_lingspam_dataset import *
+from Utilities import *
 
 import numpy as np
 
@@ -46,20 +46,20 @@ def forward(X, W1, W2):
     return s1, o1, grad, s2, o2
 
 
-# Helper function to evaluate the total loss of the dataset
-def loss_function(X, t, W1, W2):
+# Helper function to evaluate the total cost of the dataset
+def cost_function(X, t, W1, W2):
     num_examples = len(X)  # N: training set size
 
     # Forward propagate to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
 
-    # Calculating the mean square error loss
+    # Calculating the mean square error cost
     squared_error = np.square(o2 - t)
-    data_loss = np.sum(squared_error) / 2
+    data_cost = np.sum(squared_error) / 2
 
-    # Add regularization term to loss (optional)
-    data_loss += NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
-    return data_loss / num_examples  # divide by number of examples and return
+    # Add regularization term to cost (optional)
+    data_cost += NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
+    return data_cost / num_examples  # divide by number of examples and return
 
 
 def test(X, W1, W2):
@@ -70,23 +70,23 @@ def test(X, W1, W2):
 
 # This function learns the parameter weights W1, W2 for the neural network and returns them.
 # - iterations: Number of iterations through the training data for gradient descent.
-# - print_loss: If True, print the loss every 1000 iterations.
-def train(X, t, W1, W2, iterations=20000, tol=1e-6, print_loss=False):
+# - print_cost_function: If True, print the cost every 1000 iterations.
+def train(X, t, W1, W2, iterations=20000, tol=1e-6, print_cost_function=False):
 
     # Run Batch Gradient Descent
-    loss_old = -np.inf
+    old_cost = -np.inf
     for i in range(iterations):
 
         W1, W2, _, _ = gradient_descent(X, t, W1, W2)
 
-        # Optionally print the loss.
+        # Optionally print the cost.
         # This is expensive because it uses the whole dataset, so we don't_train want to do it too often.
-        if print_loss and i % 1000 == 0:
-            loss = loss_function(X, t, W1, W2)
-            print("Mean squared error loss after iteration %i: %f" % (i, loss))
-            if np.abs(loss - loss_old) < tol:
+        if print_cost_function and (i % 1000 == 0 or i == iterations - 1):
+            cost = cost_function(X, t, W1, W2)
+            print("Mean squared error cost function after iteration %i: %f" % (i, cost))
+            if np.abs(cost - old_cost) < tol:
                 break
-            loss_old = loss
+            old_cost = cost
 
     return W1, W2
 
@@ -130,11 +130,11 @@ def gradient_check(X, t, W1, W2):
         for j in range(W1.shape[1]):
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] + epsilon
-            Ewplus = loss_function(X, t, W1tmp, W2)
+            Ewplus = cost_function(X, t, W1tmp, W2)
 
             W1tmp = W1
             W1tmp[i, j] = W1[i, j] - epsilon
-            Ewminus = loss_function(X, t, W1tmp, W2)
+            Ewminus = cost_function(X, t, W1tmp, W2)
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1 + numgradEw1)
@@ -146,11 +146,11 @@ def gradient_check(X, t, W1, W2):
         for j in range(W2.shape[1]):
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] + epsilon
-            Ewplus = loss_function(X, t, W1, W2tmp)
+            Ewplus = cost_function(X, t, W1, W2tmp)
 
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] - epsilon
-            Ewminus = loss_function(X, t, W1, W2tmp)
+            Ewminus = cost_function(X, t, W1, W2tmp)
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
     diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2 + numgradEw2)
@@ -207,7 +207,7 @@ if __name__ == '__main__':
     print('')
     
     # train the Neural Network Model
-    W1, W2 = train(X_train, t_train, W1, W2, iterations=NNParams.iterations, tol=NNParams.tol, print_loss=True)
+    W1, W2 = train(X_train, t_train, W1, W2, iterations=NNParams.iterations, tol=NNParams.tol, print_cost_function=True)
     
     # test the Neural Network Model
     y_test_predicted = test(X_test, W1, W2)

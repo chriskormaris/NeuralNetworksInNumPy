@@ -1,10 +1,10 @@
-from part04NNLingspamDataset.read_lingspam_dataset import *
+from read_lingspam_dataset import *
 
 
 if __name__ == '__main__':
 
     feature_dictionary_dir = "feature_dictionary.txt"
-    path = "../../LingspamDataset/"
+    path = "./LingspamDataset/"
 
     # get train and test data
     print("Reading train and test files...")

@@ -96,8 +96,8 @@ def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False, X_val=None):
 
         s = 0
         for i in range(num_examples):
-            xi = np.matrix(X[i, :])
-            ti = np.matrix(t[i, :])
+            xi = np.array(X[i, :]).reshape((1, X[i, :].size))
+            ti = np.array(t[i, :]).reshape((1, t[i, :].size))
             W1, W2, _, _ = grad_ascent(xi, ti, W1, W2)
             s = s + likelihood(xi, ti, W1, W2)
 
@@ -197,14 +197,14 @@ mnist_dir = "./mnisttxt/"
 X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
 # y_train: the true categories vector for the train data
 y_train = np.argmax(t_train, axis=1)
-y_train = np.matrix(y_train).T
+y_train = np.array(y_train).T
 
 print('')
 
 X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
 # y_test_true: the true categories vector for the test data
 y_test_true = np.argmax(t_test_true, axis=1)
-y_test_true = np.matrix(y_test_true).T
+y_test_true = np.array(y_test_true).T
 
 print('')
 
