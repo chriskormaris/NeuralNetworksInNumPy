@@ -1,7 +1,7 @@
 # This is the same NEURAL NETWORK as in Exercise 9 (SLIDE 31), but with the rightmost SIGMOID. #
 # 1st Activation Function: tanh
 # 2nd Activation Function: sigmoid
-# cost Function: Mean Squared Error cost
+# Cost Function: Mean Squared Error cost
 # Train Algorithm: Mini-batch Gradient Descent
 # Bias terms are used.
 

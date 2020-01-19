@@ -1,7 +1,7 @@
 # This is the same NEURAL NETWORK as in Exercise 10 (SLIDE 35 with a leftmost sigmoid function instead of tanh). #
 # 1st Activation Function: sigmoid
 # 2nd Activation Function: softmax
-# cost Function: Cross Entropy cost
+# Cost Function: Cross Entropy cost
 # Train Algorithm: Batch Gradient Descent
 # Bias terms are used.
 
