@@ -149,7 +149,7 @@ def gradient_check(X, t, W1, W2):
     diff1 = np.linalg.norm(gradEw1 - numgradEw1) / np.linalg.norm(gradEw1 + numgradEw1)
     print('The maximum absolute norm for parameter W1, in the gradient_check is: ' + str(diff1))
 
-    print('')
+    print()
 
     # gradient_check for parameter W2
     numgradEw2 = np.zeros(W2.shape)
@@ -184,7 +184,7 @@ if __name__ == '__main__':
     print("Getting train and test data...")
     X_train, y_train, X_test, y_test = get_classification_data(path, feature_dictionary_dir)
 
-    print('')
+    print()
 
     # normalize the data using mean normalization
     X_train = X_train - np.mean(X_train)
@@ -218,7 +218,7 @@ if __name__ == '__main__':
     gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
     '''
 
-    print('')
+    print()
 
     # train the Neural Network Model
     W1, W2 = train(X_train, t_train, W1, W2, epochs=NNParams.epochs, tol=NNParams.tol, print_cost_function=True)
@@ -226,56 +226,58 @@ if __name__ == '__main__':
     # test the Neural Network Model
     y_test_predicted = test(X_test, W1, W2)
 
-
     # check predictions
     wrong_counter = 0  # the number of wrong classifications made by the NN
-    spam_counter = 0  # the number of spam files
-    ham_counter = 0  # the number of ham files
-    wrong_spam_counter = 0  # the number of spam files classified as ham
-    wrong_ham_counter = 0  # the number of ham files classified as spam
+    false_positives = 0  # the number of ham files classified as spam
+    false_negatives = 0  # the number of spam files classified as ham
+    true_positives = 0
+    true_negatives = 0
 
-    print('')
+    print()
     print('checking predictions...')
     for i in range(len(y_test_predicted)):
         if y_test_predicted[i] == 1 and y_test[i] == 1:
             print("data" + str(i) + ' classified as: SPAM -> correct')
-            spam_counter = spam_counter + 1
+            true_positives = true_positives + 1
         elif y_test_predicted[i] == 1 and y_test[i] == 0:
             print("data" + str(i) + ' classified as: SPAM -> WRONG!')
-            ham_counter = ham_counter + 1
-            wrong_ham_counter = wrong_ham_counter + 1
+            false_positives = false_positives + 1
             wrong_counter = wrong_counter + 1
         elif y_test_predicted[i] == 0 and y_test[i] == 1:
             print("data" + str(i) + ' classified as: HAM -> WRONG!')
-            spam_counter = spam_counter + 1
-            wrong_spam_counter = wrong_spam_counter + 1
+            false_negatives = false_negatives + 1
             wrong_counter = wrong_counter + 1
         elif y_test_predicted[i] == 0 and y_test[i] == 0:
             print("data" + str(i) + ' classified as: HAM -> correct')
-            ham_counter = ham_counter + 1
+            true_negatives = true_negatives + 1
 
-    print('')
+    print()
 
     # Accuracy
 
     accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
     print("accuracy: " + str(accuracy) + " %")
-    print('')
+    print()
 
     # Calculate Precision-Recall
 
-    print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(len(X_test)) + ' files')
-    print("number of wrong spam classifications: " + str(wrong_spam_counter) + ' out of ' + str(spam_counter) + ' spam files')
-    print("number of wrong ham classifications: " + str(wrong_ham_counter) + ' out of ' + str(ham_counter) + ' ham files')
+    print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(y_test.size) + ' files')
+    print("number of wrong spam classifications: " + str(false_positives) + ' out of ' + str(y_test.size) + ' files')
+    print("number of wrong ham classifications: " + str(false_negatives) + ' out of ' + str(y_test.size) + ' files')
 
-    print('')
+    print()
 
-    spam_precision = (spam_counter - wrong_spam_counter) / (spam_counter - wrong_spam_counter + wrong_ham_counter)
-    print("precision for spam files: " + str(spam_precision))
-    ham_precision = (ham_counter - wrong_ham_counter) / (ham_counter - wrong_ham_counter + wrong_spam_counter)
-    print("precision for ham files: " + str(ham_precision))
+    spam_precision = true_positives / (true_positives + false_positives) * 100
+    print("precision for spam files: " + str(spam_precision) + " %")
+    ham_precision = true_negatives / (true_negatives + false_negatives) * 100
+    print("precision for ham files: " + str(ham_precision) + " %")
 
-    spam_recall = (spam_counter - wrong_spam_counter) / spam_counter
-    print("recall for spam files: " + str(spam_recall))
-    ham_recall = (ham_counter - wrong_ham_counter) / ham_counter
-    print("recall for ham files: " + str(ham_recall))
+    spam_recall = true_positives / (true_positives + false_negatives) * 100
+    print("recall for spam files: " + str(spam_recall) + " %")
+    ham_recall = true_negatives / (true_negatives + false_positives) * 100
+    print("recall for ham files: " + str(ham_recall) + " %")
+
+    spam_f1_score = 2 * spam_precision * spam_recall / (spam_precision + spam_recall)
+    print("f1-score for spam files: " + str(spam_f1_score) + " %")
+    ham_f1_score = 2 * ham_precision * ham_recall / (ham_precision + ham_recall)
+    print("f1-score for ham files: " + str(ham_f1_score) + " %")

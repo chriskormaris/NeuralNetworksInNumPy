@@ -13,16 +13,16 @@ if __name__ == '__main__':
 
     print("X_train length: ")
     print(X_train.shape)
-    print('')
+    print()
 
     print("y_train length: ")
     print(y_train.shape)
-    print('')
+    print()
 
     print("X_test length: ")
     print(X_test.shape)
-    print('')
+    print()
 
     print("y_test length: ")
     print(y_test.shape)
-    print('')
+    print()

@@ -15,7 +15,6 @@ __author__ = 'c.kormaris'
 
 ###############
 
-
 class NNParams:
     num_input_nodes = 784  # D: number of nodes in the input layers (aka: no of features)
     num_hidden_nodes = 100  # M: number of nodes in the hidden layer
@@ -34,16 +33,16 @@ def forward(X, W1, W2):
     s1 = X.dot(W1.T)  # s1: NxM
 
     # activation function #1
-    #o1 = h1(s1)  # o1: NxM
-    #grad = h1_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
+    # o1 = h1(s1)  # o1: NxM
+    # grad = h1_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
 
     # activation function #2
     o1 = np.tanh(s1)  # o1: NxM
     grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
 
     # activation function #3
-    #o1 = np.cos(s1)  # o1: NxM
-    #grad = cos_output_to_derivative(o1)  # the gradient of cos function, grad: NxM
+    # o1 = np.cos(s1)  # o1: NxM
+    # grad = cos_output_to_derivative(o1)  # the gradient of cos function, grad: NxM
 
     o1 = concat_ones_vector(o1)  # o1: NxM+1
     s2 = o1.dot(W2.T)  # s2: NxK
@@ -63,10 +62,11 @@ def likelihood(X, t, W1, W2):
 
     # Calculating the mle using the logsumexp trick
     maximum = np.max(A, axis=1)
+    maximum = maximum.reshape((maximum.shape[0], 1))
     mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
     # ALTERNATIVE
-    #mle = np.sum(np.multiply(t, np.log(o2)))
+    # mle = np.sum(np.multiply(t, np.log(o2)))
     
     mle *= 2  # for the gradient check to work
 
@@ -75,14 +75,16 @@ def likelihood(X, t, W1, W2):
     return mle
 
 
-def test(X, W1, W2):
+def predict(X, W1, W2):
     # Feed-Forward
     _, _, _, _, o2 = forward(X, W1, W2)
-    return np.argmax(o2, axis=1)
+    output = np.argmax(o2, axis=1)
+    output = output.reshape((output.shape[0], 1))
+    return output
 
 
 # Train using Stochastic Gradient Ascent
-def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False, X_val=None):
+def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False, X_val=None, y_val=None):
 
     # Run Stochastic Gradient Ascent
     num_examples = X.shape[0]
@@ -91,18 +93,18 @@ def train(X, t, W1, W2, epochs=100, tol=1e-6, print_estimate=False, X_val=None):
 
         s = 0
         for i in range(num_examples):
-            xi = np.array(X[i, :]).reshape((1, X[i, :].size))
-            ti = np.array(t[i, :]).reshape((1, t[i, :].size))
+            xi = X[i, :]
+            ti = t[i, :]
             W1, W2, _, _ = grad_ascent(xi, ti, W1, W2)
             s = s + likelihood(xi, ti, W1, W2)
 
         # Optionally print the estimate.
         if print_estimate:
-            if X_val is None:
+            if X_val is None or y_val is None:
                 print("Epoch %i (out of %i), likelihood estimate: %f" % ((e+1), epochs, s))
             else:
                 # Print the estimate along with the accuracy on every epoch
-                predicted = test(X_val, W1, W2)
+                predicted = predict(X_val, W1, W2)
                 err = np.not_equal(predicted, y_test_true)
                 totalerrors = np.sum(err)
                 acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
@@ -192,16 +194,16 @@ mnist_dir = "./mnisttxt/"
 X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
 # y_train: the true categories vector for the train data
 y_train = np.argmax(t_train, axis=1)
-y_train = np.array(y_train).T
+y_train = y_train.reshape((y_train.shape[0], 1))
 
-print('')
+print()
 
 X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
 # y_test_true: the true categories vector for the test data
 y_test_true = np.argmax(t_test_true, axis=1)
-y_test_true = np.array(y_test_true).T
+y_test_true = y_test_true.reshape((y_test_true.shape[0], 1))
 
-print('')
+print()
 
 # normalize the data using range normalization
 X_train = X_train / 255
@@ -231,23 +233,23 @@ ch = ch[0:20]  # get the 20 first data
 gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
 '''
 
-print('')
+print()
 
 # define the learning rate based on the number of train data
 NNParams.eta = 1 / len(X_train)
 print('learning rate: ' + str(NNParams.eta))
-print('')
+print()
 
 # train the Neural Network Model
-W1, W2 = train(X_train, t_train, W1, W2, epochs=100, tol=1e-6, print_estimate=True, X_val=X_test)
+W1, W2 = train(X_train, t_train, W1, W2, epochs=100, tol=1e-6, print_estimate=True, X_val=X_test, y_val=y_test_true)
 
 # test the Neural Network Model
-predicted = test(X_test, W1, W2)
+predicted = predict(X_test, W1, W2)
 
 # check predictions
 wrong_counter = 0  # the number of wrong classifications made by the Neural Network
 
-print('')
+print()
 
 print('checking predictions...')
 for i in range(len(predicted)):
@@ -257,7 +259,7 @@ for i in range(len(predicted)):
         print("data " + str(i) + ' classified as: ' + str(int(predicted[i])) + ' -> WRONG!')
         wrong_counter = wrong_counter + 1
 
-print('')
+print()
 
 # Accuracy
 

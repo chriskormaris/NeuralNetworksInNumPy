@@ -1,27 +1,27 @@
 Getting train and test data...
 
 
-Cross entropy cost function after iteration 0: 847.325836
-Cross entropy cost function after iteration 1000: 3.432467
-Cross entropy cost function after iteration 2000: 1.902475
-Cross entropy cost function after iteration 3000: 1.460595
-Cross entropy cost function after iteration 4000: 1.259588
-Cross entropy cost function after iteration 5000: 1.147713
-Cross entropy cost function after iteration 6000: 1.077762
-Cross entropy cost function after iteration 7000: 1.030545
-Cross entropy cost function after iteration 8000: 0.996884
-Cross entropy cost function after iteration 9000: 0.971875
-Cross entropy cost function after iteration 10000: 0.952682
-Cross entropy cost function after iteration 11000: 0.937557
-Cross entropy cost function after iteration 12000: 0.925375
-Cross entropy cost function after iteration 13000: 0.915379
-Cross entropy cost function after iteration 14000: 0.907044
-Cross entropy cost function after iteration 15000: 0.899997
-Cross entropy cost function after iteration 16000: 0.893965
-Cross entropy cost function after iteration 17000: 0.888746
-Cross entropy cost function after iteration 18000: 0.884185
-Cross entropy cost function after iteration 19000: 0.880165
-Cross entropy cost function after iteration 19999: 0.876596
+Cross entropy cost function after iteration 0: 845.973926
+Cross entropy cost function after iteration 1000: 3.435710
+Cross entropy cost function after iteration 2000: 1.903866
+Cross entropy cost function after iteration 3000: 1.461536
+Cross entropy cost function after iteration 4000: 1.260333
+Cross entropy cost function after iteration 5000: 1.148349
+Cross entropy cost function after iteration 6000: 1.078329
+Cross entropy cost function after iteration 7000: 1.031064
+Cross entropy cost function after iteration 8000: 0.997366
+Cross entropy cost function after iteration 9000: 0.972329
+Cross entropy cost function after iteration 10000: 0.953112
+Cross entropy cost function after iteration 11000: 0.937969
+Cross entropy cost function after iteration 12000: 0.925770
+Cross entropy cost function after iteration 13000: 0.915759
+Cross entropy cost function after iteration 14000: 0.907411
+Cross entropy cost function after iteration 15000: 0.900352
+Cross entropy cost function after iteration 16000: 0.894309
+Cross entropy cost function after iteration 17000: 0.889079
+Cross entropy cost function after iteration 18000: 0.884509
+Cross entropy cost function after iteration 19000: 0.880480
+Cross entropy cost function after iteration 19999: 0.876903
 
 checking predictions...
 data0 classified as: SPAM -> correct
@@ -288,10 +288,12 @@ data259 classified as: HAM -> correct
 accuracy: 98.46153846153847 %
 
 number of wrong classifications: 4 out of 260 files
-number of wrong spam classifications: 0 out of 130 spam files
-number of wrong ham classifications: 4 out of 130 ham files
+number of wrong spam classifications: 4 out of 260 files
+number of wrong ham classifications: 0 out of 260 files
 
-precision for spam files: 0.9701492537313433
-precision for ham files: 1.0
-recall for spam files: 1.0
-recall for ham files: 0.9692307692307692
+precision for spam files: 97.01492537313433 %
+precision for ham files: 100.0 %
+recall for spam files: 100.0 %
+recall for ham files: 96.92307692307692 %
+f1-score for spam files: 98.4848484848485 %
+f1-score for ham files: 98.4375 %

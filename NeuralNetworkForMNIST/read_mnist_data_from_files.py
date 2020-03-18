@@ -78,7 +78,7 @@ if __name__ == "__main__":
     y_train = np.argmax(t_train, axis=1)
     y_train = np.matrix(y_train).T
 
-    print('')
+    print()
     print("X_train:")
     df = DataFrame(X_train)
     df.index = range(X_train.shape[0])
@@ -87,14 +87,14 @@ if __name__ == "__main__":
 
     print("y_train: " + str(y_train))
 
-    print('')
+    print()
 
     X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
     # y_test_true: the true categories vector for the test data
     y_test_true = np.argmax(t_test_true, axis=1)
     y_test_true = np.matrix(y_test_true).T
 
-    print('')
+    print()
     print("X_test:")
     df = DataFrame(X_test)
     df.index = range(X_test.shape[0])
@@ -103,4 +103,4 @@ if __name__ == "__main__":
 
     print("y_test_true: " + str(y_test_true))
 
-    print('')
+    print()

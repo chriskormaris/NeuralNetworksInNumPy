@@ -1,133 +1,130 @@
 Reading train files...
-Reading 'train0.txt'
-Reading 'train1.txt'
-Reading 'train2.txt'
-Reading 'train3.txt'
-Reading 'train4.txt'
-Reading 'train5.txt'
-Reading 'train6.txt'
-Reading 'train7.txt'
-Reading 'train8.txt'
-Reading 'train9.txt'
+Reading "train0.txt"
+Reading "train1.txt"
+Reading "train2.txt"
+Reading "train3.txt"
+Reading "train4.txt"
+Reading "train5.txt"
+Reading "train6.txt"
+Reading "train7.txt"
+Reading "train8.txt"
+Reading "train9.txt"
 
 Reading test files...
-Reading 'test0.txt'
-Reading 'test1.txt'
-Reading 'test2.txt'
-Reading 'test3.txt'
-Reading 'test4.txt'
-Reading 'test5.txt'
-Reading 'test6.txt'
-Reading 'test7.txt'
-Reading 'test8.txt'
-Reading 'test9.txt'
+Reading "test0.txt"
+Reading "test1.txt"
+Reading "test2.txt"
+Reading "test3.txt"
+Reading "test4.txt"
+Reading "test5.txt"
+Reading "test6.txt"
+Reading "test7.txt"
+Reading "test8.txt"
+Reading "test9.txt"
 
-Running gradient check...
-The maximum absolute norm for parameter W1, in the gradient_check is: 0.00302023072783
-The maximum absolute norm for parameter W2, in the gradient_check is: 0.000313710181074
 
 learning rate: 1.6666666666666667e-05
 
-Epoch 1 (out of 100), likelihood estimate: -150595.349147, accuracy: 10.09 %
-Epoch 2 (out of 100), likelihood estimate: -148142.456623, accuracy: 10.09 %
-Epoch 3 (out of 100), likelihood estimate: -139238.497363, accuracy: 10.26 %
-Epoch 4 (out of 100), likelihood estimate: -129203.503060, accuracy: 18.43 %
-Epoch 5 (out of 100), likelihood estimate: -120288.629569, accuracy: 35.59 %
-Epoch 6 (out of 100), likelihood estimate: -113166.337123, accuracy: 46.00 %
-Epoch 7 (out of 100), likelihood estimate: -107614.874662, accuracy: 53.38 %
-Epoch 8 (out of 100), likelihood estimate: -103211.035037, accuracy: 58.39 %
-Epoch 9 (out of 100), likelihood estimate: -99616.179755, accuracy: 62.61 %
-Epoch 10 (out of 100), likelihood estimate: -96598.146701, accuracy: 66.08 %
-Epoch 11 (out of 100), likelihood estimate: -94000.717291, accuracy: 68.65 %
-Epoch 12 (out of 100), likelihood estimate: -91717.787225, accuracy: 70.39 %
-Epoch 13 (out of 100), likelihood estimate: -89676.125245, accuracy: 72.10 %
-Epoch 14 (out of 100), likelihood estimate: -87824.224603, accuracy: 73.37 %
-Epoch 15 (out of 100), likelihood estimate: -86125.081470, accuracy: 74.68 %
-Epoch 16 (out of 100), likelihood estimate: -84551.503088, accuracy: 75.82 %
-Epoch 17 (out of 100), likelihood estimate: -83083.049962, accuracy: 76.83 %
-Epoch 18 (out of 100), likelihood estimate: -81704.027130, accuracy: 77.72 %
-Epoch 19 (out of 100), likelihood estimate: -80402.146133, accuracy: 78.26 %
-Epoch 20 (out of 100), likelihood estimate: -79167.617268, accuracy: 78.94 %
-Epoch 21 (out of 100), likelihood estimate: -77992.520973, accuracy: 79.52 %
-Epoch 22 (out of 100), likelihood estimate: -76870.363323, accuracy: 80.14 %
-Epoch 23 (out of 100), likelihood estimate: -75795.755417, accuracy: 80.65 %
-Epoch 24 (out of 100), likelihood estimate: -74764.177832, accuracy: 81.06 %
-Epoch 25 (out of 100), likelihood estimate: -73771.804591, accuracy: 81.43 %
-Epoch 26 (out of 100), likelihood estimate: -72815.369518, accuracy: 81.86 %
-Epoch 27 (out of 100), likelihood estimate: -71892.063202, accuracy: 82.17 %
-Epoch 28 (out of 100), likelihood estimate: -70999.452412, accuracy: 82.42 %
-Epoch 29 (out of 100), likelihood estimate: -70135.416246, accuracy: 82.69 %
-Epoch 30 (out of 100), likelihood estimate: -69298.094922, accuracy: 82.95 %
-Epoch 31 (out of 100), likelihood estimate: -68485.848307, accuracy: 83.18 %
-Epoch 32 (out of 100), likelihood estimate: -67697.222062, accuracy: 83.45 %
-Epoch 33 (out of 100), likelihood estimate: -66930.919805, accuracy: 83.68 %
-Epoch 34 (out of 100), likelihood estimate: -66185.780103, accuracy: 83.92 %
-Epoch 35 (out of 100), likelihood estimate: -65460.757360, accuracy: 84.13 %
-Epoch 36 (out of 100), likelihood estimate: -64754.905863, accuracy: 84.31 %
-Epoch 37 (out of 100), likelihood estimate: -64067.366403, accuracy: 84.47 %
-Epoch 38 (out of 100), likelihood estimate: -63397.355009, accuracy: 84.62 %
-Epoch 39 (out of 100), likelihood estimate: -62744.153409, accuracy: 84.76 %
-Epoch 40 (out of 100), likelihood estimate: -62107.100923, accuracy: 84.87 %
-Epoch 41 (out of 100), likelihood estimate: -61485.587548, accuracy: 84.97 %
-Epoch 42 (out of 100), likelihood estimate: -60879.048031, accuracy: 85.02 %
-Epoch 43 (out of 100), likelihood estimate: -60286.956775, accuracy: 85.14 %
-Epoch 44 (out of 100), likelihood estimate: -59708.823449, accuracy: 85.25 %
-Epoch 45 (out of 100), likelihood estimate: -59144.189184, accuracy: 85.37 %
-Epoch 46 (out of 100), likelihood estimate: -58592.623286, accuracy: 85.43 %
-Epoch 47 (out of 100), likelihood estimate: -58053.720370, accuracy: 85.45 %
-Epoch 48 (out of 100), likelihood estimate: -57527.097862, accuracy: 85.54 %
-Epoch 49 (out of 100), likelihood estimate: -57012.393819, accuracy: 85.69 %
-Epoch 50 (out of 100), likelihood estimate: -56509.265018, accuracy: 85.75 %
-Epoch 51 (out of 100), likelihood estimate: -56017.385271, accuracy: 85.87 %
-Epoch 52 (out of 100), likelihood estimate: -55536.443947, accuracy: 85.94 %
-Epoch 53 (out of 100), likelihood estimate: -55066.144661, accuracy: 86.03 %
-Epoch 54 (out of 100), likelihood estimate: -54606.204114, accuracy: 86.12 %
-Epoch 55 (out of 100), likelihood estimate: -54156.351061, accuracy: 86.18 %
-Epoch 56 (out of 100), likelihood estimate: -53716.325394, accuracy: 86.22 %
-Epoch 57 (out of 100), likelihood estimate: -53285.877313, accuracy: 86.28 %
-Epoch 58 (out of 100), likelihood estimate: -52864.766596, accuracy: 86.32 %
-Epoch 59 (out of 100), likelihood estimate: -52452.761931, accuracy: 86.42 %
-Epoch 60 (out of 100), likelihood estimate: -52049.640326, accuracy: 86.48 %
-Epoch 61 (out of 100), likelihood estimate: -51655.186562, accuracy: 86.55 %
-Epoch 62 (out of 100), likelihood estimate: -51269.192710, accuracy: 86.59 %
-Epoch 63 (out of 100), likelihood estimate: -50891.457688, accuracy: 86.63 %
-Epoch 64 (out of 100), likelihood estimate: -50521.786859, accuracy: 86.71 %
-Epoch 65 (out of 100), likelihood estimate: -50159.991664, accuracy: 86.74 %
-Epoch 66 (out of 100), likelihood estimate: -49805.889290, accuracy: 86.77 %
-Epoch 67 (out of 100), likelihood estimate: -49459.302364, accuracy: 86.77 %
-Epoch 68 (out of 100), likelihood estimate: -49120.058677, accuracy: 86.76 %
-Epoch 69 (out of 100), likelihood estimate: -48787.990926, accuracy: 86.82 %
-Epoch 70 (out of 100), likelihood estimate: -48462.936486, accuracy: 86.88 %
-Epoch 71 (out of 100), likelihood estimate: -48144.737191, accuracy: 86.89 %
-Epoch 72 (out of 100), likelihood estimate: -47833.239141, accuracy: 86.93 %
-Epoch 73 (out of 100), likelihood estimate: -47528.292519, accuracy: 86.97 %
-Epoch 74 (out of 100), likelihood estimate: -47229.751428, accuracy: 87.03 %
-Epoch 75 (out of 100), likelihood estimate: -46937.473735, accuracy: 87.06 %
-Epoch 76 (out of 100), likelihood estimate: -46651.320931, accuracy: 87.10 %
-Epoch 77 (out of 100), likelihood estimate: -46371.157998, accuracy: 87.14 %
-Epoch 78 (out of 100), likelihood estimate: -46096.853292, accuracy: 87.14 %
-Epoch 79 (out of 100), likelihood estimate: -45828.278424, accuracy: 87.15 %
-Epoch 80 (out of 100), likelihood estimate: -45565.308158, accuracy: 87.17 %
-Epoch 81 (out of 100), likelihood estimate: -45307.820313, accuracy: 87.18 %
-Epoch 82 (out of 100), likelihood estimate: -45055.695666, accuracy: 87.20 %
-Epoch 83 (out of 100), likelihood estimate: -44808.817868, accuracy: 87.25 %
-Epoch 84 (out of 100), likelihood estimate: -44567.073360, accuracy: 87.35 %
-Epoch 85 (out of 100), likelihood estimate: -44330.351293, accuracy: 87.38 %
-Epoch 86 (out of 100), likelihood estimate: -44098.543451, accuracy: 87.39 %
-Epoch 87 (out of 100), likelihood estimate: -43871.544184, accuracy: 87.40 %
-Epoch 88 (out of 100), likelihood estimate: -43649.250332, accuracy: 87.42 %
-Epoch 89 (out of 100), likelihood estimate: -43431.561162, accuracy: 87.43 %
-Epoch 90 (out of 100), likelihood estimate: -43218.378300, accuracy: 87.44 %
-Epoch 91 (out of 100), likelihood estimate: -43009.605669, accuracy: 87.48 %
-Epoch 92 (out of 100), likelihood estimate: -42805.149431, accuracy: 87.52 %
-Epoch 93 (out of 100), likelihood estimate: -42604.917918, accuracy: 87.53 %
-Epoch 94 (out of 100), likelihood estimate: -42408.821584, accuracy: 87.55 %
-Epoch 95 (out of 100), likelihood estimate: -42216.772941, accuracy: 87.58 %
-Epoch 96 (out of 100), likelihood estimate: -42028.686507, accuracy: 87.58 %
-Epoch 97 (out of 100), likelihood estimate: -41844.478750, accuracy: 87.60 %
-Epoch 98 (out of 100), likelihood estimate: -41664.068034, accuracy: 87.60 %
-Epoch 99 (out of 100), likelihood estimate: -41487.374572, accuracy: 87.63 %
-Epoch 100 (out of 100), likelihood estimate: -41314.320372, accuracy: 87.65 %
+Epoch 1 (out of 100), likelihood estimate: -236145.021692, accuracy on the validation set: 10.09 %
+Epoch 2 (out of 100), likelihood estimate: -232441.461627, accuracy on the validation set: 10.09 %
+Epoch 3 (out of 100), likelihood estimate: -215666.364873, accuracy on the validation set: 10.26 %
+Epoch 4 (out of 100), likelihood estimate: -196461.014530, accuracy on the validation set: 18.43 %
+Epoch 5 (out of 100), likelihood estimate: -179371.740493, accuracy on the validation set: 35.59 %
+Epoch 6 (out of 100), likelihood estimate: -165804.849833, accuracy on the validation set: 46.00 %
+Epoch 7 (out of 100), likelihood estimate: -155359.895974, accuracy on the validation set: 53.38 %
+Epoch 8 (out of 100), likelihood estimate: -147211.246770, accuracy on the validation set: 58.39 %
+Epoch 9 (out of 100), likelihood estimate: -140689.088896, accuracy on the validation set: 62.61 %
+Epoch 10 (out of 100), likelihood estimate: -135330.408478, accuracy on the validation set: 66.08 %
+Epoch 11 (out of 100), likelihood estimate: -130821.565053, accuracy on the validation set: 68.65 %
+Epoch 12 (out of 100), likelihood estimate: -126948.278658, accuracy on the validation set: 70.39 %
+Epoch 13 (out of 100), likelihood estimate: -123561.867243, accuracy on the validation set: 72.10 %
+Epoch 14 (out of 100), likelihood estimate: -120557.240982, accuracy on the validation set: 73.37 %
+Epoch 15 (out of 100), likelihood estimate: -117858.555724, accuracy on the validation set: 74.68 %
+Epoch 16 (out of 100), likelihood estimate: -115409.842422, accuracy on the validation set: 75.82 %
+Epoch 17 (out of 100), likelihood estimate: -113168.872427, accuracy on the validation set: 76.83 %
+Epoch 18 (out of 100), likelihood estimate: -111103.111240, accuracy on the validation set: 77.72 %
+Epoch 19 (out of 100), likelihood estimate: -109187.013194, accuracy on the validation set: 78.26 %
+Epoch 20 (out of 100), likelihood estimate: -107400.179564, accuracy on the validation set: 78.94 %
+Epoch 21 (out of 100), likelihood estimate: -105726.078662, accuracy on the validation set: 79.52 %
+Epoch 22 (out of 100), likelihood estimate: -104151.137822, accuracy on the validation set: 80.14 %
+Epoch 23 (out of 100), likelihood estimate: -102664.086341, accuracy on the validation set: 80.65 %
+Epoch 24 (out of 100), likelihood estimate: -101255.471243, accuracy on the validation set: 81.06 %
+Epoch 25 (out of 100), likelihood estimate: -99917.294304, accuracy on the validation set: 81.43 %
+Epoch 26 (out of 100), likelihood estimate: -98642.735592, accuracy on the validation set: 81.86 %
+Epoch 27 (out of 100), likelihood estimate: -97425.939693, accuracy on the validation set: 82.17 %
+Epoch 28 (out of 100), likelihood estimate: -96261.848011, accuracy on the validation set: 82.42 %
+Epoch 29 (out of 100), likelihood estimate: -95146.065456, accuracy on the validation set: 82.69 %
+Epoch 30 (out of 100), likelihood estimate: -94074.753232, accuracy on the validation set: 82.95 %
+Epoch 31 (out of 100), likelihood estimate: -93044.541741, accuracy on the validation set: 83.18 %
+Epoch 32 (out of 100), likelihood estimate: -92052.459253, accuracy on the validation set: 83.45 %
+Epoch 33 (out of 100), likelihood estimate: -91095.873086, accuracy on the validation set: 83.68 %
+Epoch 34 (out of 100), likelihood estimate: -90172.440842, accuracy on the validation set: 83.92 %
+Epoch 35 (out of 100), likelihood estimate: -89280.069762, accuracy on the validation set: 84.13 %
+Epoch 36 (out of 100), likelihood estimate: -88416.882694, accuracy on the validation set: 84.31 %
+Epoch 37 (out of 100), likelihood estimate: -87581.189465, accuracy on the validation set: 84.47 %
+Epoch 38 (out of 100), likelihood estimate: -86771.462690, accuracy on the validation set: 84.62 %
+Epoch 39 (out of 100), likelihood estimate: -85986.317234, accuracy on the validation set: 84.76 %
+Epoch 40 (out of 100), likelihood estimate: -85224.492699, accuracy on the validation set: 84.87 %
+Epoch 41 (out of 100), likelihood estimate: -84484.838437, accuracy on the validation set: 84.97 %
+Epoch 42 (out of 100), likelihood estimate: -83766.300668, accuracy on the validation set: 85.02 %
+Epoch 43 (out of 100), likelihood estimate: -83067.911371, accuracy on the validation set: 85.14 %
+Epoch 44 (out of 100), likelihood estimate: -82388.778684, accuracy on the validation set: 85.25 %
+Epoch 45 (out of 100), likelihood estimate: -81728.078565, accuracy on the validation set: 85.37 %
+Epoch 46 (out of 100), likelihood estimate: -81085.047548, accuracy on the validation set: 85.43 %
+Epoch 47 (out of 100), likelihood estimate: -80458.976419, accuracy on the validation set: 85.45 %
+Epoch 48 (out of 100), likelihood estimate: -79849.204691, accuracy on the validation set: 85.54 %
+Epoch 49 (out of 100), likelihood estimate: -79255.115756, accuracy on the validation set: 85.69 %
+Epoch 50 (out of 100), likelihood estimate: -78676.132622, accuracy on the validation set: 85.75 %
+Epoch 51 (out of 100), likelihood estimate: -78111.714167, accuracy on the validation set: 85.87 %
+Epoch 52 (out of 100), likelihood estimate: -77561.351811, accuracy on the validation set: 85.94 %
+Epoch 53 (out of 100), likelihood estimate: -77024.566589, accuracy on the validation set: 86.03 %
+Epoch 54 (out of 100), likelihood estimate: -76500.906531, accuracy on the validation set: 86.12 %
+Epoch 55 (out of 100), likelihood estimate: -75989.944346, accuracy on the validation set: 86.18 %
+Epoch 56 (out of 100), likelihood estimate: -75491.275345, accuracy on the validation set: 86.22 %
+Epoch 57 (out of 100), likelihood estimate: -75004.515585, accuracy on the validation set: 86.28 %
+Epoch 58 (out of 100), likelihood estimate: -74529.300210, accuracy on the validation set: 86.32 %
+Epoch 59 (out of 100), likelihood estimate: -74065.281953, accuracy on the validation set: 86.42 %
+Epoch 60 (out of 100), likelihood estimate: -73612.129791, accuracy on the validation set: 86.48 %
+Epoch 61 (out of 100), likelihood estimate: -73169.527734, accuracy on the validation set: 86.55 %
+Epoch 62 (out of 100), likelihood estimate: -72737.173727, accuracy on the validation set: 86.59 %
+Epoch 63 (out of 100), likelihood estimate: -72314.778659, accuracy on the validation set: 86.63 %
+Epoch 64 (out of 100), likelihood estimate: -71902.065463, accuracy on the validation set: 86.71 %
+Epoch 65 (out of 100), likelihood estimate: -71498.768301, accuracy on the validation set: 86.74 %
+Epoch 66 (out of 100), likelihood estimate: -71104.631824, accuracy on the validation set: 86.77 %
+Epoch 67 (out of 100), likelihood estimate: -70719.410497, accuracy on the validation set: 86.77 %
+Epoch 68 (out of 100), likelihood estimate: -70342.867985, accuracy on the validation set: 86.76 %
+Epoch 69 (out of 100), likelihood estimate: -69974.776598, accuracy on the validation set: 86.82 %
+Epoch 70 (out of 100), likelihood estimate: -69614.916776, accuracy on the validation set: 86.88 %
+Epoch 71 (out of 100), likelihood estimate: -69263.076629, accuracy on the validation set: 86.89 %
+Epoch 72 (out of 100), likelihood estimate: -68919.051511, accuracy on the validation set: 86.93 %
+Epoch 73 (out of 100), likelihood estimate: -68582.643630, accuracy on the validation set: 86.97 %
+Epoch 74 (out of 100), likelihood estimate: -68253.661692, accuracy on the validation set: 87.03 %
+Epoch 75 (out of 100), likelihood estimate: -67931.920581, accuracy on the validation set: 87.06 %
+Epoch 76 (out of 100), likelihood estimate: -67617.241051, accuracy on the validation set: 87.10 %
+Epoch 77 (out of 100), likelihood estimate: -67309.449459, accuracy on the validation set: 87.14 %
+Epoch 78 (out of 100), likelihood estimate: -67008.377508, accuracy on the validation set: 87.14 %
+Epoch 79 (out of 100), likelihood estimate: -66713.862013, accuracy on the validation set: 87.15 %
+Epoch 80 (out of 100), likelihood estimate: -66425.744683, accuracy on the validation set: 87.17 %
+Epoch 81 (out of 100), likelihood estimate: -66143.871926, accuracy on the validation set: 87.18 %
+Epoch 82 (out of 100), likelihood estimate: -65868.094651, accuracy on the validation set: 87.20 %
+Epoch 83 (out of 100), likelihood estimate: -65598.268103, accuracy on the validation set: 87.25 %
+Epoch 84 (out of 100), likelihood estimate: -65334.251694, accuracy on the validation set: 87.35 %
+Epoch 85 (out of 100), likelihood estimate: -65075.908845, accuracy on the validation set: 87.38 %
+Epoch 86 (out of 100), likelihood estimate: -64823.106846, accuracy on the validation set: 87.39 %
+Epoch 87 (out of 100), likelihood estimate: -64575.716713, accuracy on the validation set: 87.40 %
+Epoch 88 (out of 100), likelihood estimate: -64333.613056, accuracy on the validation set: 87.42 %
+Epoch 89 (out of 100), likelihood estimate: -64096.673954, accuracy on the validation set: 87.43 %
+Epoch 90 (out of 100), likelihood estimate: -63864.780833, accuracy on the validation set: 87.44 %
+Epoch 91 (out of 100), likelihood estimate: -63637.818352, accuracy on the validation set: 87.48 %
+Epoch 92 (out of 100), likelihood estimate: -63415.674287, accuracy on the validation set: 87.52 %
+Epoch 93 (out of 100), likelihood estimate: -63198.239428, accuracy on the validation set: 87.53 %
+Epoch 94 (out of 100), likelihood estimate: -62985.407472, accuracy on the validation set: 87.55 %
+Epoch 95 (out of 100), likelihood estimate: -62777.074925, accuracy on the validation set: 87.58 %
+Epoch 96 (out of 100), likelihood estimate: -62573.141002, accuracy on the validation set: 87.58 %
+Epoch 97 (out of 100), likelihood estimate: -62373.507536, accuracy on the validation set: 87.60 %
+Epoch 98 (out of 100), likelihood estimate: -62178.078888, accuracy on the validation set: 87.60 %
+Epoch 99 (out of 100), likelihood estimate: -61986.761859, accuracy on the validation set: 87.63 %
+Epoch 100 (out of 100), likelihood estimate: -61799.465608, accuracy on the validation set: 87.65 %
 
 checking predictions...
 data 0 classified as: 0 -> correct

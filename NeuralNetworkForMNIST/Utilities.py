@@ -31,12 +31,13 @@ def cos_output_to_derivative(output):
 
 
 def sigmoid(X):
-    return np.matrix(1 / (1 + np.exp(-X)))
+    return 1 / (1 + np.exp(-X))
 
 
 # activation function for the 2nd layer
 def softmax(X):
-    return np.divide(np.exp(X), np.sum(np.exp(X), axis=1))
+    denominator = np.sum(np.exp(X), axis=1)
+    return np.exp(X) / denominator.reshape((denominator.shape[0], 1))
 
 
 # concat ones column vector as the first column of the matrix (adds bias term)

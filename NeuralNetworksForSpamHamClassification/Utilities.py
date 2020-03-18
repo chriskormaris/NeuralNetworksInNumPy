@@ -17,8 +17,7 @@ def concat_ones_vector(X):
 
 
 def sigmoid(X):
-    output = 1 / (1 + np.exp(-X))
-    return np.array(output)
+    return 1 / (1 + np.exp(-X))
 
 
 def sigmoid_output_to_derivative(output):
