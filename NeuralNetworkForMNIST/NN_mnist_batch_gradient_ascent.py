@@ -4,14 +4,9 @@
 # Train Algorithm: Batch Gradient Ascent
 # Bias terms are used.
 
-# force the result of divisions to be float numbers
-from __future__ import division
-
 # import local python files
 from read_mnist_data_from_files import *
 from Utilities import *
-
-import numpy as np
 
 __author__ = 'c.kormaris'
 

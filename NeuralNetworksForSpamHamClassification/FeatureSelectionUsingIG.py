@@ -1,6 +1,3 @@
-# force the result of divisions to be float numbers
-from __future__ import division
-
 from os import listdir
 from os.path import isfile, join
 import re

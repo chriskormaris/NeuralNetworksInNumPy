@@ -5,9 +5,6 @@
 # Train Algorithm: Stochastic Gradient Descent
 # Bias terms are used.
 
-# force the result of divisions to be float numbers
-from __future__ import division
-
 from read_lingspam_dataset import *
 from Utilities import *
 

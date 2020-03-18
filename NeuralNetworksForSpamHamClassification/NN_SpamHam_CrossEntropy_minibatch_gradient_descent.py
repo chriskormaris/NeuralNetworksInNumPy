@@ -5,21 +5,9 @@
 # Train Algorithm: Mini-batch Gradient Descent
 # Bias terms are used.
 
-# force the result of divisions to be float numbers
-from __future__ import division
-
-import pandas as pd
-
 from read_lingspam_dataset import *
-from Utilities import *
-
-import numpy as np
 
 __author__ = 'c.kormaris'
-
-# set options
-pd.set_option('display.width', 1000)
-pd.set_option('display.max_rows', 200)
 
 feature_dictionary_dir = "./feature_dictionary.txt"
 path = "./LingspamDataset"

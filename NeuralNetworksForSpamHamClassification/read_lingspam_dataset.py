@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 # I/O Libraries
 from os import listdir
 from os.path import isfile, join
+from Utilities import *
 
 __author__ = 'c.kormaris'
 
@@ -32,7 +33,7 @@ def generate_data(path, trainOrTest, feature_tokens, tfidf=False):
 
     x = tfidf_data.toarray()
     # print(x)
-    with open('x_' + trainOrTest + '.txt', "wb") as f:
+    with open(path + 'x_' + trainOrTest + '.txt', "wb") as f:
         if not tfidf:
             np.savetxt(f, x.astype(int), fmt='%i', delimiter=", ")
         else:
@@ -40,8 +41,9 @@ def generate_data(path, trainOrTest, feature_tokens, tfidf=False):
 
     labels = [1] * len(spam_files)
     labels.extend([0] * len(ham_files))
+    
     y = np.array(labels, dtype=np.int8)
-    with open('y_' + trainOrTest + '.txt', "wb") as f:
+    with open(path + 'y_' + trainOrTest + '.txt', "wb") as f:
         np.savetxt(f, y.astype(int), fmt='%i')
 
     return x, y
@@ -55,33 +57,10 @@ def get_classification_data(path, feature_tokens_dictionary_dir, construct_data=
         x_train, y_train = generate_data(path, 'train', feature_tokens, tfidf=tfidf)
         x_test, y_test = generate_data(path, 'test', feature_tokens, tfidf=tfidf)
     else:
-        x_train = np.loadtxt('./x_train.txt', delimiter=', ')
-        y_train = np.loadtxt('./y_train.txt', dtype=np.int8)
-        x_test = np.loadtxt('./x_test.txt', delimiter=', ')
-        y_test = np.loadtxt('./y_test.txt', dtype=np.int8)
+        x_train = np.loadtxt(path + '/x_train.txt', delimiter=', ')
+        y_train = np.loadtxt(path + '/y_train.txt', dtype=np.int8)
+        x_test = np.loadtxt(path + '/x_test.txt', delimiter=', ')
+        y_test = np.loadtxt(path + '/y_test.txt', dtype=np.int8)
 
     return x_train, y_train, x_test, y_test
 
-
-def read_file(filename):
-    with open(filename, "r") as f:
-        return f.read()
-
-
-# defines the label of the files based on their names
-def read_labels(files):
-    labels = []
-    for file in files:
-        if 'spam' in file:
-            labels.append(1)
-        elif 'ham' in file:
-            labels.append(0)
-    return labels
-
-
-def read_dictionary_file(filename):
-    text_file = open(filename, "r")
-    lines = text_file.readlines()
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace("\n", "")
-    return lines

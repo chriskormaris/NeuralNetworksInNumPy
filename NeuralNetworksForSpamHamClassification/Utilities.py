@@ -38,3 +38,11 @@ def tanh_output_to_derivative(output):
 
 def skip_first_column(X):
     return X[:, 1:]
+
+
+def read_dictionary_file(filename):
+    text_file = open(filename, "r")
+    lines = text_file.readlines()
+    for i in range(len(lines)):
+        lines[i] = lines[i].replace("\n", "")
+    return lines

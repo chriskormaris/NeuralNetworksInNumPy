@@ -6,3 +6,4 @@ python NN_SpamHam_CrossEntropy_stochastic_gradient_descent.py > console_outputs/
 python NN_SpamHam_MSE_batch_gradient_descent.py > console_outputs/NN_SpamHam_MSE_batch_gradient_descent.txt
 python NN_SpamHam_MSE_minibatch_gradient_descent.py > console_outputs/NN_SpamHam_MSE_minibatch_gradient_descent.txt
 python NN_SpamHam_MSE_stochastic_gradient_descent.py > console_outputs/NN_SpamHam_MSE_stochastic_gradient_descent.txt
+pause
