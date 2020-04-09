@@ -222,10 +222,11 @@ if __name__ == '__main__':
 
     # check predictions
     wrong_counter = 0  # the number of wrong classifications made by the NN
-    false_positives = 0  # the number of ham files classified as spam
-    false_negatives = 0  # the number of spam files classified as ham
+    
     true_positives = 0
     true_negatives = 0
+    false_positives = 0  # the number of ham files classified as spam
+    false_negatives = 0  # the number of spam files classified as ham
 
     print()
     print('checking predictions...')
@@ -237,13 +238,13 @@ if __name__ == '__main__':
             print("data" + str(i) + ' classified as: SPAM -> WRONG!')
             false_positives = false_positives + 1
             wrong_counter = wrong_counter + 1
+        elif y_test_predicted[i] == 0 and y_test[i] == 0:
+            print("data" + str(i) + ' classified as: HAM -> correct')
+            true_negatives = true_negatives + 1
         elif y_test_predicted[i] == 0 and y_test[i] == 1:
             print("data" + str(i) + ' classified as: HAM -> WRONG!')
             false_negatives = false_negatives + 1
             wrong_counter = wrong_counter + 1
-        elif y_test_predicted[i] == 0 and y_test[i] == 0:
-            print("data" + str(i) + ' classified as: HAM -> correct')
-            true_negatives = true_negatives + 1
 
     print()
 

@@ -184,86 +184,124 @@ def gradient_check(X, t, W1, W2):
 
 # MAIN #
 
-mnist_dir = "./mnisttxt/"
+if __name__ == '__main__':
 
-X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
-# y_train: the true categories vector for the train data
-y_train = np.argmax(t_train, axis=1)
-y_train = np.array(y_train).T
+    mnist_dir = "./mnisttxt/"
 
-print()
+    X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
+    # y_train: the true categories vector for the train data
+    y_train = np.argmax(t_train, axis=1)
+    y_train = np.array(y_train).T
 
-X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
-# y_test_true: the true categories vector for the test data
-y_test_true = np.argmax(t_test_true, axis=1)
-y_test_true = y_test_true.reshape((y_test_true.shape[0], 1))
+    print()
 
-print()
+    X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
+    # y_test_true: the true categories vector for the test data
+    y_test_true = np.argmax(t_test_true, axis=1)
+    y_test_true = y_test_true.reshape((y_test_true.shape[0], 1))
 
-# normalize the data using range normalization
-X_train = X_train / 255
-X_test = X_test / 255
+    print()
 
-# concat ones vector
-X_train = concat_ones_vector(X_train)
-X_test = concat_ones_vector(X_test)
+    # normalize the data using range normalization
+    X_train = X_train / 255
+    X_test = X_test / 255
 
-# Initialize the parameters to random values. We need to learn these.
-np.random.seed(0)
-W1 = np.random.randn(NNParams.num_hidden_nodes, NNParams.num_input_nodes) / \
-     np.sqrt(NNParams.num_input_nodes)  # W1: MxD
-W2 = np.random.randn(NNParams.num_output_nodes, NNParams.num_hidden_nodes) / \
-     np.sqrt(NNParams.num_hidden_nodes)  # W2: KxM
+    # concat ones vector
+    X_train = concat_ones_vector(X_train)
+    X_test = concat_ones_vector(X_test)
 
-# concat ones vector
-W1 = concat_ones_vector(W1)  # W1: MxD+1
-W2 = concat_ones_vector(W2)  # W2: KxM+1
+    # Initialize the parameters to random values. We need to learn these.
+    np.random.seed(0)
+    W1 = np.random.randn(NNParams.num_hidden_nodes, NNParams.num_input_nodes) / \
+         np.sqrt(NNParams.num_input_nodes)  # W1: MxD
+    W2 = np.random.randn(NNParams.num_output_nodes, NNParams.num_hidden_nodes) / \
+         np.sqrt(NNParams.num_hidden_nodes)  # W2: KxM
 
-# Do a gradient check first
-# SKIP THIS PART FOR FASTER EXECUTION
-'''
-print('Running gradient check...')
-ch = np.random.permutation(X_train.shape[0])
-ch = ch[0:20]  # get the 20 first data
-gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
-'''
+    # concat ones vector
+    W1 = concat_ones_vector(W1)  # W1: MxD+1
+    W2 = concat_ones_vector(W2)  # W2: KxM+1
 
-print()
+    # Do a gradient check first
+    # SKIP THIS PART FOR FASTER EXECUTION
+    '''
+    print('Running gradient check...')
+    ch = np.random.permutation(X_train.shape[0])
+    ch = ch[0:20]  # get the 20 first data
+    gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
+    '''
 
-# define the learning rate based on the number of train data
-NNParams.eta = 0.5 / len(X_train)
-print('learning rate: ' + str(NNParams.eta))
-print()
+    print()
 
-# train the Neural Network Model
-W1, W2 = train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_val=X_test, y_val=y_test_true)
+    # define the learning rate based on the number of train data
+    NNParams.eta = 0.5 / len(X_train)
+    print('learning rate: ' + str(NNParams.eta))
+    print()
 
-# print the learned weights
-'''
-print('W1: ' + str(W1))
-print('W2: ' + str(W2))
-'''
+    # train the Neural Network Model
+    W1, W2 = train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_val=X_test, y_val=y_test_true)
 
-# test the Neural Network Model
-predicted = predict(X_test, W1, W2)
+    # print the learned weights
+    '''
+    print('W1: ' + str(W1))
+    print('W2: ' + str(W2))
+    '''
 
-# check predictions
-wrong_counter = 0  # the number of wrong classifications made by the Neural Network
+    # test the Neural Network Model
+    predicted = predict(X_test, W1, W2)
 
-print()
+    # check predictions
+    wrong_counter = 0  # the number of wrong classifications made by the NN
 
-print('checking predictions...')
-for i in range(len(predicted)):
-    if predicted[i] == y_test_true[i]:
-        print("data " + str(i) + ' classified as: ' + str(int(predicted[i])) + ' -> correct')
-    elif predicted[i] != y_test_true[i]:
-        print("data " + str(i) + ' classified as: ' + str(int(predicted[i])) + ' -> WRONG!')
-        wrong_counter = wrong_counter + 1
+    true_positives = 0
+    true_negatives = 0
+    false_positives = 0  # the number of ham files classified as spam
+    false_negatives = 0  # the number of spam files classified as ham
 
-print()
+    print()
+    print('checking predictions...')
+    for i in range(len(predicted)):
+        if predicted[i] == 1 and y_test_true[i] == 1:
+            print("data" + str(i) + ' classified as: SPAM -> correct')
+            true_positives = true_positives + 1
+        elif predicted[i] == 1 and y_test_true[i] == 0:
+            print("data" + str(i) + ' classified as: SPAM -> WRONG!')
+            false_positives = false_positives + 1
+            wrong_counter = wrong_counter + 1
+        elif predicted[i] == 0 and y_test_true[i] == 0:
+            print("data" + str(i) + ' classified as: HAM -> correct')
+            true_negatives = true_negatives + 1
+        elif predicted[i] == 0 and y_test_true[i] == 1:
+            print("data" + str(i) + ' classified as: HAM -> WRONG!')
+            false_negatives = false_negatives + 1
+            wrong_counter = wrong_counter + 1
 
-# Accuracy
+    print()
 
-accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
-print("accuracy: " + str(accuracy) + " %")
-print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(len(X_test)) + ' images!')
+    # Accuracy
+
+    accuracy = ((len(X_test) - wrong_counter) / len(X_test)) * 100
+    print("accuracy: " + str(accuracy) + " %")
+    print()
+
+    # Calculate Precision-Recall
+
+    print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(y_test_true.size) + ' files')
+    print("number of wrong spam classifications: " + str(false_positives) + ' out of ' + str(y_test_true.size) + ' files')
+    print("number of wrong ham classifications: " + str(false_negatives) + ' out of ' + str(y_test_true.size) + ' files')
+
+    print()
+
+    spam_precision = true_positives / (true_positives + false_positives) * 100
+    print("precision for spam files: " + str(spam_precision) + " %")
+    ham_precision = true_negatives / (true_negatives + false_negatives) * 100
+    print("precision for ham files: " + str(ham_precision) + " %")
+
+    spam_recall = true_positives / (true_positives + false_negatives) * 100
+    print("recall for spam files: " + str(spam_recall) + " %")
+    ham_recall = true_negatives / (true_negatives + false_positives) * 100
+    print("recall for ham files: " + str(ham_recall) + " %")
+
+    spam_f1_score = 2 * spam_precision * spam_recall / (spam_precision + spam_recall)
+    print("f1-score for spam files: " + str(spam_f1_score) + " %")
+    ham_f1_score = 2 * ham_precision * ham_recall / (ham_precision + ham_recall)
+    print("f1-score for ham files: " + str(ham_f1_score) + " %")
