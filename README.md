@@ -13,15 +13,15 @@ Slightly based on code from this repository: <a href="https://github.com/dennybr
 
 Unzip the MNIST data from the compressed file "mnisttxt.zip" in the same directory where the Python files are.
 Then, run the Neural Network that uses batch gradient ascent, from the file "NN_mnist.py" as follows:
-```bash
+```shell
 python NN_mnist_batch_gradient_ascent.py
 ```
 Alternatively, train the neural network using mini-batch gradient ascent. The batch size can be changed from within the code:
-```bash
+```shell
 python NN_mnist_minibatch_gradient_ascent.py
 ```
 Alternatively, train the neural network using stochastic gradient ascent. The batch size for stochastic gradient ascent is set to 1:
-```bash
+```shell
 python NN_mnist_stochstic_gradient_ascent.py
 ```
 Implementating the neural network using stochastic gradient ascent is very slow, because of the big amount of data of the MNIST dataset.
@@ -46,15 +46,15 @@ The precision that was achieved, after training with batch gradient ascent, was:
 Unzip the compressed file "LingspamDataset.zip" in the same directory where the Python files are.
 First, run the python file "FeatureSelectionUsingIG.py" to generate the output file
 "feature_dictionary.txt", containing the features tokens that we'll use.
-```bash
+```shell
 python FeatureSelectionUsingIG.py
 ```
 Then, to download the necessary stopwords from the "nltk" package, run:
-```bash
+```shell
 python nltk_download.py
 ```
 And then, to construct the train and test data, run:
-```bash
+```shell
 python main.py
 ```
 Then, run the Neural Network of your choice between **"NN_SpamHam_MSE_batch_gradient_descent.py"** and **"NN_SpamHam_CrossEntropy_batch_gradient_descent.py"**.
@@ -63,7 +63,7 @@ You can alternatively train the neural network using stochastic gradient descent
 
 ### Neural Network #1
 Run:
-```bash
+```shell
 python NN_SpamHam_MSE_batch_gradient_descent.py
 ```
 File: "NN_SpamHam_MSE_batch_gradient_descent.py"
@@ -86,7 +86,7 @@ The precision that was achieved, after training with batch gradient descent, was
 
 ### Neural Network #2
 Run:
-```bash
+```shell
 python NN_SpamHam_CrossEntropy_batch_gradient_descent.py
 ```
 File: "NN_SpamHam_CrossEntropy_batch_gradient_descent.py"
