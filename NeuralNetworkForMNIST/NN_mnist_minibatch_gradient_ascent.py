@@ -4,11 +4,9 @@
 # Train Algorithm: Mini-batch Gradient Ascent
 # Bias terms are used.
 
+from Utilities import *
 # import local python files
 from read_mnist_data_from_files import *
-from Utilities import *
-
-__author__ = 'c.kormaris'
 
 
 ###############
@@ -63,10 +61,10 @@ def likelihood(X, t, W1, W2):
     maximum = np.max(A, axis=1)
     maximum = maximum.reshape((maximum.shape[0], 1))
     mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
-        - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
+          - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
     # ALTERNATIVE
-    #mle = np.sum(np.multiply(t, np.log(o2)))
-    
+    # mle = np.sum(np.multiply(t, np.log(o2)))
+
     mle *= 2  # for the gradient check to work
 
     # Add regularization term to likelihood (optional)
@@ -84,7 +82,6 @@ def predict(X, W1, W2):
 
 # Train using Mini-batch Gradient Ascent
 def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None, y_val=None):
-
     # Run Mini-batch Gradient Ascent
     num_examples = X.shape[0]
     s_old = -np.inf
@@ -107,7 +104,7 @@ def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None, 
         # Optionally print the estimate.
         if print_estimate:
             if X_val is None or y_val is None:
-                print("Epoch %i (out of %i), likelihood estimate: %f" % ((e+1), epochs, s))
+                print("Epoch %i (out of %i), likelihood estimate: %f" % ((e + 1), epochs, s))
             else:
                 # Print the estimate along with the accuracy on every epoch
                 predicted = predict(X_val, W1, W2)
@@ -115,7 +112,7 @@ def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None, 
                 totalerrors = np.sum(err)
                 acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
                 print("Epoch %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
-                      % ((e+1), epochs, s, float(acc)))
+                      % ((e + 1), epochs, s, float(acc)))
 
         if np.abs(s - s_old) < tol:
             break
@@ -295,8 +292,10 @@ if __name__ == '__main__':
     # Calculate Precision-Recall
 
     print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(y_test_true.size) + ' files')
-    print("number of wrong spam classifications: " + str(false_positives) + ' out of ' + str(y_test_true.size) + ' files')
-    print("number of wrong ham classifications: " + str(false_negatives) + ' out of ' + str(y_test_true.size) + ' files')
+    print(
+        "number of wrong spam classifications: " + str(false_positives) + ' out of ' + str(y_test_true.size) + ' files')
+    print(
+        "number of wrong ham classifications: " + str(false_negatives) + ' out of ' + str(y_test_true.size) + ' files')
 
     print()
 

@@ -1,12 +1,11 @@
-import numpy as np
-from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 # I/O Libraries
 from os import listdir
 from os.path import isfile, join
-from Utilities import *
 
-__author__ = 'c.kormaris'
+from nltk.corpus import stopwords
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+
+from Utilities import *
 
 
 def generate_data(path, trainOrTest, feature_tokens, tfidf=False):
@@ -41,7 +40,7 @@ def generate_data(path, trainOrTest, feature_tokens, tfidf=False):
 
     labels = [1] * len(spam_files)
     labels.extend([0] * len(ham_files))
-    
+
     y = np.array(labels, dtype=np.int8)
     with open(path + 'y_' + trainOrTest + '.txt', "wb") as f:
         np.savetxt(f, y.astype(int), fmt='%i')
@@ -50,7 +49,6 @@ def generate_data(path, trainOrTest, feature_tokens, tfidf=False):
 
 
 def get_classification_data(path, feature_tokens_dictionary_dir, construct_data=False, tfidf=False):
-
     feature_tokens = read_dictionary_file(feature_tokens_dictionary_dir)
 
     if construct_data:
@@ -63,4 +61,3 @@ def get_classification_data(path, feature_tokens_dictionary_dir, construct_data=
         y_test = np.loadtxt(path + '/y_test.txt', dtype=np.int8)
 
     return x_train, y_train, x_test, y_test
-

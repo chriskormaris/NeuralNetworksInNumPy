@@ -3,8 +3,6 @@ import numpy as np
 # ignore errors
 np.seterr(all='ignore')
 
-__author__ = 'c.kormaris'
-
 
 ###############
 
@@ -21,7 +19,7 @@ def sigmoid(X):
 
 
 def sigmoid_output_to_derivative(output):
-    return np.multiply(output, (1-output))
+    return np.multiply(output, (1 - output))
 
 
 def softmax(X):

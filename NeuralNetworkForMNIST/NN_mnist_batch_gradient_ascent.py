@@ -4,11 +4,9 @@
 # Train Algorithm: Batch Gradient Ascent
 # Bias terms are used.
 
+from Utilities import *
 # import local python files
 from read_mnist_data_from_files import *
-from Utilities import *
-
-__author__ = 'c.kormaris'
 
 
 ###############
@@ -20,7 +18,6 @@ class NNParams:
     # Gradient ascent parameters
     eta = 0.1  # the learning rate for gradient ascent; it is modified according to the number of train data
     reg_lambda = 0.01  # the regularization parameter
-
 
 
 ###############
@@ -51,7 +48,7 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the likelihood on the train dataset.
 def likelihood(X, t, W1, W2):
-    #num_examples = len(X_train)  # N: training set size
+    # num_examples = len(X_train)  # N: training set size
 
     # Feed-Forward to calculate our predictions
     _, _, _, s2, _ = forward(X, W1, W2)
@@ -64,8 +61,8 @@ def likelihood(X, t, W1, W2):
     mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
     # ALTERNATIVE
-    #mle = np.sum(np.multiply(t, np.log(o2)))
-    
+    # mle = np.sum(np.multiply(t, np.log(o2)))
+
     mle *= 2  # for the gradient check to work
 
     # Add regularization term to likelihood (optional)
@@ -86,7 +83,6 @@ def predict(X, W1, W2):
 # - iterations: Number of iterations through the training data for gradient ascent.
 # - print_estimate: If True, print the estimate every 1000 iterations.
 def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=None, y_val=None):
-
     # Run Batch Gradient Ascent
     lik_old = -np.inf
     for i in range(iterations):
@@ -98,7 +94,7 @@ def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=No
         if print_estimate:
             lik = likelihood(X, t, W1, W2)
             if X_val is None or y_val is None:
-                print("Iteration %i (out of %i), likelihood estimate: %f" % ((i+1), iterations, float(lik)))
+                print("Iteration %i (out of %i), likelihood estimate: %f" % ((i + 1), iterations, float(lik)))
             else:
                 # Print the estimate along with the accuracy on every epoch
                 predicted = predict(X_val, W1, W2)
@@ -106,7 +102,7 @@ def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=No
                 totalerrors = np.sum(err)
                 acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
                 print("Iteration %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
-                      % ((i+1), iterations, float(lik), float(acc)))
+                      % ((i + 1), iterations, float(lik), float(acc)))
 
             if np.abs(lik - lik_old) < tol:
                 break
@@ -238,7 +234,8 @@ if __name__ == '__main__':
     print()
 
     # train the Neural Network Model
-    W1, W2 = train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_val=X_test, y_val=y_test_true)
+    W1, W2 = train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_val=X_test,
+                   y_val=y_test_true)
 
     # print the learned weights
     '''
@@ -286,8 +283,10 @@ if __name__ == '__main__':
     # Calculate Precision-Recall
 
     print("number of wrong classifications: " + str(wrong_counter) + ' out of ' + str(y_test_true.size) + ' files')
-    print("number of wrong spam classifications: " + str(false_positives) + ' out of ' + str(y_test_true.size) + ' files')
-    print("number of wrong ham classifications: " + str(false_negatives) + ' out of ' + str(y_test_true.size) + ' files')
+    print(
+        "number of wrong spam classifications: " + str(false_positives) + ' out of ' + str(y_test_true.size) + ' files')
+    print(
+        "number of wrong ham classifications: " + str(false_negatives) + ' out of ' + str(y_test_true.size) + ' files')
 
     print()
 

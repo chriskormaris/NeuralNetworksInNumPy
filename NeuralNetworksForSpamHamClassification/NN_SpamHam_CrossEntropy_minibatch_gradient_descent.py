@@ -7,10 +7,9 @@
 
 from read_lingspam_dataset import *
 
-__author__ = 'c.kormaris'
-
 feature_dictionary_dir = "./feature_dictionary.txt"
 path = "./LingspamDataset"
+
 
 ###############
 
@@ -25,6 +24,7 @@ class NNParams:
     batch_size = 50
     epochs = 50
     tol = 1e-6
+
 
 ###############
 
@@ -43,7 +43,6 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the total cost of the dataset
 def cost_function(X, t, W1, W2):
-
     # Feed-Forward to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
 
@@ -68,7 +67,6 @@ def test(X, W1, W2):
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_cost_function: If True, print the cost.
 def train(X, t, W1, W2, epochs=50, tol=1e-6, print_cost_function=False):
-
     # Run Mini-batch Gradient Descent
     num_examples = X.shape[0]
     s_old = -np.inf
@@ -79,7 +77,8 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_cost_function=False):
         for i in range(iterations):
             start_index = int(i * NNParams.batch_size)
             end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            W1, W2, _, _ = gradient_descent(np.array(X[start_index:end_index, :]), np.array(t[start_index:end_index, :]), W1, W2)
+            W1, W2, _, _ = gradient_descent(np.array(X[start_index:end_index, :]),
+                                            np.array(t[start_index:end_index, :]), W1, W2)
             s = s + cost_function(np.array(X[start_index:end_index, :]), np.array(t[start_index:end_index, :]), W1, W2)
 
             # Optionally print the cost.
@@ -167,7 +166,7 @@ def gradient_check(X, t, W1, W2):
     # print('gradEw2: ' + str(gradEw2))
     # print('numgradEw2: ' + str(numgradEw2))
     diff2 = np.linalg.norm(gradEw2 - numgradEw2) / np.linalg.norm(gradEw2 + numgradEw2)
-    #diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2 + numgradEw2))
+    # diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2 + numgradEw2))
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
 
@@ -228,7 +227,7 @@ if __name__ == '__main__':
 
     # check predictions
     wrong_counter = 0  # the number of wrong classifications made by the NN
-    
+
     true_positives = 0
     true_negatives = 0
     false_positives = 0  # the number of ham files classified as spam

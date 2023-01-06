@@ -3,8 +3,6 @@ import numpy as np
 # ignore errors
 np.seterr(all='ignore')
 
-__author__ = 'c.kormaris'
-
 
 #####
 

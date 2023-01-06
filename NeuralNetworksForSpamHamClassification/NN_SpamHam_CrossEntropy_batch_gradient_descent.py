@@ -7,10 +7,9 @@
 
 from read_lingspam_dataset import *
 
-__author__ = 'c.kormaris'
-
 feature_dictionary_dir = "./feature_dictionary.txt"
 path = "./LingspamDataset"
+
 
 ###############
 
@@ -24,6 +23,7 @@ class NNParams:
     reg_lambda = 0.01  # the regularization parameter
     iterations = 20000
     tol = 1e-6
+
 
 ###############
 
@@ -43,7 +43,6 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the total cost of the dataset
 def cost_function(X, t, W1, W2):
-
     # Feed-Forward to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
 
@@ -68,7 +67,6 @@ def test(X, W1, W2):
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_cost_function: If True, print the cost every 1000 iterations.
 def train(X, t, W1, W2, iterations=20000, tol=1e-6, print_cost_function=False):
-
     # Run Batch Gradient Descent
     old_cost = -np.inf
     for i in range(iterations):
@@ -166,20 +164,20 @@ if __name__ == '__main__':
     # read feature dictionary from file
     feature_tokens = read_dictionary_file(feature_dictionary_dir)
     NNParams.num_input_units = len(feature_tokens)
-    
+
     print("Getting train and test data...")
     X_train, y_train, X_test, y_test = get_classification_data(path, feature_dictionary_dir)
-    
+
     print()
-    
+
     # normalize the data using mean normalization
     X_train = X_train - np.mean(X_train)
     X_test = X_test - np.mean(X_test)
-    
+
     # concat ones vector
     X_train = concat_ones_vector(X_train)
     X_test = concat_ones_vector(X_test)
-    
+
     # t_train: 1-hot matrix for the categories y_train
     t_train = np.zeros((y_train.shape[0], NNParams.num_output_units))
     t_train[np.arange(y_train.shape[0]), y_train] = 1
@@ -190,11 +188,11 @@ if __name__ == '__main__':
         NNParams.num_input_units)  # W1: MxD
     W2 = np.random.randn(NNParams.num_output_units, NNParams.num_hidden_units) / np.sqrt(
         NNParams.num_hidden_units)  # W2: KxM
-    
+
     # concat ones vector
     W1 = concat_ones_vector(W1)  # W1: MxD+1
     W2 = concat_ones_vector(W2)  # W2: KxM+1
-    
+
     # Do a gradient check first
     # SKIP THIS PART FOR FASTER EXECUTION
     '''
@@ -203,18 +201,18 @@ if __name__ == '__main__':
     ch = ch[0:20]  # get the 20 first data
     gradient_check(X_train[ch, :], t_train[ch, :], W1, W2)
     '''
-    
+
     print()
-    
+
     # train the Neural Network Model
     W1, W2 = train(X_train, t_train, W1, W2, iterations=NNParams.iterations, tol=NNParams.tol, print_cost_function=True)
-    
+
     # test the Neural Network Model
     y_test_predicted = test(X_test, W1, W2)
-    
+
     # check predictions
     wrong_counter = 0  # the number of wrong classifications made by the NN
-    
+
     true_positives = 0
     true_negatives = 0
     false_positives = 0  # the number of ham files classified as spam

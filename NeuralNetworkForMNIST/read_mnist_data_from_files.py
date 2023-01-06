@@ -1,13 +1,11 @@
 import numpy as np
+import pandas as pd
 # import re
 from pandas import DataFrame
-import pandas as pd
 
 # set options
 pd.set_option('display.width', 1000)
 pd.set_option('display.max_rows', 200)
-
-__author__ = 'c.kormaris'
 
 D = 784  # number of input layers (or number of pixels in the digit image)
 K = 10  # number of output layers (or number of categories or number of digits)
@@ -26,7 +24,7 @@ def read_data(path, testOrTrainFile):
     for i in range(len(lines)):
         tokens = lines[i].split(' ')
         for j in range(D):
-            if j == D-1:
+            if j == D - 1:
                 tokens[j] = tokens[j].replace('\n', '')
             X[i][j] = np.int(tokens[j])
 
@@ -70,7 +68,6 @@ def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
 # MAIN #
 
 if __name__ == "__main__":
-
     mnist_dir = "./mnisttxt/"
 
     X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)

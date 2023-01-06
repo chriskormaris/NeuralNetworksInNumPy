@@ -5,15 +5,14 @@
 # Train Algorithm: Stochastic Gradient Descent
 # Bias terms are used.
 
-from read_lingspam_dataset import *
-from Utilities import *
-
 import numpy as np
 
-__author__ = 'c.kormaris'
+from Utilities import *
+from read_lingspam_dataset import *
 
 feature_dictionary_dir = "./feature_dictionary.txt"
 path = "./LingspamDataset"
+
 
 ###############
 
@@ -27,6 +26,7 @@ class NNParams:
     reg_lambda = 0.01  # the regularization parameter
     epochs = 50
     tol = 1e-6
+
 
 ###############
 
@@ -45,7 +45,6 @@ def forward(X, W1, W2):
 
 # Helper function to evaluate the total cost of the dataset
 def cost_function(X, t, W1, W2):
-
     # Feed-Forward to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
 
@@ -70,7 +69,6 @@ def test(X, W1, W2):
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_cost_function: If True, print the cost.
 def train(X, t, W1, W2, epochs=50, tol=1e-6, print_cost_function=False):
-
     # Run Stochastic Gradient Descent
     num_examples = X.shape[0]
     s_old = -np.inf
@@ -222,7 +220,7 @@ if __name__ == '__main__':
 
     # check predictions
     wrong_counter = 0  # the number of wrong classifications made by the NN
-    
+
     true_positives = 0
     true_negatives = 0
     false_positives = 0  # the number of ham files classified as spam
