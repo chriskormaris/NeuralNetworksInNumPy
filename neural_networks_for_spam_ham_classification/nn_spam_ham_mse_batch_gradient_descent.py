@@ -7,7 +7,7 @@
 
 import numpy as np
 
-from Utilities import *
+from utilities import *
 from read_lingspam_dataset import *
 
 feature_dictionary_dir = "./feature_dictionary.txt"

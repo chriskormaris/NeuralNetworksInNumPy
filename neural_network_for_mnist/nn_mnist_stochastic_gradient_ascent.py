@@ -6,7 +6,7 @@
 # Train Algorithm: Stochastic Gradient Ascent
 # Bias terms are used.
 
-from Utilities import *
+from utilities import *
 # import local python files
 from read_mnist_data_from_files import *
 

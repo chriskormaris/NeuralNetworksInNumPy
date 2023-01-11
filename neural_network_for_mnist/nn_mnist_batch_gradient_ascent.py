@@ -1,10 +1,10 @@
 # 1st Activation Function: tanh
 # 2nd Activation Function: softmax
 # Maximum Likelihood Estimate Function: Cross Entropy Function
-# Train Algorithm: Mini-batch Gradient Ascent
+# Train Algorithm: Batch Gradient Ascent
 # Bias terms are used.
 
-from Utilities import *
+from utilities import *
 # import local python files
 from read_mnist_data_from_files import *
 
@@ -18,7 +18,6 @@ class NNParams:
     # Gradient ascent parameters
     eta = 0.1  # the learning rate for gradient ascent; it is modified according to the number of train data
     reg_lambda = 0.01  # the regularization parameter
-    batch_size = 1000
 
 
 ###############
@@ -59,7 +58,6 @@ def likelihood(X, t, W1, W2):
 
     # Calculating the mle using the logsumexp trick
     maximum = np.max(A, axis=1)
-    maximum = maximum.reshape((maximum.shape[0], 1))
     mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
     # ALTERNATIVE
@@ -80,44 +78,35 @@ def predict(X, W1, W2):
     return output
 
 
-# Train using Mini-batch Gradient Ascent
-def train(X, t, W1, W2, epochs=250, tol=1e-6, print_estimate=False, X_val=None, y_val=None):
-    # Run Mini-batch Gradient Ascent
-    num_examples = X.shape[0]
-    s_old = -np.inf
-    for e in range(epochs):
+# Train using Batch Gradient Ascent
+# This function learns the parameter weights W1, W2 for the neural network and returns them.
+# - iterations: Number of iterations through the training data for gradient ascent.
+# - print_estimate: If True, print the estimate every 1000 iterations.
+def train(X, t, W1, W2, iterations=500, tol=1e-6, print_estimate=False, X_val=None, y_val=None):
+    # Run Batch Gradient Ascent
+    lik_old = -np.inf
+    for i in range(iterations):
 
-        s = 0
-        iterations = int(np.ceil(num_examples / NNParams.batch_size))
-        for i in range(iterations):
-            start_index = int(i * NNParams.batch_size)
-            end_index = int(i * NNParams.batch_size + NNParams.batch_size)
-            batch_X = X[start_index:end_index, :]
-            if batch_X.shape == (NNParams.num_input_nodes + 1,):
-                batch_X = batch_X.reshape((1, NNParams.num_input_nodes + 1))
-            batch_t = t[start_index:end_index, :]
-            if batch_t.shape == (NNParams.num_output_nodes,):
-                batch_t = batch_t.reshape((1, NNParams.num_output_nodes))
-            W1, W2, _, _ = grad_ascent(batch_X, batch_t, W1, W2)
-            s = s + likelihood(batch_X, batch_t, W1, W2)
+        W1, W2, _, _ = grad_ascent(X, t, W1, W2)
 
         # Optionally print the estimate.
+        # This is expensive because it uses the whole dataset.
         if print_estimate:
+            lik = likelihood(X, t, W1, W2)
             if X_val is None or y_val is None:
-                print("Epoch %i (out of %i), likelihood estimate: %f" % ((e + 1), epochs, s))
+                print("Iteration %i (out of %i), likelihood estimate: %f" % ((i + 1), iterations, float(lik)))
             else:
                 # Print the estimate along with the accuracy on every epoch
                 predicted = predict(X_val, W1, W2)
                 err = np.not_equal(predicted, y_val)
                 totalerrors = np.sum(err)
                 acc = ((len(X_val) - totalerrors) / len(X_val)) * 100
-                print("Epoch %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
-                      % ((e + 1), epochs, s, float(acc)))
+                print("Iteration %i (out of %i), likelihood estimate: %f, accuracy on the validation set: %.2f %%"
+                      % ((i + 1), iterations, float(lik), float(acc)))
 
-        if np.abs(s - s_old) < tol:
-            break
-
-        s_old = s
+            if np.abs(lik - lik_old) < tol:
+                break
+            lik_old = lik
 
     return W1, W2
 
@@ -167,8 +156,6 @@ def gradient_check(X, t, W1, W2):
             Ewminus = likelihood(X, t, W1tmp, W2)
 
             numgradEw1[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-    # print('gradEw1: ' + str(gradEw1))
-    # print('numgradEw1: ' + str(numgradEw1))
     diff1 = np.sum(np.abs(gradEw1 - numgradEw1)) / np.sum(np.abs(gradEw1))
     print('The maximum absolute norm for parameter W1, in the gradient_check is: ' + str(diff1))
 
@@ -178,15 +165,13 @@ def gradient_check(X, t, W1, W2):
         for j in range(W2.shape[1]):
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] + epsilon
-            Ewplus = likelihood(X, t, W1, W2tmp)
+            Ewplus = likelihood(X_train, t_train, W1, W2tmp)
 
             W2tmp = W2
             W2tmp[i, j] = W2[i, j] - epsilon
-            Ewminus = likelihood(X, t, W1, W2tmp)
+            Ewminus = likelihood(X_train, t_train, W1, W2tmp)
 
             numgradEw2[i, j] = (Ewplus - Ewminus) / (2 * epsilon)
-    # print('gradEw2: ' + str(gradEw2))
-    # print('numgradEw2: ' + str(numgradEw2))
     diff2 = np.sum(np.abs(gradEw2 - numgradEw2)) / np.sum(np.abs(gradEw2))
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
@@ -201,8 +186,8 @@ if __name__ == '__main__':
 
     X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
     # y_train: the true categories vector for the train data
-    # y_train = np.argmax(t_train, axis=1)
-    # y_train = y_train.reshape((y_train.shape[0], 1))
+    y_train = np.argmax(t_train, axis=1)
+    y_train = np.array(y_train).T
 
     print()
 
@@ -244,13 +229,19 @@ if __name__ == '__main__':
     print()
 
     # define the learning rate based on the number of train data
-    NNParams.eta = 1 / len(X_train)
+    NNParams.eta = 0.5 / len(X_train)
     print('learning rate: ' + str(NNParams.eta))
-    print('batch size: ' + str(NNParams.batch_size))
     print()
 
     # train the Neural Network Model
-    W1, W2 = train(X_train, t_train, W1, W2, epochs=250, tol=1e-6, print_estimate=True, X_val=X_test, y_val=y_test_true)
+    W1, W2 = train(X_train, t_train, W1, W2, iterations=500, tol=1e-6, print_estimate=True, X_val=X_test,
+                   y_val=y_test_true)
+
+    # print the learned weights
+    '''
+    print('W1: ' + str(W1))
+    print('W2: ' + str(W2))
+    '''
 
     # test the Neural Network Model
     predicted = predict(X_test, W1, W2)

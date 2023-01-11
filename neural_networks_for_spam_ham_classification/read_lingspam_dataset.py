@@ -5,7 +5,7 @@ from os.path import isfile, join
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
-from Utilities import *
+from utilities import *
 
 
 def generate_data(path, trainOrTest, feature_tokens, tfidf=False):

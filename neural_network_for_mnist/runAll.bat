@@ -1,0 +1,4 @@
+python nn_mnist_batch_gradient_ascent.py > console_outputs/nn_mnist_batch_gradient_ascent.txt
+python nn_mnist_minibatch_gradient_ascent.py > console_outputs/nn_mnist_minibatch_gradient_ascent.txt
+python nn_mnist_stochastic_gradient_ascent.py > console_outputs/nn_mnist_stochastic_gradient_ascent.txt
+pause

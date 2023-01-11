@@ -1,13 +1,13 @@
-# This is the same NEURAL NETWORK as in Exercise 10 (SLIDE 35 with a leftmost sigmoid function instead of tanh). #
-# 1st Activation Function: sigmoid
-# 2nd Activation Function: softmax
-# Cost Function: Cross Entropy cost
-# Train Algorithm: Stochastic Gradient Descent
+# This is the same NEURAL NETWORK as in Exercise 9 (SLIDE 31), but with the rightmost SIGMOID. #
+# 1st Activation Function: tanh
+# 2nd Activation Function: sigmoid
+# Cost Function: Mean Squared Error cost
+# Train Algorithm: Mini-batch Gradient Descent
 # Bias terms are used.
 
 import numpy as np
 
-from Utilities import *
+from utilities import *
 from read_lingspam_dataset import *
 
 feature_dictionary_dir = "./feature_dictionary.txt"
@@ -19,11 +19,12 @@ path = "./LingspamDataset"
 
 class NNParams:
     num_input_units = 1000  # D: number of nodes in the input layers (aka: no of features)
-    num_hidden_units = 3  # M: number of nodes in the hidden layer
+    num_hidden_units = 50  # M: number of nodes in the hidden layer
     num_output_units = 2  # K: number of nodes in the output layer (aka: no of categories)
     # Gradient descent parameters
     eta = 0.001  # the learning rate of gradient descent
     reg_lambda = 0.01  # the regularization parameter
+    batch_size = 50
     epochs = 50
     tol = 1e-6
 
@@ -35,28 +36,28 @@ class NNParams:
 # Feed-Forward
 def forward(X, W1, W2):
     s1 = X.dot(W1.T)  # s1: NxM
-    o1 = sigmoid(s1)  # o1: NxM
-    grad = sigmoid_output_to_derivative(o1)  # the gradient of sigmoid function, grad: NxM
+    o1 = np.tanh(s1)  # o1: NxM
+    grad = tanh_output_to_derivative(o1)  # the gradient of tanh function, grad: NxM
     o1 = concat_ones_vector(o1)  # o1: NxM+1
     s2 = o1.dot(W2.T)  # s2: NxK
-    o2 = softmax(s2)  # o2: NxK
+    o2 = sigmoid(s2)  # o2: NxK
     return s1, o1, grad, s2, o2
 
 
 # Helper function to evaluate the total cost of the dataset
 def cost_function(X, t, W1, W2):
+    num_examples = len(X)  # N: training set size
+
     # Feed-Forward to calculate our predictions
     _, _, _, _, o2 = forward(X, W1, W2)
 
-    # Calculating the cost
-    logprobs = -np.multiply(t, np.log(o2))
-    data_cost = np.sum(logprobs)  # cross entropy cost
-
-    data_cost *= 2  # for the gradient check to work
+    # Calculating the mean square error cost
+    squared_error = np.square(o2 - t)
+    data_cost = np.sum(squared_error) / 2
 
     # Add regularization term to cost (optional)
     data_cost += NNParams.reg_lambda / 2 * (np.sum(np.square(W1)) + np.sum(np.square(W2)))
-    return data_cost
+    return data_cost / num_examples  # divide by number of examples and return
 
 
 def test(X, W1, W2):
@@ -69,21 +70,23 @@ def test(X, W1, W2):
 # - iterations: Number of iterations through the training data for gradient descent.
 # - print_cost_function: If True, print the cost.
 def train(X, t, W1, W2, epochs=50, tol=1e-6, print_cost_function=False):
-    # Run Stochastic Gradient Descent
+    # Run Mini-batch Gradient Descent
     num_examples = X.shape[0]
     s_old = -np.inf
     for e in range(epochs):
 
         s = 0
-        for i in range(num_examples):
-            xi = np.array(X[i, :]).reshape((1, X[i, :].size))
-            ti = np.array(t[i, :]).reshape((1, t[i, :].size))
-            W1, W2, dW1, dW2 = gradient_descent(xi, ti, W1, W2)
-            s = s + cost_function(xi, ti, W1, W2)
+        iterations = int(np.ceil(num_examples / NNParams.batch_size))
+        for i in range(iterations):
+            start_index = int(i * NNParams.batch_size)
+            end_index = int(i * NNParams.batch_size + NNParams.batch_size)
+            W1, W2, _, _ = gradient_descent(np.array(X[start_index:end_index, :]),
+                                            np.array(t[start_index:end_index, :]), W1, W2)
+            s = s + cost_function(np.array(X[start_index:end_index, :]), np.array(t[start_index:end_index, :]), W1, W2)
 
         # Optionally print the cost.
         if print_cost_function:
-            print("Cross entropy cost function after epoch %i: %f" % (e, cost_function(X, t, W1, W2)))
+            print("Mean squared error cost function after epoch %i: %f" % (e, cost_function(X, t, W1, W2)))
 
         if np.abs(s - s_old) < tol:
             break
@@ -104,9 +107,9 @@ def gradient_descent(X, t, W1, W2):
     # Back-Propagation
 
     # sum1 = np.array(np.sum(t_train, axis=1)).T  # sum1: Nx1
-    # t = np.matlib.repmat(sum1, 1, K)  # t: NxK, each row contains the same sum values in each column
-    # delta1 = np.multiply(o2, t) - t  # delta1: NxK
-    delta1 = o2 - t  # delta1: NxK, since t is one-hot matrix, then t=1, so we can omit it
+    # t_train = np.matlib.repmat(sum1, 1, K)  # t_train: NxK, each row contains the same sum values in each column
+    # delta1 = np.multiply(o2, t_train) - t_train  # delta1: NxK
+    delta1 = o2 - t  # delta1: NxK, since t_train is one-hot matrix, then t_train=1, so we can omit it
 
     W2_reduce = skip_first_column(W2)  # skip the first column of W2: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
@@ -126,6 +129,7 @@ def gradient_descent(X, t, W1, W2):
     return W1, W2, dW1, dW2
 
 
+# IT DOES NOT WORK CORRECTLY YET!
 def gradient_check(X, t, W1, W2):
     _, _, gradEw1, gradEw2 = gradient_descent(X, t, W1, W2)
     epsilon = 1e-6
