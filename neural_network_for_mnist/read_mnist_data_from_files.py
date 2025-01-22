@@ -19,16 +19,15 @@ def read_data(path, testOrTrainFile):
     lines = text_file.readlines()
     text_file.close()
 
-    X = [[0 for _ in range(D)] for _ in
-         range(len(lines))]  # X: len(lines) X num_input_layers
+    X = [[0 for _ in range(D)] for _ in range(len(lines))]  # X: len(lines) X num_input_layers
     for i in range(len(lines)):
         tokens = lines[i].split(' ')
         for j in range(D):
             if j == D - 1:
                 tokens[j] = tokens[j].replace('\n', '')
-            X[i][j] = np.int(tokens[j])
+            X[i][j] = np.int8(tokens[j])
 
-    X = np.matrix(X)  # convert classification parameter to the appropriate data type
+    X = np.array(X)  # convert classification parameter to the appropriate data type
     return X
 
 
@@ -36,8 +35,8 @@ def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
     print('Reading ' + trainOrTest + ' files...')
 
     # read train images for digits 0,1, 2 and 3
-    X = np.matrix  # 2D matrix
-    y = np.matrix  # 1D matrix
+    X = None  # 2D array
+    y = None  # 1D array
 
     for i in range(K):
         print('Reading "' + trainOrTest + str(i) + '.txt"')
@@ -51,10 +50,10 @@ def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
             X = np.concatenate((X, X_class_i), axis=0)
             y = np.concatenate((y, Y_class_i), axis=0)
 
-    y = np.matrix(y).T
+    y = y.reshape(-1, 1)
 
     if one_hot:
-        # construct t_train: 1-hot matrix for the categories y_train
+        # construct t: 1-hot array for the categories y
         t = np.zeros((y.shape[0], K))
         t[np.arange(y.shape[0]), y.ravel().tolist()] = 1
 
@@ -73,7 +72,7 @@ if __name__ == "__main__":
     X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
     # y_train: the true categories vector for the train data
     y_train = np.argmax(t_train, axis=1)
-    y_train = np.matrix(y_train).T
+    y_train = y_train.reshape(-1, 1)
 
     print()
     print("X_train:")
@@ -89,7 +88,7 @@ if __name__ == "__main__":
     X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
     # y_test_true: the true categories vector for the test data
     y_test_true = np.argmax(t_test_true, axis=1)
-    y_test_true = np.matrix(y_test_true).T
+    y_test_true = y_test_true.reshape(-1, 1)
 
     print()
     print("X_test:")

@@ -42,3 +42,7 @@ def softmax(X):
 def concat_ones_vector(X):
     ones_vector = np.ones((X.shape[0], 1))
     return np.concatenate((ones_vector, X), axis=1)
+
+
+def skip_first_column(X):
+    return X[:, 1:]

@@ -18,9 +18,9 @@ path = "./LingspamDataset"
 
 
 class NNParams:
-    num_input_units = 1000  # D: number of nodes in the input layers (aka: no of features)
+    num_input_units = 1000  # D: number of nodes in the input layers (aka: num of features)
     num_hidden_units = 50  # M: number of nodes in the hidden layer
-    num_output_units = 2  # K: number of nodes in the output layer (aka: no of categories)
+    num_output_units = 2  # K: number of nodes in the output layer (aka: num of categories)
     # Gradient descent parameters
     eta = 0.001  # the learning rate of gradient descent
     reg_lambda = 0.01  # the regularization parameter
@@ -111,7 +111,7 @@ def gradient_descent(X, t, W1, W2):
     # delta1 = np.multiply(o2, t_train) - t_train  # delta1: NxK
     delta1 = o2 - t  # delta1: NxK, since t_train is one-hot matrix, then t_train=1, so we can omit it
 
-    W2_reduce = skip_first_column(W2)  # skip the first column of W2: KxM
+    W2_reduce = skip_first_column(W2)  # skip the first column of W2, so W2_reduce: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: NxM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: NxM
 

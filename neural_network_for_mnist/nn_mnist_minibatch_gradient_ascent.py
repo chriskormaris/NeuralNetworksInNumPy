@@ -5,16 +5,15 @@
 # Bias terms are used.
 
 from utilities import *
-# import local python files
 from read_mnist_data_from_files import *
 
 
 ###############
 
 class NNParams:
-    num_input_nodes = 784  # D: number of nodes in the input layers (aka: no of features)
+    num_input_nodes = 784  # D: number of nodes in the input layers (aka: num of features)
     num_hidden_nodes = 100  # M: number of nodes in the hidden layer
-    num_output_nodes = 10  # K: number of nodes in the output layer (aka: no of categories)
+    num_output_nodes = 10  # K: number of nodes in the output layer (aka: num of categories)
     # Gradient ascent parameters
     eta = 0.1  # the learning rate for gradient ascent; it is modified according to the number of train data
     reg_lambda = 0.01  # the regularization parameter
@@ -59,8 +58,8 @@ def likelihood(X, t, W1, W2):
 
     # Calculating the mle using the logsumexp trick
     maximum = np.max(A, axis=1)
-    maximum = maximum.reshape((maximum.shape[0], 1))
-    mle = np.sum(np.multiply(t, A)) - np.sum(maximum, axis=0) \
+    maximum = maximum.reshape(-1, 1)  # maximum: Nx1
+    mle = np.sum(np.multiply(t, A)) - np.sum(maximum) \
           - np.sum(np.log(np.sum(np.exp(A - np.repeat(maximum, K, axis=1)), axis=1)))
     # ALTERNATIVE
     # mle = np.sum(np.multiply(t, np.log(o2)))
@@ -76,7 +75,7 @@ def predict(X, W1, W2):
     # Feed-Forward
     _, _, _, _, o2 = forward(X, W1, W2)
     output = np.argmax(o2, axis=1)
-    output = output.reshape((output.shape[0], 1))
+    output = output.reshape(-1, 1)
     return output
 
 
@@ -132,7 +131,7 @@ def grad_ascent(X, t, W1, W2):
 
     # Back-Propagation
     delta1 = t - o2  # delta1: 1xK
-    W2_reduce = W2[np.ix_(np.arange(W2.shape[0]), np.arange(1, W2.shape[1]))]  # skip the first column of W2: KxM
+    W2_reduce = skip_first_column(W2)  # skip the first column of W2, so W2_reduce: KxM
     delta2 = np.dot(delta1, W2_reduce)  # delta2: 1xM
     delta3 = np.multiply(delta2, grad)  # element-wise multiplication, delta3: 1xM
 
@@ -209,7 +208,7 @@ if __name__ == '__main__':
     X_test, t_test_true = get_mnist_data(mnist_dir, "test", one_hot=True)
     # y_test_true: the true categories vector for the test data
     y_test_true = np.argmax(t_test_true, axis=1)
-    y_test_true = y_test_true.reshape((y_test_true.shape[0], 1))
+    y_test_true = y_test_true.reshape(-1, 1)
 
     print()
 
