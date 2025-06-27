@@ -5,13 +5,10 @@
 # Train Algorithm: Stochastic Gradient Descent
 # Bias terms are used.
 
-import numpy as np
-
-from utilities import *
 from read_lingspam_dataset import *
 
-feature_dictionary_dir = "./feature_dictionary.txt"
-path = "./LingspamDataset"
+feature_dictionary_dir = "feature_dictionary.txt"
+path = "LingspamDataset"
 
 
 ###############
@@ -59,7 +56,7 @@ def cost_function(X, t, W1, W2):
     return data_cost
 
 
-def test(X, W1, W2):
+def predict(X, W1, W2):
     # Feed-Forward
     _, _, _, _, o2 = forward(X, W1, W2)
     return np.argmax(o2, axis=1)
@@ -73,7 +70,6 @@ def train(X, t, W1, W2, epochs=50, tol=1e-6, print_cost_function=False):
     num_examples = X.shape[0]
     s_old = -np.inf
     for e in range(epochs):
-
         s = 0
         for i in range(num_examples):
             xi = np.array(X[i, :]).reshape((1, X[i, :].size))
@@ -163,12 +159,7 @@ def gradient_check(X, t, W1, W2):
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
 
-###############
-
-# MAIN #
-
 if __name__ == '__main__':
-
     # read feature dictionary from file
     feature_tokens = read_dictionary_file(feature_dictionary_dir)
     NNParams.num_input_units = len(feature_tokens)
@@ -216,7 +207,7 @@ if __name__ == '__main__':
     W1, W2 = train(X_train, t_train, W1, W2, epochs=NNParams.epochs, tol=NNParams.tol, print_cost_function=True)
 
     # test the Neural Network Model
-    y_test_predicted = test(X_test, W1, W2)
+    y_test_predicted = predict(X_test, W1, W2)
 
     # check predictions
     wrong_counter = 0  # the number of wrong classifications made by the NN

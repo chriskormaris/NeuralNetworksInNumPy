@@ -15,8 +15,8 @@ m = 1000
 
 feature_dictionary_dir = "feature_dictionary.txt"
 
-spam_train_dir = "./LingspamDataset/spam-train/"
-ham_train_dir = "./LingspamDataset/nonspam-train/"
+spam_train_dir = join("LingspamDataset", "spam-train")
+ham_train_dir = join("LingspamDataset", "nonspam-train")
 
 
 ###############
@@ -50,7 +50,7 @@ def read_file(filename):
 
 
 # extracts tokens from the given text
-def getTokens(text):
+def get_tokens(text):
     text_tokens = re.findall(r"[\w']+", text)
     # remove digits, special characters and convert to lowercase
     for k in range(len(text_tokens)):
@@ -69,14 +69,9 @@ def write_tokens_to_file(tokens, filename):
     f.close()
 
 
-###############
-
-# MAIN #
-
 if __name__ == '__main__':
-
-    spam_train_files = sorted([f for f in listdir(spam_train_dir) if isfile(join(spam_train_dir, f))])
-    ham_train_files = sorted([f for f in listdir(ham_train_dir) if isfile(join(ham_train_dir, f))])
+    spam_train_files = sorted([file for file in listdir(spam_train_dir) if isfile(join(spam_train_dir, file))])
+    ham_train_files = sorted([file for file in listdir(ham_train_dir) if isfile(join(ham_train_dir, file))])
 
     train_files = list(spam_train_files)
     train_files.extend(ham_train_files)
@@ -119,10 +114,10 @@ if __name__ == '__main__':
     for i in range(len(train_files)):
         train_text = ''
         if train_labels[i] == 1:  # for "SPAM" files
-            train_text = read_file(spam_train_dir + train_files[i])
+            train_text = read_file(join(spam_train_dir, train_files[i]))
         elif train_labels[i] == 0:  # for "HAM" files
-            train_text = read_file(ham_train_dir + train_files[i])
-        candidate_features = getTokens(train_text)
+            train_text = read_file(join(ham_train_dir, train_files[i]))
+        candidate_features = get_tokens(train_text)
 
         for token in candidate_features:
             if token not in stop_words:

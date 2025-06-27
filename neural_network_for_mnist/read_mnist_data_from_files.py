@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 import pandas as pd
 # import re
@@ -14,8 +16,8 @@ K = 10  # number of output layers (or number of categories or number of digits)
 ###############
 
 
-def read_data(path, testOrTrainFile):
-    text_file = open(path + testOrTrainFile + '.txt', 'r')
+def read_data(path, test_or_train_file):
+    text_file = open(os.path.join(path, f'{test_or_train_file}.txt'), 'r')
     lines = text_file.readlines()
     text_file.close()
 
@@ -31,16 +33,16 @@ def read_data(path, testOrTrainFile):
     return X
 
 
-def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
-    print('Reading ' + trainOrTest + ' files...')
+def get_mnist_data(mnist_dir, train_or_test, one_hot=False):
+    print('Reading ' + train_or_test + ' files...')
 
     # read train images for digits 0,1, 2 and 3
     X = None  # 2D array
     y = None  # 1D array
 
     for i in range(K):
-        print('Reading "' + trainOrTest + str(i) + '.txt"')
-        X_class_i = read_data(mnist_dir, trainOrTest + str(i))
+        print('Reading "' + train_or_test + str(i) + '.txt"')
+        X_class_i = read_data(mnist_dir, train_or_test + str(i))
         N_train_i = X_class_i.shape[0]
         Y_class_i = np.repeat([i], N_train_i, axis=0)
         if i == 0:
@@ -62,12 +64,8 @@ def get_mnist_data(mnist_dir, trainOrTest, one_hot=False):
         return X, y
 
 
-###############
-
-# MAIN #
-
 if __name__ == "__main__":
-    mnist_dir = "./mnisttxt/"
+    mnist_dir = "mnisttxt"
 
     X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
     # y_train: the true categories vector for the train data

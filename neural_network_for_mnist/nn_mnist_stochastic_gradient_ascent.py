@@ -6,8 +6,8 @@
 # Train Algorithm: Stochastic Gradient Ascent
 # Bias terms are used.
 
-from utilities import *
 from read_mnist_data_from_files import *
+from utilities import *
 
 
 ###############
@@ -180,13 +180,8 @@ def gradient_check(X, t, W1, W2):
     print('The maximum absolute norm for parameter W2, in the gradient_check is: ' + str(diff2))
 
 
-###############
-
-# MAIN #
-
 if __name__ == '__main__':
-
-    mnist_dir = "./mnisttxt/"
+    mnist_dir = "mnisttxt"
 
     X_train, t_train = get_mnist_data(mnist_dir, 'train', one_hot=True)
     # y_train: the true categories vector for the train data
